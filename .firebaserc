@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "cusec-2021-staging",
+    "production": "cusec-2021-production"
+  }
+}
