@@ -1,12 +1,5 @@
 import Head from "next/head";
-
-import About from "@/components/sections/About";
-import FAQ from "@/components/sections/FAQ";
-import Footer from "@/components/sections/Footers";
-import Hero from "@/components/sections/Hero";
-import Speakers from "@/components/sections/Speakers";
-import Sponsors from "@/components/sections/Sponsors";
-import Stories from "@/components/sections/Stories";
+import SplashScreen from "@/components/sections/SplashScreen";
 
 export default function Home() {
   return (
@@ -17,15 +10,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Hero />
-        <About />
-        <Stories />
-        <Speakers />
-        <Sponsors />
-        <FAQ />
+        <SplashScreen />
       </main>
-
-      <Footer />
 
       <style jsx global>{`
         html,
