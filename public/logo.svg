@@ -1,0 +1,23 @@
+<svg width="346.4101615137754" height="400" viewBox="-173.2050807568877 -200 346.4101615137754 400" fill="none" 
+    xmlns="http://www.w3.org/2000/svg">
+    <g transform="rotate(-30)">
+        <path d="M-200 0h400l-100 -173.2050807568877h-200Z" fill="#09D8C4"/>
+        <path d="M-200 0l50 -86.60254037844385h300l50 86.60254037844385l-50 86.60254037844385h-300" fill="url(#dark-neon)"/>
+        <path d="M-200 0h400l-100 173.2050807568877h-200Z" fill="url(#dark-blue)"/>
+        <path d="M-150 86.60254037844385h300l-50 86.60254037844385h-200Z" fill="url(#purple)"/>
+    </g>
+    <defs>
+        <linearGradient id="dark-neon" x1="0" y1="-86.60254037844385" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0e8990" />
+            <stop offset="25%" stop-color="#11a0a7" />
+        </linearGradient>
+        <linearGradient id="dark-blue" x1="0" y1="0" x2="0" y2="86.60254037844385" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#19466b" />
+            <stop offset="25%" stop-color="#1e5480" />
+        </linearGradient>
+        <linearGradient id="purple" x1="0" y1="86.60254037844385" x2="0" y2="173.2050807568877" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1c2759" />
+            <stop offset="25%" stop-color="#22306d" />
+        </linearGradient>
+    </defs>
+</svg> 
