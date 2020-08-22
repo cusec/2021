@@ -1,11 +1,12 @@
-import { Flex, Image } from "@chakra-ui/core";
+import { Flex } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
+import Logo from "./svgs/logo.svg";
 
 export default function TopBar() {
   return (
     <>
       <Flex
-        display={["none", "none", "none", "flex"]}
+        visibility={["hidden", "hidden", "hidden", "visible"]}
         alignItems="center"
         justifyContent="space-between"
         width="100%"
@@ -17,7 +18,7 @@ export default function TopBar() {
         top="0"
       >
         <Flex alignItems="center">
-          <Image height="32px" src="logo.svg" alt="CUSEC logo" />
+          <Logo style={{ height: "32px", width: "auto" }} />
         </Flex>
         <Flex alignItems="center">
           <Socials marginLeft="32px" />
