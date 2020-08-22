@@ -1,10 +1,11 @@
 import React from "react";
-import { Flex, Image, Link, Text } from "@chakra-ui/core";
+import { Flex, Link, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
+import Logo from "../svgs/logo.svg";
 
 const FlexFullView = styled(Flex)`
-  background-image: url("cityscape.svg");
+  background-image: url("images/cityscape.svg");
   background-repeat: no-repeat;
   background-attachment: local;
 `;
@@ -49,13 +50,16 @@ export default function SplashScreen(): React.ReactElement {
           height="100%"
           paddingX={["16px", "16px", "10vw", "10vw"]}
         >
-          <Flex justifyContent="center">
-            <Image
-              src="logo.svg"
-              alt="CUSEC logo"
-              size="100px"
-              marginBottom="8px"
-              display={["block", "block", "block", "none"]}
+          <Flex
+            justifyContent="center"
+            marginBottom="8px"
+            display={["flex", "flex", "flex", "none"]}
+          >
+            <Logo
+              style={{
+                height: "100px",
+                width: "auto",
+              }}
             />
           </Flex>
           <Flex
@@ -99,13 +103,9 @@ export default function SplashScreen(): React.ReactElement {
                 <Socials margin="16px" />
               </Flex>
             </Flex>
-            <Image
-              src="logo.svg"
-              alt="CUSEC logo"
-              width="min(250px, 15vw)"
-              marginLeft="50px"
-              display={["none", "none", "none", "block"]}
-            />
+            <Flex marginLeft="50px" display={["none", "none", "none", "flex"]}>
+              <Logo style={{ width: "min(250px, 15vw)", height: "auto" }} />
+            </Flex>
           </Flex>
         </Flex>
       </FlexFullView>
