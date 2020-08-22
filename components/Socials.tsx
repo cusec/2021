@@ -7,6 +7,9 @@ import {
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
+import * as firebase from "firebase/app";
+import "firebase/analytics";
+
 const StyledIcon = styled(FontAwesomeIcon)`
   width: 16px;
 `;
@@ -16,15 +19,50 @@ interface PropTypes {
 }
 
 export default function Socials(props: PropTypes) {
+  let analytics: firebase.analytics.Analytics;
+
+  firebase.analytics.isSupported().then((isSupported) => {
+    if (isSupported) {
+      analytics = firebase.analytics();
+    }
+  });
+
+  const clickSocial = (type: string) => {
+    if (analytics) {
+      analytics.logEvent(`click_social: ${type}`);
+    }
+  };
+
   return (
     <>
-      <Link {...props} href="https://www.facebook.com/cusecofficial/">
+      <Link
+        {...props}
+        href="https://www.facebook.com/cusecofficial/"
+        target="_blank"
+        onClick={() => {
+          clickSocial("facebook");
+        }}
+      >
         <StyledIcon icon={faFacebookSquare} />
       </Link>
-      <Link {...props} href="https://twitter.com/cusec">
+      <Link
+        {...props}
+        href="https://twitter.com/cusec"
+        target="_blank"
+        onClick={() => {
+          clickSocial("twitter");
+        }}
+      >
         <StyledIcon icon={faTwitterSquare} />
       </Link>
-      <Link {...props} href="https://www.instagram.com/cusecofficial/">
+      <Link
+        {...props}
+        href="https://www.instagram.com/cusecofficial/"
+        target="_blank"
+        onClick={() => {
+          clickSocial("instagram");
+        }}
+      >
         <StyledIcon icon={faInstagram} />
       </Link>
     </>
