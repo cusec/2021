@@ -21,11 +21,14 @@ interface PropTypes {
 export default function Socials(props: PropTypes) {
   let analytics: firebase.analytics.Analytics;
 
-  firebase.analytics.isSupported().then((isSupported) => {
-    if (isSupported) {
-      analytics = firebase.analytics();
-    }
-  });
+  firebase.analytics
+    .isSupported()
+    .then((isSupported) => {
+      if (isSupported) {
+        analytics = firebase.analytics();
+      }
+    })
+    .catch(() => {});
 
   const clickSocial = (type: string) => {
     if (analytics) {
