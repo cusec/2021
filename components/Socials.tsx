@@ -42,6 +42,7 @@ export default function Socials(props: PropTypes) {
         {...props}
         href="https://www.facebook.com/cusecofficial/"
         target="_blank"
+        rel="noopener noreferrer"
         onClick={() => {
           clickSocial("facebook");
         }}
@@ -52,6 +53,7 @@ export default function Socials(props: PropTypes) {
         {...props}
         href="https://twitter.com/cusec"
         target="_blank"
+        rel="noopener noreferrer"
         onClick={() => {
           clickSocial("twitter");
         }}
@@ -62,6 +64,7 @@ export default function Socials(props: PropTypes) {
         {...props}
         href="https://www.instagram.com/cusecofficial/"
         target="_blank"
+        rel="noopener noreferrer"
         onClick={() => {
           clickSocial("instagram");
         }}
