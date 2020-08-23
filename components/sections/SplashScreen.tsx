@@ -32,10 +32,17 @@ const LinkStyled = styled(Link)`
 `;
 
 export default function SplashScreen(): React.ReactElement {
-  const [windowHeight, setWindowHeight] = useState(0);
+  const minHeights = [500, 600, 700, 800];
+  const [heightProp, setHeightProp] = useState(
+    minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
+  );
 
   const updateHeight = () => {
-    setWindowHeight(innerHeight);
+    setHeightProp(
+      minHeights.map(
+        (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
+      )
+    );
   };
 
   useEffect(() => {
@@ -49,15 +56,7 @@ export default function SplashScreen(): React.ReactElement {
 
   return (
     <>
-      <FlexFullView
-        height={[
-          `${Math.max(500, windowHeight)}px`,
-          `${Math.max(600, windowHeight)}px`,
-          `${Math.max(700, windowHeight)}px`,
-          `${Math.max(800, windowHeight)}px`,
-        ]}
-        width="100%"
-      >
+      <FlexFullView height={heightProp} width="100%">
         <Flex
           flexDirection="column"
           justifyContent="center"
