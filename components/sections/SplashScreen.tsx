@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Flex, Link, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
@@ -8,6 +8,8 @@ const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
   background-repeat: no-repeat;
   background-attachment: local;
+  background-size: 100vw auto;
+  background-position: center bottom;
 `;
 
 const TextStyled = styled(Text)`
@@ -30,18 +32,31 @@ const LinkStyled = styled(Link)`
 `;
 
 export default function SplashScreen(): React.ReactElement {
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  const updateHeight = () => {
+    setWindowHeight(innerHeight);
+  };
+
+  useEffect(() => {
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
+
   return (
     <>
       <FlexFullView
         height={[
-          "max(100vh, 600px)",
-          "max(100vh, 600px)",
-          "max(100vh, 700px)",
-          "max(100vh, 800px)",
+          `${Math.max(500, windowHeight)}px`,
+          `${Math.max(600, windowHeight)}px`,
+          `${Math.max(700, windowHeight)}px`,
+          `${Math.max(800, windowHeight)}px`,
         ]}
         width="100%"
-        backgroundSize="100vw auto"
-        backgroundPosition={["center bottom"]}
       >
         <Flex
           flexDirection="column"
