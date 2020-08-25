@@ -12,7 +12,6 @@ export default function TopBar() {
         width="100%"
         paddingX={["0.2in", "0.2in", "10vw", "10vw"]}
         paddingY="8px"
-        background="white"
         // TODO: change position to "fixed" when navigation is added (and also add box shadow, top bar hiding, hamburger menu, etc.)
         position="absolute"
         top="0"

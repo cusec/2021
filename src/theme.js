@@ -18,6 +18,7 @@ const theme = {
     off_black: "#2E3440",
     grey_stroke: "#F1F1F1",
     grey_fill: "#FAFAFA",
+    off_white_bg: "#F8FCFE",
   },
   fonts,
   breakpoints,

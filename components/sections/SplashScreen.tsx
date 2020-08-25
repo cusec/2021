@@ -56,7 +56,11 @@ export default function SplashScreen(): React.ReactElement {
 
   return (
     <>
-      <FlexFullView height={heightProp} width="100%">
+      <FlexFullView
+        height={heightProp}
+        width="100%"
+        backgroundColor="off_white_bg"
+      >
         <Flex
           flexDirection="column"
           justifyContent="center"
