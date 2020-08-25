@@ -27,8 +27,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-        with:
-          ref: develop
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
