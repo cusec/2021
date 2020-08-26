@@ -34,6 +34,10 @@ const TextTagLine = styled(TextStyled)`
   color: #1e5480;
 `;
 
+const FlexExperience = styled(Flex)`
+  width: 100%;
+`;
+
 export default function About(): React.ReactElement {
   return (
     <>
@@ -60,7 +64,7 @@ export default function About(): React.ReactElement {
               </Box>
             </Flex>
             <Flex flexDirection="column" marginLeft="50px">
-              <TextStyledBold>
+              <TextStyledBold fontSize="xl">
                 Annual Software Engineering Conference
               </TextStyledBold>
               <TextStyled>
@@ -94,6 +98,74 @@ export default function About(): React.ReactElement {
               <TextStyled>career opportunities</TextStyled>
             </Flex>
           </FlexTagLines>
+          <FlexExperience flexDirection="column">
+            <Flex justifyContent="center" marginBottom="5vh">
+              <TextStyledBold fontSize={["xl", "3xl"]}>
+                Ways to experience CUSEC
+              </TextStyledBold>
+            </Flex>
+            <Flex flexWrap="wrap">
+              <Box borderWidth="1px" rounded="md" width="30vw">
+                <Flex>
+                  <Flex>
+                    <Skeleton height="100px" width="100px" />
+                  </Flex>
+                  <Flex flexDirection="column">
+                    <TextStyledBold>Inspiring Keynotes</TextStyledBold>
+                    <TextStyled>
+                      We take great pride in hosting unique and knowledgeable
+                      speakers that come from many backgrounds in the software
+                      industry.
+                    </TextStyled>
+                  </Flex>
+                </Flex>
+              </Box>
+              <Box borderWidth="1px" rounded="md" width="30vw">
+                <Flex>
+                  <Flex>
+                    <Skeleton height="100px" width="100px" />
+                  </Flex>
+                  <Flex flexDirection="column">
+                    <TextStyledBold>Meet Recruiters</TextStyledBold>
+                    <TextStyled>
+                      Get exclusive opportunities to network with recruiters
+                      from the top companies that redefine tech everyday at our
+                      career fair.
+                    </TextStyled>
+                  </Flex>
+                </Flex>
+              </Box>
+              <Box borderWidth="1px" rounded="md" width="30vw">
+                <Flex>
+                  <Flex>
+                    <Skeleton height="100px" width="100px" />
+                  </Flex>
+                  <Flex flexDirection="column">
+                    <TextStyledBold>Attend Workshops</TextStyledBold>
+                    <TextStyled>
+                      Broaden your skill sets with new technological tools and
+                      gain insight on the hottest topics and challenges facing
+                      today’s tech industry.
+                    </TextStyled>
+                  </Flex>
+                </Flex>
+              </Box>
+              <Box borderWidth="1px" rounded="md" width="30vw">
+                <Flex>
+                  <Flex>
+                    <Skeleton height="100px" width="100px" />
+                  </Flex>
+                  <Flex flexDirection="column">
+                    <TextStyledBold>Build Your Network</TextStyledBold>
+                    <TextStyled>
+                      Meet like-minded peers, and fellow students from across
+                      North America. Make lifelong friendships.
+                    </TextStyled>
+                  </Flex>
+                </Flex>
+              </Box>
+            </Flex>
+          </FlexExperience>
         </Flex>
       </BaseFlex>
     </>
