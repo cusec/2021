@@ -9,6 +9,7 @@ import {
 
 import * as firebase from "firebase/app";
 import "firebase/analytics";
+import React from "react";
 
 const StyledIcon = styled(FontAwesomeIcon)`
   width: 16px;
@@ -18,7 +19,7 @@ interface PropTypes {
   [prop: string]: string;
 }
 
-export default function Socials(props: PropTypes) {
+export default function Socials(props: PropTypes): React.ReactElement {
   let analytics: firebase.analytics.Analytics;
 
   firebase.analytics

@@ -6,6 +6,7 @@ import theme from "../src/theme";
 
 import * as firebase from "firebase/app";
 import "firebase/analytics";
+import React from "react";
 
 const firebaseConfig = {
   apiKey: process.env.apiKey,
