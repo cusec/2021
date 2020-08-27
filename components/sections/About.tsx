@@ -82,6 +82,7 @@ export default function About(): React.ReactElement {
             </Flex>
           </FlexAbout>
           <FlexTagLines
+            flexDirection={["column", "column", "column", "row"]}
             paddingBottom={["1in", "1in", "2in", "2in"]}
             justifyContent={["center", "center", "center", "space-evenly"]}
           >
@@ -104,13 +105,19 @@ export default function About(): React.ReactElement {
                 Ways to experience CUSEC
               </TextStyledBold>
             </Flex>
-            <Flex flexWrap="wrap" justifyContent="center">
+            <Flex
+              flexWrap="wrap"
+              justifyContent="center"
+              alignItems={["center", "center", "center", "stretch"]}
+              flexDirection={["column", "column", "column", "row"]}
+            >
               <Box
                 borderWidth="1px"
                 rounded="lg"
-                width="30vw"
+                width="30rem"
                 margin="1vw"
                 boxShadow="md"
+                maxWidth="100%"
               >
                 <Flex>
                   <Flex justifyContent="center" alignItems="center">
@@ -131,9 +138,10 @@ export default function About(): React.ReactElement {
               <Box
                 borderWidth="1px"
                 rounded="lg"
-                width="30vw"
+                width="30rem"
                 margin="1vw"
                 boxShadow="md"
+                maxWidth="100%"
               >
                 <Flex>
                   <Flex justifyContent="center" alignItems="center">
@@ -154,9 +162,10 @@ export default function About(): React.ReactElement {
               <Box
                 borderWidth="1px"
                 rounded="lg"
-                width="30vw"
+                width="30rem"
                 margin="1vw"
                 boxShadow="md"
+                maxWidth="100%"
               >
                 <Flex>
                   <Flex justifyContent="center" alignItems="center">
@@ -177,9 +186,10 @@ export default function About(): React.ReactElement {
               <Box
                 borderWidth="1px"
                 rounded="lg"
-                width="30vw"
+                width="30rem"
                 margin="1vw"
                 boxShadow="md"
+                maxWidth="100%"
               >
                 <Flex>
                   <Flex justifyContent="center" alignItems="center">
