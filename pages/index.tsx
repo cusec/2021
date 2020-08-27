@@ -2,8 +2,9 @@ import Head from "next/head";
 import TopBar from "@/components/TopBar";
 import SplashScreen from "@/components/sections/SplashScreen";
 import About from "@/components/sections/About";
+import React from "react";
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   return (
     <div className="container">
       <Head>
@@ -18,8 +19,8 @@ export default function Home() {
       </Head>
 
       <main>
-        {/*<TopBar />*/}
-        {/*<SplashScreen />*/}
+        <TopBar />
+        <SplashScreen />
         <About />
       </main>
 
