@@ -93,11 +93,11 @@ export default function About(): React.ReactElement {
               textAlign={["center", "center", "center", "left"]}
               display={["none", "none", "none", "flex"]}
             >
-              <Box>
+              <Box marginRight="50px">
                 <Skeleton height="300px" width="300px" />
               </Box>
             </Flex>
-            <Flex flexDirection="column" marginLeft="50px">
+            <Flex flexDirection="column">
               <TextStyledBold fontSize="xl">
                 Annual Software Engineering Conference
               </TextStyledBold>
