@@ -3,6 +3,7 @@ import { Box, Flex, Skeleton, Text } from "@chakra-ui/core";
 import React from "react";
 
 const BaseFlex = styled(Flex)`
+  width: 100%;
   background-repeat: no-repeat;
   background-attachment: local;
   background-size: 100vw auto;
@@ -38,10 +39,43 @@ const FlexExperience = styled(Flex)`
   width: 100%;
 `;
 
+const MarginAroundBox = styled.div`
+  margin: 1rem;
+`;
+
+const taglinesData = [
+  { title: "Connect", subtitle: "with link-minded peers" },
+  { title: "Learn", subtitle: "from world-renowned experts" },
+  { title: "Discover", subtitle: "career opportunities" },
+];
+
+const experienceCUSECData = [
+  {
+    header: "Inspiring Keynotes",
+    description:
+      "We take great pride in hosting unique and knowledgeable speakers that come from many backgrounds in the software industry.",
+  },
+  {
+    header: "Meet Recruiters",
+    description:
+      "Get exclusive opportunities to network with recruiters from the top companies that redefine tech everyday at our career fair.",
+  },
+  {
+    header: "Attend Workshops",
+    description:
+      "Broaden your skill sets with new technological tools and gain insight on the hottest topics and challenges facing today’s tech industry.",
+  },
+  {
+    header: "Build Your Network",
+    description:
+      "Meet like-minded peers, and fellow students from across North America. Make lifelong friendships.",
+  },
+];
+
 export default function About(): React.ReactElement {
   return (
     <>
-      <BaseFlex width="100%">
+      <BaseFlex>
         <Flex
           flexDirection="column"
           justifyContent="center"
@@ -86,18 +120,20 @@ export default function About(): React.ReactElement {
             paddingBottom={["1in", "1in", "2in", "2in"]}
             justifyContent={["center", "center", "center", "space-evenly"]}
           >
-            <Flex flexDirection="column" alignItems="center">
-              <TextTagLine fontSize={["xl", "5xl"]}>Connect</TextTagLine>
-              <TextStyled>with link-minded peers</TextStyled>
-            </Flex>
-            <Flex flexDirection="column" alignItems="center">
-              <TextTagLine fontSize={["xl", "5xl"]}>Learn</TextTagLine>
-              <TextStyled>from world-renowned experts</TextStyled>
-            </Flex>
-            <Flex flexDirection="column" alignItems="center">
-              <TextTagLine fontSize={["xl", "5xl"]}>Discover</TextTagLine>
-              <TextStyled>career opportunities</TextStyled>
-            </Flex>
+            {taglinesData.map((item) => {
+              return (
+                <Flex
+                  flexDirection="column"
+                  alignItems="center"
+                  key={item.title}
+                >
+                  <TextTagLine fontSize={["xl", "5xl"]}>
+                    {item.title}
+                  </TextTagLine>
+                  <TextStyled>{item.subtitle}</TextStyled>
+                </Flex>
+              );
+            })}
           </FlexTagLines>
           <FlexExperience flexDirection="column">
             <Flex justifyContent="center" marginBottom="5vh">
@@ -111,101 +147,35 @@ export default function About(): React.ReactElement {
               alignItems={["center", "center", "center", "stretch"]}
               flexDirection={["column", "column", "column", "row"]}
             >
-              <Box
-                borderWidth="1px"
-                rounded="lg"
-                width="30rem"
-                margin="1vw"
-                boxShadow="md"
-                maxWidth="100%"
-              >
-                <Flex>
-                  <Flex justifyContent="center" alignItems="center">
-                    <Skeleton height="100px" width="100px" marginLeft="1rem" />
-                  </Flex>
-                  <Flex flexDirection="column">
-                    <div style={{ margin: "1rem" }}>
-                      <TextStyledBold>Inspiring Keynotes</TextStyledBold>
-                      <TextStyled>
-                        We take great pride in hosting unique and knowledgeable
-                        speakers that come from many backgrounds in the software
-                        industry.
-                      </TextStyled>
-                    </div>
-                  </Flex>
-                </Flex>
-              </Box>
-              <Box
-                borderWidth="1px"
-                rounded="lg"
-                width="30rem"
-                margin="1vw"
-                boxShadow="md"
-                maxWidth="100%"
-              >
-                <Flex>
-                  <Flex justifyContent="center" alignItems="center">
-                    <Skeleton height="100px" width="100px" marginLeft="1rem" />
-                  </Flex>
-                  <Flex flexDirection="column">
-                    <div style={{ margin: "1rem" }}>
-                      <TextStyledBold>Meet Recruiters</TextStyledBold>
-                      <TextStyled>
-                        Get exclusive opportunities to network with recruiters
-                        from the top companies that redefine tech everyday at
-                        our career fair.
-                      </TextStyled>
-                    </div>
-                  </Flex>
-                </Flex>
-              </Box>
-              <Box
-                borderWidth="1px"
-                rounded="lg"
-                width="30rem"
-                margin="1vw"
-                boxShadow="md"
-                maxWidth="100%"
-              >
-                <Flex>
-                  <Flex justifyContent="center" alignItems="center">
-                    <Skeleton height="100px" width="100px" marginLeft="1rem" />
-                  </Flex>
-                  <Flex flexDirection="column">
-                    <div style={{ margin: "1rem" }}>
-                      <TextStyledBold>Attend Workshops</TextStyledBold>
-                      <TextStyled>
-                        Broaden your skill sets with new technological tools and
-                        gain insight on the hottest topics and challenges facing
-                        today’s tech industry.
-                      </TextStyled>
-                    </div>
-                  </Flex>
-                </Flex>
-              </Box>
-              <Box
-                borderWidth="1px"
-                rounded="lg"
-                width="30rem"
-                margin="1vw"
-                boxShadow="md"
-                maxWidth="100%"
-              >
-                <Flex>
-                  <Flex justifyContent="center" alignItems="center">
-                    <Skeleton height="100px" width="100px" marginLeft="1rem" />
-                  </Flex>
-                  <Flex flexDirection="column">
-                    <div style={{ margin: "1rem" }}>
-                      <TextStyledBold>Build Your Network</TextStyledBold>
-                      <TextStyled>
-                        Meet like-minded peers, and fellow students from across
-                        North America. Make lifelong friendships.
-                      </TextStyled>
-                    </div>
-                  </Flex>
-                </Flex>
-              </Box>
+              {experienceCUSECData.map((item) => {
+                return (
+                  <Box
+                    borderWidth="1px"
+                    rounded="lg"
+                    width="30rem"
+                    margin="1vw"
+                    boxShadow="md"
+                    maxWidth="100%"
+                    key={item.header}
+                  >
+                    <Flex>
+                      <Flex justifyContent="center" alignItems="center">
+                        <Skeleton
+                          height="100px"
+                          width="100px"
+                          marginLeft="1rem"
+                        />
+                      </Flex>
+                      <Flex flexDirection="column">
+                        <MarginAroundBox>
+                          <TextStyledBold>{item.header}</TextStyledBold>
+                          <TextStyled>{item.description}</TextStyled>
+                        </MarginAroundBox>
+                      </Flex>
+                    </Flex>
+                  </Box>
+                );
+              })}
             </Flex>
           </FlexExperience>
         </Flex>
