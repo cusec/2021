@@ -21,7 +21,6 @@ const FlexTagLines = styled(Flex)`
 
 const TextStyled = styled(Text)`
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
 `;
 
 const TextStyledBold = styled(TextStyled)`
@@ -44,7 +43,7 @@ const MarginAroundBox = styled.div`
 `;
 
 const taglinesData = [
-  { title: "Connect", subtitle: "with link-minded peers" },
+  { title: "Connect", subtitle: "with like-minded peers" },
   { title: "Learn", subtitle: "from world-renowned experts" },
   { title: "Discover", subtitle: "career opportunities" },
 ];
@@ -82,7 +81,7 @@ export default function About(): React.ReactElement {
           width="100%"
           height="100%"
           paddingX={["16px", "16px", "10vw", "10vw"]}
-          marginTop="15vh"
+          marginTop={["10vh", "10vh", "15vh", "15vh"]}
         >
           <FlexAbout
             justifyContent={["center", "center", "center", "space-between"]}
@@ -98,7 +97,7 @@ export default function About(): React.ReactElement {
               </Box>
             </Flex>
             <Flex flexDirection="column">
-              <TextStyledBold fontSize="xl">
+              <TextStyledBold fontSize={["xl", "3xl"]}>
                 Annual Software Engineering Conference
               </TextStyledBold>
               <TextStyled>
@@ -127,10 +126,19 @@ export default function About(): React.ReactElement {
                   alignItems="center"
                   key={item.title}
                 >
-                  <TextTagLine fontSize={["xl", "5xl"]}>
+                  <TextTagLine fontSize={["4xl", "5xl"]}>
                     {item.title}
                   </TextTagLine>
-                  <TextStyled>{item.subtitle}</TextStyled>
+                  <TextStyled
+                    margin={[
+                      "0px 0px 30px 0px",
+                      "0px 0px 30px 0px",
+                      "0px 0px 20px 0px",
+                      "0px 0px 0px 0px",
+                    ]}
+                  >
+                    {item.subtitle}
+                  </TextStyled>
                 </Flex>
               );
             })}
