@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Flex, Link, Text } from "@chakra-ui/core";
+import {
+  Flex,
+  IconButton,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Link,
+  Text,
+} from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -14,7 +22,6 @@ const FlexFullView = styled(Flex)`
 
 const TextStyled = styled(Text)`
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
 `;
 
 const TextStyledExtraBold = styled(TextStyled)`
@@ -32,7 +39,7 @@ const LinkStyled = styled(Link)`
 `;
 
 export default function SplashScreen(): React.ReactElement {
-  const minHeights = [500, 600, 700, 800];
+  const minHeights = [550, 650, 700, 800];
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
@@ -90,25 +97,85 @@ export default function SplashScreen(): React.ReactElement {
               flexDirection="column"
               textAlign={["center", "center", "center", "left"]}
             >
-              <TextStyledExtraBold fontSize={["4xl", "5xl"]}>
+              <TextStyledExtraBold fontSize={["4xl", "5xl"]} marginBottom="4px">
                 CUSEC 2021
               </TextStyledExtraBold>
-              <TextStyledBold fontSize={["xl", "2xl"]}>
+              <TextStyledBold fontSize={["xl", "2xl"]} marginBottom="12px">
                 Canadian University Software Engineering Conference
               </TextStyledBold>
-              <Flex justify={["center", "center", "center", "left"]}>
-                <TextStyled>January 9 - 10, 2021</TextStyled>
-                <Text margin="0 10px">{"\u2022"}</Text>
-                <TextStyled>Virtual Experience</TextStyled>
+              <Flex
+                flexDirection={["column", "column", "column", "row"]}
+                justify={["center", "center", "center", "left"]}
+                alignItems="center"
+                marginBottom={["0px", "0px", "0px", "8px"]}
+              >
+                <Flex
+                  alignItems="center"
+                  marginBottom={["16px", "16px", "16px", "0px"]}
+                >
+                  <TextStyled>January 9 - 10, 2021</TextStyled>
+                  <Text marginX="10px" height="24px">
+                    {"\u2022"}
+                  </Text>
+                  <TextStyled>Virtual Experience</TextStyled>
+                </Flex>
+                <Flex>
+                  <Text
+                    marginX="10px"
+                    height="24px"
+                    display={["none", "none", "none", "initial"]}
+                  >
+                    {"\u2022"}
+                  </Text>
+                  <TextStyled>Join our email listing</TextStyled>
+                </Flex>
               </Flex>
               <Flex
                 alignItems="center"
                 marginTop="8px"
+                flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
+                <InputGroup
+                  size="md"
+                  width="3in"
+                  marginRight={["0px", "0px", "0px", "24px"]}
+                  marginBottom={["16px", "16px", "16px", "0px"]}
+                >
+                  <Input
+                    paddingRight="72px"
+                    placeholder="Enter your email address"
+                    rounded="100px"
+                    fontFamily="Inter"
+                    fontSize="14px"
+                    borderColor="#d3d3d3"
+                    _hover={{}}
+                  />
+                  <InputRightElement width="64px" justifyContent="flex-end">
+                    <Flex width="100%">
+                      <IconButton
+                        aria-label="Submit email address to join email listing"
+                        icon="arrow-forward"
+                        isRound={true}
+                        backgroundColor="brand.blue"
+                        color="white"
+                        fontSize="24px"
+                        width="100%"
+                        _hover={{
+                          backgroundColor: "brand.dark_teal",
+                        }}
+                        _active={{}}
+                      />
+                    </Flex>
+                  </InputRightElement>
+                </InputGroup>
                 <LinkStyled
-                  color="brand.dark_teal"
+                  color="brand.blue"
                   href="mailto:sponsor@cusec.net"
+                  _hover={{
+                    color: "brand.dark_teal",
+                    textDecoration: "underline",
+                  }}
                 >
                   Interested in sponsoring?
                 </LinkStyled>
