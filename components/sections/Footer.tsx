@@ -8,6 +8,7 @@ const BaseContainer = styled.div`
   height: 4rem;
   width: 100%;
   display: flex;
+  border-top: 1px solid #f1f1f1;
 `;
 
 const FooterText = styled(Text)`
@@ -21,6 +22,7 @@ export default function Footer(): React.ReactElement {
     <>
       <BaseContainer>
         <Flex
+          width="100%"
           flexDirection={["column", "column", "row", "row"]}
           justifyContent={[
             "flex-start",
@@ -29,7 +31,11 @@ export default function Footer(): React.ReactElement {
             "space-between",
           ]}
         >
-          <Flex alignItems="center" justifyContent="center">
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            marginLeft={["0", "0", "2vw", "5vw"]}
+          >
             <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
               Contact CUSEC
             </FooterText>
@@ -37,13 +43,17 @@ export default function Footer(): React.ReactElement {
               Open Source
             </FooterText>
             <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
-              Icons from flaticons.com
+              Icons from flaticons.com*
             </FooterText>
           </Flex>
           <Flex alignItems="center" justifyContent="center">
             <Logo style={{ height: "24px", width: "auto" }} />
           </Flex>
-          <Flex alignItems="center" justifyContent="center">
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            marginRight={["0", "0", "2vw", "5vw"]}
+          >
             <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
               &copy; CUSEC 2021
             </FooterText>
