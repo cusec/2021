@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Flex, Skeleton, Text } from "@chakra-ui/core";
+import { Box, Divider, Flex, Skeleton, Text } from "@chakra-ui/core";
 import React from "react";
 
 const FlexAbout = styled(Flex)`
@@ -113,23 +113,30 @@ export default function About(): React.ReactElement {
           paddingBottom={["0.25in", "0.25in", "0.5in", "0.5in"]}
           paddingTop={["0.25in", "0.25in", "0.5in", "0.5in"]}
         >
-          {taglinesData.map((item) => {
+          {taglinesData.map((item, index) => {
             return (
-              <Flex flexDirection="column" alignItems="center" key={item.title}>
-                <TextTagLine fontSize={["4xl", "5xl"]}>
-                  {item.title}
-                </TextTagLine>
-                <TextStyled
-                  margin={[
-                    "0px 0px 30px 0px",
-                    "0px 0px 30px 0px",
-                    "0px 0px 20px 0px",
-                    "0px 0px 0px 0px",
-                  ]}
+              <>
+                {index !== 0 && <Divider orientation="vertical" />}
+                <Flex
+                  flexDirection="column"
+                  alignItems="center"
+                  key={item.title}
                 >
-                  {item.subtitle}
-                </TextStyled>
-              </Flex>
+                  <TextTagLine fontSize={["4xl", "5xl"]}>
+                    {item.title}
+                  </TextTagLine>
+                  <TextStyled
+                    margin={[
+                      "0px 0px 30px 0px",
+                      "0px 0px 30px 0px",
+                      "0px 0px 20px 0px",
+                      "0px 0px 0px 0px",
+                    ]}
+                  >
+                    {item.subtitle}
+                  </TextStyled>
+                </Flex>
+              </>
             );
           })}
         </FlexTagLines>
