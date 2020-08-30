@@ -160,7 +160,7 @@ export default function About(): React.ReactElement {
                   rounded="lg"
                   width="30rem"
                 >
-                  <Flex>
+                  <Flex height="100%">
                     <Flex
                       alignContent="center"
                       alignItems="center"
