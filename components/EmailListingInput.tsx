@@ -54,21 +54,22 @@ export default function EmailListingInput() {
 
       try {
         await submitToDatabase(emailValue);
+        setIsSubmitted(true);
+        showToast(
+          ToastStatusEnum.SUCCESS,
+          "Success!",
+          "We've added your email to our list."
+        );
       } catch (error) {
         setHasBadSubmission(true);
+        setIsDisabled(false);
+
         showToast(
           ToastStatusEnum.ERROR,
           "Error",
           "Email has already been registered."
         );
       }
-
-      setIsSubmitted(true);
-      showToast(
-        ToastStatusEnum.SUCCESS,
-        "Success!",
-        "We've added your email to our list."
-      );
     } else {
       setHasBadSubmission(true);
       showToast(ToastStatusEnum.ERROR, "Error", "Please enter a valid email.");
