@@ -8,7 +8,7 @@ Please see https://github.com/firebase/firebase-js-sdk/issues/3096 and https://s
 ## Testing
 
 To run the Firestore security rules unit tests, first, start the emulator with the Firebase CLI.
-Make sure it is install beforehand.
+Make sure it is installed beforehand.
 
 ```bash
 firebase emulators:start --only firestore
