@@ -1,6 +1,7 @@
 import Head from "next/head";
 import TopBar from "@/components/TopBar";
 import SplashScreen from "@/components/sections/SplashScreen";
+import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <main>
         <TopBar />
         <SplashScreen />
+        <FAQ />
       </main>
 
       <style jsx global>{`

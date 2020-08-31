@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Flex, Link, Text } from "@chakra-ui/core";
+import { Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
+import {
+  LinkStyled,
+  TextStyled,
+  TextStyledBold,
+  TextStyledExtraBold,
+} from "@/components/StyledCore";
 
 const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
@@ -10,25 +16,6 @@ const FlexFullView = styled(Flex)`
   background-attachment: local;
   background-size: 100vw auto;
   background-position: center bottom;
-`;
-
-const TextStyled = styled(Text)`
-  font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
-`;
-
-const TextStyledExtraBold = styled(TextStyled)`
-  font-weight: 900;
-`;
-
-const TextStyledBold = styled(TextStyled)`
-  font-weight: 700;
-  font-family: "Metropolis", sans-serif;
-`;
-
-const LinkStyled = styled(Link)`
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
 `;
 
 export default function SplashScreen(): React.ReactElement {
