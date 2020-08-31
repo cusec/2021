@@ -15,6 +15,10 @@ jobs:
         run: npm ci
       - name: Build & Export
         run: npm run export-staging
+      - name: Firestore unit tests against emulator
+        run: |
+          java -version
+          npx firebase-tools emulators:exec --only firestore --project cusec-2021-staging 'npm run test'
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
