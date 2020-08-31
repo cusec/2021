@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  Flex,
-  IconButton,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Link,
-  Text,
-} from "@chakra-ui/core";
+import { Flex, Link, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
+import EmailListingInput from "@/components/EmailListingInput";
 
 const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
@@ -136,39 +129,7 @@ export default function SplashScreen(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <InputGroup
-                  size="md"
-                  width="3in"
-                  marginRight={["0px", "0px", "0px", "24px"]}
-                  marginBottom={["16px", "16px", "16px", "0px"]}
-                >
-                  <Input
-                    paddingRight="72px"
-                    placeholder="Enter your email address"
-                    rounded="100px"
-                    fontFamily="Inter"
-                    fontSize="14px"
-                    borderColor="#d3d3d3"
-                    _hover={{}}
-                  />
-                  <InputRightElement width="64px" justifyContent="flex-end">
-                    <Flex width="100%">
-                      <IconButton
-                        aria-label="Submit email address to join email listing"
-                        icon="arrow-forward"
-                        isRound={true}
-                        backgroundColor="brand.blue"
-                        color="white"
-                        fontSize="24px"
-                        width="100%"
-                        _hover={{
-                          backgroundColor: "brand.dark_teal",
-                        }}
-                        _active={{}}
-                      />
-                    </Flex>
-                  </InputRightElement>
-                </InputGroup>
+                <EmailListingInput />
                 <LinkStyled
                   color="brand.blue"
                   href="mailto:sponsor@cusec.net"

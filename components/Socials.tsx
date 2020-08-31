@@ -6,9 +6,7 @@ import {
   faInstagram,
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
-
-import * as firebase from "firebase/app";
-import "firebase/analytics";
+import useStore from "../src/store";
 
 const StyledIcon = styled(FontAwesomeIcon)`
   width: 16px;
@@ -19,16 +17,9 @@ interface PropTypes {
 }
 
 export default function Socials(props: PropTypes) {
-  let analytics: firebase.analytics.Analytics;
-
-  firebase.analytics
-    .isSupported()
-    .then((isSupported) => {
-      if (isSupported) {
-        analytics = firebase.analytics();
-      }
-    })
-    .catch(() => {});
+  const analytics: firebase.analytics.Analytics = useStore(
+    (state) => state.analytics
+  );
 
   const clickSocial = (type: string) => {
     if (analytics) {
