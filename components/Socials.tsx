@@ -9,7 +9,7 @@ import {
 import useStore from "../src/store";
 
 const StyledIcon = styled(FontAwesomeIcon)`
-  width: 16px;
+  width: 20px;
 `;
 
 interface PropTypes {
