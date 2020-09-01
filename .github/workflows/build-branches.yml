@@ -17,3 +17,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run export
+      - name: Firestore unit tests against emulator
+        run: |
+          java -version
+          npx firebase-tools emulators:exec --only firestore --project cusec-2021-staging 'npm run test'
