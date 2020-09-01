@@ -15,6 +15,10 @@ jobs:
         run: npm ci
       - name: Build & Export
         run: npm run export-production
+      - name: Firestore unit tests against emulator
+        run: |
+          java -version
+          npx firebase-tools emulators:exec --only firestore --project cusec-2021-production 'npm run test'
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
@@ -35,6 +39,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy -P production --only hosting
+          args: deploy -P production --only hosting,firestore
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

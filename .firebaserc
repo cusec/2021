@@ -1,5 +1,6 @@
 {
   "projects": {
+    "default": "cusec-2021-staging",
     "staging": "cusec-2021-staging",
     "production": "cusec-2021-production"
   }
