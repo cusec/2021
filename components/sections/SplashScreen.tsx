@@ -3,6 +3,7 @@ import { Flex, Link, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
+import EmailListingInput from "@/components/EmailListingInput";
 
 const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
@@ -14,7 +15,6 @@ const FlexFullView = styled(Flex)`
 
 const TextStyled = styled(Text)`
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
 `;
 
 const TextStyledExtraBold = styled(TextStyled)`
@@ -32,7 +32,7 @@ const LinkStyled = styled(Link)`
 `;
 
 export default function SplashScreen(): React.ReactElement {
-  const minHeights = [500, 600, 700, 800];
+  const minHeights = [550, 650, 700, 800];
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
@@ -90,25 +90,53 @@ export default function SplashScreen(): React.ReactElement {
               flexDirection="column"
               textAlign={["center", "center", "center", "left"]}
             >
-              <TextStyledExtraBold fontSize={["4xl", "5xl"]}>
+              <TextStyledExtraBold fontSize={["4xl", "5xl"]} marginBottom="4px">
                 CUSEC 2021
               </TextStyledExtraBold>
-              <TextStyledBold fontSize={["xl", "2xl"]}>
+              <TextStyledBold fontSize={["xl", "2xl"]} marginBottom="12px">
                 Canadian University Software Engineering Conference
               </TextStyledBold>
-              <Flex justify={["center", "center", "center", "left"]}>
-                <TextStyled>January 9 - 10, 2021</TextStyled>
-                <Text margin="0 10px">{"\u2022"}</Text>
-                <TextStyled>Virtual Experience</TextStyled>
+              <Flex
+                flexDirection={["column", "column", "column", "row"]}
+                justify={["center", "center", "center", "left"]}
+                alignItems="center"
+                marginBottom={["0px", "0px", "0px", "8px"]}
+              >
+                <Flex
+                  alignItems="center"
+                  marginBottom={["16px", "16px", "16px", "0px"]}
+                >
+                  <TextStyled>January 9 - 10, 2021</TextStyled>
+                  <Text marginX="10px" height="24px">
+                    {"\u2022"}
+                  </Text>
+                  <TextStyled>Virtual Experience</TextStyled>
+                </Flex>
+                <Flex>
+                  <Text
+                    marginX="10px"
+                    height="24px"
+                    display={["none", "none", "none", "initial"]}
+                  >
+                    {"\u2022"}
+                  </Text>
+                  <TextStyled>Join our email listing</TextStyled>
+                </Flex>
               </Flex>
               <Flex
                 alignItems="center"
                 marginTop="8px"
+                flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
+                <EmailListingInput />
                 <LinkStyled
-                  color="brand.dark_teal"
+                  color="brand.blue"
                   href="mailto:sponsor@cusec.net"
+                  _hover={{
+                    color: "brand.dark_teal",
+                    textDecoration: "underline",
+                  }}
                 >
                   Interested in sponsoring?
                 </LinkStyled>
