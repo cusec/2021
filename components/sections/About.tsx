@@ -109,8 +109,7 @@ export default function About(): React.ReactElement {
       <FlexTagLines
         flexDirection={["column", "column", "column", "row"]}
         justifyContent={["center", "center", "center", "space-evenly"]}
-        paddingBottom={["0.25in", "0.25in", "0.5in", "0.5in"]}
-        paddingTop={["0.25in", "0.25in", "0.5in", "0.5in"]}
+        paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
       >
         {taglinesData.map((item, index) => {
           return (
@@ -137,7 +136,7 @@ export default function About(): React.ReactElement {
       </FlexTagLines>
       <FlexExperience
         flexDirection="column"
-        paddingTop={["0.5in", "0.5in", "1in", "1in"]}
+        paddingY={["0.5in", "0.5in", "1in", "1in"]}
         paddingX={["16px", "16px", "10vw", "10vw"]}
       >
         <Flex justifyContent="center" marginBottom="5vh">
