@@ -89,7 +89,10 @@ export default function About(): React.ReactElement {
           </Box>
         </Flex>
         <Flex flexDirection="column">
-          <TextStyledBold fontSize={["xl", "3xl"]}>
+          <TextStyledBold
+            fontSize={["xl", "3xl"]}
+            paddingBottom={["10px", "10px", "15px", "20px"]}
+          >
             Annual Software Engineering Conference
           </TextStyledBold>
           <TextStyled>
@@ -157,7 +160,7 @@ export default function About(): React.ReactElement {
                 boxShadow="md"
                 key={item.header}
                 margin="1vw"
-                maxWidth="100%"
+                maxWidth="98%"
                 rounded="lg"
                 width="30rem"
               >
