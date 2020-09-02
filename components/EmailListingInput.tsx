@@ -109,6 +109,7 @@ export default function EmailListingInput() {
         marginBottom={["16px", "16px", "16px", "0px"]}
       >
         <Input
+          type="email"
           paddingRight="72px"
           placeholder="Enter your email address"
           rounded="100px"
