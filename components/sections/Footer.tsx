@@ -5,10 +5,10 @@ import React from "react";
 
 const BaseContainer = styled.div`
   background-color: #fafafa;
-  height: 4rem;
-  width: 100%;
-  display: flex;
   border-top: 1px solid #f1f1f1;
+  display: flex;
+  height: 100%;
+  width: 100%;
 `;
 
 const FooterText = styled(Text)`
@@ -27,16 +27,16 @@ const FooterLink = styled(Link)`
   position: relative;
 
   &:after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    opacity: 0;
-    transform: translateY(3px);
     background: #11a0a7;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transform: translateY(3px);
     transition: opacity 0.2s ease, transform 0.2s ease;
+    width: 100%;
   }
 
   &:hover::after {
@@ -63,6 +63,8 @@ export default function Footer(): React.ReactElement {
             alignItems="center"
             justifyContent="center"
             marginLeft={["0", "0", "2vw", "5vw"]}
+            paddingBottom={["0", "0", "0.15in", "0.15in"]}
+            paddingTop="0.15in"
           >
             <FooterLink
               _focus={{}}
@@ -93,13 +95,15 @@ export default function Footer(): React.ReactElement {
               Icons from flaticon.com*
             </FooterLink>
           </Flex>
-          <Flex alignItems="center" justifyContent="center">
+          <Flex alignItems="center" justifyContent="center" paddingY="0.1in">
             <Logo style={{ height: "24px", width: "auto" }} />
           </Flex>
           <Flex
             alignItems="center"
             justifyContent="center"
             marginRight={["0", "0", "2vw", "5vw"]}
+            paddingBottom="0.15in"
+            paddingTop={["0", "0", "0.15in", "0.15in"]}
           >
             <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
               &copy; CUSEC 2021
