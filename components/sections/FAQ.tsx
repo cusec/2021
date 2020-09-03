@@ -25,35 +25,51 @@ export default function FAQ(): React.ReactElement {
   return (
     <>
       <Background>
-        <Flex direction="column" paddingX={["16px", "16px", "10vw", "10vw"]}>
+        <Flex
+          direction="column"
+          paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
+          paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
+          paddingX={["16px", "16px", "10vw", "10vw"]}
+        >
           <TextStyledBold fontSize={["xl", "3xl"]}>
             Frequently Asked Questions
           </TextStyledBold>
           <TextStyled>
             Can’t find an answer? Send us your question at
-            <LinkStyled color="brand.blue" href="mailto:sponsor@cusec.net">
+            <LinkStyled color="brand.blue" href="mailto:info@cusec.net">
               {` info@cusec.com `}
             </LinkStyled>
             and we’ll get back to you.
           </TextStyled>
         </Flex>
-        <Flex>
-          <Accordion>
-            {data.map((item) => {
-              return (
-                <>
-                  <AccordionItem>
-                    <AccordionHeader>
-                      <Box flex="1" textAlign="left">
-                        {item.question}
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionHeader>
-                    <AccordionPanel pb={4}>{item.answer}</AccordionPanel>
-                  </AccordionItem>
-                </>
-              );
-            })}
+        <Flex paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}>
+          <Accordion allowToggle>
+            <Flex flexWrap="wrap" justify="center">
+              {data.map((item) => {
+                return (
+                  <Box
+                    borderWidth="1px"
+                    key={item.question}
+                    margin="1vw"
+                    maxWidth="98%"
+                    rounded="lg"
+                    width="30rem"
+                  >
+                    <AccordionItem border="0">
+                      <AccordionHeader>
+                        <Box display="flex" textAlign="left">
+                          {item.question}
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionHeader>
+                      <AccordionPanel paddingBottom={4}>
+                        {item.answer}
+                      </AccordionPanel>
+                    </AccordionItem>
+                  </Box>
+                );
+              })}
+            </Flex>
           </Accordion>
         </Flex>
       </Background>
