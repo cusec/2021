@@ -43,21 +43,27 @@ export default function FAQ(): React.ReactElement {
           </TextStyled>
         </Flex>
         <Flex paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}>
-          <Accordion allowToggle>
-            <Flex flexWrap="wrap" justify="center">
+          <Accordion>
+            <Flex
+              alignContent="flex-start"
+              alignItems="flex-start"
+              flexWrap="wrap"
+              justify="center"
+            >
               {data.map((item) => {
                 return (
                   <Box
                     borderWidth="1px"
+                    display="flex"
                     key={item.question}
                     margin="1vw"
-                    maxWidth="98%"
+                    maxWidth="100%"
                     rounded="lg"
                     width="30rem"
                   >
-                    <AccordionItem border="0">
+                    <AccordionItem border="0" width="100%">
                       <AccordionHeader>
-                        <Box display="flex" textAlign="left">
+                        <Box flex="1" textAlign="left">
                           {item.question}
                         </Box>
                         <AccordionIcon />
