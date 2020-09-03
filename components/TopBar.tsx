@@ -1,8 +1,9 @@
 import { Flex } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
+import React from "react";
 
-export default function TopBar() {
+export default function TopBar(): React.ReactElement {
   return (
     <>
       <Flex
