@@ -46,8 +46,12 @@ function AccordionBox({ props }: AccordionBoxParams): React.ReactElement {
         {({ isExpanded }: IExpanded) => (
           <>
             {setExpanded(isExpanded)}
-            <AccordionHeader _focus={{}} _expanded={{ "font-weight": "bold" }}>
-              <Box flex="1" textAlign="left">
+            <AccordionHeader _focus={{}}>
+              <Box
+                flex="1"
+                textAlign="left"
+                fontWeight={isExpanded ? "bold" : "normal"}
+              >
                 {props.question}
               </Box>
               <AccordionIcon />
