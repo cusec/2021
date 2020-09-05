@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
-import React, { ReactElement, useState } from "react";
+import React, {
+  Dispatch,
+  FormEvent,
+  ReactElement,
+  SetStateAction,
+  useState,
+} from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -23,14 +29,34 @@ const Background = styled.div`
 
 interface AccordionBoxParams {
   props: { question: string; answer: string };
+  opened: string | null;
+  setOpened: Dispatch<SetStateAction<string | null>>;
 }
 
 interface IExpanded {
   isExpanded: boolean;
 }
 
-function AccordionBox({ props }: AccordionBoxParams): ReactElement {
+function AccordionBox({
+  props,
+  opened,
+  setOpened,
+}: AccordionBoxParams): ReactElement {
   const [expanded, setExpanded] = useState<boolean>(false);
+
+  const shouldBeOpened = () => {
+    if (opened === null) {
+      return false;
+    } else return opened === props.question;
+  };
+
+  const handleChange = (event: boolean | FormEvent<any>) => {
+    if (event) {
+      setOpened(props.question);
+    } else {
+      setOpened(null);
+    }
+  };
 
   return (
     <Box
@@ -40,10 +66,15 @@ function AccordionBox({ props }: AccordionBoxParams): ReactElement {
       maxWidth="95vw"
       rounded="lg"
       width="30rem"
-      borderColor={expanded ? "#09D8C4" : "#e2e8f0"}
+      borderColor={expanded ? "#09d8c4" : "#e2e8f0"}
       shadow={expanded ? "md" : "none"}
     >
-      <AccordionItem border="0" width="100%">
+      <AccordionItem
+        border="0"
+        width="100%"
+        onChange={handleChange}
+        isOpen={shouldBeOpened()}
+      >
         {({ isExpanded }: IExpanded) => (
           <>
             {setExpanded(isExpanded)}
@@ -65,7 +96,9 @@ function AccordionBox({ props }: AccordionBoxParams): ReactElement {
   );
 }
 
-export default function FAQ(): React.ReactElement {
+export default function FAQ(): ReactElement {
+  const [opened, setOpened] = useState<string | null>(null);
+
   return (
     <>
       <Background>
@@ -96,7 +129,14 @@ export default function FAQ(): React.ReactElement {
             <Accordion>
               {data.map((item, index) => {
                 if (index % 2 === 0) {
-                  return <AccordionBox props={item} key={item.question} />;
+                  return (
+                    <AccordionBox
+                      props={item}
+                      key={item.question}
+                      opened={opened}
+                      setOpened={setOpened}
+                    />
+                  );
                 }
               })}
             </Accordion>
@@ -105,7 +145,14 @@ export default function FAQ(): React.ReactElement {
             <Accordion>
               {data.map((item, index) => {
                 if (index % 2 !== 0) {
-                  return <AccordionBox props={item} key={item.question} />;
+                  return (
+                    <AccordionBox
+                      props={item}
+                      key={item.question}
+                      opened={opened}
+                      setOpened={setOpened}
+                    />
+                  );
                 }
               })}
             </Accordion>
