@@ -36,7 +36,7 @@ function AccordionBox({ props }: AccordionBoxParams): React.ReactElement {
       borderWidth="1px"
       display="flex"
       margin="1vw"
-      maxWidth="100vw"
+      maxWidth="95vw"
       rounded="lg"
       width="30rem"
       borderColor={expanded ? "#09D8C4" : "#e2e8f0"}
