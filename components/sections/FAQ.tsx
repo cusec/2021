@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -29,8 +29,9 @@ interface IExpanded {
   isExpanded: boolean;
 }
 
-function AccordionBox({ props }: AccordionBoxParams): React.ReactElement {
+function AccordionBox({ props }: AccordionBoxParams): ReactElement {
   const [expanded, setExpanded] = useState<boolean>(false);
+
   return (
     <Box
       borderWidth="1px"
