@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -25,25 +25,36 @@ interface AccordionBoxParams {
   props: { question: string; answer: string };
 }
 
+interface IExpanded {
+  isExpanded: boolean;
+}
+
 function AccordionBox({ props }: AccordionBoxParams): React.ReactElement {
+  const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <Box
       borderWidth="1px"
       display="flex"
-      key={props.question}
       margin="1vw"
       maxWidth="100vw"
       rounded="lg"
       width="30rem"
+      borderColor={expanded ? "#09D8C4" : "#e2e8f0"}
+      shadow={expanded ? "md" : "none"}
     >
       <AccordionItem border="0" width="100%">
-        <AccordionHeader>
-          <Box flex="1" textAlign="left">
-            {props.question}
-          </Box>
-          <AccordionIcon />
-        </AccordionHeader>
-        <AccordionPanel paddingBottom={4}>{props.answer}</AccordionPanel>
+        {({ isExpanded }: IExpanded) => (
+          <>
+            {setExpanded(isExpanded)}
+            <AccordionHeader _focus={{}} _expanded={{ "font-weight": "bold" }}>
+              <Box flex="1" textAlign="left">
+                {props.question}
+              </Box>
+              <AccordionIcon />
+            </AccordionHeader>
+            <AccordionPanel paddingBottom={4}>{props.answer}</AccordionPanel>
+          </>
+        )}
       </AccordionItem>
     </Box>
   );
@@ -57,7 +68,7 @@ export default function FAQ(): React.ReactElement {
           direction="column"
           paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
           paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
-          paddingX={["16px", "16px", "10vw", "10vw"]}
+          paddingX={["5vw", "5vw", "10vw", "10vw"]}
         >
           <TextStyledBold fontSize={["xl", "3xl"]}>
             Frequently Asked Questions
@@ -80,7 +91,7 @@ export default function FAQ(): React.ReactElement {
             <Accordion>
               {data.map((item, index) => {
                 if (index % 2 === 0) {
-                  return <AccordionBox props={item} />;
+                  return <AccordionBox props={item} key={item.question} />;
                 }
               })}
             </Accordion>
@@ -89,7 +100,7 @@ export default function FAQ(): React.ReactElement {
             <Accordion>
               {data.map((item, index) => {
                 if (index % 2 !== 0) {
-                  return <AccordionBox props={item} />;
+                  return <AccordionBox props={item} key={item.question} />;
                 }
               })}
             </Accordion>
