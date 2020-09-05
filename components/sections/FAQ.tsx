@@ -21,6 +21,34 @@ const Background = styled.div`
   background-color: #fafafa;
 `;
 
+interface AccordionBoxParams {
+  props: { question: string; answer: string };
+}
+
+function AccordionBox({ props }: AccordionBoxParams): React.ReactElement {
+  return (
+    <Box
+      borderWidth="1px"
+      display="flex"
+      key={props.question}
+      margin="1vw"
+      maxWidth="100vw"
+      rounded="lg"
+      width="30rem"
+    >
+      <AccordionItem border="0" width="100%">
+        <AccordionHeader>
+          <Box flex="1" textAlign="left">
+            {props.question}
+          </Box>
+          <AccordionIcon />
+        </AccordionHeader>
+        <AccordionPanel paddingBottom={4}>{props.answer}</AccordionPanel>
+      </AccordionItem>
+    </Box>
+  );
+}
+
 export default function FAQ(): React.ReactElement {
   return (
     <>
@@ -42,41 +70,30 @@ export default function FAQ(): React.ReactElement {
             and we’ll get back to you.
           </TextStyled>
         </Flex>
-        <Flex paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}>
-          <Accordion>
-            <Flex
-              alignContent="flex-start"
-              alignItems="flex-start"
-              flexWrap="wrap"
-              justify="center"
-            >
-              {data.map((item) => {
-                return (
-                  <Box
-                    borderWidth="1px"
-                    display="flex"
-                    key={item.question}
-                    margin="1vw"
-                    maxWidth="100%"
-                    rounded="lg"
-                    width="30rem"
-                  >
-                    <AccordionItem border="0" width="100%">
-                      <AccordionHeader>
-                        <Box flex="1" textAlign="left">
-                          {item.question}
-                        </Box>
-                        <AccordionIcon />
-                      </AccordionHeader>
-                      <AccordionPanel paddingBottom={4}>
-                        {item.answer}
-                      </AccordionPanel>
-                    </AccordionItem>
-                  </Box>
-                );
+        <Flex
+          direction="row"
+          justify="center"
+          paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}
+          wrap="wrap"
+        >
+          <Flex>
+            <Accordion>
+              {data.map((item, index) => {
+                if (index % 2 === 0) {
+                  return <AccordionBox props={item} />;
+                }
               })}
-            </Flex>
-          </Accordion>
+            </Accordion>
+          </Flex>
+          <Flex>
+            <Accordion>
+              {data.map((item, index) => {
+                if (index % 2 !== 0) {
+                  return <AccordionBox props={item} />;
+                }
+              })}
+            </Accordion>
+          </Flex>
         </Flex>
       </Background>
     </>
