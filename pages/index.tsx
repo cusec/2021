@@ -2,6 +2,7 @@ import Head from "next/head";
 import TopBar from "@/components/TopBar";
 import SplashScreen from "@/components/sections/SplashScreen";
 import FAQ from "@/components/sections/FAQ";
+import Footer from "@/components/sections/Footer";
 import About from "@/components/sections/About";
 import React from "react";
 
@@ -24,6 +25,7 @@ export default function Home(): React.ReactElement {
         <SplashScreen />
         <About />
         <FAQ />
+        <Footer />
       </main>
 
       <style jsx global>{`
