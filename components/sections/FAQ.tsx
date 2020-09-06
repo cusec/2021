@@ -27,6 +27,49 @@ const Background = styled.div`
   background-color: #fafafa;
 `;
 
+const AccordionHeaderStyled = styled(AccordionHeader)`
+   {
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f1f1f1;
+    border-radius: 8px;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
+`;
+
 interface AccordionBoxParams {
   props: { question: string; answer: string };
   index: number;
@@ -66,7 +109,7 @@ function AccordionBox({
       display="flex"
       margin={index === 0 || index === 1 ? "0 1vw 1vw 1vw" : "1vw"}
       maxWidth="95vw"
-      rounded="lg"
+      rounded="8px"
       width="30rem"
       borderColor={expanded ? "#09d8c4" : "#e2e8f0"}
       shadow={expanded ? "md" : "none"}
@@ -80,7 +123,7 @@ function AccordionBox({
         {({ isExpanded }: IExpanded) => (
           <>
             {setExpanded(isExpanded)}
-            <AccordionHeader _focus={{}}>
+            <AccordionHeaderStyled _focus={{}} _hover={{}}>
               <Box
                 flex="1"
                 textAlign="left"
@@ -89,7 +132,7 @@ function AccordionBox({
                 {props.question}
               </Box>
               <AccordionIcon />
-            </AccordionHeader>
+            </AccordionHeaderStyled>
             <AccordionPanel paddingBottom={4}>{props.answer}</AccordionPanel>
           </>
         )}
