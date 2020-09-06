@@ -29,6 +29,7 @@ const Background = styled.div`
 
 interface AccordionBoxParams {
   props: { question: string; answer: string };
+  index: number;
   opened: string | null;
   setOpened: Dispatch<SetStateAction<string | null>>;
 }
@@ -39,6 +40,7 @@ interface IExpanded {
 
 function AccordionBox({
   props,
+  index,
   opened,
   setOpened,
 }: AccordionBoxParams): ReactElement {
@@ -62,7 +64,7 @@ function AccordionBox({
     <Box
       borderWidth="1px"
       display="flex"
-      margin="1vw"
+      margin={index === 0 || index === 1 ? "0 1vw 1vw 1vw" : "1vw"}
       maxWidth="95vw"
       rounded="lg"
       width="30rem"
@@ -125,7 +127,7 @@ export default function FAQ(): ReactElement {
           paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}
           wrap="wrap"
         >
-          <Flex>
+          <Flex direction={["column", "column", "column", "row"]}>
             <Accordion>
               {data.map((item, index) => {
                 if (index % 2 === 0) {
@@ -133,6 +135,7 @@ export default function FAQ(): ReactElement {
                     <AccordionBox
                       props={item}
                       key={item.question}
+                      index={index}
                       opened={opened}
                       setOpened={setOpened}
                     />
@@ -140,8 +143,6 @@ export default function FAQ(): ReactElement {
                 }
               })}
             </Accordion>
-          </Flex>
-          <Flex>
             <Accordion>
               {data.map((item, index) => {
                 if (index % 2 !== 0) {
@@ -149,6 +150,7 @@ export default function FAQ(): ReactElement {
                     <AccordionBox
                       props={item}
                       key={item.question}
+                      index={index}
                       opened={opened}
                       setOpened={setOpened}
                     />
