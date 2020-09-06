@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Box, Divider, Flex, Skeleton, Text } from "@chakra-ui/core";
 import React, { Fragment } from "react";
+import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
 
 const FlexAbout = styled(Flex)`
   align-items: center;
@@ -170,7 +171,12 @@ export default function About(): React.ReactElement {
                     alignItems="center"
                     justifyContent="center"
                   >
-                    <Skeleton height="100px" marginLeft="1rem" width="100px" />
+                    <InspiringKeynotes
+                      height="80px"
+                      marginLeft="1rem"
+                      width="80px"
+                    />
+                    {/*<Skeleton height="100px" marginLeft="1rem" width="100px" />*/}
                   </Flex>
                   <Flex flexDirection="column">
                     <MarginAroundText>

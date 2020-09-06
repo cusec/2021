@@ -7,6 +7,7 @@ import {
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import useStore from "../src/store";
+import React, { ReactElement } from "react";
 
 const StyledIcon = styled(FontAwesomeIcon)`
   width: 20px;
@@ -16,7 +17,7 @@ interface PropTypes {
   [prop: string]: string;
 }
 
-export default function Socials(props: PropTypes) {
+export default function Socials(props: PropTypes): ReactElement {
   const analytics: firebase.analytics.Analytics = useStore(
     (state) => state.analytics
   );
