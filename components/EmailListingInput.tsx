@@ -104,17 +104,17 @@ export default function EmailListingInput() {
     <>
       <InputGroup
         size="md"
-        width="3in"
+        width="3.5in"
         marginRight={["0px", "0px", "0px", "24px"]}
         marginBottom={["16px", "16px", "16px", "0px"]}
       >
         <Input
           type="email"
           paddingRight="72px"
-          placeholder="Enter your email address"
+          placeholder="Enter your email address to stay connected"
           rounded="100px"
           fontFamily="Inter"
-          fontSize="14px"
+          fontSize="12px"
           borderColor="#d3d3d3"
           _hover={{}}
           isDisabled={isDisabled}
