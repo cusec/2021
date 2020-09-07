@@ -2,6 +2,9 @@ import styled from "@emotion/styled";
 import { Box, Divider, Flex, Skeleton, Text } from "@chakra-ui/core";
 import React, { Fragment } from "react";
 import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
+import MeetRecruiters from "../svgs/meet-recruiters.svg";
+import AttendWorkshops from "../svgs/attend-workshops.svg";
+import BuildYourNetwork from "../svgs/build-your-network.svg";
 
 const FlexAbout = styled(Flex)`
   align-items: center;
@@ -48,21 +51,25 @@ const experienceCUSECData = [
     header: "Inspiring Keynotes",
     description:
       "We take great pride in hosting unique and knowledgeable speakers that come from many backgrounds in the software industry.",
+    icon: <InspiringKeynotes height="90px" />,
   },
   {
     header: "Meet Recruiters",
     description:
       "Get exclusive opportunities to network with recruiters from the top companies that redefine tech everyday at our career fair.",
+    icon: <MeetRecruiters height="90px" />,
   },
   {
     header: "Attend Workshops",
     description:
       "Broaden your skill sets with new technological tools and gain insight on the hottest topics and challenges facing today’s tech industry.",
+    icon: <AttendWorkshops height="90px" />,
   },
   {
     header: "Build Your Network",
     description:
       "Meet like-minded peers, and fellow students from across North America. Make lifelong friendships.",
+    icon: <BuildYourNetwork height="90px" />,
   },
 ];
 
@@ -170,13 +177,9 @@ export default function About(): React.ReactElement {
                     alignContent="center"
                     alignItems="center"
                     justifyContent="center"
+                    marginLeft="1rem"
                   >
-                    <InspiringKeynotes
-                      height="80px"
-                      marginLeft="1rem"
-                      width="80px"
-                    />
-                    {/*<Skeleton height="100px" marginLeft="1rem" width="100px" />*/}
+                    {item.icon}
                   </Flex>
                   <Flex flexDirection="column">
                     <MarginAroundText>
