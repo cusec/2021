@@ -1,4 +1,4 @@
-export const FAQData = [
+export const FAQData: { question: string; answer: string }[] = [
   {
     question: "1 How will the conference work when it is virtual?",
     answer:
