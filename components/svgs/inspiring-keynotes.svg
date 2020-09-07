@@ -1,6 +1,6 @@
 <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="55.5" cy="55.5" r="55.5" fill="#ECF2FF"/>
-  <g clip-path="url(#clip0)">
+  <g clip-path="url(#inspiring-keynotes)">
     <path
       d="M56.4267 55.3143L49.8596 61.8815C49.1859 62.5551 48.0937 62.5552 47.4198 61.8815C46.7461 61.2078 46.7461 60.1154 47.4198 59.4417L53.987 52.8746C52.3906 50.9429 51.2564 48.7554 50.5857 46.4597L25.6618 72.8743C23.1011 75.6075 23.1699 79.8228 25.8181 82.471L26.8303 83.4832C29.4786 86.1317 33.6943 86.1998 36.4315 83.6354L62.8416 58.7156C60.5459 58.0449 58.3584 56.9107 56.4267 55.3143Z"
       fill="#175FFF"/>
@@ -12,7 +12,7 @@
       fill="#175FFF"/>
   </g>
   <defs>
-    <clipPath id="clip0">
+    <clipPath id="inspiring-keynotes">
       <rect width="58.898" height="58.898" fill="white" transform="translate(23.7857 26.6174)"/>
     </clipPath>
   </defs>

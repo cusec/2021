@@ -1,6 +1,6 @@
 <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="55.5" cy="55.5" r="55.5" fill="#FFFBF1"/>
-  <g clip-path="url(#clip0)">
+  <g clip-path="url(#attend-workshops)">
     <path
       d="M54.9337 33.9684C53.9372 33.9684 53.1285 33.1438 53.1285 32.1278V27.3252C53.1285 26.3092 53.9372 25.4846 54.9337 25.4846C55.9301 25.4846 56.7388 26.3092 56.7388 27.3252V32.1278C56.7388 33.1438 55.9301 33.9684 54.9337 33.9684Z"
       fill="#F9CB40"/>
@@ -32,7 +32,7 @@
     <path d="M62.2747 73.3391V73.3637C62.2266 73.3391 62.2025 73.3391 62.1544 73.3391H62.2747Z" fill="#F9CB40"/>
   </g>
   <defs>
-    <clipPath id="clip0">
+    <clipPath id="attend-workshops">
       <rect width="57.7653" height="58.898" fill="white" transform="translate(26.051 25.4846)"/>
     </clipPath>
   </defs>

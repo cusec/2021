@@ -1,5 +1,5 @@
 <svg width="1920" height="547" viewBox="0 0 1920 547" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
+<g clip-path="url(#cityscape-clip)">
 <rect y="471" width="1920" height="76" fill="#09D8C4"/>
 <g filter="url(#filter0_d)">
 <path d="M0 458H1920V518.5C1872.41 518.5 1832.5 513.431 1730 513.431C1627.5 513.431 1522.01 535.51 1317.74 535.51C1113.47 535.51 719.118 507.277 542.5 507.277C401.205 507.277 107.719 532.027 0 539V458Z" fill="#1E5480"/>
@@ -78,7 +78,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
-<clipPath id="clip0">
+<clipPath id="cityscape-clip">
 <rect width="1920" height="547" fill="white"/>
 </clipPath>
 </defs>

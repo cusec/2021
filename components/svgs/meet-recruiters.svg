@@ -1,6 +1,6 @@
 <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="55.5" cy="55.5" r="55.5" fill="#EDF8F8"/>
-  <g clip-path="url(#clip0)">
+  <g clip-path="url(#meet-recruiters)">
     <path
       d="M43.4089 41.5872C41.4833 39.6239 33.3 39.1332 30.6523 38.8877C30.4117 38.8877 30.1709 38.8877 29.9303 39.1331C29.6896 39.3786 29.449 39.8694 29.449 40.1148V62.2015C29.449 62.9377 29.9304 63.4286 30.6525 63.4286H37.8731C38.3545 63.4286 38.8358 63.1832 39.0766 62.6924C39.0766 61.9562 43.409 48.9495 43.8904 42.5689C43.8903 42.3235 43.8903 41.8327 43.4089 41.5872Z"
       fill="#0DA49A"/>
@@ -15,7 +15,7 @@
       fill="#0DA49A"/>
   </g>
   <defs>
-    <clipPath id="clip0">
+    <clipPath id="meet-recruiters">
       <rect width="57.7653" height="58.898" fill="white" transform="translate(29.449 26.6174)"/>
     </clipPath>
   </defs>

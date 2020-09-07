@@ -7,7 +7,9 @@
         "svgo": {
           "plugins": [
             {
-              "prefixIds": true
+              "cleanupIDs": {
+                "minify": false
+              }
             }
           ]
         }

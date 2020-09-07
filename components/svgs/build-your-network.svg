@@ -1,6 +1,6 @@
 <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="55.5" cy="55.5" r="55.5" fill="#FFF5EE"/>
-  <g clip-path="url(#clip0)">
+  <g clip-path="url(#build-your-network)">
     <path
       d="M40.0408 49.1958C41.1043 49.1958 41.9663 48.3168 41.9663 47.2325C41.9663 46.1483 41.1043 45.2693 40.0408 45.2693C38.9774 45.2693 38.1154 46.1483 38.1154 47.2325C38.1154 48.3168 38.9774 49.1958 40.0408 49.1958Z"
       fill="#FF7A1A"/>
@@ -30,7 +30,7 @@
       fill="#FF7A1A"/>
   </g>
   <defs>
-    <clipPath id="clip0">
+    <clipPath id="build-your-network">
       <rect width="57.7653" height="58.898" fill="white" transform="translate(29.449 26.6174)"/>
     </clipPath>
   </defs>
