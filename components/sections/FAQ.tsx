@@ -123,7 +123,7 @@ export default function FAQ(): ReactElement {
                       setOpened={setOpened}
                     />
                   ))
-                  .filter(({}, index) => index % 2 === 0)}
+                  .filter((_, index) => index % 2 === 0)}
               </Accordion>
               <Accordion
                 width={["100%", "100%", "100%", "50%"]}
@@ -139,7 +139,7 @@ export default function FAQ(): ReactElement {
                       setOpened={setOpened}
                     />
                   ))
-                  .filter(({}, index) => index % 2 !== 0)}
+                  .filter((_, index) => index % 2 !== 0)}
               </Accordion>
             </Flex>
           </Box>
