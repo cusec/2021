@@ -131,6 +131,7 @@ export default function About(): React.ReactElement {
                   {item.title}
                 </TextTagLine>
                 <TextStyled
+                  textAlign="center"
                   margin={[
                     "0px 0px 30px 0px",
                     "0px 0px 30px 0px",
