@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import styled from "@emotion/styled";
 import { Link } from "@chakra-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +17,7 @@ interface PropTypes {
   [prop: string]: string;
 }
 
-export default function Socials(props: PropTypes) {
+export default function Socials(props: PropTypes): ReactElement {
   const analytics: firebase.analytics.Analytics = useStore(
     (state) => state.analytics
   );

@@ -1,6 +1,7 @@
+import { ReactElement } from "react";
 import Head from "next/head";
 
-export default function Email() {
+export default function Email(): ReactElement {
   return (
     <>
       <Head>

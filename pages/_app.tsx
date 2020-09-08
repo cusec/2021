@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, ReactElement } from "react";
 
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 import { AppProps } from "next/app";
@@ -8,7 +8,7 @@ import Head from "next/head";
 import useStore from "../src/store";
 import theme from "../src/theme";
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps): ReactElement {
   const analytics: firebase.analytics.Analytics = useStore(
     (state) => state.analytics
   );
@@ -18,7 +18,7 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     initAnalytics();
-  }, []);
+  }, [initAnalytics]);
 
   if (analytics) {
     Router.events.on("routeChangeComplete", (url) =>
