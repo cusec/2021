@@ -1,0 +1,14 @@
+name: production
+on: push
+
+jobs:
+  backup:
+    name: backup-firestore
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          project_id: cusec-2021-production
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+      - run: gcloud firestore export gs://cusec-2021-production-backup
