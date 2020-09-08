@@ -98,7 +98,7 @@ export default function FAQ(): ReactElement {
             Frequently Asked Questions
           </TextStyledBold>
           <TextStyled>
-            Can't find an answer? Send us your question at{" "}
+            Can&apos;t find an answer? Send us your question at{" "}
             <LinkStyled color="brand.blue" href="mailto:info@cusec.net">
               info@cusec.com
             </LinkStyled>{" "}
