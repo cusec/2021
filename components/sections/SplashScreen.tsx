@@ -11,6 +11,8 @@ import {
 } from "@/components/StyledCore";
 import EmailListingInput from "@/components/EmailListingInput";
 
+const minHeights = [550, 650, 700, 800];
+
 const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
   background-repeat: no-repeat;
@@ -20,20 +22,19 @@ const FlexFullView = styled(Flex)`
 `;
 
 export default function SplashScreen(): React.ReactElement {
-  const minHeights = [550, 650, 700, 800];
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
 
-  const updateHeight = () => {
-    setHeightProp(
-      minHeights.map(
-        (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
-      )
-    );
-  };
-
   useEffect(() => {
+    const updateHeight = () => {
+      setHeightProp(
+        minHeights.map(
+          (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
+        )
+      );
+    };
+
     updateHeight();
     window.addEventListener("resize", updateHeight);
 

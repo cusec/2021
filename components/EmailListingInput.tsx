@@ -6,7 +6,7 @@ import {
   InputRightElement,
   useToast,
 } from "@chakra-ui/core";
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, ReactElement } from "react";
 import useStore from "../src/store";
 import * as firebase from "firebase/app";
 
@@ -17,7 +17,7 @@ enum ToastStatusEnum {
   WARNING = "warning",
 }
 
-export default function EmailListingInput() {
+export default function EmailListingInput(): ReactElement {
   const toast = useToast();
   const firestore: firebase.firestore.Firestore = useStore(
     (state) => state.firestore
