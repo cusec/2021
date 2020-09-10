@@ -6,6 +6,7 @@ import EmailIcon from "../svgs/envelope-coloured-icon.svg";
 import FBIcon from "../svgs/facebook-coloured-icon.svg";
 import TwitterIcon from "../svgs/twitter-coloured-icon.svg";
 import SocialShareSVG from "../svgs/undraw-social-share.svg";
+import { TextStyled, TextStyledBold } from "@/components/StyledCore";
 
 export default function Contact(): ReactElement {
   return (
@@ -17,11 +18,13 @@ export default function Contact(): ReactElement {
           paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
           paddingX={["5vw", "5vw", "10vw", "10vw"]}
         >
-          <Text fontSize={["xl", "3xl"]}>Can&apos;t get enough of CUSEC?</Text>
-          <Text>
+          <TextStyledBold fontSize={["xl", "3xl"]}>
+            Can&apos;t get enough of CUSEC?
+          </TextStyledBold>
+          <TextStyled>
             Follow us on our socials. Get updates by signing up for our email
             listing.
-          </Text>
+          </TextStyled>
           <Flex direction="row">
             <FBIcon />
             <TwitterIcon />
@@ -30,7 +33,7 @@ export default function Contact(): ReactElement {
           </Flex>
           <EmailListingInput />
         </Flex>
-        <Flex>
+        <Flex paddingY="0.5in" display={["none", "none", "none", "flex"]}>
           <SocialShareSVG />
         </Flex>
       </Flex>

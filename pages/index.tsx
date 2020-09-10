@@ -25,8 +25,8 @@ export default function Home(): React.ReactElement {
         <TopBar />
         <SplashScreen />
         <About />
-        <Contact />
         <FAQ />
+        <Contact />
         <Footer />
       </main>
 
