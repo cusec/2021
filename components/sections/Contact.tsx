@@ -25,7 +25,11 @@ export default function Contact(): ReactElement {
             Follow us on our socials. Get updates by signing up for our email
             listing.
           </TextStyled>
-          <Flex direction="row" align="center">
+          <Flex
+            align="center"
+            direction="row"
+            justify={["center", "flex-start", "flex-start", "flex-start"]}
+          >
             <Flex paddingRight={["0.15in", "0.15in", "0.2in", "0.25in"]}>
               <FBIcon />
             </Flex>
@@ -39,7 +43,10 @@ export default function Contact(): ReactElement {
               <EmailIcon />
             </Flex>
           </Flex>
-          <Flex paddingTop={["0.3in", "0.3in", "0.35in", "0.35in"]}>
+          <Flex
+            justify={["center", "flex-start", "flex-start", "flex-start"]}
+            paddingTop={["0.3in", "0.3in", "0.35in", "0.35in"]}
+          >
             <EmailListingInput />
           </Flex>
         </Flex>
