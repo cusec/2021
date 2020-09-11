@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import styled from "@emotion/styled";
 import { Link } from "@chakra-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,10 +7,6 @@ import {
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import useStore from "../src/store";
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  width: 20px;
-`;
 
 interface PropTypes {
   [prop: string]: string;
@@ -39,7 +34,7 @@ export default function Socials(props: PropTypes): ReactElement {
           clickSocial("facebook");
         }}
       >
-        <StyledIcon icon={faFacebookSquare} />
+        <FontAwesomeIcon width="20px" icon={faFacebookSquare} />
       </Link>
       <Link
         {...props}
@@ -50,7 +45,7 @@ export default function Socials(props: PropTypes): ReactElement {
           clickSocial("twitter");
         }}
       >
-        <StyledIcon icon={faTwitterSquare} />
+        <FontAwesomeIcon width="20px" icon={faTwitterSquare} />
       </Link>
       <Link
         {...props}
@@ -61,7 +56,7 @@ export default function Socials(props: PropTypes): ReactElement {
           clickSocial("instagram");
         }}
       >
-        <StyledIcon icon={faInstagram} />
+        <FontAwesomeIcon width="20px" icon={faInstagram} />
       </Link>
     </>
   );
