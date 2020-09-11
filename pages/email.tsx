@@ -6,8 +6,6 @@ export default function Email(): ReactElement {
     <>
       <Head>
         <title>CUSEC 2021 Email Signature</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta charSet="UTF-8" />
       </Head>
 
       <table id="email-signature">
