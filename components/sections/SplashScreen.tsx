@@ -86,31 +86,15 @@ export default function SplashScreen(): React.ReactElement {
                 Canadian University Software Engineering Conference
               </TextStyledBold>
               <Flex
-                flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
                 alignItems="center"
-                marginBottom={["0px", "0px", "0px", "8px"]}
+                marginBottom="16px"
               >
-                <Flex
-                  alignItems="center"
-                  marginBottom={["16px", "16px", "16px", "0px"]}
-                >
-                  <TextStyled>January 9 - 10, 2021</TextStyled>
-                  <Text marginX="10px" height="24px">
-                    {"\u2022"}
-                  </Text>
-                  <TextStyled>Virtual Experience</TextStyled>
-                </Flex>
-                <Flex>
-                  <Text
-                    marginX="10px"
-                    height="24px"
-                    display={["none", "none", "none", "initial"]}
-                  >
-                    {"\u2022"}
-                  </Text>
-                  <TextStyled>Join our email listing</TextStyled>
-                </Flex>
+                <TextStyled>January 9 - 10, 2021</TextStyled>
+                <Text marginX="10px" height="24px">
+                  {"\u2022"}
+                </Text>
+                <TextStyled>Virtual Experience</TextStyled>
               </Flex>
               <Flex
                 alignItems="center"

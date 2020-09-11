@@ -72,7 +72,11 @@ export default function EmailListingInput(): ReactElement {
       }
     } else {
       setHasBadSubmission(true);
-      showToast(ToastStatusEnum.ERROR, "Error", "Please enter a valid email.");
+      showToast(
+        ToastStatusEnum.ERROR,
+        "Error",
+        "Please enter a valid email address."
+      );
     }
 
     setIsLoading(false);
@@ -111,7 +115,7 @@ export default function EmailListingInput(): ReactElement {
         <Input
           type="email"
           paddingRight="72px"
-          placeholder="Enter your email address"
+          placeholder="Stay connected by email"
           rounded="100px"
           fontFamily="Inter"
           fontSize="14px"
