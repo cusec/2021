@@ -1,3 +1,5 @@
-export default function Stories() {
+import { ReactElement } from "react";
+
+export default function Stories(): ReactElement {
   return <></>;
 }

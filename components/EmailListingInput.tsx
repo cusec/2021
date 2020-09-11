@@ -6,7 +6,7 @@ import {
   InputRightElement,
   useToast,
 } from "@chakra-ui/core";
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, ReactElement } from "react";
 import useStore from "../src/store";
 import * as firebase from "firebase/app";
 
@@ -17,7 +17,7 @@ enum ToastStatusEnum {
   WARNING = "warning",
 }
 
-export default function EmailListingInput() {
+export default function EmailListingInput(): ReactElement {
   const toast = useToast();
   const firestore: firebase.firestore.Firestore = useStore(
     (state) => state.firestore
@@ -72,7 +72,11 @@ export default function EmailListingInput() {
       }
     } else {
       setHasBadSubmission(true);
-      showToast(ToastStatusEnum.ERROR, "Error", "Please enter a valid email.");
+      showToast(
+        ToastStatusEnum.ERROR,
+        "Error",
+        "Please enter a valid email address."
+      );
     }
 
     setIsLoading(false);
@@ -111,7 +115,7 @@ export default function EmailListingInput() {
         <Input
           type="email"
           paddingRight="72px"
-          placeholder="Enter your email address"
+          placeholder="Stay connected by email"
           rounded="100px"
           fontFamily="Inter"
           fontSize="14px"

@@ -11,6 +11,8 @@ import {
 } from "@/components/StyledCore";
 import EmailListingInput from "@/components/EmailListingInput";
 
+const minHeights = [550, 650, 700, 800];
+
 const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
   background-repeat: no-repeat;
@@ -20,20 +22,19 @@ const FlexFullView = styled(Flex)`
 `;
 
 export default function SplashScreen(): React.ReactElement {
-  const minHeights = [550, 650, 700, 800];
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
 
-  const updateHeight = () => {
-    setHeightProp(
-      minHeights.map(
-        (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
-      )
-    );
-  };
-
   useEffect(() => {
+    const updateHeight = () => {
+      setHeightProp(
+        minHeights.map(
+          (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
+        )
+      );
+    };
+
     updateHeight();
     window.addEventListener("resize", updateHeight);
 
@@ -85,31 +86,15 @@ export default function SplashScreen(): React.ReactElement {
                 Canadian University Software Engineering Conference
               </TextStyledBold>
               <Flex
-                flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
                 alignItems="center"
-                marginBottom={["0px", "0px", "0px", "8px"]}
+                marginBottom="16px"
               >
-                <Flex
-                  alignItems="center"
-                  marginBottom={["16px", "16px", "16px", "0px"]}
-                >
-                  <TextStyled>January 9 - 10, 2021</TextStyled>
-                  <Text marginX="10px" height="24px">
-                    {"\u2022"}
-                  </Text>
-                  <TextStyled>Virtual Experience</TextStyled>
-                </Flex>
-                <Flex>
-                  <Text
-                    marginX="10px"
-                    height="24px"
-                    display={["none", "none", "none", "initial"]}
-                  >
-                    {"\u2022"}
-                  </Text>
-                  <TextStyled>Join our email listing</TextStyled>
-                </Flex>
+                <TextStyled>January 9 - 10, 2021</TextStyled>
+                <Text marginX="10px" height="24px">
+                  {"\u2022"}
+                </Text>
+                <TextStyled>Virtual Experience</TextStyled>
               </Flex>
               <Flex
                 alignItems="center"
