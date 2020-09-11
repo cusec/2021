@@ -72,7 +72,11 @@ export default function EmailListingInput() {
       }
     } else {
       setHasBadSubmission(true);
-      showToast(ToastStatusEnum.ERROR, "Error", "Please enter a valid email.");
+      showToast(
+        ToastStatusEnum.ERROR,
+        "Error",
+        "Please enter a valid email address."
+      );
     }
 
     setIsLoading(false);
@@ -104,17 +108,17 @@ export default function EmailListingInput() {
     <>
       <InputGroup
         size="md"
-        width="3.5in"
+        width="3in"
         marginRight={["0px", "0px", "0px", "24px"]}
         marginBottom={["16px", "16px", "16px", "0px"]}
       >
         <Input
           type="email"
           paddingRight="72px"
-          placeholder="Enter your email address to stay connected"
+          placeholder="Stay connected by email"
           rounded="100px"
           fontFamily="Inter"
-          fontSize="12px"
+          fontSize="14px"
           borderColor="#d3d3d3"
           _hover={{}}
           isDisabled={isDisabled}
