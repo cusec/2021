@@ -12,7 +12,7 @@ import SocialLink from "../SocialLink";
 export default function Contact(): ReactElement {
   return (
     <>
-      <Flex direction="row" align="center">
+      <Flex direction="row" align="center" justify="space-between">
         <Flex
           direction="column"
           paddingBottom="0.3in"
@@ -65,7 +65,11 @@ export default function Contact(): ReactElement {
             <EmailListingInput />
           </Flex>
         </Flex>
-        <Flex paddingY="0.5in" display={["none", "none", "none", "flex"]}>
+        <Flex
+          paddingY="0.5in"
+          paddingRight={["0", "0", "0", "10vw"]}
+          display={["none", "none", "none", "flex"]}
+        >
           <SocialShareSVG />
         </Flex>
       </Flex>
