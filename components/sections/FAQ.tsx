@@ -51,7 +51,7 @@ function AccordionBox({
       background="white"
       borderWidth="1px"
       display="flex"
-      marginBottom="1vw"
+      marginBottom={["1vw", "1vw", "1vw", "0.5vw"]}
       maxWidth="95vw"
       rounded="8px"
       borderColor={shouldBeOpened ? "brand.teal" : "#e2e8f0"}
