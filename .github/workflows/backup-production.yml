@@ -1,11 +1,11 @@
-name: production
+name: backup
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 8 * * *"
 
 jobs:
   backup:
-    name: backup-firestore
+    name: production-firestore
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
