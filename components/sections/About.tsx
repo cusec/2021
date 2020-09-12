@@ -165,14 +165,13 @@ export default function About(): React.ReactElement {
                 key={item.header}
                 margin="1vw"
                 maxWidth="98%"
-                minHeight="140px"
                 rounded="lg"
                 width={["45rem", "45rem", "30rem", "45rem"]}
               >
                 <Flex
                   align="center"
                   alignContent="center"
-                  height="100%"
+                  minHeight="140px"
                   justify="center"
                 >
                   <Flex
