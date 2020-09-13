@@ -16,8 +16,9 @@ export default function Contact(): ReactElement {
         <Flex
           direction="column"
           paddingBottom="0.3in"
+          paddingLeft={["5vw", "5vw", "10vw", "10vw"]}
+          paddingRight={["5vw", "5vw", "0", "0"]}
           paddingTop={["0.5in", "0.5in", "0.75in", "0.75in"]}
-          paddingX={["5vw", "5vw", "10vw", "10vw"]}
         >
           <TextStyledBold fontSize={["xl", "3xl"]}>
             Can&apos;t get enough of CUSEC?
