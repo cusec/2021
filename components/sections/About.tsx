@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
 import { Box, Divider, Flex, Skeleton, Text } from "@chakra-ui/core";
 import React, { Fragment } from "react";
+import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
+import MeetRecruiters from "../svgs/meet-recruiters.svg";
+import AttendWorkshops from "../svgs/attend-workshops.svg";
+import BuildYourNetwork from "../svgs/build-your-network.svg";
 
 const FlexAbout = styled(Flex)`
-  align-items: center;
   width: 100%;
 `;
 
@@ -47,48 +50,48 @@ const experienceCUSECData = [
     header: "Inspiring Keynotes",
     description:
       "We take great pride in hosting unique and knowledgeable speakers that come from many backgrounds in the software industry.",
+    icon: <InspiringKeynotes height="90px" />,
   },
   {
     header: "Meet Recruiters",
     description:
       "Get exclusive opportunities to network with recruiters from the top companies that redefine tech everyday at our career fair.",
+    icon: <MeetRecruiters height="90px" />,
   },
   {
     header: "Attend Workshops",
     description:
       "Broaden your skill sets with new technological tools and gain insight on the hottest topics and challenges facing today’s tech industry.",
+    icon: <AttendWorkshops height="90px" />,
   },
   {
     header: "Build Your Network",
     description:
       "Meet like-minded peers, and fellow students from across North America. Make lifelong friendships.",
+    icon: <BuildYourNetwork height="90px" />,
   },
 ];
 
 export default function About(): React.ReactElement {
   return (
-    <Flex
-      flexDirection="column"
-      height="100%"
-      justifyContent="center"
-      width="100%"
-    >
+    <Flex direction="column" height="100%" justify="center" width="100%">
       <FlexAbout
-        justifyContent={["center", "center", "center", "space-between"]}
+        align="center"
+        justify={["center", "center", "center", "space-between"]}
         marginTop={["10vh", "10vh", "15vh", "15vh"]}
         paddingBottom={["0.5in", "0.5in", "1in", "1in"]}
         paddingX={["16px", "16px", "10vw", "10vw"]}
       >
         <Flex
           display={["none", "none", "none", "flex"]}
-          flexDirection="column"
+          direction="column"
           textAlign={["center", "center", "center", "left"]}
         >
           <Box marginRight="50px">
             <Skeleton height="300px" width="300px" />
           </Box>
         </Flex>
-        <Flex flexDirection="column">
+        <Flex direction="column">
           <TextStyledBold
             fontSize={["xl", "3xl"]}
             paddingBottom={["10px", "10px", "15px", "20px"]}
@@ -110,8 +113,8 @@ export default function About(): React.ReactElement {
         </Flex>
       </FlexAbout>
       <FlexTagLines
-        flexDirection={["column", "column", "column", "row"]}
-        justifyContent={["center", "center", "center", "space-evenly"]}
+        direction={["column", "column", "column", "row"]}
+        justify={["center", "center", "center", "space-evenly"]}
         paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
       >
         {taglinesData.map((item, index) => {
@@ -139,9 +142,9 @@ export default function About(): React.ReactElement {
         })}
       </FlexTagLines>
       <FlexExperience
-        flexDirection="column"
+        direction="column"
         paddingY={["0.5in", "0.5in", "1in", "1in"]}
-        paddingX={["16px", "16px", "10vw", "10vw"]}
+        paddingX={["16px", "16px", "7vw", "7vw"]}
       >
         <Flex justifyContent="center" marginBottom="5vh">
           <TextStyledBold fontSize={["xl", "3xl"]}>
@@ -149,10 +152,10 @@ export default function About(): React.ReactElement {
           </TextStyledBold>
         </Flex>
         <Flex
-          alignItems={["center", "center", "center", "stretch"]}
-          flexDirection={["column", "column", "column", "row"]}
-          flexWrap="wrap"
-          justifyContent="center"
+          align={["center", "center", "center", "stretch"]}
+          direction={["column", "column", "column", "row"]}
+          wrap="wrap"
+          justify="center"
         >
           {experienceCUSECData.map((item) => {
             return (
@@ -163,17 +166,23 @@ export default function About(): React.ReactElement {
                 margin="1vw"
                 maxWidth="98%"
                 rounded="lg"
-                width="30rem"
+                width={["45rem", "45rem", "30rem", "45rem"]}
               >
-                <Flex height="100%">
+                <Flex
+                  align="center"
+                  alignContent="center"
+                  minHeight="140px"
+                  justify="center"
+                >
                   <Flex
+                    align="center"
                     alignContent="center"
-                    alignItems="center"
-                    justifyContent="center"
+                    justify="center"
+                    marginLeft="1rem"
                   >
-                    <Skeleton height="100px" marginLeft="1rem" width="100px" />
+                    {item.icon}
                   </Flex>
-                  <Flex flexDirection="column">
+                  <Flex direction="column" height="100%">
                     <MarginAroundText>
                       <TextStyledBold>{item.header}</TextStyledBold>
                       <TextStyled>{item.description}</TextStyled>
