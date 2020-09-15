@@ -7,13 +7,20 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/core";
-import React, { ReactElement, useEffect } from "react";
-import { FooterLink } from "@/components/StyledCore";
+import React, { Fragment, ReactElement, useEffect } from "react";
+import {
+  FooterLink,
+  TextStyled,
+  TextStyledBold,
+} from "@/components/StyledCore";
 import { useRouter } from "next/router";
 
 interface FooterModalProps {
   linkBody: string;
-  modalBody: string;
+  modalBody: {
+    paragraph: string[];
+    title: string;
+  }[];
 }
 
 export default function FooterModal({
@@ -58,12 +65,31 @@ export default function FooterModal({
       >
         {linkBody}
       </FooterLink>
-      <Modal isOpen={isOpen} onClose={handleOnClose} isCentered size="xl">
+      <Modal
+        isOpen={isOpen}
+        onClose={handleOnClose}
+        preserveScrollBarGap
+        scrollBehavior="inside"
+        size={["95vw", "95vw", "80vw", "60vw"]}
+      >
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{linkBody}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>{modalBody}</ModalBody>
+        <ModalContent rounded="lg">
+          <ModalHeader paddingTop={6}>
+            <TextStyledBold fontSize="2xl">{linkBody}</TextStyledBold>
+          </ModalHeader>
+          <ModalCloseButton _focus={{}} />
+          <ModalBody paddingBottom={6}>
+            {modalBody.map((item) => (
+              <Fragment key={item.title}>
+                <TextStyledBold>{item.title}</TextStyledBold>
+                {item.paragraph.map((paragraph) => (
+                  <Fragment key={paragraph}>
+                    <TextStyled>{paragraph}</TextStyled>
+                  </Fragment>
+                ))}
+              </Fragment>
+            ))}
+          </ModalBody>
         </ModalContent>
       </Modal>
     </>
