@@ -59,9 +59,9 @@ export default function FooterModal({
         _focus={{}}
         _hover={{}}
         fontSize={["xs", "xs", "xs", "sm"]}
+        onClick={handleOnOpen}
         rel="noopener noreferrer"
         target="_blank"
-        onClick={handleOnOpen}
       >
         {linkBody}
       </FooterLink>
