@@ -21,13 +21,41 @@ const FlexFullView = styled(Flex)`
   background-position: center bottom;
 `;
 
+function useScreenOrientation() {
+  const [orientation, setOrientation] = useState<
+    "landscape" | "portrait" | undefined
+  >(undefined);
+
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      setOrientation(
+        window.innerWidth > window.innerHeight ? "landscape" : "portrait"
+      );
+    };
+
+    handleOrientationChange();
+    window.addEventListener("resize", handleOrientationChange);
+
+    return () => {
+      window.removeEventListener("resize", handleOrientationChange);
+    };
+  }, []);
+
+  return orientation;
+}
+
 export default function SplashScreen(): React.ReactElement {
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
+  const currentOrientation = useScreenOrientation();
+  const [screenOrientation, setScreenOrientation] = useState<
+    "landscape" | "portrait" | undefined
+  >(undefined);
 
   useEffect(() => {
     const updateHeight = () => {
+      setScreenOrientation(currentOrientation);
       setHeightProp(
         minHeights.map(
           (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
@@ -35,13 +63,13 @@ export default function SplashScreen(): React.ReactElement {
       );
     };
 
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-
-    return () => {
-      window.removeEventListener("resize", updateHeight);
-    };
-  }, []);
+    if (
+      screenOrientation === undefined ||
+      screenOrientation !== currentOrientation
+    ) {
+      updateHeight();
+    }
+  }, [currentOrientation, screenOrientation]);
 
   return (
     <>
