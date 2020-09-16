@@ -87,7 +87,6 @@ export default function SplashScreen(): React.ReactElement {
               </TextStyledBold>
               <Flex
                 justify={["center", "center", "center", "left"]}
-                alignItems="center"
                 marginBottom="16px"
               >
                 <TextStyled>January 9 - 10, 2021</TextStyled>
