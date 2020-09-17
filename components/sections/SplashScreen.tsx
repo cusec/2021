@@ -21,41 +21,34 @@ const FlexFullView = styled(Flex)`
   background-position: center bottom;
 `;
 
-function useScreenOrientation() {
-  const [orientation, setOrientation] = useState<
-    "landscape" | "portrait" | undefined
-  >(undefined);
+function useScreenWidth() {
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    const handleOrientationChange = () => {
-      setOrientation(
-        window.innerWidth > window.innerHeight ? "landscape" : "portrait"
-      );
+    const handleWidthChange = () => {
+      setWidth(window.innerWidth);
     };
-
-    handleOrientationChange();
-    window.addEventListener("resize", handleOrientationChange);
+    handleWidthChange();
+    window.addEventListener("resize", handleWidthChange);
 
     return () => {
-      window.removeEventListener("resize", handleOrientationChange);
+      window.removeEventListener("resize", handleWidthChange);
     };
   }, []);
 
-  return orientation;
+  return width;
 }
 
 export default function SplashScreen(): React.ReactElement {
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
-  const currentOrientation = useScreenOrientation();
-  const [screenOrientation, setScreenOrientation] = useState<
-    "landscape" | "portrait" | undefined
-  >(undefined);
+  const actualWidth = useScreenWidth();
+  const [currentWidth, setCurrentWidth] = useState(0);
 
   useEffect(() => {
     const updateHeight = () => {
-      setScreenOrientation(currentOrientation);
+      setCurrentWidth(actualWidth);
       setHeightProp(
         minHeights.map(
           (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
@@ -63,13 +56,10 @@ export default function SplashScreen(): React.ReactElement {
       );
     };
 
-    if (
-      screenOrientation === undefined ||
-      screenOrientation !== currentOrientation
-    ) {
+    if (currentWidth === 0 || currentWidth !== actualWidth) {
       updateHeight();
     }
-  }, [currentOrientation, screenOrientation]);
+  }, [actualWidth, currentWidth]);
 
   return (
     <>
