@@ -5,6 +5,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  SlideIn,
   useDisclosure,
 } from "@chakra-ui/core";
 import React, { Fragment, ReactElement, useEffect } from "react";
@@ -65,33 +66,46 @@ export default function FooterModal({
       >
         {linkBody}
       </FooterLink>
-      <Modal
-        isOpen={isOpen}
-        onClose={handleOnClose}
-        preserveScrollBarGap
-        scrollBehavior="inside"
-        size={["95vw", "95vw", "80vw", "60vw"]}
-      >
-        <ModalOverlay />
-        <ModalContent rounded="lg">
-          <ModalHeader paddingTop={6}>
-            <TextStyledBold fontSize="2xl">{linkBody}</TextStyledBold>
-          </ModalHeader>
-          <ModalCloseButton _focus={{}} />
-          <ModalBody paddingBottom={6}>
-            {modalBody.map((item) => (
-              <Fragment key={item.title}>
-                <TextStyledBold>{item.title}</TextStyledBold>
-                {item.paragraph.map((paragraph) => (
-                  <Fragment key={paragraph}>
-                    <TextStyled>{paragraph}</TextStyled>
-                  </Fragment>
-                ))}
-              </Fragment>
-            ))}
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      {/* @ts-ignore */}
+      <SlideIn in={isOpen}>
+        {/* @ts-ignore */}
+        {(styles) => (
+          <>
+            <Modal
+              isOpen={true}
+              onClose={handleOnClose}
+              preserveScrollBarGap
+              size={["95vw", "95vw", "80vw", "60vw"]}
+            >
+              <ModalOverlay onClick={handleOnClose} opacity={styles.opacity} />
+              <ModalContent rounded="lg" {...styles}>
+                <ModalHeader paddingTop={6}>
+                  <TextStyledBold fontSize="2xl">{linkBody}</TextStyledBold>
+                </ModalHeader>
+                <ModalCloseButton _focus={{}} />
+                <ModalBody paddingBottom={6}>
+                  {modalBody.map((item) => (
+                    <Fragment key={item.title}>
+                      <TextStyledBold>{item.title}</TextStyledBold>
+                      {item.paragraph.map((paragraph) => (
+                        <Fragment key={paragraph}>
+                          {paragraph.charAt(0) === "•" ? (
+                            <TextStyled>
+                              &nbsp;&nbsp;&nbsp;&nbsp;{paragraph}
+                            </TextStyled>
+                          ) : (
+                            <TextStyled>{paragraph}</TextStyled>
+                          )}
+                        </Fragment>
+                      ))}
+                    </Fragment>
+                  ))}
+                </ModalBody>
+              </ModalContent>
+            </Modal>
+          </>
+        )}
+      </SlideIn>
     </>
   );
 }
