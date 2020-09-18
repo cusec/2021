@@ -77,7 +77,7 @@ export default function FooterModal({
               preserveScrollBarGap
               size={["95vw", "95vw", "80vw", "60vw"]}
             >
-              <ModalOverlay onClick={handleOnClose} opacity={styles.opacity} />
+              <ModalOverlay opacity={styles.opacity} />
               <ModalContent rounded="lg" {...styles}>
                 <ModalHeader paddingTop={6}>
                   <TextStyledBold fontSize="2xl">{linkBody}</TextStyledBold>
@@ -90,9 +90,7 @@ export default function FooterModal({
                       {item.paragraph.map((paragraph) => (
                         <Fragment key={paragraph}>
                           {paragraph.charAt(0) === "•" ? (
-                            <TextStyled>
-                              &nbsp;&nbsp;&nbsp;&nbsp;{paragraph}
-                            </TextStyled>
+                            <TextStyled paddingLeft={4}>{paragraph}</TextStyled>
                           ) : (
                             <TextStyled>{paragraph}</TextStyled>
                           )}
