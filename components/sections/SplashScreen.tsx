@@ -21,13 +21,34 @@ const FlexFullView = styled(Flex)`
   background-position: center bottom;
 `;
 
+function useScreenWidth() {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const handleWidthChange = () => {
+      setWidth(window.innerWidth);
+    };
+    handleWidthChange();
+    window.addEventListener("resize", handleWidthChange);
+
+    return () => {
+      window.removeEventListener("resize", handleWidthChange);
+    };
+  }, []);
+
+  return width;
+}
+
 export default function SplashScreen(): React.ReactElement {
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
   );
+  const actualWidth = useScreenWidth();
+  const [currentWidth, setCurrentWidth] = useState(0);
 
   useEffect(() => {
     const updateHeight = () => {
+      setCurrentWidth(actualWidth);
       setHeightProp(
         minHeights.map(
           (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
@@ -35,13 +56,10 @@ export default function SplashScreen(): React.ReactElement {
       );
     };
 
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-
-    return () => {
-      window.removeEventListener("resize", updateHeight);
-    };
-  }, []);
+    if (currentWidth === 0 || currentWidth !== actualWidth) {
+      updateHeight();
+    }
+  }, [actualWidth, currentWidth]);
 
   return (
     <>
@@ -87,7 +105,6 @@ export default function SplashScreen(): React.ReactElement {
               </TextStyledBold>
               <Flex
                 justify={["center", "center", "center", "left"]}
-                alignItems="center"
                 marginBottom="16px"
               >
                 <TextStyled>January 9 - 10, 2021</TextStyled>

@@ -24,3 +24,29 @@ export const GreyBackground = styled.div`
   border-top: 1px solid #f1f1f1;
   background-color: #fafafa;
 `;
+
+export const FooterLink = styled(Link)`
+  color: #616161;
+  font-family: "Inter", sans-serif;
+  margin: 5px 8px;
+  padding-bottom: 1px;
+  position: relative;
+
+  &:after {
+    background: #11a0a7;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transform: translateY(3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    width: 100%;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
