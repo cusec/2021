@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 import Logo from "../svgs/logo.svg";
-import { Flex, Link, Text } from "@chakra-ui/core";
+import { Flex, Text } from "@chakra-ui/core";
 import React from "react";
+import { FooterLink } from "../StyledCore";
+import FooterModal from "@/components/FooterModal";
+import { codeOfConductText, privacyPolicyText } from "../../src/data";
 
 const BaseContainer = styled.div`
   background-color: #fafafa;
@@ -17,32 +20,6 @@ const FooterText = styled(Text)`
   margin: 5px 8px;
   padding-bottom: 1px;
   position: relative;
-`;
-
-const FooterLink = styled(Link)`
-  color: #616161;
-  font-family: "Inter", sans-serif;
-  margin: 5px 8px;
-  padding-bottom: 1px;
-  position: relative;
-
-  &:after {
-    background: #11a0a7;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    transform: translateY(3px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    width: 100%;
-  }
-
-  &:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-  }
 `;
 
 export default function Footer(): React.ReactElement {
@@ -108,24 +85,14 @@ export default function Footer(): React.ReactElement {
             <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
               &copy; CUSEC 2021
             </FooterText>
-            <FooterLink
-              _focus={{}}
-              _hover={{}}
-              fontSize={["xs", "xs", "xs", "sm"]}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Code of Conduct
-            </FooterLink>
-            <FooterLink
-              _focus={{}}
-              _hover={{}}
-              fontSize={["xs", "xs", "xs", "sm"]}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Privacy Policy
-            </FooterLink>
+            <FooterModal
+              linkBody="Code of Conduct"
+              modalBody={codeOfConductText}
+            />
+            <FooterModal
+              linkBody="Privacy Policy"
+              modalBody={privacyPolicyText}
+            />
           </Flex>
         </Flex>
       </BaseContainer>
