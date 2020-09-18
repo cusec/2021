@@ -19,3 +19,8 @@ export const LinkStyled = styled(Link)`
   font-family: "Inter", sans-serif;
   font-weight: 600;
 `;
+
+export const GreyBackground = styled.div`
+  border-top: 1px solid #f1f1f1;
+  background-color: #fafafa;
+`;

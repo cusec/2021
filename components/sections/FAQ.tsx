@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import React, {
   Dispatch,
   FormEvent,
@@ -16,16 +15,12 @@ import {
   Flex,
 } from "@chakra-ui/core";
 import {
+  GreyBackground,
   LinkStyled,
   TextStyled,
   TextStyledBold,
 } from "@/components/StyledCore";
 import { FAQData as data } from "../../src/data";
-
-const Background = styled.div`
-  border-top: 1px solid #f1f1f1;
-  background-color: #fafafa;
-`;
 
 interface AccordionBoxParams {
   props: { question: string; answer: string };
@@ -87,7 +82,7 @@ export default function FAQ(): ReactElement {
 
   return (
     <>
-      <Background>
+      <GreyBackground>
         <Flex
           direction="column"
           paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
@@ -144,7 +139,7 @@ export default function FAQ(): ReactElement {
             </Flex>
           </Box>
         </Flex>
-      </Background>
+      </GreyBackground>
     </>
   );
 }

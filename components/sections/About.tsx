@@ -5,6 +5,7 @@ import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
 import MeetRecruiters from "../svgs/meet-recruiters.svg";
 import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
+import { GreyBackground } from "@/components/StyledCore";
 
 const FlexAbout = styled(Flex)`
   width: 100%;
@@ -12,8 +13,6 @@ const FlexAbout = styled(Flex)`
 
 const FlexTagLines = styled(Flex)`
   width: 100%;
-  border-top: 1px solid #f1f1f1;
-  background-color: #fafafa;
 `;
 
 const TextStyled = styled(Text)`
@@ -112,35 +111,37 @@ export default function About(): React.ReactElement {
           </TextStyled>
         </Flex>
       </FlexAbout>
-      <FlexTagLines
-        direction={["column", "column", "column", "row"]}
-        justify={["center", "center", "center", "space-evenly"]}
-        paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
-      >
-        {taglinesData.map((item, index) => {
-          return (
-            <Fragment key={item.title}>
-              {index !== 0 && <Divider orientation="vertical" />}
-              <Flex flexDirection="column" alignItems="center">
-                <TextTagLine fontSize={["4xl", "5xl"]}>
-                  {item.title}
-                </TextTagLine>
-                <TextStyled
-                  textAlign="center"
-                  margin={[
-                    "0px 0px 30px 0px",
-                    "0px 0px 30px 0px",
-                    "0px 0px 20px 0px",
-                    "0px 0px 0px 0px",
-                  ]}
-                >
-                  {item.subtitle}
-                </TextStyled>
-              </Flex>
-            </Fragment>
-          );
-        })}
-      </FlexTagLines>
+      <GreyBackground>
+        <FlexTagLines
+          direction={["column", "column", "column", "row"]}
+          justify={["center", "center", "center", "space-evenly"]}
+          paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
+        >
+          {taglinesData.map((item, index) => {
+            return (
+              <Fragment key={item.title}>
+                {index !== 0 && <Divider orientation="vertical" />}
+                <Flex flexDirection="column" alignItems="center">
+                  <TextTagLine fontSize={["4xl", "5xl"]}>
+                    {item.title}
+                  </TextTagLine>
+                  <TextStyled
+                    textAlign="center"
+                    margin={[
+                      "0px 0px 30px 0px",
+                      "0px 0px 30px 0px",
+                      "0px 0px 20px 0px",
+                      "0px 0px 0px 0px",
+                    ]}
+                  >
+                    {item.subtitle}
+                  </TextStyled>
+                </Flex>
+              </Fragment>
+            );
+          })}
+        </FlexTagLines>
+      </GreyBackground>
       <FlexExperience
         direction="column"
         paddingY={["0.5in", "0.5in", "1in", "1in"]}
