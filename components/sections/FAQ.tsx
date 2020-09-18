@@ -15,7 +15,6 @@ import {
   Flex,
 } from "@chakra-ui/core";
 import {
-  GreyBackground,
   LinkStyled,
   TextStyled,
   TextStyledBold,
@@ -82,64 +81,62 @@ export default function FAQ(): ReactElement {
 
   return (
     <>
-      <GreyBackground>
-        <Flex
-          direction="column"
-          paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
-          paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
-          paddingX={["5vw", "5vw", "10vw", "10vw"]}
+      <Flex
+        direction="column"
+        paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
+        paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
+        paddingX={["5vw", "5vw", "10vw", "10vw"]}
+      >
+        <TextStyledBold fontSize={["xl", "3xl"]}>
+          Frequently Asked Questions
+        </TextStyledBold>
+        <TextStyled>
+          Can&apos;t find an answer? Send us your question at{" "}
+          <LinkStyled color="brand.blue" href="mailto:info@cusec.net">
+            info@cusec.com
+          </LinkStyled>{" "}
+          and we’ll get back to you.
+        </TextStyled>
+        <Box
+          marginTop="0.25in"
+          paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}
         >
-          <TextStyledBold fontSize={["xl", "3xl"]}>
-            Frequently Asked Questions
-          </TextStyledBold>
-          <TextStyled>
-            Can&apos;t find an answer? Send us your question at{" "}
-            <LinkStyled color="brand.blue" href="mailto:info@cusec.net">
-              info@cusec.com
-            </LinkStyled>{" "}
-            and we’ll get back to you.
-          </TextStyled>
-          <Box
-            marginTop="0.25in"
-            paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}
-          >
-            <Flex direction={["column", "column", "column", "row"]}>
-              <Accordion
-                width={["100%", "100%", "100%", "50%"]}
-                marginRight={["0", "0", "0", "1vw"]}
-              >
-                {data
-                  .map((faqItem, index) => (
-                    <AccordionBox
-                      props={faqItem}
-                      key={`${index}${faqItem.question}`}
-                      index={index}
-                      opened={opened}
-                      setOpened={setOpened}
-                    />
-                  ))
-                  .filter((_, index) => index % 2 === 0)}
-              </Accordion>
-              <Accordion
-                width={["100%", "100%", "100%", "50%"]}
-                marginLeft={["0", "0", "0", "1vw"]}
-              >
-                {data
-                  .map((faqItem, index) => (
-                    <AccordionBox
-                      props={faqItem}
-                      key={`${index}${faqItem.question}`}
-                      index={index}
-                      opened={opened}
-                      setOpened={setOpened}
-                    />
-                  ))
-                  .filter((_, index) => index % 2 !== 0)}
-              </Accordion>
-            </Flex>
-          </Box>
-        </Flex>
-      </GreyBackground>
+          <Flex direction={["column", "column", "column", "row"]}>
+            <Accordion
+              width={["100%", "100%", "100%", "50%"]}
+              marginRight={["0", "0", "0", "1vw"]}
+            >
+              {data
+                .map((faqItem, index) => (
+                  <AccordionBox
+                    props={faqItem}
+                    key={`${index}${faqItem.question}`}
+                    index={index}
+                    opened={opened}
+                    setOpened={setOpened}
+                  />
+                ))
+                .filter((_, index) => index % 2 === 0)}
+            </Accordion>
+            <Accordion
+              width={["100%", "100%", "100%", "50%"]}
+              marginLeft={["0", "0", "0", "1vw"]}
+            >
+              {data
+                .map((faqItem, index) => (
+                  <AccordionBox
+                    props={faqItem}
+                    key={`${index}${faqItem.question}`}
+                    index={index}
+                    opened={opened}
+                    setOpened={setOpened}
+                  />
+                ))
+                .filter((_, index) => index % 2 !== 0)}
+            </Accordion>
+          </Flex>
+        </Box>
+      </Flex>
     </>
   );
 }

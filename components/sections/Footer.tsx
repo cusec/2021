@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import Logo from "../svgs/logo.svg";
 import { Flex, Link, Text } from "@chakra-ui/core";
 import React, { ReactElement } from "react";
-import { GreyBackground } from "@/components/StyledCore";
 
 const BaseContainer = styled.div`
   display: flex;
@@ -47,89 +46,87 @@ const FooterLink = styled(Link)`
 export default function Footer(): ReactElement {
   return (
     <>
-      <GreyBackground>
-        <BaseContainer>
+      <BaseContainer>
+        <Flex
+          width="100%"
+          flexDirection={["column", "column", "row", "row"]}
+          justifyContent={[
+            "flex-start",
+            "flex-start",
+            "space-between",
+            "space-between",
+          ]}
+        >
           <Flex
-            width="100%"
-            flexDirection={["column", "column", "row", "row"]}
-            justifyContent={[
-              "flex-start",
-              "flex-start",
-              "space-between",
-              "space-between",
-            ]}
+            alignItems="center"
+            justifyContent="center"
+            marginLeft={["0", "0", "2vw", "5vw"]}
+            paddingBottom={["0", "0", "0.15in", "0.15in"]}
+            paddingTop="0.15in"
           >
-            <Flex
-              alignItems="center"
-              justifyContent="center"
-              marginLeft={["0", "0", "2vw", "5vw"]}
-              paddingBottom={["0", "0", "0.15in", "0.15in"]}
-              paddingTop="0.15in"
+            <FooterLink
+              _focus={{}}
+              _hover={{}}
+              fontSize={["xs", "xs", "xs", "sm"]}
+              href="mailto:info@cusec.net"
             >
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                href="mailto:info@cusec.net"
-              >
-                Contact CUSEC
-              </FooterLink>
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                href="https://github.com/cusec/2021"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Open Source
-              </FooterLink>
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                href="https://www.flaticon.com/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Icons from flaticon.com*
-              </FooterLink>
-            </Flex>
-            <Flex alignItems="center" justifyContent="center" paddingY="0.1in">
-              <Logo style={{ height: "24px", width: "auto" }} />
-            </Flex>
-            <Flex
-              alignItems="center"
-              justifyContent="center"
-              marginRight={["0", "0", "2vw", "5vw"]}
-              paddingBottom="0.15in"
-              paddingTop={["0", "0", "0.15in", "0.15in"]}
+              Contact CUSEC
+            </FooterLink>
+            <FooterLink
+              _focus={{}}
+              _hover={{}}
+              fontSize={["xs", "xs", "xs", "sm"]}
+              href="https://github.com/cusec/2021"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
-                &copy; CUSEC 2021
-              </FooterText>
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Code of Conduct
-              </FooterLink>
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Privacy Policy
-              </FooterLink>
-            </Flex>
+              Open Source
+            </FooterLink>
+            <FooterLink
+              _focus={{}}
+              _hover={{}}
+              fontSize={["xs", "xs", "xs", "sm"]}
+              href="https://www.flaticon.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Icons from flaticon.com*
+            </FooterLink>
           </Flex>
-        </BaseContainer>
-      </GreyBackground>
+          <Flex alignItems="center" justifyContent="center" paddingY="0.1in">
+            <Logo style={{ height: "24px", width: "auto" }} />
+          </Flex>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            marginRight={["0", "0", "2vw", "5vw"]}
+            paddingBottom="0.15in"
+            paddingTop={["0", "0", "0.15in", "0.15in"]}
+          >
+            <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
+              &copy; CUSEC 2021
+            </FooterText>
+            <FooterLink
+              _focus={{}}
+              _hover={{}}
+              fontSize={["xs", "xs", "xs", "sm"]}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Code of Conduct
+            </FooterLink>
+            <FooterLink
+              _focus={{}}
+              _hover={{}}
+              fontSize={["xs", "xs", "xs", "sm"]}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Privacy Policy
+            </FooterLink>
+          </Flex>
+        </Flex>
+      </BaseContainer>
     </>
   );
 }
