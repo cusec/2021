@@ -5,8 +5,9 @@ import {
 } from "@/components/StyledCore";
 import { Flex } from "@chakra-ui/core";
 import React, { ReactElement } from "react";
-import Kinaxis from "../svgs/Kinaxis-Logo.wine.svg";
+import Kinaxis from "../svgs/Kinaxis-Logo.svg";
 import RBC from "../svgs/Royal_Bank_of_Canada-Logo.wine.svg";
+import SponsorLogo, { Categories } from "@/components/SponsorLogo";
 
 export default function Sponsors(): ReactElement {
   return (
@@ -26,8 +27,8 @@ export default function Sponsors(): ReactElement {
             We are able to offer a conference like CUSEC thanks to our amazing
             sponsors.
           </TextStyled>
-          <Kinaxis style={{ width: "max(250px, 25vw)", height: "auto" }} />
-          <RBC style={{ width: "max(200px, 15vw)", height: "auto" }} />
+          <SponsorLogo logo={<Kinaxis />} category={Categories.Partner} />
+          <SponsorLogo logo={<RBC />} category={Categories.Gold} />
         </Flex>
       </GreyBackground>
     </>
