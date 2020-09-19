@@ -20,6 +20,13 @@ export const LinkStyled = styled(Link)`
   font-weight: 600;
 `;
 
+export const NavBarLink = styled(Link)`
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  padding-left: 8px;
+  padding-right: 8px;
+`;
+
 export const GreyBackground = styled.div`
   border-top: 1px solid #f1f1f1;
   background-color: #fafafa;
