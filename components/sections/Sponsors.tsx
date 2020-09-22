@@ -7,6 +7,8 @@ import { Flex } from "@chakra-ui/core";
 import React, { ReactElement } from "react";
 import Kinaxis from "../svgs/Kinaxis-Logo.svg";
 import RBC from "../svgs/Royal_Bank_of_Canada-Logo.wine.svg";
+import Amazon from "../svgs/Amazon_logo.svg";
+import Ssense from "../svgs/Ssense_logo.svg";
 
 export default function Sponsors(): ReactElement {
   return (
@@ -31,6 +33,12 @@ export default function Sponsors(): ReactElement {
           </Flex>
           <Flex>
             <RBC />
+          </Flex>
+          <Flex>
+            <Amazon />
+          </Flex>
+          <Flex>
+            <Ssense />
           </Flex>
         </Flex>
       </GreyBackground>
