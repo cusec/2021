@@ -1,9 +1,10 @@
 import { Flex } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { NavBarLink } from "./StyledCore";
 import styled from "@emotion/styled";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -13,9 +14,37 @@ const VerticalBar = styled.div`
 `;
 
 export default function TopBar(): React.ReactElement {
+  const [hideBackground, setHideBackground] = useState(true);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+
+  const componentRef = useRef();
+
+  const getComponentHeight = () => {
+    const element = componentRef.current as HTMLElement | undefined;
+
+    return element ? element.getBoundingClientRect().height : 0;
+  };
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isAtTop = currPos.y === 0;
+      const isHide = currPos.y < prevPos.y;
+
+      if (isAtTop !== hideBackground) {
+        setHideBackground(isAtTop);
+      }
+
+      if (isHide !== hideOnScroll) {
+        setHideOnScroll(isHide);
+      }
+    },
+    [hideOnScroll]
+  );
+
   return (
     <>
       <Flex
+        ref={componentRef}
         align="center"
         justify="space-between"
         paddingX={["0.2in", "0.2in", "10vw", "10vw"]}
@@ -24,6 +53,15 @@ export default function TopBar(): React.ReactElement {
         top="0"
         visibility={["hidden", "hidden", "hidden", "visible"]}
         width="100%"
+        transform={`translateY(${hideOnScroll ? -getComponentHeight() : 0}px)`}
+        background={hideBackground ? undefined : "white"}
+        boxShadow={
+          hideBackground || hideOnScroll
+            ? undefined
+            : "0 0 8px rgba(0, 0, 0, 0.2)"
+        }
+        transition="transform 0.2s, background 1s, box-shadow 0.5s"
+        zIndex={10000000}
       >
         <Flex align="center">
           <Logo style={{ height: "32px", width: "auto" }} />
