@@ -26,7 +26,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@n8tb1t/use-scroll-position": "^1.0.47",
     "emotion-theming": "^10.0.27",
-    "firebase": "^7.19.0",
+    "firebase": "^7.21.0",
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
