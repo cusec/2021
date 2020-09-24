@@ -20,7 +20,13 @@ export const FAQData: { question: string; answer: string }[] = [
   },
   {
     question: "How can I get a ticket?",
-    answer: "The online conference will be free of charge this year!",
+    answer:
+      "The online conference will be free of charge this year! You will have access to all talks from speakers, networking in a virtual career fair with sponsors, social events, workshops hosted by sponsors, and more!",
+  },
+  {
+    question: "What is the VIP ticket?",
+    answer:
+      "With a VIP ticket, you will have all the perks of the free ticket as well as CUSEC 2021 merchandise, exclusive and priority networking, access to a private communication platform with the sponsors and speakers, Q&A events at the end of each night with speakers and sponsors!",
   },
   {
     question: "Who can attend?",
