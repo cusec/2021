@@ -29,6 +29,11 @@ export const FAQData: { question: string; answer: string }[] = [
       "With a VIP ticket, you will have all the perks of the free ticket as well as CUSEC 2021 merchandise, exclusive and priority networking, access to a private communication platform with the sponsors and speakers, Q&A events at the end of each night with speakers and sponsors!",
   },
   {
+    question: "Why do I need to register if it's a free conference?",
+    answer:
+      "By registering, we will collect your resumes and forward them to our sponsors and you will receive the link to sign up for the virtual conference on Hoping.",
+  },
+  {
     question: "Who can attend?",
     answer:
       "High school, undergraduate and graduate students from all across Canada are all welcome to attend.",
