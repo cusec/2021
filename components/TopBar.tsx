@@ -63,9 +63,9 @@ export default function TopBar(): React.ReactElement {
         transform={`translateY(${
           hideOnScroll && !isNavOverlayOpen ? -getComponentHeight() : 0
         }px)`}
-        background={hideBackground || isNavOverlayOpen ? undefined : "white"}
+        background={hideBackground && !isNavOverlayOpen ? undefined : "white"}
         boxShadow={
-          hideBackground || hideOnScroll || isNavOverlayOpen
+          (hideBackground || hideOnScroll) && !isNavOverlayOpen
             ? undefined
             : "0 0 8px rgba(0, 0, 0, 0.2)"
         }

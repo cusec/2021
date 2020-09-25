@@ -1,31 +1,29 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
 import useStore from "../src/store";
-import { Flex, Stack } from "@chakra-ui/core";
-import { TextStyledBold } from "@/components/StyledCore";
-import useScreenWidth from "@/components/hooks/useScreenWidth";
+import { Flex, Box, Text } from "@chakra-ui/core";
+import styled from "@emotion/styled";
+import ColoredSocialIcons from "@/components/ColoredSocialIcons";
+
+const StyledNavItemText = styled(Text)`
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-family: "Metropolis", sans-serif;
+  margin-bottom: 5vh;
+  display: inline-block;
+  background: linear-gradient(135deg, #09d8c4, #22306d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
 
 export default function NavOverlay(): ReactElement {
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
-  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
-  const actualWidth = useScreenWidth();
-  const [isMobile, setMobile] = useState(true);
-
-  useEffect(() => {
-    const currentMobile = actualWidth <= 992;
-
-    if (currentMobile !== isMobile) {
-      setMobile(currentMobile);
-      setNavOverlayOpen(false);
-    }
-  }, [actualWidth, isMobile, setNavOverlayOpen]);
-
-  if (!isNavOverlayOpen) {
-    return <></>;
-  }
 
   return (
     <Flex
       display={["flex", "flex", "flex", "none"]}
+      opacity={isNavOverlayOpen ? 1 : 0}
+      visibility={isNavOverlayOpen ? "visible" : "hidden"}
+      transition="opacity 0.4s, visibility 0.4s"
       position="fixed"
       width="100%"
       height="100%"
@@ -35,11 +33,17 @@ export default function NavOverlay(): ReactElement {
       justify="center"
       background="white"
     >
-      <Stack>
-        <TextStyledBold fontSize={["xl", "3xl"]}>About</TextStyledBold>
-        <TextStyledBold fontSize={["xl", "3xl"]}>Sponsors</TextStyledBold>
-        <TextStyledBold fontSize={["xl", "3xl"]}>FAQ</TextStyledBold>
-      </Stack>
+      <Box>
+        <StyledNavItemText fontSize="3xl">About</StyledNavItemText>
+        <br />
+        <StyledNavItemText fontSize="3xl">Sponsors</StyledNavItemText>
+        <br />
+        <StyledNavItemText fontSize="3xl">FAQ</StyledNavItemText>
+        <br />
+        <Flex>
+          <ColoredSocialIcons />
+        </Flex>
+      </Box>
     </Flex>
   );
 }

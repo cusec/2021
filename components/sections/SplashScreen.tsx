@@ -11,6 +11,7 @@ import {
 } from "@/components/StyledCore";
 import EmailListingInput from "@/components/EmailListingInput";
 import useScreenWidth from "../hooks/useScreenWidth";
+import useStore from "../../src/store";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -28,6 +29,7 @@ export default function SplashScreen(): React.ReactElement {
   );
   const actualWidth = useScreenWidth();
   const [currentWidth, setCurrentWidth] = useState(0);
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
   useEffect(() => {
     const updateHeight = () => {
@@ -41,8 +43,9 @@ export default function SplashScreen(): React.ReactElement {
 
     if (currentWidth === 0 || currentWidth !== actualWidth) {
       updateHeight();
+      setNavOverlayOpen(false);
     }
-  }, [actualWidth, currentWidth]);
+  }, [actualWidth, currentWidth, setNavOverlayOpen]);
 
   return (
     <>
