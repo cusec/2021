@@ -1,10 +1,11 @@
-import { Flex } from "@chakra-ui/core";
+import { Box, Flex } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
 import React, { useRef, useState } from "react";
 import { NavBarLink } from "./StyledCore";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -51,7 +52,6 @@ export default function TopBar(): React.ReactElement {
         paddingY="8px"
         position="fixed"
         top="0"
-        visibility={["hidden", "hidden", "hidden", "visible"]}
         width="100%"
         transform={`translateY(${hideOnScroll ? -getComponentHeight() : 0}px)`}
         background={hideBackground ? undefined : "white"}
@@ -64,9 +64,15 @@ export default function TopBar(): React.ReactElement {
         zIndex={10000000}
       >
         <Flex align="center">
-          <Logo style={{ height: "32px", width: "auto" }} />
+          <Logo
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ height: "32px", width: "auto", cursor: "pointer" }}
+          />
         </Flex>
-        <Flex align="center">
+        <Box display={["block", "block", "block", "none"]}>
+          <HamburgerMenu />
+        </Box>
+        <Flex align="center" display={["none", "none", "none", "flex"]}>
           <Flex direction="row">
             <NavBarLink>About</NavBarLink>
             <NavBarLink>Sponsors</NavBarLink>
