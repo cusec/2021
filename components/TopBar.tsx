@@ -9,6 +9,7 @@ import HamburgerMenu from "react-hamburger-menu";
 import useStore from "../src/store";
 import { LocationHashEnum } from "../src/enums";
 import { useRouter } from "next/router";
+import { goToAnchor, goToTop } from "react-scrollable-anchor";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -32,9 +33,13 @@ export default function TopBar(): React.ReactElement {
   };
 
   const handleCusecIconClick = () => {
-    window.scrollTo({ top: 0 });
+    goToTop();
     setNavOverlayOpen(false);
     router.replace("/");
+  };
+
+  const handleNavItemClick = (href: LocationHashEnum) => () => {
+    goToAnchor(href);
   };
 
   useScrollPosition(
@@ -67,9 +72,9 @@ export default function TopBar(): React.ReactElement {
         transform={`translateY(${
           hideOnScroll && !isNavOverlayOpen ? -getComponentHeight() : 0
         }px)`}
-        background={hideBackground && !isNavOverlayOpen ? undefined : "white"}
+        background={hideBackground || isNavOverlayOpen ? undefined : "white"}
         boxShadow={
-          (hideBackground || hideOnScroll) && !isNavOverlayOpen
+          hideBackground || hideOnScroll || isNavOverlayOpen
             ? undefined
             : "0 0 8px rgba(0, 0, 0, 0.2)"
         }
@@ -94,11 +99,13 @@ export default function TopBar(): React.ReactElement {
         </Box>
         <Flex align="center" display={["none", "none", "none", "flex"]}>
           <Flex direction="row">
-            <NavBarLink href={`#${LocationHashEnum.About}`}>About</NavBarLink>
-            <NavBarLink href={`#${LocationHashEnum.Sponsors}`}>
+            <NavBarLink onClick={handleNavItemClick(LocationHashEnum.About)}>
+              About
+            </NavBarLink>
+            <NavBarLink onClick={handleNavItemClick(LocationHashEnum.Sponsors)}>
               Sponsors
             </NavBarLink>
-            <NavBarLink href={`#${LocationHashEnum.FAQ}`} marginRight="24px">
+            <NavBarLink onClick={handleNavItemClick(LocationHashEnum.FAQ)}>
               FAQ
             </NavBarLink>
           </Flex>

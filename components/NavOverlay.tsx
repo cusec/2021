@@ -4,13 +4,15 @@ import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { LocationHashEnum } from "../src/enums";
 import { GradientNavItemLink } from "@/components/StyledCore";
+import { goToAnchor } from "react-scrollable-anchor";
 
 export default function NavOverlay(): ReactElement {
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
-  const handleNavItemClick = () => {
+  const handleNavItemClick = (href: LocationHashEnum) => () => {
     setNavOverlayOpen(false);
+    goToAnchor(href);
   };
 
   return (
@@ -31,24 +33,21 @@ export default function NavOverlay(): ReactElement {
       <Box>
         <GradientNavItemLink
           fontSize="3xl"
-          onClick={handleNavItemClick}
-          href={`#${LocationHashEnum.About}`}
+          onClick={handleNavItemClick(LocationHashEnum.About)}
         >
           About
         </GradientNavItemLink>
         <br />
         <GradientNavItemLink
           fontSize="3xl"
-          onClick={handleNavItemClick}
-          href={`#${LocationHashEnum.Sponsors}`}
+          onClick={handleNavItemClick(LocationHashEnum.Sponsors)}
         >
           Sponsors
         </GradientNavItemLink>
         <br />
         <GradientNavItemLink
           fontSize="3xl"
-          onClick={handleNavItemClick}
-          href={`#${LocationHashEnum.FAQ}`}
+          onClick={handleNavItemClick(LocationHashEnum.FAQ)}
         >
           FAQ
         </GradientNavItemLink>
