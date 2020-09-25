@@ -17,7 +17,6 @@ export default function NavOverlay(): ReactElement {
 
   return (
     <Flex
-      display={["flex", "flex", "flex", "none"]}
       opacity={isNavOverlayOpen ? 1 : 0}
       visibility={isNavOverlayOpen ? "visible" : "hidden"}
       transition="opacity 0.4s, visibility 0.4s"
