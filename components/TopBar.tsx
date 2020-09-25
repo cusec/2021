@@ -5,7 +5,8 @@ import React, { useRef, useState } from "react";
 import { NavBarLink } from "./StyledCore";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import HamburgerMenu from "@/components/HamburgerMenu";
+import HamburgerMenu from "react-hamburger-menu";
+import useStore from "../src/store";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -17,13 +18,19 @@ const VerticalBar = styled.div`
 export default function TopBar(): React.ReactElement {
   const [hideBackground, setHideBackground] = useState(true);
   const [hideOnScroll, setHideOnScroll] = useState(false);
+  const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
   const componentRef = useRef();
 
   const getComponentHeight = () => {
     const element = componentRef.current as HTMLElement | undefined;
-
     return element ? element.getBoundingClientRect().height : 0;
+  };
+
+  const handleCusecIconClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setNavOverlayOpen(false);
   };
 
   useScrollPosition(
@@ -53,24 +60,33 @@ export default function TopBar(): React.ReactElement {
         position="fixed"
         top="0"
         width="100%"
-        transform={`translateY(${hideOnScroll ? -getComponentHeight() : 0}px)`}
-        background={hideBackground ? undefined : "white"}
+        transform={`translateY(${
+          hideOnScroll && !isNavOverlayOpen ? -getComponentHeight() : 0
+        }px)`}
+        background={hideBackground || isNavOverlayOpen ? undefined : "white"}
         boxShadow={
-          hideBackground || hideOnScroll
+          hideBackground || hideOnScroll || isNavOverlayOpen
             ? undefined
             : "0 0 8px rgba(0, 0, 0, 0.2)"
         }
-        transition="transform 0.2s, background 1s, box-shadow 0.5s"
-        zIndex={10000000}
+        transition="transform 0.2s, background 0.5s, box-shadow 0.5s"
+        zIndex={100}
       >
         <Flex align="center">
           <Logo
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={handleCusecIconClick}
             style={{ height: "32px", width: "auto", cursor: "pointer" }}
           />
         </Flex>
-        <Box display={["block", "block", "block", "none"]}>
-          <HamburgerMenu />
+        <Box display={["block", "block", "block", "none"]} cursor="pointer">
+          <HamburgerMenu
+            isOpen={isNavOverlayOpen}
+            menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
+            height={17}
+            width={28}
+            strokeWidth={3}
+            rotate={180}
+          />
         </Box>
         <Flex align="center" display={["none", "none", "none", "flex"]}>
           <Flex direction="row">

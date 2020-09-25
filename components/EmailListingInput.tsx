@@ -19,9 +19,7 @@ enum ToastStatusEnum {
 
 export default function EmailListingInput(): ReactElement {
   const toast = useToast();
-  const firestore: firebase.firestore.Firestore = useStore(
-    (state) => state.firestore
-  );
+  const firestore = useStore((state) => state.firestore);
 
   const [emailValue, setEmailValue] = useState("");
   const [hasValidEmail, setHasValidEmail] = useState(false);

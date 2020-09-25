@@ -1,4 +1,5 @@
 import Head from "next/head";
+import NavOverlay from "@/components/NavOverlay";
 import TopBar from "@/components/TopBar";
 import SplashScreen from "@/components/sections/SplashScreen";
 import FAQ from "@/components/sections/FAQ";
@@ -20,6 +21,7 @@ export default function Home(): React.ReactElement {
       </Head>
 
       <main>
+        <NavOverlay />
         <TopBar />
         <SplashScreen />
         <About />

@@ -7,9 +7,7 @@ interface PropTypes {
 }
 
 export default function SocialLink(props: PropTypes): ReactElement {
-  const analytics: firebase.analytics.Analytics = useStore(
-    (state) => state.analytics
-  );
+  const analytics = useStore((state) => state.analytics);
 
   const clickSocial = (type: string | Element) => {
     if (analytics) {

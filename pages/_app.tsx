@@ -9,12 +9,8 @@ import useStore from "../src/store";
 import theme from "../src/theme";
 
 function App({ Component, pageProps }: AppProps): ReactElement {
-  const analytics: firebase.analytics.Analytics = useStore(
-    (state) => state.analytics
-  );
-  const initAnalytics: () => Promise<void> = useStore(
-    (state) => state.initAnalytics
-  );
+  const analytics = useStore((state) => state.analytics);
+  const initAnalytics = useStore((state) => state.initAnalytics);
 
   useEffect(() => {
     initAnalytics();
