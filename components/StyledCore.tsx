@@ -57,3 +57,18 @@ export const FooterLink = styled(Link)`
     transform: translateY(0);
   }
 `;
+
+export const GradientNavItemLink = styled(Link)`
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-family: "Metropolis", sans-serif;
+  margin-bottom: 5vh;
+  display: inline-block;
+  background: linear-gradient(135deg, #09d8c4, #22306d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;

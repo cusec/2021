@@ -4,11 +4,12 @@ import {
   TextStyledBold,
 } from "@/components/StyledCore";
 import { Flex } from "@chakra-ui/core";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
+import { LocationHashEnum } from "../../src/enums";
 
 export default function Sponsors(): ReactElement {
   return (
-    <>
+    <div id={LocationHashEnum.Sponsors}>
       <GreyBackground>
         <Flex
           direction="column"
@@ -26,6 +27,6 @@ export default function Sponsors(): ReactElement {
           </TextStyled>
         </Flex>
       </GreyBackground>
-    </>
+    </div>
   );
 }

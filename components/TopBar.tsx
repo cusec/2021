@@ -7,6 +7,8 @@ import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import HamburgerMenu from "react-hamburger-menu";
 import useStore from "../src/store";
+import { LocationHashEnum } from "../src/enums";
+import { useRouter } from "next/router";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -20,6 +22,7 @@ export default function TopBar(): React.ReactElement {
   const [hideOnScroll, setHideOnScroll] = useState(false);
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+  const router = useRouter();
 
   const componentRef = useRef();
 
@@ -29,8 +32,9 @@ export default function TopBar(): React.ReactElement {
   };
 
   const handleCusecIconClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
     setNavOverlayOpen(false);
+    router.replace("/");
   };
 
   useScrollPosition(
@@ -90,9 +94,13 @@ export default function TopBar(): React.ReactElement {
         </Box>
         <Flex align="center" display={["none", "none", "none", "flex"]}>
           <Flex direction="row">
-            <NavBarLink>About</NavBarLink>
-            <NavBarLink>Sponsors</NavBarLink>
-            <NavBarLink marginRight="24px">FAQ</NavBarLink>
+            <NavBarLink href={`#${LocationHashEnum.About}`}>About</NavBarLink>
+            <NavBarLink href={`#${LocationHashEnum.Sponsors}`}>
+              Sponsors
+            </NavBarLink>
+            <NavBarLink href={`#${LocationHashEnum.FAQ}`} marginRight="24px">
+              FAQ
+            </NavBarLink>
           </Flex>
           <Flex>
             <VerticalBar />

@@ -1,22 +1,17 @@
 import { ReactElement } from "react";
 import useStore from "../src/store";
-import { Flex, Box, Text } from "@chakra-ui/core";
-import styled from "@emotion/styled";
+import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
-
-const StyledNavItemText = styled(Text)`
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-family: "Metropolis", sans-serif;
-  margin-bottom: 5vh;
-  display: inline-block;
-  background: linear-gradient(135deg, #09d8c4, #22306d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
+import { LocationHashEnum } from "../src/enums";
+import { GradientNavItemLink } from "@/components/StyledCore";
 
 export default function NavOverlay(): ReactElement {
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+
+  const handleNavItemClick = () => {
+    setNavOverlayOpen(false);
+  };
 
   return (
     <Flex
@@ -34,11 +29,29 @@ export default function NavOverlay(): ReactElement {
       background="white"
     >
       <Box>
-        <StyledNavItemText fontSize="3xl">About</StyledNavItemText>
+        <GradientNavItemLink
+          fontSize="3xl"
+          onClick={handleNavItemClick}
+          href={`#${LocationHashEnum.About}`}
+        >
+          About
+        </GradientNavItemLink>
         <br />
-        <StyledNavItemText fontSize="3xl">Sponsors</StyledNavItemText>
+        <GradientNavItemLink
+          fontSize="3xl"
+          onClick={handleNavItemClick}
+          href={`#${LocationHashEnum.Sponsors}`}
+        >
+          Sponsors
+        </GradientNavItemLink>
         <br />
-        <StyledNavItemText fontSize="3xl">FAQ</StyledNavItemText>
+        <GradientNavItemLink
+          fontSize="3xl"
+          onClick={handleNavItemClick}
+          href={`#${LocationHashEnum.FAQ}`}
+        >
+          FAQ
+        </GradientNavItemLink>
         <br />
         <Flex>
           <ColoredSocialIcons />
