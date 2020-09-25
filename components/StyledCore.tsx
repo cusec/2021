@@ -23,8 +23,11 @@ export const LinkStyled = styled(Link)`
 export const NavBarLink = styled(Link)`
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  padding-left: 8px;
-  padding-right: 8px;
+  margin-right: 32px;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 export const GreyBackground = styled.div`

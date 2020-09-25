@@ -14,7 +14,7 @@ const VerticalBar = styled.div`
   display: inline-block;
   border-left: 1px solid #ccc;
   margin: 0 10px;
-  height: 35px;
+  height: 24px;
 `;
 
 export default function TopBar(): React.ReactElement {
