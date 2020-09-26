@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { Link } from "@chakra-ui/core";
-import useStore from "../src/store";
+import useStore from "@/src/store";
 
 interface PropTypes {
   [prop: string]: any;

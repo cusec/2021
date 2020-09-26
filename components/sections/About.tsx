@@ -6,7 +6,7 @@ import MeetRecruiters from "../svgs/meet-recruiters.svg";
 import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
 import { GreyBackground } from "@/components/StyledCore";
-import { LocationHashEnum } from "../../src/enums";
+import { LocationHashEnum } from "@/src/enums";
 
 const FlexAbout = styled(Flex)`
   width: 100%;

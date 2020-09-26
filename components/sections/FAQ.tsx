@@ -15,12 +15,13 @@ import {
   Flex,
 } from "@chakra-ui/core";
 import {
+  GreyBackground,
   LinkStyled,
   TextStyled,
   TextStyledBold,
 } from "@/components/StyledCore";
-import { FAQData as data } from "../../src/data";
-import { LocationHashEnum } from "../../src/enums";
+import { FAQData as data } from "@/src/data";
+import { LocationHashEnum } from "@/src/enums";
 
 interface AccordionBoxParams {
   props: { question: string; answer: string };
@@ -81,7 +82,7 @@ export default function FAQ(): ReactElement {
   const [opened, setOpened] = useState<number | null>(null);
 
   return (
-    <div id={LocationHashEnum.FAQ}>
+    <GreyBackground id={LocationHashEnum.FAQ}>
       <Flex
         direction="column"
         paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
@@ -138,6 +139,6 @@ export default function FAQ(): ReactElement {
           </Flex>
         </Box>
       </Flex>
-    </div>
+    </GreyBackground>
   );
 }

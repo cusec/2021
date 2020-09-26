@@ -6,8 +6,8 @@ import { NavBarLink } from "./StyledCore";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import HamburgerMenu from "react-hamburger-menu";
-import useStore from "../src/store";
-import { LocationHashEnum } from "../src/enums";
+import useStore from "@/src/store";
+import { LocationHashEnum } from "@/src/enums";
 import { useRouter } from "next/router";
 import { goToAnchor, goToTop } from "react-scrollable-anchor";
 

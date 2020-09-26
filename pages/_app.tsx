@@ -5,8 +5,8 @@ import { AppProps } from "next/app";
 import Router from "next/router";
 import Head from "next/head";
 
-import useStore from "../src/store";
-import theme from "../src/theme";
+import useStore from "@/src/store";
+import theme from "@/src/theme";
 
 function App({ Component, pageProps }: AppProps): ReactElement {
   const analytics = useStore((state) => state.analytics);

@@ -11,7 +11,7 @@ import {
 } from "@/components/StyledCore";
 import EmailListingInput from "@/components/EmailListingInput";
 import useScreenWidth from "../hooks/useScreenWidth";
-import useStore from "../../src/store";
+import useStore from "@/src/store";
 
 const minHeights = [550, 650, 700, 800];
 

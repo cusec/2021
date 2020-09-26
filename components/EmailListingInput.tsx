@@ -7,7 +7,7 @@ import {
   useToast,
 } from "@chakra-ui/core";
 import { useState, FormEvent, ReactElement } from "react";
-import useStore from "../src/store";
+import useStore from "@/src/store";
 import * as firebase from "firebase/app";
 
 enum ToastStatusEnum {

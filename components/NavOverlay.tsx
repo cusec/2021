@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
-import useStore from "../src/store";
+import useStore from "@/src/store";
 import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
-import { LocationHashEnum } from "../src/enums";
+import { LocationHashEnum } from "@/src/enums";
 import { GradientNavItemLink } from "@/components/StyledCore";
 import { goToAnchor } from "react-scrollable-anchor";
 

@@ -32,6 +32,7 @@ export const NavBarLink = styled(Link)`
 
 export const GreyBackground = styled.div`
   border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
   background-color: #fafafa;
 `;
 
