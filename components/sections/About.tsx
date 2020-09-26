@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
-import { Box, Divider, Flex, Skeleton, Text } from "@chakra-ui/core";
+import { Box, Divider, Flex, Text } from "@chakra-ui/core";
 import React, { Fragment } from "react";
 import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
 import MeetRecruiters from "../svgs/meet-recruiters.svg";
 import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
 import { GreyBackground } from "@/components/StyledCore";
+import MapleLeaf from "../svgs/maple-leaf.svg";
 
 const FlexAbout = styled(Flex)`
   width: 100%;
@@ -87,7 +88,7 @@ export default function About(): React.ReactElement {
           textAlign={["center", "center", "center", "left"]}
         >
           <Box marginRight="50px">
-            <Skeleton height="300px" width="300px" />
+            <MapleLeaf />
           </Box>
         </Flex>
         <Flex direction="column">
