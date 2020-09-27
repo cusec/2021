@@ -5,6 +5,8 @@ import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
 import MeetRecruiters from "../svgs/meet-recruiters.svg";
 import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
+import { GreyBackground } from "@/components/StyledCore";
+import { LocationHashEnum } from "@/src/enums";
 
 const FlexAbout = styled(Flex)`
   width: 100%;
@@ -12,8 +14,6 @@ const FlexAbout = styled(Flex)`
 
 const FlexTagLines = styled(Flex)`
   width: 100%;
-  border-top: 1px solid #f1f1f1;
-  background-color: #fafafa;
 `;
 
 const TextStyled = styled(Text)`
@@ -74,126 +74,130 @@ const experienceCUSECData = [
 
 export default function About(): React.ReactElement {
   return (
-    <Flex direction="column" height="100%" justify="center" width="100%">
-      <FlexAbout
-        align="center"
-        justify={["center", "center", "center", "space-between"]}
-        marginTop={["10vh", "10vh", "15vh", "15vh"]}
-        paddingBottom={["0.5in", "0.5in", "1in", "1in"]}
-        paddingX={["16px", "16px", "10vw", "10vw"]}
-      >
-        <Flex
-          display={["none", "none", "none", "flex"]}
-          direction="column"
-          textAlign={["center", "center", "center", "left"]}
+    <div id={LocationHashEnum.About}>
+      <Flex direction="column" height="100%" justify="center" width="100%">
+        <FlexAbout
+          align="center"
+          justify={["center", "center", "center", "space-between"]}
+          marginTop={["10vh", "10vh", "15vh", "15vh"]}
+          paddingBottom={["0.5in", "0.5in", "1in", "1in"]}
+          paddingX={["16px", "16px", "10vw", "10vw"]}
         >
-          <Box marginRight="50px">
-            <Skeleton height="300px" width="300px" />
-          </Box>
-        </Flex>
-        <Flex direction="column">
-          <TextStyledBold
-            fontSize={["xl", "3xl"]}
-            paddingBottom={["10px", "10px", "15px", "20px"]}
+          <Flex
+            display={["none", "none", "none", "flex"]}
+            direction="column"
+            textAlign={["center", "center", "center", "left"]}
           >
-            Annual Software Engineering Conference
-          </TextStyledBold>
-          <TextStyled>
-            Join over 500 students from across Canada for three days of
-            knowledge sharing, mentoring, career opportunities and community
-            with people who are enthusiastic about the future of tech. CUSEC is
-            an annual software engineering conference organized for students by
-            students. It was founded in 2002 by a small team of tech enthusiasts
-            on a mission to educate and expose students to a diverse range of
-            areas in software engineering and computer science. The conference
-            enables attendees to discover knowledgeable speakers, connect with
-            sponsoring companies, and make lifelong friends, all in a safe and
-            comfortable space.
-          </TextStyled>
-        </Flex>
-      </FlexAbout>
-      <FlexTagLines
-        direction={["column", "column", "column", "row"]}
-        justify={["center", "center", "center", "space-evenly"]}
-        paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
-      >
-        {taglinesData.map((item, index) => {
-          return (
-            <Fragment key={item.title}>
-              {index !== 0 && <Divider orientation="vertical" />}
-              <Flex flexDirection="column" alignItems="center">
-                <TextTagLine fontSize={["4xl", "5xl"]}>
-                  {item.title}
-                </TextTagLine>
-                <TextStyled
-                  textAlign="center"
-                  margin={[
-                    "0px 0px 30px 0px",
-                    "0px 0px 30px 0px",
-                    "0px 0px 20px 0px",
-                    "0px 0px 0px 0px",
-                  ]}
-                >
-                  {item.subtitle}
-                </TextStyled>
-              </Flex>
-            </Fragment>
-          );
-        })}
-      </FlexTagLines>
-      <FlexExperience
-        direction="column"
-        paddingY={["0.5in", "0.5in", "1in", "1in"]}
-        paddingX={["16px", "16px", "7vw", "7vw"]}
-      >
-        <Flex justifyContent="center" marginBottom="5vh">
-          <TextStyledBold fontSize={["xl", "3xl"]}>
-            Ways to experience CUSEC
-          </TextStyledBold>
-        </Flex>
-        <Flex
-          align={["center", "center", "center", "stretch"]}
-          direction={["column", "column", "column", "row"]}
-          wrap="wrap"
-          justify="center"
+            <Box marginRight="50px">
+              <Skeleton height="300px" width="300px" />
+            </Box>
+          </Flex>
+          <Flex direction="column">
+            <TextStyledBold
+              fontSize={["xl", "3xl"]}
+              paddingBottom={["10px", "10px", "15px", "20px"]}
+            >
+              Annual Software Engineering Conference
+            </TextStyledBold>
+            <TextStyled>
+              Join over 500 students from across Canada for three days of
+              knowledge sharing, mentoring, career opportunities and community
+              with people who are enthusiastic about the future of tech. CUSEC
+              is an annual software engineering conference organized for
+              students by students. It was founded in 2002 by a small team of
+              tech enthusiasts on a mission to educate and expose students to a
+              diverse range of areas in software engineering and computer
+              science. The conference enables attendees to discover
+              knowledgeable speakers, connect with sponsoring companies, and
+              make lifelong friends, all in a safe and comfortable space.
+            </TextStyled>
+          </Flex>
+        </FlexAbout>
+        <GreyBackground>
+          <FlexTagLines
+            direction={["column", "column", "column", "row"]}
+            justify={["center", "center", "center", "space-evenly"]}
+            paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
+          >
+            {taglinesData.map((item, index) => {
+              return (
+                <Fragment key={item.title}>
+                  {index !== 0 && <Divider orientation="vertical" />}
+                  <Flex flexDirection="column" alignItems="center">
+                    <TextTagLine fontSize={["4xl", "5xl"]}>
+                      {item.title}
+                    </TextTagLine>
+                    <TextStyled
+                      textAlign="center"
+                      margin={[
+                        "0px 0px 30px 0px",
+                        "0px 0px 30px 0px",
+                        "0px 0px 20px 0px",
+                        "0px 0px 0px 0px",
+                      ]}
+                    >
+                      {item.subtitle}
+                    </TextStyled>
+                  </Flex>
+                </Fragment>
+              );
+            })}
+          </FlexTagLines>
+        </GreyBackground>
+        <FlexExperience
+          direction="column"
+          paddingY={["0.5in", "0.5in", "1in", "1in"]}
+          paddingX={["16px", "16px", "7vw", "7vw"]}
         >
-          {experienceCUSECData.map((item) => {
-            return (
-              <Box
-                borderWidth="1px"
-                boxShadow="md"
-                key={item.header}
-                margin="1vw"
-                maxWidth="98%"
-                rounded="lg"
-                width={["45rem", "45rem", "30rem", "45rem"]}
-              >
-                <Flex
-                  align="center"
-                  alignContent="center"
-                  minHeight="140px"
-                  justify="center"
+          <Flex justifyContent="center" marginBottom="5vh">
+            <TextStyledBold fontSize={["xl", "3xl"]}>
+              Ways to experience CUSEC
+            </TextStyledBold>
+          </Flex>
+          <Flex
+            align={["center", "center", "center", "stretch"]}
+            direction={["column", "column", "column", "row"]}
+            wrap="wrap"
+            justify="center"
+          >
+            {experienceCUSECData.map((item) => {
+              return (
+                <Box
+                  borderWidth="1px"
+                  boxShadow="md"
+                  key={item.header}
+                  margin="1vw"
+                  maxWidth="98%"
+                  rounded="lg"
+                  width={["45rem", "45rem", "30rem", "45rem"]}
                 >
                   <Flex
                     align="center"
                     alignContent="center"
+                    minHeight="140px"
                     justify="center"
-                    marginLeft="1rem"
                   >
-                    {item.icon}
+                    <Flex
+                      align="center"
+                      alignContent="center"
+                      justify="center"
+                      marginLeft="1rem"
+                    >
+                      {item.icon}
+                    </Flex>
+                    <Flex direction="column" height="100%">
+                      <MarginAroundText>
+                        <TextStyledBold>{item.header}</TextStyledBold>
+                        <TextStyled>{item.description}</TextStyled>
+                      </MarginAroundText>
+                    </Flex>
                   </Flex>
-                  <Flex direction="column" height="100%">
-                    <MarginAroundText>
-                      <TextStyledBold>{item.header}</TextStyledBold>
-                      <TextStyled>{item.description}</TextStyled>
-                    </MarginAroundText>
-                  </Flex>
-                </Flex>
-              </Box>
-            );
-          })}
-        </Flex>
-      </FlexExperience>
-    </Flex>
+                </Box>
+              );
+            })}
+          </Flex>
+        </FlexExperience>
+      </Flex>
+    </div>
   );
 }

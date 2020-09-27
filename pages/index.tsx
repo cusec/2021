@@ -6,6 +6,7 @@ import Footer from "@/components/sections/Footer";
 import About from "@/components/sections/About";
 import React from "react";
 import Contact from "@/components/sections/Contact";
+import Sponsors from "@/components/sections/Sponsors";
 
 export default function Home(): React.ReactElement {
   return (
@@ -22,6 +23,7 @@ export default function Home(): React.ReactElement {
         <TopBar />
         <SplashScreen />
         <About />
+        <Sponsors />
         <FAQ />
         <Contact />
         <Footer />

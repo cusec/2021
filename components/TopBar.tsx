@@ -1,26 +1,125 @@
-import { Flex } from "@chakra-ui/core";
+import { Box, Flex } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { NavBarLink } from "./StyledCore";
+import styled from "@emotion/styled";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import HamburgerMenu from "react-hamburger-menu";
+import useStore from "@/src/store";
+import { LocationHashEnum } from "@/src/enums";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import NavOverlay from "@/components/NavOverlay";
+
+const VerticalBar = styled.div`
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin: 0 10px;
+  height: 24px;
+`;
 
 export default function TopBar(): React.ReactElement {
+  const [hideBackground, setHideBackground] = useState(true);
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+  const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+
+  const componentRef = useRef();
+
+  const getComponentHeight = () => {
+    const element = componentRef.current as HTMLElement | undefined;
+    return element ? element.getBoundingClientRect().height : 0;
+  };
+
+  const handleCusecIconClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setNavOverlayOpen(false);
+  };
+
+  useEffect(() => {
+    setHideBackground(document.body.getBoundingClientRect().top === 0);
+  }, []);
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isAtTop = currPos.y === 0;
+      const isHide = currPos.y < prevPos.y;
+
+      if (isAtTop || isAtTop !== hideBackground) {
+        setHideBackground(isAtTop);
+      }
+
+      if (isHide !== hideOnScroll) {
+        setHideOnScroll(isHide);
+      }
+    },
+    [hideOnScroll]
+  );
+
   return (
     <>
+      <NavOverlay getTopBarHeight={getComponentHeight} />
       <Flex
-        visibility={["hidden", "hidden", "hidden", "visible"]}
-        alignItems="center"
-        justifyContent="space-between"
-        width="100%"
+        ref={componentRef}
+        align="center"
+        justify="space-between"
         paddingX={["0.2in", "0.2in", "10vw", "10vw"]}
         paddingY="8px"
-        // TODO: change position to "fixed" when navigation is added (and also add box shadow, top bar hiding, hamburger menu, etc.)
-        position="absolute"
+        position="fixed"
         top="0"
+        width="100%"
+        transform={`translateY(${
+          hideOnScroll && !isNavOverlayOpen ? -getComponentHeight() : 0
+        }px)`}
+        background={hideBackground || isNavOverlayOpen ? undefined : "white"}
+        boxShadow={
+          hideBackground || hideOnScroll || isNavOverlayOpen
+            ? undefined
+            : "0 0 8px rgba(0, 0, 0, 0.2)"
+        }
+        transition="transform 0.2s, background 0.5s, box-shadow 0.5s"
+        zIndex={100}
       >
-        <Flex alignItems="center">
-          <Logo style={{ height: "32px", width: "auto" }} />
+        <Flex align="center">
+          <Logo
+            onClick={handleCusecIconClick}
+            style={{ height: "32px", width: "auto", cursor: "pointer" }}
+          />
         </Flex>
-        <Flex alignItems="center">
+        <Box display={["block", "block", "block", "none"]} cursor="pointer">
+          <HamburgerMenu
+            isOpen={isNavOverlayOpen}
+            menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
+            height={17}
+            width={28}
+            strokeWidth={3}
+            rotate={180}
+          />
+        </Box>
+        <Flex align="center" display={["none", "none", "none", "flex"]}>
+          <Flex direction="row">
+            <AnchorLink
+              offset={getComponentHeight}
+              href={`#${LocationHashEnum.About}`}
+            >
+              <NavBarLink>About</NavBarLink>
+            </AnchorLink>
+            <AnchorLink
+              offset={getComponentHeight}
+              href={`#${LocationHashEnum.Sponsors}`}
+            >
+              <NavBarLink>Sponsors</NavBarLink>
+            </AnchorLink>
+            <AnchorLink
+              offset={getComponentHeight}
+              href={`#${LocationHashEnum.FAQ}`}
+            >
+              <NavBarLink>FAQ</NavBarLink>
+            </AnchorLink>
+          </Flex>
+          <Flex>
+            <VerticalBar />
+          </Flex>
           <Socials marginLeft="32px" />
         </Flex>
       </Flex>
