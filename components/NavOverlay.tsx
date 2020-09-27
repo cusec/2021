@@ -4,15 +4,16 @@ import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { LocationHashEnum } from "@/src/enums";
 import { GradientNavItemLink } from "@/components/StyledCore";
-import { goToAnchor } from "react-scrollable-anchor";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
-export default function NavOverlay(): ReactElement {
+export default function NavOverlay(props: {
+  getTopBarHeight: () => number;
+}): ReactElement {
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
-  const handleNavItemClick = (href: LocationHashEnum) => () => {
+  const handleNavItemClick = () => {
     setNavOverlayOpen(false);
-    goToAnchor(href);
   };
 
   return (
@@ -30,26 +31,29 @@ export default function NavOverlay(): ReactElement {
       background="white"
     >
       <Box>
-        <GradientNavItemLink
-          fontSize="3xl"
-          onClick={handleNavItemClick(LocationHashEnum.About)}
+        <AnchorLink
+          offset={props.getTopBarHeight}
+          href={`#${LocationHashEnum.About}`}
+          onClick={handleNavItemClick}
         >
-          About
-        </GradientNavItemLink>
+          <GradientNavItemLink fontSize="3xl">About</GradientNavItemLink>
+        </AnchorLink>
         <br />
-        <GradientNavItemLink
-          fontSize="3xl"
-          onClick={handleNavItemClick(LocationHashEnum.Sponsors)}
+        <AnchorLink
+          offset={props.getTopBarHeight}
+          href={`#${LocationHashEnum.Sponsors}`}
+          onClick={handleNavItemClick}
         >
-          Sponsors
-        </GradientNavItemLink>
+          <GradientNavItemLink fontSize="3xl">Sponsors</GradientNavItemLink>
+        </AnchorLink>
         <br />
-        <GradientNavItemLink
-          fontSize="3xl"
-          onClick={handleNavItemClick(LocationHashEnum.FAQ)}
+        <AnchorLink
+          offset={props.getTopBarHeight}
+          href={`#${LocationHashEnum.FAQ}`}
+          onClick={handleNavItemClick}
         >
-          FAQ
-        </GradientNavItemLink>
+          <GradientNavItemLink fontSize="3xl">FAQ</GradientNavItemLink>
+        </AnchorLink>
         <br />
         <Flex>
           <ColoredSocialIcons />

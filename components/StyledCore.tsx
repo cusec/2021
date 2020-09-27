@@ -20,14 +20,10 @@ export const LinkStyled = styled(Link)`
   font-weight: 600;
 `;
 
-export const NavBarLink = styled(Link)`
+export const NavBarLink = styled(Text)`
   font-family: "Inter", sans-serif;
   font-weight: 500;
   margin-right: 32px;
-
-  &:hover {
-    text-decoration: none;
-  }
 `;
 
 export const GreyBackground = styled.div`
@@ -62,7 +58,7 @@ export const FooterLink = styled(Link)`
   }
 `;
 
-export const GradientNavItemLink = styled(Link)`
+export const GradientNavItemLink = styled(Text)`
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-family: "Metropolis", sans-serif;
@@ -71,8 +67,4 @@ export const GradientNavItemLink = styled(Link)`
   background: linear-gradient(135deg, #09d8c4, #22306d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  &:hover {
-    text-decoration: none;
-  }
 `;

@@ -1,15 +1,15 @@
 import { Box, Flex } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { NavBarLink } from "./StyledCore";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import HamburgerMenu from "react-hamburger-menu";
 import useStore from "@/src/store";
 import { LocationHashEnum } from "@/src/enums";
-import { useRouter } from "next/router";
-import { goToAnchor, goToTop } from "react-scrollable-anchor";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import NavOverlay from "@/components/NavOverlay";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -23,7 +23,6 @@ export default function TopBar(): React.ReactElement {
   const [hideOnScroll, setHideOnScroll] = useState(false);
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
-  const router = useRouter();
 
   const componentRef = useRef();
 
@@ -33,21 +32,20 @@ export default function TopBar(): React.ReactElement {
   };
 
   const handleCusecIconClick = () => {
-    goToTop();
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setNavOverlayOpen(false);
-    router.replace("/");
   };
 
-  const handleNavItemClick = (href: LocationHashEnum) => () => {
-    goToAnchor(href);
-  };
+  useEffect(() => {
+    setHideBackground(document.body.getBoundingClientRect().top === 0);
+  }, []);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isAtTop = currPos.y === 0;
       const isHide = currPos.y < prevPos.y;
 
-      if (isAtTop !== hideBackground) {
+      if (isAtTop || isAtTop !== hideBackground) {
         setHideBackground(isAtTop);
       }
 
@@ -60,6 +58,7 @@ export default function TopBar(): React.ReactElement {
 
   return (
     <>
+      <NavOverlay getTopBarHeight={getComponentHeight} />
       <Flex
         ref={componentRef}
         align="center"
@@ -99,15 +98,24 @@ export default function TopBar(): React.ReactElement {
         </Box>
         <Flex align="center" display={["none", "none", "none", "flex"]}>
           <Flex direction="row">
-            <NavBarLink onClick={handleNavItemClick(LocationHashEnum.About)}>
-              About
-            </NavBarLink>
-            <NavBarLink onClick={handleNavItemClick(LocationHashEnum.Sponsors)}>
-              Sponsors
-            </NavBarLink>
-            <NavBarLink onClick={handleNavItemClick(LocationHashEnum.FAQ)}>
-              FAQ
-            </NavBarLink>
+            <AnchorLink
+              offset={getComponentHeight}
+              href={`#${LocationHashEnum.About}`}
+            >
+              <NavBarLink>About</NavBarLink>
+            </AnchorLink>
+            <AnchorLink
+              offset={getComponentHeight}
+              href={`#${LocationHashEnum.Sponsors}`}
+            >
+              <NavBarLink>Sponsors</NavBarLink>
+            </AnchorLink>
+            <AnchorLink
+              offset={getComponentHeight}
+              href={`#${LocationHashEnum.FAQ}`}
+            >
+              <NavBarLink>FAQ</NavBarLink>
+            </AnchorLink>
           </Flex>
           <Flex>
             <VerticalBar />

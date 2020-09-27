@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NavOverlay from "@/components/NavOverlay";
 import TopBar from "@/components/TopBar";
 import SplashScreen from "@/components/sections/SplashScreen";
 import FAQ from "@/components/sections/FAQ";
@@ -21,7 +20,6 @@ export default function Home(): React.ReactElement {
       </Head>
 
       <main>
-        <NavOverlay />
         <TopBar />
         <SplashScreen />
         <About />
@@ -52,7 +50,6 @@ export default function Home(): React.ReactElement {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
-          scroll-behavior: smooth;
         }
 
         * {
