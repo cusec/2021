@@ -34,6 +34,68 @@ export const FAQData: { question: string; answer: string }[] = [
       "By registering, we will collect your resumes and forward them to our sponsors and you will receive the link to sign up for the virtual conference on Hoping.",
   },
   {
+    question: "How will CUSEC be delivered this year?",
+    answer:
+      "Cusec2021 will be delivered through an online platform known as Hopin. Hopin was founded in 2019 by Johnny Boufarhat in London, United Kingdom. The platform began as a simple networking tool for matching people one-on-one but rapidly grew into a full-conference online events platform with Sessions, Stages, Expos, and more." +
+      "Today, Hopin is the first all-in-one live online events platform where attendees can learn, interact, and connect with people from anywhere in the world. Whether it’s a meetup of 100 people or a full-scale multi-track conference of 100,000 participants, Hopin’s a live video platform makes online events more personal and engaging." +
+      "Hopin is designed to replicate an in-person event experience, only without the barriers of travel, venues, weather, awkward wandering, parking, and so on. With Hopin, businesses, communities, and organisations can reach their global audiences, gather in one place, and make an enormous online event feel small again.",
+  },
+  {
+    question: "How is Hopin different from a webinar?",
+    answer:
+      "At a webinar, only a few people talk. Everybody else listens. Passively. When one person talks for an hour, and 50 or so people are on mute, it feels a little one-sided, not like an interactive event." +
+      "Bystander effect takes place -- everybody starts to think the other people on the call will volunteer to speak up." +
+      "Webinars and video conferencing encourage you to hit mute, surf the web, and go on Twitter. If you’re an event organizer, or professor, or speaker, you know this is a frustrating problem. You want people to be engaged." +
+      "It’s nice that people can join a webinar from home, but if they’re non-participatory and bored, it’s not really an effective initiative. The way to solve the disengagement problem with webinars and large video-conferencing events is to put people — building connections — at the center of it." +
+      "This is exactly how they built Hopin. Hopin is people-centric, not powerpoint-centric.",
+  },
+  {
+    question: "How does Hopin work? (career fair, networking, events, etc.)",
+    answer:
+      "Hopin’s platform structure is designed to recreate the in-person event experience." +
+      "There are 5 main areas on the platform:" +
+      "Reception" +
+      "The reception is the welcome area where you will start as an attendee when the event is live. You will see a welcome message and information about Cusec and the event in general." +
+      "The Stage" +
+      "The Stage is an event-wide virtual stage. This is where you will see presentations and keynotes with other attendees. You will be able to see live broadcasts and some pre-recorded content here. This will replicate the real conference experience." +
+      "Sessions" +
+      "Sessions promote real-time live interactions. They replicate the roundtables, rooms and panels experience. Up to 20 attendees can be on one screen with hundreds of attendees watching and chatting. There is no limit to the amount of sessions that can run at the same time, it's a perfect place for roundtables, group talks, and project-related discussions." +
+      "Networking" +
+      "Networking allows to get to know people at CUSEC! Expand your network with ticket type-based matching and have engaging 1:1 meetings to connect with other students. This area will be used for speed networking and a microphone/webcam is recommended. Those with a VIP ticket will get priority networking in this area." +
+      "Expo" +
+      "The Expo area will be used for our virtual career fair. Attendees can “walk around” to visit the booths that interest them and interact with the sponsors. Each booth at will have commercials, branded content, special offers, and some representatives on live camera.",
+  },
+  {
+    question: "Can I use Hopin on mobile?",
+    answer:
+      "The events that run on Hopin platform also can be accessed by Attendees and have some limited compatibility for Speakers and Organizers. There is no dedicated app for desktops or mobiles on the Stores, no downloads are required.",
+  },
+  {
+    question: "How much tickets cost and where do you get from them?",
+    answer:
+      "CUSEC will be free this year! VIP tickets are available for $25 that offer extra benefits and exclusive CUESC2021 merch. You will be able to buy tickets straight from the Hopin page.",
+  },
+  {
+    question: "What is included in a ticket?",
+    answer:
+      "The Free ticket gives you access to the full conference. The VIP ticket gives you extra benefits like priority networking, VIP exclusive events and CUSEC2021 merch.",
+  },
+  {
+    question: "Is there swag this year?",
+    answer:
+      "Swag is only available to those with VIP tickets, but you are still eligible to win prizes in our events if you have a free ticket.",
+  },
+  {
+    question: "How long do ticket sales last?",
+    answer:
+      "Ticket sales will for VIP tickets will end earlier so we can make sure you get your merch in time for the conference. Free ticket sales will run until January.",
+  },
+  {
+    question: "Could i get a refund if i can't go anymore?",
+    answer:
+      '"Your ticket sales revenue is deposited into your Stripe account 3-7 days after the sale occurs. Hopin does not cover Stripe’s payment processing fee." – TBD Hopin allows for refunds but will we?',
+  },
+  {
     question: "Who can attend?",
     answer:
       "High school, undergraduate and graduate students from all across Canada are all welcome to attend.",
