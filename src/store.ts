@@ -9,7 +9,15 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-const useStore = create((set, get) => ({
+type State = {
+  analytics: firebase.analytics.Analytics | undefined;
+  firestore: firebase.firestore.Firestore;
+  initAnalytics: () => Promise<void>;
+  isNavOverlayOpen: boolean;
+  setNavOverlayOpen: (isOpen: boolean) => void;
+};
+
+const useStore = create<State>((set, get) => ({
   analytics: undefined,
   firestore: firebase.firestore(),
   initAnalytics: async () => {
@@ -27,6 +35,8 @@ const useStore = create((set, get) => ({
       }
     }
   },
+  isNavOverlayOpen: false,
+  setNavOverlayOpen: (isOpen) => set({ isNavOverlayOpen: isOpen }),
 }));
 
 export default useStore;

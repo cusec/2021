@@ -20,8 +20,15 @@ export const LinkStyled = styled(Link)`
   font-weight: 600;
 `;
 
+export const NavBarLink = styled(Text)`
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin-right: 32px;
+`;
+
 export const GreyBackground = styled.div`
   border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
   background-color: #fafafa;
 `;
 
@@ -49,4 +56,15 @@ export const FooterLink = styled(Link)`
     opacity: 1;
     transform: translateY(0);
   }
+`;
+
+export const GradientNavItemLink = styled(Text)`
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-family: "Metropolis", sans-serif;
+  margin-bottom: 5vh;
+  display: inline-block;
+  background: linear-gradient(135deg, #09d8c4, #22306d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;

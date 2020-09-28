@@ -11,7 +11,7 @@
     "export-production": "env-cmd -e production --use-shell \"next build && next export\"",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write **/*.{js,ts,tsx}",
+    "format": "prettier --write **/*.{js,ts,tsx} --ignore-path .gitignore",
     "lint": "eslint . --ext ts --ext tsx --ext js --ignore-path .gitignore",
     "test": "jest tests"
   },
@@ -24,11 +24,14 @@
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@n8tb1t/use-scroll-position": "^1.0.47",
     "emotion-theming": "^10.0.27",
-    "firebase": "^7.19.0",
+    "firebase": "^7.21.0",
     "next": "9.5.2",
     "react": "16.13.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "16.13.1",
+    "react-hamburger-menu": "^1.2.1",
     "zustand": "^3.0.2"
   },
   "devDependencies": {
