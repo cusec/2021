@@ -5,6 +5,7 @@ import PricingBanner from "../svgs/pricing-banner.svg";
 import { TextStyledBold } from "@/components/StyledCore";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
+import { LocationHashEnum } from "@/src/enums";
 
 type PricingInfo = {
   title: string;
@@ -47,7 +48,7 @@ const CardContainer = styled(Box)`
 
 export default function Pricing(): ReactElement {
   return (
-    <>
+    <Box id={LocationHashEnum.Pricing}>
       <Grid
         justifyItems="center"
         alignItems="center"
@@ -96,6 +97,6 @@ export default function Pricing(): ReactElement {
           </Box>
         </CardContainer>
       </Flex>
-    </>
+    </Box>
   );
 }
