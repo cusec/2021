@@ -16,7 +16,7 @@ type PricingInfo = {
 const freeTierInfo: PricingInfo = {
   title: "Free",
   price: "$0",
-  description: "Get a complete experience",
+  description: "Get a complete experience.",
   benefits: [
     "Access to our virtual conference platform Hopin.to",
     "All talks from speakers",
@@ -30,7 +30,7 @@ const freeTierInfo: PricingInfo = {
 const vipTierInfo: PricingInfo = {
   title: "VIP",
   price: "$25",
-  description: "Get an exclusive experience",
+  description: "Get an exclusive experience.",
   benefits: [
     "All free tier benefits",
     "CUSEC 2021 merch",
@@ -42,7 +42,7 @@ const vipTierInfo: PricingInfo = {
 };
 
 const CardContainer = styled(Box)`
-  margin: 0 0.4in;
+  margin: 0 0.4in 0.4in 0.4in;
 `;
 
 export default function Pricing(): ReactElement {
@@ -80,6 +80,7 @@ export default function Pricing(): ReactElement {
             boxShadow="md"
             border={`1px solid ${theme.colors.grey_stroke}`}
             borderRadius="8px"
+            background="white"
           >
             <PricingCard {...freeTierInfo} />
           </Box>
