@@ -1,8 +1,7 @@
 import { ReactElement } from "react";
-import { Box, Flex, Grid } from "@chakra-ui/core";
+import { Box, Flex, Grid, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
-import { TextStyledBold } from "@/components/StyledCore";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
@@ -27,6 +26,13 @@ const freeTierInfo: PricingInfo = {
     "And more to come!",
   ],
 };
+
+const Headline = styled(Text)`
+  font-family: "Metropolis", sans-serif;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+`;
 
 const vipTierInfo: PricingInfo = {
   title: "VIP",
@@ -61,13 +67,9 @@ export default function Pricing(): ReactElement {
           width="100%"
           height="100%"
         />
-        <TextStyledBold
-          fontSize={["xl", "3xl"]}
-          gridArea="I_LOVE_CUSEC"
-          color="white"
-        >
+        <Headline fontSize={["xl", "3xl"]} gridArea="I_LOVE_CUSEC">
           Pricing Tiers
-        </TextStyledBold>
+        </Headline>
       </Grid>
       <Flex
         paddingX={["5vw", "5vw", "10vw", "10vw"]}

@@ -4,23 +4,23 @@ import styled from "@emotion/styled";
 import CheckMark from "./svgs/check-mark-coloured.svg";
 
 const CardTitle = styled(Text)`
-  font-family: Metropolis;
+  font-family: Metropolis, sans-serif;
   font-size: 28px;
 `;
 
 const CardPrice = styled(Text)`
-  font-family: Metropolis;
+  font-family: Metropolis, sans-serif;
   font-size: 36px;
 `;
 
 const CardDescription = styled(Text)`
-  font-family: Metropolis;
+  font-family: Metropolis, sans-serif;
   font-size: 16px;
   color: grey;
 `;
 
 const CardBenefit = styled(Text)`
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 14px;
 `;
 

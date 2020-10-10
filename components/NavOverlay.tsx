@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, Fragment } from "react";
 import useStore from "@/src/store";
 import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
@@ -32,7 +32,7 @@ export default function NavOverlay(props: {
     >
       <Box>
         {locations.map((location) => (
-          <>
+          <Fragment key={location.href}>
             <AnchorLink
               offset={props.getTopBarHeight}
               href={location.href}
@@ -43,7 +43,7 @@ export default function NavOverlay(props: {
               </GradientNavItemLink>
             </AnchorLink>
             <br />
-          </>
+          </Fragment>
         ))}
         <Flex>
           <ColoredSocialIcons />
