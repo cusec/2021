@@ -48,10 +48,6 @@ const vipTierInfo: PricingInfo = {
   ],
 };
 
-const CardContainer = styled(Box)`
-  margin: 0 0.4in 0.4in 0.4in;
-`;
-
 export default function Pricing(): ReactElement {
   return (
     <Box id={LocationHashEnum.Pricing}>
@@ -72,32 +68,36 @@ export default function Pricing(): ReactElement {
         </Headline>
       </Grid>
       <Flex
-        paddingX={["5vw", "5vw", "10vw", "10vw"]}
-        wrap="wrap"
-        align={["center", "center", "start"]}
+        paddingX={["5vw", "5vw", 0]}
+        direction={["column", "column", "column", "row"]}
+        transform={[0, 0, 0, "-6vw"].map(
+          (translationY) => `translateY(${translationY})`
+        )}
+        marginTop={["32px", "32px", "32px", 0]}
+        marginBottom={["0.4in", "0.8in", 0]}
+        align="center"
         justify="center"
       >
-        <CardContainer>
-          <Box
-            padding="4px"
-            boxShadow="md"
-            border={`1px solid ${theme.colors.grey_stroke}`}
-            borderRadius="8px"
-            background="white"
-          >
-            <PricingCard {...freeTierInfo} />
-          </Box>
-        </CardContainer>
-        <CardContainer>
-          <Box
-            padding="4px"
-            boxShadow="md"
-            borderRadius="12px"
-            background="linear-gradient(to bottom right, #09D8C4, #22306D)"
-          >
-            <PricingCard {...vipTierInfo} />
-          </Box>
-        </CardContainer>
+        <Box
+          marginBottom="0.4in"
+          padding="4px"
+          boxShadow="md"
+          border={`1px solid ${theme.colors.grey_stroke}`}
+          borderRadius="8px"
+          background="white"
+        >
+          <PricingCard {...freeTierInfo} />
+        </Box>
+        <Box width="8%" />
+        <Box
+          marginBottom="0.4in"
+          padding="4px"
+          boxShadow="md"
+          borderRadius="12px"
+          background={`linear-gradient(to bottom right, ${theme.colors.brand.teal}, ${theme.colors.brand.dark_blue})`}
+        >
+          <PricingCard {...vipTierInfo} />
+        </Box>
       </Flex>
     </Box>
   );

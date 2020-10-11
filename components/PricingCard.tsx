@@ -35,7 +35,7 @@ export default function PricingCard(props: {
   return (
     <>
       <Box
-        width="4in"
+        maxWidth="4in"
         padding="56px 32px"
         background="white"
         borderRadius="8px"
