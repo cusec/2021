@@ -45,7 +45,7 @@ export default function PricingCard(props: {
           <CardPrice>{price}</CardPrice>
           <CardDescription>{description}</CardDescription>
         </Stack>
-        <Divider marginY="32px" />
+        <Divider height="2px" marginY="32px" />
         <Stack spacing="24px">
           {benefits.map((benefit, index) => (
             <Flex key={`${index}${benefit}`} align="center">

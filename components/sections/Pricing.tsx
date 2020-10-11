@@ -5,6 +5,7 @@ import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
+import RegisterButton from "@/components/RegisterButton";
 
 type PricingInfo = {
   title: string;
@@ -48,6 +49,11 @@ const vipTierInfo: PricingInfo = {
   ],
 };
 
+const translation = [0, 0, 0, "-6vw"].map(
+  (translationY) => `translateY(${translationY})`
+);
+const cardMarginBottom = ["16px", "16px", "16px", 0];
+
 export default function Pricing(): ReactElement {
   return (
     <Box id={LocationHashEnum.Pricing}>
@@ -70,16 +76,14 @@ export default function Pricing(): ReactElement {
       <Flex
         paddingX={["5vw", "5vw", 0]}
         direction={["column", "column", "column", "row"]}
-        transform={[0, 0, 0, "-6vw"].map(
-          (translationY) => `translateY(${translationY})`
-        )}
+        transform={translation}
         marginTop={["32px", "32px", "32px", 0]}
-        marginBottom={["0.4in", "0.8in", 0]}
+        marginBottom={["0.4in", "0.4in", "0.4in", 0]}
         align="center"
         justify="center"
       >
         <Box
-          marginBottom="0.4in"
+          marginBottom={cardMarginBottom}
           padding="4px"
           boxShadow="md"
           border={`1px solid ${theme.colors.grey_stroke}`}
@@ -90,7 +94,7 @@ export default function Pricing(): ReactElement {
         </Box>
         <Box width="8%" />
         <Box
-          marginBottom="0.4in"
+          marginBottom={cardMarginBottom}
           padding="4px"
           boxShadow="md"
           borderRadius="12px"
@@ -98,6 +102,14 @@ export default function Pricing(): ReactElement {
         >
           <PricingCard {...vipTierInfo} />
         </Box>
+      </Flex>
+      <Flex
+        transform={translation}
+        marginBottom={["0.8in", "0.8in", "0.8in", 0]}
+        marginTop={[0, 0, 0, "0.8in"]}
+        justify="center"
+      >
+        <RegisterButton />
       </Flex>
     </Box>
   );
