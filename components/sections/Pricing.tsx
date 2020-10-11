@@ -28,13 +28,6 @@ const freeTierInfo: PricingInfo = {
   ],
 };
 
-const Headline = styled(Text)`
-  font-family: "Metropolis", sans-serif;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-`;
-
 const vipTierInfo: PricingInfo = {
   title: "VIP",
   price: "$25",
@@ -49,10 +42,36 @@ const vipTierInfo: PricingInfo = {
   ],
 };
 
-const translation = [0, 0, 0, "-6vw"].map(
+const monoGridArea = "I_LOVE_CUSEC";
+
+const translation = [0, 0, 0, "-80px"].map(
   (translationY) => `translateY(${translationY})`
 );
 const cardMarginBottom = ["16px", "16px", "16px", 0];
+
+const Headline = styled(Text)`
+  font-family: "Metropolis", sans-serif;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+`;
+
+const StyledPricingBanner = styled(PricingBanner)`
+  grid-area: ${monoGridArea};
+  height: 125px;
+
+  @media only screen and (min-width: ${theme.breakpoints[0]}) {
+    height: 200px;
+  }
+
+  @media only screen and (min-width: ${theme.breakpoints[1]}) {
+    height: 250px;
+  }
+
+  @media only screen and (min-width: ${theme.breakpoints[2]}) {
+    height: 350px;
+  }
+`;
 
 export default function Pricing(): ReactElement {
   return (
@@ -62,14 +81,10 @@ export default function Pricing(): ReactElement {
         alignItems="center"
         gridTemplateColumns="1fr"
         gridTemplateRows="1fr"
-        gridTemplateAreas={`"I_LOVE_CUSEC"`}
+        gridTemplateAreas={`"${monoGridArea}"`}
       >
-        <PricingBanner
-          style={{ gridArea: "I_LOVE_CUSEC" }}
-          width="100%"
-          height="100%"
-        />
-        <Headline fontSize={["xl", "3xl"]} gridArea="I_LOVE_CUSEC">
+        <StyledPricingBanner width="100%" preserveAspectRatio="none" />
+        <Headline fontSize={["xl", "3xl"]} gridArea={monoGridArea}>
           Pricing Tiers
         </Headline>
       </Grid>
