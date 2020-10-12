@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import HamburgerMenu from "react-hamburger-menu";
 import useStore from "@/src/store";
-import { LocationHashEnum } from "@/src/enums";
+import { locations } from "@/src/constants";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import NavOverlay from "@/components/NavOverlay";
 
@@ -98,24 +98,15 @@ export default function TopBar(): React.ReactElement {
         </Box>
         <Flex align="center" display={["none", "none", "none", "flex"]}>
           <Flex direction="row">
-            <AnchorLink
-              offset={getComponentHeight}
-              href={`#${LocationHashEnum.About}`}
-            >
-              <NavBarLink>About</NavBarLink>
-            </AnchorLink>
-            <AnchorLink
-              offset={getComponentHeight}
-              href={`#${LocationHashEnum.Sponsors}`}
-            >
-              <NavBarLink>Sponsors</NavBarLink>
-            </AnchorLink>
-            <AnchorLink
-              offset={getComponentHeight}
-              href={`#${LocationHashEnum.FAQ}`}
-            >
-              <NavBarLink>FAQ</NavBarLink>
-            </AnchorLink>
+            {locations.map((location) => (
+              <AnchorLink
+                key={location.href}
+                offset={getComponentHeight}
+                href={location.href}
+              >
+                <NavBarLink>{location.label}</NavBarLink>
+              </AnchorLink>
+            ))}
           </Flex>
           <Flex>
             <VerticalBar />

@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactElement, Fragment } from "react";
 import useStore from "@/src/store";
 import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
-import { LocationHashEnum } from "@/src/enums";
+import { locations } from "@/src/constants";
 import { GradientNavItemLink } from "@/components/StyledCore";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
@@ -31,30 +31,20 @@ export default function NavOverlay(props: {
       background="white"
     >
       <Box>
-        <AnchorLink
-          offset={props.getTopBarHeight}
-          href={`#${LocationHashEnum.About}`}
-          onClick={handleNavItemClick}
-        >
-          <GradientNavItemLink fontSize="3xl">About</GradientNavItemLink>
-        </AnchorLink>
-        <br />
-        <AnchorLink
-          offset={props.getTopBarHeight}
-          href={`#${LocationHashEnum.Sponsors}`}
-          onClick={handleNavItemClick}
-        >
-          <GradientNavItemLink fontSize="3xl">Sponsors</GradientNavItemLink>
-        </AnchorLink>
-        <br />
-        <AnchorLink
-          offset={props.getTopBarHeight}
-          href={`#${LocationHashEnum.FAQ}`}
-          onClick={handleNavItemClick}
-        >
-          <GradientNavItemLink fontSize="3xl">FAQ</GradientNavItemLink>
-        </AnchorLink>
-        <br />
+        {locations.map((location) => (
+          <Fragment key={location.href}>
+            <AnchorLink
+              offset={props.getTopBarHeight}
+              href={location.href}
+              onClick={handleNavItemClick}
+            >
+              <GradientNavItemLink fontSize="3xl">
+                {location.label}
+              </GradientNavItemLink>
+            </AnchorLink>
+            <br />
+          </Fragment>
+        ))}
         <Flex>
           <ColoredSocialIcons />
         </Flex>
