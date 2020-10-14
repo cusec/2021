@@ -14,7 +14,8 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0.3-alpha
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CUSEC_2021_STAGING }}
-          projectId: cusec-2021-staging
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CUSEC_2021_STAGING }}"
+          projectId: staging
+          expires: 14d
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
