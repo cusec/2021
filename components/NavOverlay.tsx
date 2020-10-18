@@ -23,7 +23,7 @@ export default function NavOverlay(props: {
       transition="opacity 0.4s, visibility 0.4s"
       position="fixed"
       width="100%"
-      height="100%"
+      height="100vh"
       zIndex={10}
       direction="column"
       align="center"
