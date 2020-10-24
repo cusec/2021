@@ -14,6 +14,7 @@ export default function RegisterButton(): ReactElement {
       bg="brand.blue"
       color="white"
       _hover={{ background: theme.colors.brand.dark_teal }}
+      _active={{}}
     >
       Register
     </Button>

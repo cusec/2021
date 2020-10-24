@@ -42,6 +42,7 @@ export default function SponsorAnExperience(): ReactElement {
                 bg="brand.dark_teal"
                 color="white"
                 _hover={{ background: theme.colors.brand.teal }}
+                _active={{}}
               >
                 Become a sponsor
               </Button>
