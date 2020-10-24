@@ -1,13 +1,11 @@
 import { ReactElement } from "react";
-import { PseudoBox } from "@chakra-ui/core";
+import { Button } from "@chakra-ui/core";
 import theme from "@/src/theme";
 
 export default function RegisterButton(): ReactElement {
   return (
-    <PseudoBox
-      as="button"
+    <Button
       height="42px"
-      transition="all 0.2s"
       paddingX="42px"
       rounded="9999px"
       fontFamily="Metropolis, sans-serif"
@@ -18,6 +16,6 @@ export default function RegisterButton(): ReactElement {
       _hover={{ background: theme.colors.brand.dark_teal }}
     >
       Register
-    </PseudoBox>
+    </Button>
   );
 }

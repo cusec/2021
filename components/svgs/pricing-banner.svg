@@ -7,9 +7,9 @@
 <g style="mix-blend-mode:multiply">
 <path d="M1339 407.8L1920 368L1920 413.7L1339 453.5L1339 407.8Z" fill="#1E5480"/>
 </g>
-<path d="M0 131.5L1920 0V369.5L0 501V131.5Z" fill="url(#paint0_linear)"/>
+<path d="M0 131.5L1920 0V369.5L0 501V131.5Z" fill="url(#pricing_banner_paint0_linear)"/>
 <defs>
-<linearGradient id="paint0_linear" x1="0" y1="0" x2="1944.88" y2="370.374" gradientUnits="userSpaceOnUse">
+<linearGradient id="pricing_banner_paint0_linear" x1="0" y1="0" x2="1944.88" y2="370.374" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0A2540"/>
 <stop offset="1" stop-color="#214C6F"/>
 </linearGradient>
