@@ -25,6 +25,26 @@ export const NavBarLink = styled(Text)`
   font-family: "Inter", sans-serif;
   font-weight: 500;
   margin-right: 32px;
+  position: relative;
+
+  &:after {
+    background: ${theme.colors.brand.teal};
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 export const GreyBackground = styled.div`
