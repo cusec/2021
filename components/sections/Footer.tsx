@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 import Logo from "../svgs/logo.svg";
 import React, { ReactElement } from "react";
 import { Flex, Text } from "@chakra-ui/core";
-import { FooterLink, GreyBackground } from "../StyledCore";
+import { GreyBackground } from "@/components/core/Layout";
+import { FooterLink } from "@/components/StyledCore";
 import FooterModal from "@/components/FooterModal";
 import { codeOfConductText, privacyPolicyText } from "@/src/data";
 

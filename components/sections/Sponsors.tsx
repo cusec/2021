@@ -1,7 +1,7 @@
-import { TextStyled, TextStyledBold } from "@/components/StyledCore";
 import { Flex } from "@chakra-ui/core";
 import { ReactElement } from "react";
 import { LocationHashEnum } from "@/src/enums";
+import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 
 export default function Sponsors(): ReactElement {
   return (
@@ -13,12 +13,10 @@ export default function Sponsors(): ReactElement {
         paddingX={["5vw", "5vw", "10vw", "10vw"]}
         align="center"
       >
-        <TextStyledBold fontSize={["xl", "3xl"]}>
-          Sponsor Showcase
-        </TextStyledBold>
-        <TextStyled>
+        <HeadlinePrimary>Sponsor Showcase</HeadlinePrimary>
+        <BodyPrimary>
           Meet the sponsors who are making CUSEC 2021 a reality.
-        </TextStyled>
+        </BodyPrimary>
       </Flex>
     </div>
   );

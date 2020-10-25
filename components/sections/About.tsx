@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
-import { Box, Divider, Flex, Skeleton, Text } from "@chakra-ui/core";
+import { Box, Divider, Flex, Skeleton } from "@chakra-ui/core";
 import React, { Fragment } from "react";
 import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
 import MeetRecruiters from "../svgs/meet-recruiters.svg";
 import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
-import { GreyBackground } from "@/components/StyledCore";
 import { LocationHashEnum } from "@/src/enums";
 import theme from "@/src/theme";
+import { GreyBackground } from "@/components/core/Layout";
+import { Headline, HeadlinePrimary, BodyPrimary } from "@/components/core/Text";
 
 const FlexAbout = styled(Flex)`
   width: 100%;
@@ -17,18 +18,7 @@ const FlexTagLines = styled(Flex)`
   width: 100%;
 `;
 
-const TextStyled = styled(Text)`
-  font-family: "Inter", sans-serif;
-`;
-
-const TextStyledBold = styled(TextStyled)`
-  font-weight: 700;
-  font-family: "Metropolis", sans-serif;
-`;
-
-const TextTagLine = styled(TextStyled)`
-  font-weight: 900;
-  font-family: "Metropolis", sans-serif;
+const TextTagLine = styled(Headline)`
   color: ${theme.colors.brand.blue};
 `;
 
@@ -94,13 +84,10 @@ export default function About(): React.ReactElement {
             </Box>
           </Flex>
           <Flex direction="column">
-            <TextStyledBold
-              fontSize={["xl", "3xl"]}
-              paddingBottom={["10px", "10px", "15px", "20px"]}
-            >
+            <HeadlinePrimary>
               Annual Software Engineering Conference
-            </TextStyledBold>
-            <TextStyled>
+            </HeadlinePrimary>
+            <BodyPrimary>
               Join over 500 students from across Canada for three days of
               knowledge sharing, mentoring, career opportunities and community
               with people who are enthusiastic about the future of tech. CUSEC
@@ -111,7 +98,7 @@ export default function About(): React.ReactElement {
               science. The conference enables attendees to discover
               knowledgeable speakers, connect with sponsoring companies, and
               make lifelong friends, all in a safe and comfortable space.
-            </TextStyled>
+            </BodyPrimary>
           </Flex>
         </FlexAbout>
         <GreyBackground>
@@ -128,7 +115,7 @@ export default function About(): React.ReactElement {
                     <TextTagLine fontSize={["4xl", "5xl"]}>
                       {item.title}
                     </TextTagLine>
-                    <TextStyled
+                    <BodyPrimary
                       textAlign="center"
                       margin={[
                         "0px 0px 30px 0px",
@@ -138,7 +125,7 @@ export default function About(): React.ReactElement {
                       ]}
                     >
                       {item.subtitle}
-                    </TextStyled>
+                    </BodyPrimary>
                   </Flex>
                 </Fragment>
               );
@@ -151,9 +138,7 @@ export default function About(): React.ReactElement {
           paddingX={["16px", "16px", "7vw", "7vw"]}
         >
           <Flex justifyContent="center" marginBottom="5vh">
-            <TextStyledBold fontSize={["xl", "3xl"]}>
-              Ways to experience CUSEC
-            </TextStyledBold>
+            <HeadlinePrimary>Ways to experience CUSEC</HeadlinePrimary>
           </Flex>
           <Flex
             align={["center", "center", "center", "stretch"]}
@@ -188,8 +173,8 @@ export default function About(): React.ReactElement {
                     </Flex>
                     <Flex direction="column" height="100%">
                       <MarginAroundText>
-                        <TextStyledBold>{item.header}</TextStyledBold>
-                        <TextStyled>{item.description}</TextStyled>
+                        <Headline fontSize="16px">{item.header}</Headline>
+                        <BodyPrimary>{item.description}</BodyPrimary>
                       </MarginAroundText>
                     </Flex>
                   </Flex>

@@ -14,14 +14,14 @@ import {
   Box,
   Flex,
 } from "@chakra-ui/core";
-import {
-  GreyBackground,
-  LinkStyled,
-  TextStyled,
-  TextStyledBold,
-} from "@/components/StyledCore";
 import { FAQData as data } from "@/src/data";
 import { LocationHashEnum } from "@/src/enums";
+import { GreyBackground } from "@/components/core/Layout";
+import {
+  BodyPrimary,
+  HeadlinePrimary,
+  LinkPrimary,
+} from "@/components/core/Text";
 
 interface AccordionBoxParams {
   props: { question: string; answer: string };
@@ -89,16 +89,12 @@ export default function FAQ(): ReactElement {
         paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
         paddingX={["5vw", "5vw", "10vw", "10vw"]}
       >
-        <TextStyledBold fontSize={["xl", "3xl"]}>
-          Frequently Asked Questions
-        </TextStyledBold>
-        <TextStyled>
+        <HeadlinePrimary>Frequently Asked Questions</HeadlinePrimary>
+        <BodyPrimary>
           Can&apos;t find an answer? Send us your question at{" "}
-          <LinkStyled color="brand.blue" href="mailto:info@cusec.net">
-            info@cusec.com
-          </LinkStyled>{" "}
+          <LinkPrimary href="mailto:info@cusec.net">info@cusec.com</LinkPrimary>{" "}
           and we’ll get back to you.
-        </TextStyled>
+        </BodyPrimary>
         <Box
           marginTop="0.25in"
           paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}

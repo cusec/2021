@@ -1,11 +1,12 @@
 import { ReactElement } from "react";
-import { Box, Flex, Grid, Text } from "@chakra-ui/core";
+import { Box, Flex, Grid } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
-import RegisterButton from "@/components/RegisterButton";
+import { ButtonPrimary } from "@/components/core/Button";
+import { HeadlinePrimary } from "@/components/core/Text";
 
 type PricingInfo = {
   title: string;
@@ -49,13 +50,6 @@ const translation = [0, 0, 0, "-80px"].map(
 );
 const cardMarginBottom = ["16px", "16px", "16px", 0];
 
-const Headline = styled(Text)`
-  font-family: "Metropolis", sans-serif;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-`;
-
 const StyledPricingBanner = styled(PricingBanner)`
   grid-area: ${monoGridArea};
   height: 125px;
@@ -84,9 +78,13 @@ export default function Pricing(): ReactElement {
         gridTemplateAreas={`"${monoGridArea}"`}
       >
         <StyledPricingBanner width="100%" preserveAspectRatio="none" />
-        <Headline fontSize={["xl", "3xl"]} gridArea={monoGridArea}>
+        <HeadlinePrimary
+          gridArea={monoGridArea}
+          color="white"
+          margin="0px !important"
+        >
           Pricing Tiers
-        </Headline>
+        </HeadlinePrimary>
       </Grid>
       <Flex
         paddingX={["5vw", "5vw", 0]}
@@ -124,7 +122,7 @@ export default function Pricing(): ReactElement {
         marginTop={[0, 0, 0, "0.8in"]}
         justify="center"
       >
-        <RegisterButton />
+        <ButtonPrimary>Register</ButtonPrimary>
       </Flex>
     </Box>
   );

@@ -1,10 +1,24 @@
 import { ReactElement, Fragment } from "react";
 import useStore from "@/src/store";
+import styled from "@emotion/styled";
 import { Flex, Box } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { locations } from "@/src/constants";
-import { GradientNavItemLink } from "@/components/StyledCore";
+import { Headline } from "@/components/core/Text";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import theme from "@/src/theme";
+
+export const GradientNavItemLink = styled(Headline)`
+  margin-bottom: 5vh;
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    ${theme.colors.brand.teal},
+    ${theme.colors.brand.dark_blue}
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
 
 export default function NavOverlay(props: {
   getTopBarHeight: () => number;

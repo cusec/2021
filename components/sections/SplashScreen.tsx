@@ -3,15 +3,15 @@ import { Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
-import {
-  LinkStyled,
-  TextStyled,
-  TextStyledBold,
-  TextStyledExtraBold,
-} from "@/components/StyledCore";
 import EmailListingInput from "@/components/EmailListingInput";
 import useScreenWidth from "../hooks/useScreenWidth";
 import useStore from "@/src/store";
+import {
+  Body,
+  BodyPrimary,
+  Headline,
+  LinkPrimary,
+} from "@/components/core/Text";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -83,21 +83,25 @@ export default function SplashScreen(): React.ReactElement {
               flexDirection="column"
               textAlign={["center", "center", "center", "left"]}
             >
-              <TextStyledExtraBold fontSize={["4xl", "5xl"]} marginBottom="4px">
+              <Body
+                fontSize={["4xl", "5xl"]}
+                fontWeight={900}
+                marginBottom="4px"
+              >
                 CUSEC 2021
-              </TextStyledExtraBold>
-              <TextStyledBold fontSize={["xl", "2xl"]} marginBottom="12px">
+              </Body>
+              <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
                 Canadian University Software Engineering Conference
-              </TextStyledBold>
+              </Headline>
               <Flex
                 justify={["center", "center", "center", "left"]}
                 marginBottom="16px"
               >
-                <TextStyled>January 9 - 10, 2021</TextStyled>
+                <BodyPrimary>January 9 - 10, 2021</BodyPrimary>
                 <Text marginX="10px" height="24px">
                   {"\u2022"}
                 </Text>
-                <TextStyled>Virtual Experience</TextStyled>
+                <BodyPrimary>Virtual Experience</BodyPrimary>
               </Flex>
               <Flex
                 alignItems="center"
@@ -106,16 +110,9 @@ export default function SplashScreen(): React.ReactElement {
                 justify={["center", "center", "center", "left"]}
               >
                 <EmailListingInput />
-                <LinkStyled
-                  color="brand.blue"
-                  href="mailto:sponsor@cusec.net"
-                  _hover={{
-                    color: "brand.dark_teal",
-                    textDecoration: "underline",
-                  }}
-                >
+                <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
-                </LinkStyled>
+                </LinkPrimary>
               </Flex>
               <Flex
                 justifyContent="center"

@@ -1,8 +1,8 @@
-import { Box, Flex } from "@chakra-ui/core";
+import { Box, Flex, Link } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
 import React, { useRef, useEffect, useState } from "react";
-import { NavBarLink } from "./StyledCore";
+import { Body } from "@/components/core/Text";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import HamburgerMenu from "react-hamburger-menu";
@@ -10,12 +10,38 @@ import useStore from "@/src/store";
 import { locations } from "@/src/constants";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import NavOverlay from "@/components/NavOverlay";
+import theme from "@/src/theme";
 
 const VerticalBar = styled.div`
   display: inline-block;
   border-left: 1px solid #ccc;
   margin: 0 10px;
   height: 24px;
+`;
+
+export const NavBarLink = styled(Body)`
+  font-weight: 500;
+  margin-right: 32px;
+  position: relative;
+
+  &:after {
+    background: ${theme.colors.brand.teal};
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 export default function TopBar(): React.ReactElement {
@@ -81,10 +107,9 @@ export default function TopBar(): React.ReactElement {
         zIndex={100}
       >
         <Flex align="center">
-          <Logo
-            onClick={handleCusecIconClick}
-            style={{ height: "32px", width: "auto", cursor: "pointer" }}
-          />
+          <Link onClick={handleCusecIconClick}>
+            <Logo style={{ height: "32px", width: "auto" }} />
+          </Link>
         </Flex>
         <Box display={["block", "block", "block", "none"]} cursor="pointer">
           <HamburgerMenu

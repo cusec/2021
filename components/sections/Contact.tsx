@@ -2,8 +2,8 @@ import { Flex } from "@chakra-ui/core";
 import React, { ReactElement } from "react";
 import EmailListingInput from "@/components/EmailListingInput";
 import SocialShareSVG from "../svgs/undraw-social-share.svg";
-import { TextStyled, TextStyledBold } from "@/components/StyledCore";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
+import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 
 export default function Contact(): ReactElement {
   return (
@@ -16,13 +16,11 @@ export default function Contact(): ReactElement {
           paddingRight={["5vw", "5vw", "0", "0"]}
           paddingTop={["0.5in", "0.5in", "0.75in", "0.75in"]}
         >
-          <TextStyledBold fontSize={["xl", "3xl"]}>
-            Can&apos;t get enough of CUSEC?
-          </TextStyledBold>
-          <TextStyled paddingBottom={["0.15in", "0.15in", "0.3in", "0.3in"]}>
+          <HeadlinePrimary>Can&apos;t get enough of CUSEC?</HeadlinePrimary>
+          <BodyPrimary paddingBottom="0.15in">
             Follow us on our socials. Get updates by signing up for our email
             listing.
-          </TextStyled>
+          </BodyPrimary>
           <Flex
             align="center"
             direction="row"
