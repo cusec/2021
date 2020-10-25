@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Text, Link } from "@chakra-ui/core";
+import theme from "@/src/theme";
 
 export const TextStyled = styled(Text)`
   font-family: "Inter", sans-serif;
@@ -27,9 +28,9 @@ export const NavBarLink = styled(Text)`
 `;
 
 export const GreyBackground = styled.div`
-  border-top: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
-  background-color: #fafafa;
+  border-top: 1px solid ${theme.colors.grey_stroke};
+  border-bottom: 1px solid ${theme.colors.grey_stroke};
+  background-color: ${theme.colors.grey_fill};
 `;
 
 export const FooterLink = styled(Link)`
@@ -40,7 +41,7 @@ export const FooterLink = styled(Link)`
   position: relative;
 
   &:after {
-    background: #11a0a7;
+    background: ${theme.colors.brand.dark_teal};
     bottom: 0;
     content: "";
     height: 2px;
@@ -64,7 +65,11 @@ export const GradientNavItemLink = styled(Text)`
   font-family: "Metropolis", sans-serif;
   margin-bottom: 5vh;
   display: inline-block;
-  background: linear-gradient(135deg, #09d8c4, #22306d);
+  background: linear-gradient(
+    135deg,
+    ${theme.colors.brand.teal},
+    ${theme.colors.brand.dark_blue}
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

@@ -7,6 +7,7 @@ import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
 import { GreyBackground } from "@/components/StyledCore";
 import { LocationHashEnum } from "@/src/enums";
+import theme from "@/src/theme";
 
 const FlexAbout = styled(Flex)`
   width: 100%;
@@ -28,7 +29,7 @@ const TextStyledBold = styled(TextStyled)`
 const TextTagLine = styled(TextStyled)`
   font-weight: 900;
   font-family: "Metropolis", sans-serif;
-  color: #1e5480;
+  color: ${theme.colors.brand.blue};
 `;
 
 const FlexExperience = styled(Flex)`
