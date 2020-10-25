@@ -55,8 +55,7 @@ export default function Footer(): ReactElement {
                 _hover={{}}
                 fontSize={["xs", "xs", "xs", "sm"]}
                 href="https://github.com/cusec/2021"
-                rel="noopener noreferrer"
-                target="_blank"
+                isExternal
               >
                 Open Source
               </FooterLink>
@@ -65,8 +64,7 @@ export default function Footer(): ReactElement {
                 _hover={{}}
                 fontSize={["xs", "xs", "xs", "sm"]}
                 href="https://www.flaticon.com/"
-                rel="noopener noreferrer"
-                target="_blank"
+                isExternal
               >
                 Icons from flaticon.com*
               </FooterLink>

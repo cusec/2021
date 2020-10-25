@@ -61,8 +61,7 @@ export default function FooterModal({
         _hover={{}}
         fontSize={["xs", "xs", "xs", "sm"]}
         onClick={handleOnOpen}
-        rel="noopener noreferrer"
-        target="_blank"
+        isExternal
       >
         {linkBody}
       </FooterLink>
