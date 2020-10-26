@@ -117,7 +117,7 @@ export default function About(): React.ReactElement {
       </GreyBackground>
       <WidthWrapper>
         <Flex direction="column" paddingY={["1in", "1in", "1.5in"]}>
-          <Flex justifyContent="center" marginBottom="32px">
+          <Flex justifyContent="center" textAlign="center" marginBottom="32px">
             <HeadlinePrimary>Ways to experience CUSEC</HeadlinePrimary>
           </Flex>
           <Flex

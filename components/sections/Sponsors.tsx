@@ -13,6 +13,7 @@ export default function Sponsors(): ReactElement {
           paddingTop={["1in", "1in", "1in", "1.25in"]}
           paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
           align="center"
+          textAlign="center"
         >
           <HeadlinePrimary>Sponsor Showcase</HeadlinePrimary>
           <BodyPrimary>
