@@ -2,8 +2,22 @@ import styled from "@emotion/styled";
 import { Box } from "@chakra-ui/core";
 import theme from "@/src/theme";
 
-export const Wrapper = styled(Box)`
+export const WidthWrapper = styled(Box)`
   max-width: 1640px;
+  margin: 0 auto;
+  padding: 0 0.25in;
+
+  @media only screen and (min-width: ${theme.breakpoints[0]}) {
+    padding: 0 0.5in;
+  }
+
+  @media only screen and (min-width: ${theme.breakpoints[1]}) {
+    padding: 0 0.75in;
+  }
+
+  @media only screen and (min-width: ${theme.breakpoints[2]}) {
+    padding: 0 1.25in;
+  }
 `;
 
 export const GreyBackground = styled(Box)`

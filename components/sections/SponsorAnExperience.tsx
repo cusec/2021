@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import { Box, Flex } from "@chakra-ui/core";
 import BuildingBlocksSVG from "../svgs/undraw-building-blocks.svg";
 import { ButtonPrimaryVariant } from "@/components/core/Button";
+import { WidthWrapper } from "@/components/core/Layout";
 import {
   BodyPrimary,
   HeadlinePrimary,
@@ -11,13 +12,12 @@ import theme from "@/src/theme";
 
 export default function SponsorAnExperience(): ReactElement {
   return (
-    <>
-      <Box
-        background={`linear-gradient(to bottom right, ${theme.colors.bg_gradient_dark}, ${theme.colors.bg_gradient_light})`}
-      >
+    <Box
+      background={`linear-gradient(to bottom right, ${theme.colors.bg_gradient_dark}, ${theme.colors.bg_gradient_light})`}
+    >
+      <WidthWrapper>
         <Flex
           direction={["column", "column", "column", "row"]}
-          paddingX={["5vw", "5vw", "10vw", "10vw"]}
           paddingY="0.5in"
           justify="space-between"
           align={["start", "start", "start", "center"]}
@@ -51,7 +51,7 @@ export default function SponsorAnExperience(): ReactElement {
             </Box>
           </Flex>
         </Flex>
-      </Box>
-    </>
+      </WidthWrapper>
+    </Box>
   );
 }

@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Box, Divider, Flex, Stack } from "@chakra-ui/core";
+import { Box, Flex, Stack } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import CheckMark from "./svgs/check-mark-coloured.svg";
 import { Body, Headline } from "@/components/core/Text";
@@ -42,7 +42,7 @@ export default function PricingCard(props: {
           <CardPrice>{price}</CardPrice>
           <CardDescription>{description}</CardDescription>
         </Stack>
-        <Divider height="2px" marginY="32px" />
+        <Box height="1px" background="#edf1f5" marginY="32px" />
         <Stack spacing="24px">
           {benefits.map((benefit, index) => (
             <Flex key={`${index}${benefit}`} align="center">

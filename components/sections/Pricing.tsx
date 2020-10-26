@@ -6,6 +6,7 @@ import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
 import { ButtonPrimary } from "@/components/core/Button";
+import { WidthWrapper } from "@/components/core/Layout";
 import { HeadlinePrimary } from "@/components/core/Text";
 
 type PricingInfo = {
@@ -86,44 +87,45 @@ export default function Pricing(): ReactElement {
           Pricing Tiers
         </HeadlinePrimary>
       </Grid>
-      <Flex
-        paddingX={["5vw", "5vw", 0]}
-        direction={["column", "column", "column", "row"]}
-        transform={translation}
-        marginTop={["32px", "32px", "32px", 0]}
-        marginBottom={["0.4in", "0.4in", "0.4in", 0]}
-        align="center"
-        justify="center"
-      >
-        <Box
-          marginBottom={cardMarginBottom}
-          padding="4px"
-          boxShadow="md"
-          border={`1px solid ${theme.colors.grey_stroke}`}
-          borderRadius="8px"
-          background="white"
+      <WidthWrapper>
+        <Flex
+          direction={["column", "column", "column", "row"]}
+          transform={translation}
+          marginTop={["32px", "32px", "32px", 0]}
+          marginBottom={["0.4in", "0.4in", "0.4in", 0]}
+          justify="center"
+          align={["center", "center", "center", "start"]}
         >
-          <PricingCard {...freeTierInfo} />
-        </Box>
-        <Box width="8%" />
-        <Box
-          marginBottom={cardMarginBottom}
-          padding="4px"
-          boxShadow="md"
-          borderRadius="12px"
-          background={`linear-gradient(to bottom right, ${theme.colors.brand.teal}, ${theme.colors.brand.dark_blue})`}
+          <Box
+            marginBottom={cardMarginBottom}
+            padding="4px"
+            boxShadow="md"
+            border={`1px solid ${theme.colors.grey_stroke}`}
+            borderRadius="12px"
+            background="white"
+          >
+            <PricingCard {...freeTierInfo} />
+          </Box>
+          <Box width="8%" />
+          <Box
+            marginBottom={cardMarginBottom}
+            padding="4px"
+            boxShadow="md"
+            borderRadius="12px"
+            background={`linear-gradient(to bottom right, ${theme.colors.brand.teal}, ${theme.colors.brand.dark_blue})`}
+          >
+            <PricingCard {...vipTierInfo} />
+          </Box>
+        </Flex>
+        <Flex
+          transform={translation}
+          marginBottom={["0.8in", "0.8in", "0.8in", 0]}
+          marginTop={[0, 0, 0, "0.8in"]}
+          justify="center"
         >
-          <PricingCard {...vipTierInfo} />
-        </Box>
-      </Flex>
-      <Flex
-        transform={translation}
-        marginBottom={["0.8in", "0.8in", "0.8in", 0]}
-        marginTop={[0, 0, 0, "0.8in"]}
-        justify="center"
-      >
-        <ButtonPrimary>Register</ButtonPrimary>
-      </Flex>
+          <ButtonPrimary>Register</ButtonPrimary>
+        </Flex>
+      </WidthWrapper>
     </Box>
   );
 }

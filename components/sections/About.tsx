@@ -7,27 +7,11 @@ import AttendWorkshops from "../svgs/attend-workshops.svg";
 import BuildYourNetwork from "../svgs/build-your-network.svg";
 import { LocationHashEnum } from "@/src/enums";
 import theme from "@/src/theme";
-import { GreyBackground } from "@/components/core/Layout";
+import { GreyBackground, WidthWrapper } from "@/components/core/Layout";
 import { Headline, HeadlinePrimary, BodyPrimary } from "@/components/core/Text";
-
-const FlexAbout = styled(Flex)`
-  width: 100%;
-`;
-
-const FlexTagLines = styled(Flex)`
-  width: 100%;
-`;
 
 const TextTagLine = styled(Headline)`
   color: ${theme.colors.brand.blue};
-`;
-
-const FlexExperience = styled(Flex)`
-  width: 100%;
-`;
-
-const MarginAroundText = styled.div`
-  margin: 1rem;
 `;
 
 const taglinesData = [
@@ -41,38 +25,36 @@ const experienceCUSECData = [
     header: "Inspiring Keynotes",
     description:
       "We take great pride in hosting unique and knowledgeable speakers that come from many backgrounds in the software industry.",
-    icon: <InspiringKeynotes height="90px" />,
+    Icon: InspiringKeynotes,
   },
   {
     header: "Meet Recruiters",
     description:
       "Get exclusive opportunities to network with recruiters from the top companies that redefine tech everyday at our career fair.",
-    icon: <MeetRecruiters height="90px" />,
+    Icon: MeetRecruiters,
   },
   {
     header: "Attend Workshops",
     description:
       "Broaden your skill sets with new technological tools and gain insight on the hottest topics and challenges facing today’s tech industry.",
-    icon: <AttendWorkshops height="90px" />,
+    Icon: AttendWorkshops,
   },
   {
     header: "Build Your Network",
     description:
       "Meet like-minded peers, and fellow students from across North America. Make lifelong friendships.",
-    icon: <BuildYourNetwork height="90px" />,
+    Icon: BuildYourNetwork,
   },
 ];
 
 export default function About(): React.ReactElement {
   return (
     <div id={LocationHashEnum.About}>
-      <Flex direction="column" height="100%" justify="center" width="100%">
-        <FlexAbout
+      <WidthWrapper>
+        <Flex
           align="center"
-          justify={["center", "center", "center", "space-between"]}
-          marginTop={["10vh", "10vh", "15vh", "15vh"]}
+          paddingTop={["1in", "1in", "1.5in", "1.5in"]}
           paddingBottom={["0.5in", "0.5in", "1in", "1in"]}
-          paddingX={["16px", "16px", "10vw", "10vw"]}
         >
           <Flex
             display={["none", "none", "none", "flex"]}
@@ -100,44 +82,37 @@ export default function About(): React.ReactElement {
               make lifelong friends, all in a safe and comfortable space.
             </BodyPrimary>
           </Flex>
-        </FlexAbout>
-        <GreyBackground>
-          <FlexTagLines
-            direction={["column", "column", "column", "row"]}
-            justify={["center", "center", "center", "space-evenly"]}
-            paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
-          >
-            {taglinesData.map((item, index) => {
-              return (
-                <Fragment key={item.title}>
-                  {index !== 0 && <Divider orientation="vertical" />}
-                  <Flex flexDirection="column" alignItems="center">
-                    <TextTagLine fontSize={["4xl", "5xl"]}>
-                      {item.title}
-                    </TextTagLine>
-                    <BodyPrimary
-                      textAlign="center"
-                      margin={[
-                        "0px 0px 30px 0px",
-                        "0px 0px 30px 0px",
-                        "0px 0px 20px 0px",
-                        "0px 0px 0px 0px",
-                      ]}
-                    >
-                      {item.subtitle}
-                    </BodyPrimary>
-                  </Flex>
-                </Fragment>
-              );
-            })}
-          </FlexTagLines>
-        </GreyBackground>
-        <FlexExperience
-          direction="column"
-          paddingY={["0.5in", "0.5in", "1in", "1in"]}
-          paddingX={["16px", "16px", "7vw", "7vw"]}
+        </Flex>
+      </WidthWrapper>
+      <GreyBackground>
+        <Flex
+          direction={["column", "column", "column", "row"]}
+          justify={["center", "center", "center", "space-evenly"]}
+          paddingY={["0.25in", "0.25in", "0.5in", "0.5in"]}
+          maxWidth="1920px"
+          margin="0 auto"
         >
-          <Flex justifyContent="center" marginBottom="5vh">
+          {taglinesData.map((item, index) => (
+            <Fragment key={item.title}>
+              {index !== 0 && <Divider orientation="vertical" />}
+              <Flex flexDirection="column" alignItems="center">
+                <TextTagLine fontSize={["4xl", "5xl"]}>
+                  {item.title}
+                </TextTagLine>
+                <BodyPrimary
+                  textAlign="center"
+                  marginBottom={["30px", "30px", "20px", 0]}
+                >
+                  {item.subtitle}
+                </BodyPrimary>
+              </Flex>
+            </Fragment>
+          ))}
+        </Flex>
+      </GreyBackground>
+      <WidthWrapper>
+        <Flex direction="column" paddingY={["0.5in", "0.5in", "1in", "1in"]}>
+          <Flex justifyContent="center" marginBottom="32px">
             <HeadlinePrimary>Ways to experience CUSEC</HeadlinePrimary>
           </Flex>
           <Flex
@@ -146,44 +121,45 @@ export default function About(): React.ReactElement {
             wrap="wrap"
             justify="center"
           >
-            {experienceCUSECData.map((item) => {
-              return (
-                <Box
-                  borderWidth="1px"
-                  boxShadow="md"
-                  key={item.header}
-                  margin="1vw"
-                  maxWidth="98%"
-                  rounded="lg"
-                  width={["45rem", "45rem", "30rem", "45rem"]}
+            {experienceCUSECData.map(({ header, description, Icon }) => (
+              <Box
+                key={header}
+                borderWidth="1px"
+                boxShadow="md"
+                marginX={[0, 0, 0, "1rem"]}
+                marginBottom={["1rem", "1.5rem", "2rem"]}
+                width="600px"
+                maxWidth="100%"
+                rounded="lg"
+              >
+                <Flex
+                  align="center"
+                  alignContent="center"
+                  minHeight={[0, 0, "140px"]}
+                  justify="center"
                 >
-                  <Flex
-                    align="center"
-                    alignContent="center"
-                    minHeight="140px"
-                    justify="center"
-                  >
+                  <Box display={["none", "none", "flex"]} marginLeft="1rem">
+                    <Icon height="80px" />
+                  </Box>
+                  <Flex direction="column" height="100%" padding="1rem">
                     <Flex
+                      justify="space-between"
                       align="center"
-                      alignContent="center"
-                      justify="center"
-                      marginLeft="1rem"
+                      marginBottom="4px"
                     >
-                      {item.icon}
+                      <Headline fontSize="16px">{header}</Headline>
+                      <Box display={["block", "block", "none"]}>
+                        <Icon width="32px" height="32px" />
+                      </Box>
                     </Flex>
-                    <Flex direction="column" height="100%">
-                      <MarginAroundText>
-                        <Headline fontSize="16px">{item.header}</Headline>
-                        <BodyPrimary>{item.description}</BodyPrimary>
-                      </MarginAroundText>
-                    </Flex>
+                    <BodyPrimary>{description}</BodyPrimary>
                   </Flex>
-                </Box>
-              );
-            })}
+                </Flex>
+              </Box>
+            ))}
           </Flex>
-        </FlexExperience>
-      </Flex>
+        </Flex>
+      </WidthWrapper>
     </div>
   );
 }

@@ -6,11 +6,11 @@ import { GreyBackground } from "@/components/core/Layout";
 import { FooterLink } from "@/components/StyledCore";
 import FooterModal from "@/components/FooterModal";
 import { codeOfConductText, privacyPolicyText } from "@/src/data";
+import { WidthWrapper } from "@/components/core/Layout";
 
-const BaseContainer = styled.div`
+const BaseContainer = styled(WidthWrapper)`
   display: flex;
   height: 100%;
-  width: 100%;
 `;
 
 const FooterText = styled(Text)`
@@ -39,7 +39,6 @@ export default function Footer(): ReactElement {
             <Flex
               alignItems="center"
               justifyContent="center"
-              marginLeft={["0", "0", "2vw", "5vw"]}
               paddingBottom={["0", "0", "0.15in", "0.15in"]}
               paddingTop="0.15in"
             >
@@ -64,10 +63,9 @@ export default function Footer(): ReactElement {
                 _focus={{}}
                 _hover={{}}
                 fontSize={["xs", "xs", "xs", "sm"]}
-                href="https://www.flaticon.com/"
                 isExternal
               >
-                Icons from flaticon.com*
+                Attributions
               </FooterLink>
             </Flex>
             <Flex alignItems="center" justifyContent="center" paddingY="0.1in">
@@ -76,7 +74,6 @@ export default function Footer(): ReactElement {
             <Flex
               alignItems="center"
               justifyContent="center"
-              marginRight={["0", "0", "2vw", "5vw"]}
               paddingBottom="0.15in"
               paddingTop={["0", "0", "0.15in", "0.15in"]}
             >
