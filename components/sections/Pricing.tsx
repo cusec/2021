@@ -84,15 +84,16 @@ export default function Pricing(): ReactElement {
           color="white"
           margin="0px !important"
         >
-          Pricing Tiers
+          Ticket Pricing
         </HeadlinePrimary>
       </Grid>
-      <WidthWrapper>
+      <WidthWrapper
+        marginTop={["32px", "32px", "32px", 0]}
+        marginBottom={["0.8in", "0.8in", "0.8in", 0]}
+      >
         <Flex
           direction={["column", "column", "column", "row"]}
           transform={translation}
-          marginTop={["32px", "32px", "32px", 0]}
-          marginBottom={["0.4in", "0.4in", "0.4in", 0]}
           justify="center"
           align={["center", "center", "center", "start"]}
         >
@@ -119,8 +120,7 @@ export default function Pricing(): ReactElement {
         </Flex>
         <Flex
           transform={translation}
-          marginBottom={["0.8in", "0.8in", "0.8in", 0]}
-          marginTop={[0, 0, 0, "0.8in"]}
+          marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
           justify="center"
         >
           <ButtonPrimary>Register</ButtonPrimary>

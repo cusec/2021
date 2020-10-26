@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import { Box, Divider, Flex, Skeleton } from "@chakra-ui/core";
+import { Box, Divider, Flex } from "@chakra-ui/core";
 import React, { Fragment } from "react";
+import MapleLeafs from "../svgs/maple-leafs.svg";
 import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
 import MeetRecruiters from "../svgs/meet-recruiters.svg";
 import AttendWorkshops from "../svgs/attend-workshops.svg";
@@ -54,26 +55,19 @@ export default function About(): React.ReactElement {
         <Flex
           align="center"
           paddingTop={["1in", "1in", "1.5in", "1.5in"]}
-          paddingBottom={["0.5in", "0.5in", "1in", "1in"]}
+          paddingBottom={["1in", "1in", "1.5in", "2in"]}
         >
-          <Flex
-            display={["none", "none", "none", "flex"]}
-            direction="column"
-            textAlign={["center", "center", "center", "left"]}
-          >
-            <Box marginRight="50px">
-              <Skeleton height="300px" width="300px" />
-            </Box>
-          </Flex>
-          <Flex direction="column">
+          <Flex direction="column" width={["100%", "100%", "100%", "65%"]}>
             <HeadlinePrimary>
               Annual Software Engineering Conference
             </HeadlinePrimary>
             <BodyPrimary>
               Join over 500 students from across Canada for three days of
               knowledge sharing, mentoring, career opportunities and community
-              with people who are enthusiastic about the future of tech. CUSEC
-              is an annual software engineering conference organized for
+              with people who are enthusiastic about the future of tech.
+            </BodyPrimary>
+            <BodyPrimary>
+              CUSEC is an annual software engineering conference organized for
               students by students. It was founded in 2002 by a small team of
               tech enthusiasts on a mission to educate and expose students to a
               diverse range of areas in software engineering and computer
@@ -82,6 +76,13 @@ export default function About(): React.ReactElement {
               make lifelong friends, all in a safe and comfortable space.
             </BodyPrimary>
           </Flex>
+          <Box
+            display={["none", "none", "none", "block"]}
+            width="25%"
+            marginLeft="10%"
+          >
+            <MapleLeafs width="100%" height="100%" />
+          </Box>
         </Flex>
       </WidthWrapper>
       <GreyBackground>
@@ -95,7 +96,11 @@ export default function About(): React.ReactElement {
           {taglinesData.map((item, index) => (
             <Fragment key={item.title}>
               {index !== 0 && <Divider orientation="vertical" />}
-              <Flex flexDirection="column" alignItems="center">
+              <Flex
+                flexDirection="column"
+                alignItems="center"
+                marginY={["8px", "8px", "8px", 0]}
+              >
                 <TextTagLine fontSize={["4xl", "5xl"]}>
                   {item.title}
                 </TextTagLine>
@@ -111,7 +116,7 @@ export default function About(): React.ReactElement {
         </Flex>
       </GreyBackground>
       <WidthWrapper>
-        <Flex direction="column" paddingY={["0.5in", "0.5in", "1in", "1in"]}>
+        <Flex direction="column" paddingY={["1in", "1in", "1.5in"]}>
           <Flex justifyContent="center" marginBottom="32px">
             <HeadlinePrimary>Ways to experience CUSEC</HeadlinePrimary>
           </Flex>
@@ -128,8 +133,7 @@ export default function About(): React.ReactElement {
                 boxShadow="md"
                 marginX={[0, 0, 0, "1rem"]}
                 marginBottom={["1rem", "1.5rem", "2rem"]}
-                width="600px"
-                maxWidth="100%"
+                maxWidth="600px"
                 rounded="lg"
               >
                 <Flex

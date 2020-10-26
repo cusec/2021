@@ -12,7 +12,7 @@ export const HeadlinePrimary = styled(Headline)`
   margin-bottom: 12px;
 
   @media only screen and (min-width: ${theme.breakpoints[1]}) {
-    font-size: 32px;
+    font-size: 36px;
   }
 `;
 

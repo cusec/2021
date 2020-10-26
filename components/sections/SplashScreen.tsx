@@ -3,7 +3,6 @@ import { Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
-import EmailListingInput from "@/components/EmailListingInput";
 import useScreenWidth from "../hooks/useScreenWidth";
 import useStore from "@/src/store";
 import {
@@ -12,6 +11,7 @@ import {
   Headline,
   LinkPrimary,
 } from "@/components/core/Text";
+import { ButtonPrimary } from "@/components/core/Button";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -109,7 +109,12 @@ export default function SplashScreen(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <EmailListingInput />
+                <ButtonPrimary
+                  marginRight={[0, 0, 0, "2rem"]}
+                  marginBottom={["1rem", "1rem", "1rem", 0]}
+                >
+                  Register
+                </ButtonPrimary>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>

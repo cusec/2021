@@ -9,6 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import theme from "@/src/theme";
 
 export const GradientNavItemLink = styled(Headline)`
+  font-size: 24px;
   margin-bottom: 5vh;
   display: inline-block;
   background: linear-gradient(
@@ -52,9 +53,7 @@ export default function NavOverlay(props: {
               href={location.href}
               onClick={handleNavItemClick}
             >
-              <GradientNavItemLink fontSize="3xl">
-                {location.label}
-              </GradientNavItemLink>
+              <GradientNavItemLink>{location.label}</GradientNavItemLink>
             </AnchorLink>
             <br />
           </Fragment>

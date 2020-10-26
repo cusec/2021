@@ -18,7 +18,7 @@ export default function SponsorAnExperience(): ReactElement {
       <WidthWrapper>
         <Flex
           direction={["column", "column", "column", "row"]}
-          paddingY="0.5in"
+          paddingY="0.75in"
           justify="space-between"
           align={["start", "start", "start", "center"]}
         >

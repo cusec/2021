@@ -13,8 +13,7 @@ export default function Contact(): ReactElement {
         direction="row"
         align="center"
         justify="space-between"
-        paddingTop={["0.5in", "0.5in", "0.75in", "0.75in"]}
-        paddingBottom="0.3in"
+        paddingY="0.75in"
       >
         <Flex direction="column">
           <HeadlinePrimary>Can&apos;t get enough of CUSEC?</HeadlinePrimary>
@@ -31,7 +30,8 @@ export default function Contact(): ReactElement {
           </Flex>
           <Flex
             justify={["center", "start", "start", "start"]}
-            paddingTop={["0.3in", "0.3in", "0.35in", "0.35in"]}
+            marginTop={["0.3in", "0.3in", "0.35in", "0.35in"]}
+            marginBottom="24px"
           >
             <EmailListingInput />
           </Flex>

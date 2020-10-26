@@ -89,8 +89,7 @@ export default function FAQ(): ReactElement {
       <WidthWrapper>
         <Flex
           direction="column"
-          paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
-          paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
+          paddingY={["0.75in", "0.75in", "0.75in", "1in"]}
         >
           <HeadlinePrimary>Frequently Asked Questions</HeadlinePrimary>
           <BodyPrimary>
@@ -100,10 +99,7 @@ export default function FAQ(): ReactElement {
             </LinkPrimary>{" "}
             and we&apos;ll get back to you.
           </BodyPrimary>
-          <Box
-            marginTop="0.25in"
-            paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}
-          >
+          <Box marginTop="0.25in">
             <Flex direction={["column", "column", "column", "row"]}>
               <Accordion
                 width={["100%", "100%", "100%", "50%"]}

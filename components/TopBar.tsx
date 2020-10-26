@@ -20,7 +20,6 @@ const VerticalBar = styled.div`
 `;
 
 export const NavBarLink = styled(Body)`
-  font-weight: 500;
   margin-right: 32px;
   position: relative;
 

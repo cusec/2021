@@ -4,8 +4,10 @@ import theme from "@/src/theme";
 
 export const WidthWrapper = styled(Box)`
   max-width: 1640px;
-  margin: 0 auto;
-  padding: 0 0.25in;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.25in;
+  padding-right: 0.25in;
 
   @media only screen and (min-width: ${theme.breakpoints[0]}) {
     padding: 0 0.5in;

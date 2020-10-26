@@ -7,11 +7,11 @@ import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 export default function Sponsors(): ReactElement {
   return (
     <div id={LocationHashEnum.Sponsors}>
-      <WidthWrapper>
+      <WidthWrapper height="1000px">
         <Flex
           direction="column"
+          paddingTop={["1in", "1in", "1in", "1.25in"]}
           paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
-          paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
           align="center"
         >
           <HeadlinePrimary>Sponsor Showcase</HeadlinePrimary>
