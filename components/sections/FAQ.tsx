@@ -1,6 +1,7 @@
 import React, {
   Dispatch,
   FormEvent,
+  Fragment,
   ReactElement,
   SetStateAction,
   useState,
@@ -24,7 +25,7 @@ import {
 } from "@/components/core/Text";
 
 interface AccordionBoxParams {
-  props: { question: string; answer: string };
+  props: { question: string; answer: string[] };
   index: number;
   opened: number | null;
   setOpened: Dispatch<SetStateAction<number | null>>;
@@ -74,7 +75,11 @@ function AccordionBox({
           <AccordionIcon />
         </AccordionHeader>
         <AccordionPanel padding="8px 20px 20px 20px">
-          {props.answer}
+          {props.answer.map((paragraph) => (
+            <Fragment key={paragraph}>
+              <BodyPrimary>{paragraph}</BodyPrimary>
+            </Fragment>
+          ))}
         </AccordionPanel>
       </AccordionItem>
     </Box>
