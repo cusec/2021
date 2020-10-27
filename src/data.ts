@@ -54,7 +54,7 @@ export const FAQData: { question: string; answer: string[] }[] = [
     question: "How is Hopin different from a webinar?",
     answer: [
       "At a webinar, only a few people talk. Everybody else listens. Passively. When one person talks for an hour, and 50 or so people are on mute, it feels a little one-sided, not like an interactive event.",
-      "Bystander effect takes place -- everybody starts to think the other people on the call will volunteer to speak up.",
+      "Bystander effect takes place — everybody starts to think the other people on the call will volunteer to speak up.",
       "Webinars and video conferencing encourage you to hit mute, surf the web, and go on Twitter. If you’re an event organizer, or professor, or speaker, you know this is a frustrating problem. You want people to be engaged.",
       "It’s nice that people can join a webinar from home, but if they’re non-participatory and bored, it’s not really an effective initiative. The way to solve the disengagement problem with webinars and large video-conferencing events is to put people — building connections — at the center of it.",
       "This is exactly how they built Hopin. Hopin is people-centric, not PowerPoint-centric.",
@@ -104,18 +104,18 @@ export const FAQData: { question: string; answer: string[] }[] = [
     question: "Is there swag this year?",
     answer: [
       "A digital swag bag with goodies from our sponsors will be available to all our attendees this year.",
-      "Exclusive CUSEC 2021 merch will be available to those with VIP tickets, but we will have amazing prizes to give out at our events if you have a free ticket.",
+      "Exclusive CUSEC 2021 merchandise will be available to those with VIP tickets, but we will have amazing prizes to give out at our events if you have a free ticket.",
     ],
   },
   {
     question: "How long do ticket sales last?",
     answer: [
-      "Ticket sales will for VIP tickets will end earlier so we can make sure you get your merchandise in time for the conference.",
+      "Ticket sales for VIP tickets will end earlier so we can make sure you get your merchandise in time for the conference.",
       "Free ticket sales will run until January.",
     ],
   },
   {
-    question: "Could i get a refund if i can't go anymore?",
+    question: "Can I get a refund if I can't go anymore?",
     answer: [
       "Your ticket sales revenue is deposited into your Stripe account 3-7 days after the sale occurs.",
       "Hopin does not cover Stripe’s payment processing fee.",
