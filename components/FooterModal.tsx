@@ -9,11 +9,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/core";
 import React, { Fragment, ReactElement, useEffect } from "react";
-import {
-  FooterLink,
-  TextStyled,
-  TextStyledBold,
-} from "@/components/StyledCore";
+import { BodyPrimary, Headline, HeadlinePrimary } from "@/components/core/Text";
+import { FooterLink } from "@/components/StyledCore";
 import { useRouter } from "next/router";
 
 interface FooterModalProps {
@@ -61,8 +58,7 @@ export default function FooterModal({
         _hover={{}}
         fontSize={["xs", "xs", "xs", "sm"]}
         onClick={handleOnOpen}
-        rel="noopener noreferrer"
-        target="_blank"
+        isExternal
       >
         {linkBody}
       </FooterLink>
@@ -80,19 +76,23 @@ export default function FooterModal({
               <ModalOverlay opacity={styles.opacity} />
               <ModalContent rounded="lg" {...styles}>
                 <ModalHeader paddingTop={6}>
-                  <TextStyledBold fontSize="2xl">{linkBody}</TextStyledBold>
+                  <HeadlinePrimary margin="0px !important">
+                    {linkBody}
+                  </HeadlinePrimary>
                 </ModalHeader>
                 <ModalCloseButton _focus={{}} />
                 <ModalBody paddingBottom={6}>
                   {modalBody.map((item) => (
                     <Fragment key={item.title}>
-                      <TextStyledBold>{item.title}</TextStyledBold>
+                      <Headline marginBottom="8px">{item.title}</Headline>
                       {item.paragraph.map((paragraph) => (
                         <Fragment key={paragraph}>
                           {paragraph.charAt(0) === "•" ? (
-                            <TextStyled paddingLeft={4}>{paragraph}</TextStyled>
+                            <BodyPrimary paddingLeft={4}>
+                              {paragraph}
+                            </BodyPrimary>
                           ) : (
-                            <TextStyled>{paragraph}</TextStyled>
+                            <BodyPrimary>{paragraph}</BodyPrimary>
                           )}
                         </Fragment>
                       ))}

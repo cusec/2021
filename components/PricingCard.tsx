@@ -1,26 +1,23 @@
 import { ReactElement } from "react";
-import { Box, Divider, Flex, Stack, Text } from "@chakra-ui/core";
+import { Box, Flex, Stack } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import CheckMark from "./svgs/check-mark-coloured.svg";
+import { Body, Headline } from "@/components/core/Text";
 
-const CardTitle = styled(Text)`
-  font-family: Metropolis, sans-serif;
+const CardTitle = styled(Headline)`
   font-size: 28px;
 `;
 
-const CardPrice = styled(Text)`
-  font-family: Metropolis, sans-serif;
+const CardPrice = styled(Headline)`
   font-size: 36px;
 `;
 
-const CardDescription = styled(Text)`
-  font-family: Metropolis, sans-serif;
+const CardDescription = styled(Headline)`
   font-size: 16px;
   color: grey;
 `;
 
-const CardBenefit = styled(Text)`
-  font-family: Inter, sans-serif;
+const CardBenefit = styled(Body)`
   font-size: 14px;
 `;
 
@@ -45,7 +42,7 @@ export default function PricingCard(props: {
           <CardPrice>{price}</CardPrice>
           <CardDescription>{description}</CardDescription>
         </Stack>
-        <Divider height="2px" marginY="32px" />
+        <Box height="1px" background="#edf1f5" marginY="32px" />
         <Stack spacing="24px">
           {benefits.map((benefit, index) => (
             <Flex key={`${index}${benefit}`} align="center">

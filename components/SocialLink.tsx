@@ -20,8 +20,7 @@ export default function SocialLink(props: PropTypes): ReactElement {
       <Link
         {...props}
         _focus={{}}
-        rel="noopener noreferrer"
-        target="_blank"
+        isExternal
         onClick={() => {
           clickSocial(props.eventType);
         }}
