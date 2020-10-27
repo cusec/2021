@@ -20,19 +20,20 @@ import { LocationHashEnum } from "@/src/enums";
 import { GreyBackground, WidthWrapper } from "@/components/core/Layout";
 import {
   BodyPrimary,
+  Headline,
   HeadlinePrimary,
   LinkPrimary,
 } from "@/components/core/Text";
 
 interface AccordionBoxParams {
-  props: { question: string; answer: string[] };
+  item: { question: string; answer: string[] };
   index: number;
   opened: number | null;
   setOpened: Dispatch<SetStateAction<number | null>>;
 }
 
 function AccordionBox({
-  props,
+  item,
   index,
   opened,
   setOpened,
@@ -70,14 +71,18 @@ function AccordionBox({
             marginRight="20px"
             fontWeight={shouldBeOpened ? "bold" : "normal"}
           >
-            {props.question}
+            {item.question}
           </Box>
           <AccordionIcon />
         </AccordionHeader>
         <AccordionPanel padding="8px 20px 20px 20px">
-          {props.answer.map((paragraph) => (
+          {item.answer.map((paragraph) => (
             <Fragment key={paragraph}>
-              <BodyPrimary>{paragraph}</BodyPrimary>
+              {paragraph.trim().indexOf(" ") === -1 ? (
+                <Headline marginBottom="8px">{paragraph}</Headline>
+              ) : (
+                <BodyPrimary>{paragraph}</BodyPrimary>
+              )}
             </Fragment>
           ))}
         </AccordionPanel>
@@ -113,7 +118,7 @@ export default function FAQ(): ReactElement {
                 {data
                   .map((faqItem, index) => (
                     <AccordionBox
-                      props={faqItem}
+                      item={faqItem}
                       key={`${index}${faqItem.question}`}
                       index={index}
                       opened={opened}
@@ -129,7 +134,7 @@ export default function FAQ(): ReactElement {
                 {data
                   .map((faqItem, index) => (
                     <AccordionBox
-                      props={faqItem}
+                      item={faqItem}
                       key={`${index}${faqItem.question}`}
                       index={index}
                       opened={opened}
