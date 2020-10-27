@@ -10,15 +10,18 @@ export const WidthWrapper = styled(Box)`
   padding-right: 0.25in;
 
   @media only screen and (min-width: ${theme.breakpoints[0]}) {
-    padding: 0 0.5in;
+    padding-left: 0.5in;
+    padding-right: 0.5in;
   }
 
   @media only screen and (min-width: ${theme.breakpoints[1]}) {
-    padding: 0 0.75in;
+    padding-left: 0.75in;
+    padding-right: 0.75in;
   }
 
   @media only screen and (min-width: ${theme.breakpoints[2]}) {
-    padding: 0 1.25in;
+    padding-left: 1.25in;
+    padding-right: 1.25in;
   }
 `;
 
