@@ -11,6 +11,7 @@ import { locations } from "@/src/constants";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import NavOverlay from "@/components/NavOverlay";
 import theme from "@/src/theme";
+import { WidthWrapper } from "@/components/core/Layout";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -84,12 +85,8 @@ export default function TopBar(): React.ReactElement {
   return (
     <>
       <NavOverlay getTopBarHeight={getComponentHeight} />
-      <Flex
+      <Box
         ref={componentRef}
-        align="center"
-        justify="space-between"
-        paddingX={["0.2in", "0.2in", "10vw", "10vw"]}
-        paddingY="8px"
         position="fixed"
         top="0"
         width="100%"
@@ -105,39 +102,43 @@ export default function TopBar(): React.ReactElement {
         transition="transform 0.2s, background 0.5s, box-shadow 0.5s"
         zIndex={100}
       >
-        <Flex align="center">
-          <Link onClick={handleCusecIconClick}>
-            <Logo style={{ height: "32px", width: "auto" }} />
-          </Link>
-        </Flex>
-        <Box display={["block", "block", "block", "none"]} cursor="pointer">
-          <HamburgerMenu
-            isOpen={isNavOverlayOpen}
-            menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
-            height={17}
-            width={28}
-            strokeWidth={3}
-            rotate={180}
-          />
-        </Box>
-        <Flex align="center" display={["none", "none", "none", "flex"]}>
-          <Flex direction="row">
-            {locations.map((location) => (
-              <AnchorLink
-                key={location.href}
-                offset={getComponentHeight}
-                href={location.href}
-              >
-                <NavBarLink>{location.label}</NavBarLink>
-              </AnchorLink>
-            ))}
+        <WidthWrapper>
+          <Flex align="center" justify="space-between" paddingY="8px">
+            <Flex align="center">
+              <Link onClick={handleCusecIconClick}>
+                <Logo style={{ height: "32px", width: "auto" }} />
+              </Link>
+            </Flex>
+            <Box display={["block", "block", "block", "none"]} cursor="pointer">
+              <HamburgerMenu
+                isOpen={isNavOverlayOpen}
+                menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
+                height={17}
+                width={28}
+                strokeWidth={3}
+                rotate={180}
+              />
+            </Box>
+            <Flex align="center" display={["none", "none", "none", "flex"]}>
+              <Flex direction="row">
+                {locations.map((location) => (
+                  <AnchorLink
+                    key={location.href}
+                    offset={getComponentHeight}
+                    href={location.href}
+                  >
+                    <NavBarLink>{location.label}</NavBarLink>
+                  </AnchorLink>
+                ))}
+              </Flex>
+              <Flex>
+                <VerticalBar />
+              </Flex>
+              <Socials marginLeft="32px" />
+            </Flex>
           </Flex>
-          <Flex>
-            <VerticalBar />
-          </Flex>
-          <Socials marginLeft="32px" />
-        </Flex>
-      </Flex>
+        </WidthWrapper>
+      </Box>
     </>
   );
 }

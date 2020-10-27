@@ -3,6 +3,7 @@ import { Box } from "@chakra-ui/core";
 import theme from "@/src/theme";
 
 export const WidthWrapper = styled(Box)`
+  width: 100%;
   max-width: 1640px;
   margin-left: auto;
   margin-right: auto;

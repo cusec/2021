@@ -12,6 +12,7 @@ import {
   LinkPrimary,
 } from "@/components/core/Text";
 import { ButtonPrimary } from "@/components/core/Button";
+import { WidthWrapper } from "@/components/core/Layout";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -48,18 +49,17 @@ export default function Hero(): React.ReactElement {
   }, [actualWidth, currentWidth, setNavOverlayOpen]);
 
   return (
-    <>
-      <FlexFullView
-        height={heightProp}
-        width="100%"
-        backgroundColor="off_white_bg"
-      >
+    <FlexFullView
+      height={heightProp}
+      width="100%"
+      backgroundColor="off_white_bg"
+    >
+      <WidthWrapper>
         <Flex
           flexDirection="column"
           justifyContent="center"
           width="100%"
           height="100%"
-          paddingX={["16px", "16px", "10vw", "10vw"]}
         >
           <Flex
             justifyContent="center"
@@ -132,7 +132,7 @@ export default function Hero(): React.ReactElement {
             </Flex>
           </Flex>
         </Flex>
-      </FlexFullView>
-    </>
+      </WidthWrapper>
+    </FlexFullView>
   );
 }
