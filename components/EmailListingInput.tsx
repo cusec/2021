@@ -103,53 +103,46 @@ export default function EmailListingInput(): ReactElement {
   };
 
   return (
-    <>
-      <InputGroup
-        size="md"
-        width="3in"
-        marginRight={["0px", "0px", "0px", "24px"]}
-        marginBottom={["16px", "16px", "16px", "0px"]}
-      >
-        <Input
-          type="email"
-          paddingRight="72px"
-          placeholder="Stay connected by email"
-          rounded="100px"
-          fontFamily="Inter"
-          fontSize="14px"
-          borderColor="#d3d3d3"
-          _hover={{}}
-          isDisabled={isDisabled}
-          value={emailValue}
-          onChange={handleInputChange}
-          isInvalid={hasBadSubmission && !hasValidEmail && emailValue !== ""}
-          errorBorderColor="red.300"
-        />
-        <InputRightElement width="64px" justifyContent="flex-end">
-          <Flex width="100%">
-            <IconButton
-              aria-label="Submit email address to join email listing"
-              icon={isSubmitted ? "check" : "arrow-forward"}
-              isRound={true}
-              backgroundColor="brand.blue"
-              color="white"
-              fontSize={isSubmitted ? "20px" : "24px"}
-              width="100%"
-              _hover={
-                isDisabled
-                  ? undefined
-                  : {
-                      backgroundColor: "brand.dark_teal",
-                    }
-              }
-              _active={{}}
-              onClick={handleSubmitClick}
-              isDisabled={isDisabled}
-              isLoading={isLoading}
-            />
-          </Flex>
-        </InputRightElement>
-      </InputGroup>
-    </>
+    <InputGroup size="md" width="3in">
+      <Input
+        type="email"
+        paddingRight="72px"
+        placeholder="Stay connected by email"
+        rounded="100px"
+        fontFamily="Inter"
+        fontSize="14px"
+        borderColor="#d3d3d3"
+        _hover={{}}
+        isDisabled={isDisabled}
+        value={emailValue}
+        onChange={handleInputChange}
+        isInvalid={hasBadSubmission && !hasValidEmail && emailValue !== ""}
+        errorBorderColor="red.300"
+      />
+      <InputRightElement width="64px" justifyContent="flex-end">
+        <Flex width="100%">
+          <IconButton
+            aria-label="Submit email address to join email listing"
+            icon={isSubmitted ? "check" : "arrow-forward"}
+            isRound={true}
+            backgroundColor="brand.blue"
+            color="white"
+            fontSize={isSubmitted ? "20px" : "24px"}
+            width="100%"
+            _hover={
+              isDisabled
+                ? undefined
+                : {
+                    backgroundColor: "brand.dark_teal",
+                  }
+            }
+            _active={{}}
+            onClick={handleSubmitClick}
+            isDisabled={isDisabled}
+            isLoading={isLoading}
+          />
+        </Flex>
+      </InputRightElement>
+    </InputGroup>
   );
 }

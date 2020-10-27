@@ -14,14 +14,14 @@ import {
   Box,
   Flex,
 } from "@chakra-ui/core";
-import {
-  GreyBackground,
-  LinkStyled,
-  TextStyled,
-  TextStyledBold,
-} from "@/components/StyledCore";
 import { FAQData as data } from "@/src/data";
 import { LocationHashEnum } from "@/src/enums";
+import { GreyBackground, WidthWrapper } from "@/components/core/Layout";
+import {
+  BodyPrimary,
+  HeadlinePrimary,
+  LinkPrimary,
+} from "@/components/core/Text";
 
 interface AccordionBoxParams {
   props: { question: string; answer: string };
@@ -47,8 +47,7 @@ function AccordionBox({
       background="white"
       borderWidth="1px"
       display="flex"
-      marginBottom={["1vw", "1vw", "1vw", "0.5vw"]}
-      maxWidth="95vw"
+      marginBottom="8px"
       rounded="8px"
       borderColor={shouldBeOpened ? "brand.teal" : "#e2e8f0"}
       shadow={shouldBeOpened ? "md" : "none"}
@@ -59,7 +58,11 @@ function AccordionBox({
         onChange={handleChange}
         isOpen={shouldBeOpened}
       >
-        <AccordionHeader _focus={{}} padding="12px 20px">
+        <AccordionHeader
+          _focus={{}}
+          padding="12px 20px"
+          borderRadius={shouldBeOpened ? "8px 8px 0px 0px" : "8px"}
+        >
           <Box
             flex="1"
             textAlign="left"
@@ -83,62 +86,57 @@ export default function FAQ(): ReactElement {
 
   return (
     <GreyBackground id={LocationHashEnum.FAQ}>
-      <Flex
-        direction="column"
-        paddingBottom={["0.2in", "0.2in", "0.3in", "0.3in"]}
-        paddingTop={["0.25in", "0.25in", "0.75in", "0.75in"]}
-        paddingX={["5vw", "5vw", "10vw", "10vw"]}
-      >
-        <TextStyledBold fontSize={["xl", "3xl"]}>
-          Frequently Asked Questions
-        </TextStyledBold>
-        <TextStyled>
-          Can&apos;t find an answer? Send us your question at{" "}
-          <LinkStyled color="brand.blue" href="mailto:info@cusec.net">
-            info@cusec.com
-          </LinkStyled>{" "}
-          and we’ll get back to you.
-        </TextStyled>
-        <Box
-          marginTop="0.25in"
-          paddingBottom={["0.25in", "0.25in", "0.75in", "0.75in"]}
+      <WidthWrapper>
+        <Flex
+          direction="column"
+          paddingY={["0.75in", "0.75in", "0.75in", "1in"]}
         >
-          <Flex direction={["column", "column", "column", "row"]}>
-            <Accordion
-              width={["100%", "100%", "100%", "50%"]}
-              marginRight={["0", "0", "0", "1vw"]}
-            >
-              {data
-                .map((faqItem, index) => (
-                  <AccordionBox
-                    props={faqItem}
-                    key={`${index}${faqItem.question}`}
-                    index={index}
-                    opened={opened}
-                    setOpened={setOpened}
-                  />
-                ))
-                .filter((_, index) => index % 2 === 0)}
-            </Accordion>
-            <Accordion
-              width={["100%", "100%", "100%", "50%"]}
-              marginLeft={["0", "0", "0", "1vw"]}
-            >
-              {data
-                .map((faqItem, index) => (
-                  <AccordionBox
-                    props={faqItem}
-                    key={`${index}${faqItem.question}`}
-                    index={index}
-                    opened={opened}
-                    setOpened={setOpened}
-                  />
-                ))
-                .filter((_, index) => index % 2 !== 0)}
-            </Accordion>
-          </Flex>
-        </Box>
-      </Flex>
+          <HeadlinePrimary>Frequently Asked Questions</HeadlinePrimary>
+          <BodyPrimary>
+            Can&apos;t find an answer? Send us your question at{" "}
+            <LinkPrimary href="mailto:info@cusec.net">
+              info@cusec.com
+            </LinkPrimary>{" "}
+            and we&apos;ll get back to you.
+          </BodyPrimary>
+          <Box marginTop="0.25in">
+            <Flex direction={["column", "column", "column", "row"]}>
+              <Accordion
+                width={["100%", "100%", "100%", "50%"]}
+                marginRight={["0", "0", "0", "16px"]}
+              >
+                {data
+                  .map((faqItem, index) => (
+                    <AccordionBox
+                      props={faqItem}
+                      key={`${index}${faqItem.question}`}
+                      index={index}
+                      opened={opened}
+                      setOpened={setOpened}
+                    />
+                  ))
+                  .filter((_, index) => index % 2 === 0)}
+              </Accordion>
+              <Accordion
+                width={["100%", "100%", "100%", "50%"]}
+                marginLeft={["0", "0", "0", "16px"]}
+              >
+                {data
+                  .map((faqItem, index) => (
+                    <AccordionBox
+                      props={faqItem}
+                      key={`${index}${faqItem.question}`}
+                      index={index}
+                      opened={opened}
+                      setOpened={setOpened}
+                    />
+                  ))
+                  .filter((_, index) => index % 2 !== 0)}
+              </Accordion>
+            </Flex>
+          </Box>
+        </Flex>
+      </WidthWrapper>
     </GreyBackground>
   );
 }

@@ -1,11 +1,13 @@
 import { ReactElement } from "react";
-import { Box, Flex, Grid, Text } from "@chakra-ui/core";
+import { Box, Flex, Grid } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
-import RegisterButton from "@/components/RegisterButton";
+import { ButtonPrimary } from "@/components/core/Button";
+import { WidthWrapper } from "@/components/core/Layout";
+import { HeadlinePrimary } from "@/components/core/Text";
 
 type PricingInfo = {
   title: string;
@@ -49,13 +51,6 @@ const translation = [0, 0, 0, "-80px"].map(
 );
 const cardMarginBottom = ["16px", "16px", "16px", 0];
 
-const Headline = styled(Text)`
-  font-family: "Metropolis", sans-serif;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-`;
-
 const StyledPricingBanner = styled(PricingBanner)`
   grid-area: ${monoGridArea};
   height: 125px;
@@ -84,48 +79,53 @@ export default function Pricing(): ReactElement {
         gridTemplateAreas={`"${monoGridArea}"`}
       >
         <StyledPricingBanner width="100%" preserveAspectRatio="none" />
-        <Headline fontSize={["xl", "3xl"]} gridArea={monoGridArea}>
-          Pricing Tiers
-        </Headline>
+        <HeadlinePrimary
+          gridArea={monoGridArea}
+          color="white"
+          margin="0px !important"
+        >
+          Ticket Pricing
+        </HeadlinePrimary>
       </Grid>
-      <Flex
-        paddingX={["5vw", "5vw", 0]}
-        direction={["column", "column", "column", "row"]}
-        transform={translation}
+      <WidthWrapper
         marginTop={["32px", "32px", "32px", 0]}
-        marginBottom={["0.4in", "0.4in", "0.4in", 0]}
-        align="center"
-        justify="center"
-      >
-        <Box
-          marginBottom={cardMarginBottom}
-          padding="4px"
-          boxShadow="md"
-          border={`1px solid ${theme.colors.grey_stroke}`}
-          borderRadius="8px"
-          background="white"
-        >
-          <PricingCard {...freeTierInfo} />
-        </Box>
-        <Box width="8%" />
-        <Box
-          marginBottom={cardMarginBottom}
-          padding="4px"
-          boxShadow="md"
-          borderRadius="12px"
-          background={`linear-gradient(to bottom right, ${theme.colors.brand.teal}, ${theme.colors.brand.dark_blue})`}
-        >
-          <PricingCard {...vipTierInfo} />
-        </Box>
-      </Flex>
-      <Flex
-        transform={translation}
         marginBottom={["0.8in", "0.8in", "0.8in", 0]}
-        marginTop={[0, 0, 0, "0.8in"]}
-        justify="center"
       >
-        <RegisterButton />
-      </Flex>
+        <Flex
+          direction={["column", "column", "column", "row"]}
+          transform={translation}
+          justify="center"
+          align={["center", "center", "center", "start"]}
+        >
+          <Box
+            marginBottom={cardMarginBottom}
+            padding="4px"
+            boxShadow="md"
+            border={`1px solid ${theme.colors.grey_stroke}`}
+            borderRadius="12px"
+            background="white"
+          >
+            <PricingCard {...freeTierInfo} />
+          </Box>
+          <Box width="8%" />
+          <Box
+            marginBottom={cardMarginBottom}
+            padding="4px"
+            boxShadow="md"
+            borderRadius="12px"
+            background={`linear-gradient(to bottom right, ${theme.colors.brand.teal}, ${theme.colors.brand.dark_blue})`}
+          >
+            <PricingCard {...vipTierInfo} />
+          </Box>
+        </Flex>
+        <Flex
+          transform={translation}
+          marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
+          justify="center"
+        >
+          <ButtonPrimary>Register</ButtonPrimary>
+        </Flex>
+      </WidthWrapper>
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import TopBar from "@/components/TopBar";
-import SplashScreen from "@/components/sections/SplashScreen";
+import Hero from "@/components/sections/Hero";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import About from "@/components/sections/About";
@@ -23,7 +23,7 @@ export default function Home(): React.ReactElement {
 
       <main>
         <TopBar />
-        <SplashScreen />
+        <Hero />
         <About />
         <SponsorAnExperience />
         <Sponsors />
@@ -41,10 +41,7 @@ export default function Home(): React.ReactElement {
           src: url("fonts/Metropolis-Bold.woff2") format("woff2"),
             url("fonts/Metropolis-Bold.woff") format("woff"),
             url("fonts/Metropolis-Bold.otf") format("otf"),
-            url("fonts/Metropolis-Bold.ttf") format("ttf");
-        }
-
-        :root {
+            url("fonts/Metropolis-Bold.ttf") format("truetype");
         }
 
         html,

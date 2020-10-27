@@ -1,50 +1,45 @@
-import { Flex } from "@chakra-ui/core";
+import { Box, Flex } from "@chakra-ui/core";
 import React, { ReactElement } from "react";
 import EmailListingInput from "@/components/EmailListingInput";
 import SocialShareSVG from "../svgs/undraw-social-share.svg";
-import { TextStyled, TextStyledBold } from "@/components/StyledCore";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
+import { WidthWrapper } from "@/components/core/Layout";
+import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 
 export default function Contact(): ReactElement {
   return (
-    <>
-      <Flex direction="row" align="center" justify="space-between">
-        <Flex
-          direction="column"
-          paddingBottom="0.3in"
-          paddingLeft={["5vw", "5vw", "10vw", "10vw"]}
-          paddingRight={["5vw", "5vw", "0", "0"]}
-          paddingTop={["0.5in", "0.5in", "0.75in", "0.75in"]}
-        >
-          <TextStyledBold fontSize={["xl", "3xl"]}>
-            Can&apos;t get enough of CUSEC?
-          </TextStyledBold>
-          <TextStyled paddingBottom={["0.15in", "0.15in", "0.3in", "0.3in"]}>
+    <WidthWrapper>
+      <Flex
+        direction="row"
+        align="center"
+        justify="space-between"
+        paddingY="0.75in"
+      >
+        <Flex direction="column">
+          <HeadlinePrimary>Can&apos;t get enough of CUSEC?</HeadlinePrimary>
+          <BodyPrimary paddingBottom="0.15in">
             Follow us on our socials. Get updates by signing up for our email
             listing.
-          </TextStyled>
+          </BodyPrimary>
           <Flex
             align="center"
             direction="row"
-            justify={["center", "flex-start", "flex-start", "flex-start"]}
+            justify={["center", "start", "start", "start"]}
           >
             <ColoredSocialIcons />
           </Flex>
           <Flex
-            justify={["center", "flex-start", "flex-start", "flex-start"]}
-            paddingTop={["0.3in", "0.3in", "0.35in", "0.35in"]}
+            justify={["center", "start", "start", "start"]}
+            marginTop={["0.3in", "0.3in", "0.35in", "0.35in"]}
+            marginBottom="24px"
           >
             <EmailListingInput />
           </Flex>
         </Flex>
-        <Flex
-          paddingY="0.5in"
-          paddingRight={["0", "0", "0", "10vw"]}
-          display={["none", "none", "none", "flex"]}
-        >
-          <SocialShareSVG />
-        </Flex>
+        <Box display={["none", "none", "none", "flex"]} width="420px">
+          <SocialShareSVG width="100%" height="100%" />
+        </Box>
       </Flex>
-    </>
+    </WidthWrapper>
   );
 }

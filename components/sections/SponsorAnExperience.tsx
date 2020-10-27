@@ -1,50 +1,44 @@
 import { ReactElement } from "react";
-import { Box, Button, Flex, Link } from "@chakra-ui/core";
-import theme from "@/src/theme";
-import { TextStyled, TextStyledBold } from "@/components/StyledCore";
+import { Box, Flex } from "@chakra-ui/core";
 import BuildingBlocksSVG from "../svgs/undraw-building-blocks.svg";
+import { ButtonPrimaryVariant } from "@/components/core/Button";
+import { WidthWrapper } from "@/components/core/Layout";
+import {
+  BodyPrimary,
+  HeadlinePrimary,
+  LinkPrimaryVariant,
+} from "@/components/core/Text";
+import theme from "@/src/theme";
 
 export default function SponsorAnExperience(): ReactElement {
   return (
-    <>
-      <Box background="linear-gradient(to bottom right, #0A2540, #214C6F)">
+    <Box
+      background={`linear-gradient(to bottom right, ${theme.colors.bg_gradient_dark}, ${theme.colors.bg_gradient_light})`}
+    >
+      <WidthWrapper>
         <Flex
           direction={["column", "column", "column", "row"]}
-          paddingX={["5vw", "5vw", "10vw", "10vw"]}
-          paddingY="0.5in"
+          paddingY="0.75in"
           justify="space-between"
           align={["start", "start", "start", "center"]}
         >
-          <Box color="white" width="100%">
-            <TextStyledBold fontSize={["xl", "3xl"]}>
-              Sponsor an experience
-            </TextStyledBold>
-            <TextStyled marginTop="0.2in">
+          <Box color="white" width={["100%", "100%", "100%", "60%"]}>
+            <HeadlinePrimary>Sponsor an experience</HeadlinePrimary>
+            <BodyPrimary>
               We are able to offer a conference like CUSEC thanks to our amazing
               sponsors.
-            </TextStyled>
-            <TextStyled>
+            </BodyPrimary>
+            <BodyPrimary>
               Interested in sponsoring? Please email us at{" "}
-              <Link href="mailto:sponsor@cusec.net" fontWeight="bold">
+              <LinkPrimaryVariant href="mailto:sponsor@cusec.net">
                 sponsor@cusec.net
-              </Link>
+              </LinkPrimaryVariant>
               .
-            </TextStyled>
+            </BodyPrimary>
             <Flex justify={["center", "center", "center", "start"]}>
-              <Button
-                marginTop="0.2in"
-                height="42px"
-                paddingX="42px"
-                rounded="9999px"
-                fontFamily="Metropolis, sans-serif"
-                fontSize="16px"
-                fontWeight="bold"
-                bg="brand.dark_teal"
-                color="white"
-                _hover={{ background: theme.colors.brand.teal }}
-              >
+              <ButtonPrimaryVariant marginTop="0.2in">
                 Become a sponsor
-              </Button>
+              </ButtonPrimaryVariant>
             </Flex>
           </Box>
           <Flex width={["100%", "100%", "100%", "40%"]} justify="center">
@@ -57,7 +51,7 @@ export default function SponsorAnExperience(): ReactElement {
             </Box>
           </Flex>
         </Flex>
-      </Box>
-    </>
+      </WidthWrapper>
+    </Box>
   );
 }
