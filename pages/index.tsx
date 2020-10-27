@@ -7,6 +7,8 @@ import About from "@/components/sections/About";
 import React from "react";
 import Contact from "@/components/sections/Contact";
 import Sponsors from "@/components/sections/Sponsors";
+import Pricing from "@/components/sections/Pricing";
+import SponsorAnExperience from "@/components/sections/SponsorAnExperience";
 
 export default function Home(): React.ReactElement {
   return (
@@ -23,7 +25,9 @@ export default function Home(): React.ReactElement {
         <TopBar />
         <SplashScreen />
         <About />
+        <SponsorAnExperience />
         <Sponsors />
+        <Pricing />
         <FAQ />
         <Contact />
         <Footer />
