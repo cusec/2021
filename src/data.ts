@@ -1,31 +1,131 @@
-export const FAQData: { question: string; answer: string }[] = [
+export const FAQData: { question: string; answer: string[] }[] = [
   {
     question: "Why is the conference online?",
-    answer:
-      "Due to the COVID-19 pandemic. The health and safety of our attendees is our utmost priority. We will continue to monitor the situation and provide updates on our website and social media if ever there are any changes.",
+    answer: [
+      "Due to the COVID-19 pandemic. The health and safety of our attendees is our utmost priority.",
+      "We will continue to monitor the situation and provide updates on our website and social media if ever there are any changes.",
+    ],
   },
   {
-    question: "When and Where is CUSEC Happening?",
-    answer:
+    question: "When and where is CUSEC Happening?",
+    answer: [
       "CUSEC 2021 will be held during the weekend of January 9 & 10 online.",
+    ],
   },
   {
     question: "How will the conference work when it is virtual?",
-    answer: "The conference will be hosted on the platform Hopin!",
+    answer: ["The conference will be hosted on the platform Hopin!"],
   },
   {
     question: "Where can I find the conference schedule, speakers & sponsors?",
-    answer:
-      "The schedule will be available on the website soon along with our list of speakers and sponsors! We are working around the clock to create the best conference experience for you, promised. ",
+    answer: [
+      "The schedule will be available on the website soon along with our list of speakers and sponsors!",
+      "We are working around the clock to create the best conference experience for you, promised. ",
+    ],
   },
   {
     question: "How can I get a ticket?",
-    answer: "The online conference will be free of charge this year!",
+    answer: [
+      "The online conference will be free of charge this year! ",
+      "You will have access to all talks from speakers, networking in a virtual career fair with sponsors, social events, workshops hosted by sponsors, and more!",
+    ],
+  },
+  {
+    question: "What is the VIP ticket?",
+    answer: [
+      "With a VIP ticket, you will have all the perks of the free ticket as well as CUSEC 2021 merchandise, exclusive and priority networking, access to a private communication platform with the sponsors and speakers, Q&A events at the end of each night with speakers and sponsors!",
+    ],
+  },
+  {
+    question: "Why do I need to register if it's a free conference?",
+    answer: [
+      "By registering, we will collect your resumes and forward them to our sponsors and you will receive the link to sign up for the virtual conference on Hoping.",
+    ],
+  },
+  {
+    question: "How will CUSEC be delivered this year?",
+    answer: [
+      "CUSEC 2021 will be delivered through an online platform known as Hopin. Hopin was founded in 2019 by Johnny Boufarhat in London, United Kingdom. The platform began as a simple networking tool for matching people one-on-one but rapidly grew into a full-conference online events platform with Sessions, Stages, Expos, and more.",
+      "Today, Hopin is the first all-in-one live online events platform where attendees can learn, interact, and connect with people from anywhere in the world. Whether it’s a meetup of 100 people or a full-scale multi-track conference of 100,000 participants, Hopin’s a live video platform makes online events more personal and engaging.",
+      "Hopin is designed to replicate an in-person event experience, only without the barriers of travel, venues, weather, awkward wandering, parking, and so on. With Hopin, businesses, communities, and organizations can reach their global audiences, gather in one place, and make an enormous online event feel small again.",
+    ],
+  },
+  {
+    question: "How is Hopin different from a webinar?",
+    answer: [
+      "At a webinar, only a few people talk. Everybody else listens. Passively. When one person talks for an hour, and 50 or so people are on mute, it feels a little one-sided, not like an interactive event.",
+      "Bystander effect takes place — everybody starts to think the other people on the call will volunteer to speak up.",
+      "Webinars and video conferencing encourage you to hit mute, surf the web, and go on Twitter. If you’re an event organizer, or professor, or speaker, you know this is a frustrating problem. You want people to be engaged.",
+      "It’s nice that people can join a webinar from home, but if they’re non-participatory and bored, it’s not really an effective initiative. The way to solve the disengagement problem with webinars and large video-conferencing events is to put people — building connections — at the center of it.",
+      "This is exactly how they built Hopin. Hopin is people-centric, not PowerPoint-centric.",
+    ],
+  },
+  {
+    question: "How does Hopin work? (career fair, networking, events, etc.)",
+    answer: [
+      "Hopin’s platform structure is designed to recreate the in-person event experience.",
+      "There are 5 main areas on the platform:",
+      "Reception",
+      "The reception is the welcome area where you will start as an attendee when the event is live. You will see a welcome message and information about Cusec and the event in general.",
+      "Stage",
+      "The Stage is an event-wide virtual stage. This is where you will see presentations and keynotes with other attendees. You will be able to see live broadcasts and some pre-recorded content here. This will replicate the real conference experience.",
+      "Sessions",
+      "Sessions promote real-time live interactions. They replicate the round tables, rooms and panels experience. Up to 20 attendees can be on one screen with hundreds of attendees watching and chatting. There is no limit to the amount of sessions that can run at the same time, it's a perfect place for round tables, group talks, and project-related discussions.",
+      "Networking",
+      "Networking allows to get to know people at CUSEC! Expand your network with ticket type-based matching and have engaging 1:1 meetings to connect with other students. This area will be used for speed networking and a microphone/webcam is recommended. Those with a VIP ticket will get priority networking in this area.",
+      "Expo",
+      "The Expo area will be used for our virtual career fair. Attendees can “walk around” to visit the booths that interest them and interact with the sponsors. Each booth at will have commercials, branded content, special offers, and some representatives on live camera.",
+    ],
+  },
+  {
+    question: "Can I use Hopin on mobile?",
+    answer: [
+      "The events that run on Hopin platform also can be accessed by Attendees and have some limited compatibility for Speakers and Organizers.",
+      "There is no dedicated app for desktops or mobiles on the Stores, no downloads are required.",
+    ],
+  },
+  {
+    question: "How much tickets cost and where do you get from them?",
+    answer: [
+      "CUSEC will be offering two ticket tiers this year.",
+      "The free tier will include access to all of our talks, events and networking sessions on Hopin.",
+      "VIP tickets are available for $25 CAD that offer extra benefits and exclusive CUSEC 2021 merch.",
+      "You can register for CUSEC on our website.",
+    ],
+  },
+  {
+    question: "What is included in a ticket?",
+    answer: [
+      "The Free ticket gives you access to the full conference.",
+      "The VIP ticket gives you extra benefits like priority networking, VIP exclusive events and CUSEC 2021 merchandise.",
+    ],
+  },
+  {
+    question: "Is there swag this year?",
+    answer: [
+      "A digital swag bag with goodies from our sponsors will be available to all our attendees this year.",
+      "Exclusive CUSEC 2021 merchandise will be available to those with VIP tickets, but we will have amazing prizes to give out at our events if you have a free ticket.",
+    ],
+  },
+  {
+    question: "How long do ticket sales last?",
+    answer: [
+      "Ticket sales for VIP tickets will end earlier so we can make sure you get your merchandise in time for the conference.",
+      "Free ticket sales will run until January.",
+    ],
+  },
+  {
+    question: "Can I get a refund if I can't go anymore?",
+    answer: [
+      "Your ticket sales revenue is deposited into your Stripe account 3-7 days after the sale occurs.",
+      "Hopin does not cover Stripe’s payment processing fee.",
+    ],
   },
   {
     question: "Who can attend?",
-    answer:
+    answer: [
       "High school, undergraduate and graduate students from all across Canada are all welcome to attend.",
+    ],
   },
 ];
 
@@ -57,7 +157,7 @@ export const codeOfConductText: {
       "• Trolling, insulting/derogatory comments, public or private harassment.",
       "• Publishing others' private information, such as a physical or electronic address, without explicit permission.",
       "• Not being respectful to reasonable communication boundaries, such as 'leave me alone,' 'go away,' or 'I’m not discussing this with you.'",
-      "• The usage of sexualised language or imagery and unwelcome sexual attention or advances.",
+      "• The usage of sexualized language or imagery and unwelcome sexual attention or advances.",
       "• Swearing, usage of strong or disturbing language.",
       "• Demonstrating the graphics or any other content you know may be considered disturbing.",
       "• Starting and/or participating in arguments related to politics.",
