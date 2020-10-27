@@ -93,10 +93,7 @@ export default function Hero(): React.ReactElement {
               <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
                 Canadian University Software Engineering Conference
               </Headline>
-              <Flex
-                justify={["center", "center", "center", "left"]}
-                marginBottom="16px"
-              >
+              <Flex justify={["center", "center", "center", "left"]}>
                 <BodyPrimary>January 9 - 10, 2021</BodyPrimary>
                 <Text marginX="10px" height="24px">
                   {"\u2022"}

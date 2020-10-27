@@ -156,7 +156,9 @@ export default function About(): React.ReactElement {
                         <Icon width="32px" height="32px" />
                       </Box>
                     </Flex>
-                    <BodyPrimary>{description}</BodyPrimary>
+                    <BodyPrimary marginBottom="0 !important">
+                      {description}
+                    </BodyPrimary>
                   </Flex>
                 </Flex>
               </Box>
