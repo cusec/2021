@@ -144,6 +144,10 @@ export const attributionsText: {
     title: "Privacy Policy",
     paragraph: ["Privacy Policy created with GetTerms."],
   },
+  {
+    title: "Terms of Use",
+    paragraph: ["Terms of Use created with GetTerms."],
+  },
 ];
 
 export const codeOfConductText: {
@@ -226,11 +230,11 @@ export const termsOfService: {
     title: "2. Use License",
     paragraph: [
       "Permission is granted to temporarily download one copy of the materials (information or software) on CUSEC's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:",
-      "modify or copy the materials;",
-      "use the materials for any commercial purpose, or for any public display (commercial or non-commercial);",
-      "attempt to decompile or reverse engineer any software contained on CUSEC's website;",
-      "remove any copyright or other proprietary notations from the materials; or",
-      'transfer the materials to another person or "mirror" the materials on any other server.',
+      "• modify or copy the materials;",
+      "• use the materials for any commercial purpose, or for any public display (commercial or non-commercial);",
+      "• attempt to decompile or reverse engineer any software contained on CUSEC's website;",
+      "• remove any copyright or other proprietary notations from the materials; or",
+      '• transfer the materials to another person or "mirror" the materials on any other server.',
       "This license shall automatically terminate if you violate any of these restrictions and may be terminated by CUSEC at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.",
     ],
   },
@@ -270,9 +274,5 @@ export const termsOfService: {
     paragraph: [
       "These terms and conditions are governed by and construed in accordance with the laws of Quebec, CA and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.",
     ],
-  },
-  {
-    title: "",
-    paragraph: ["Terms of Use created with GetTerms."],
   },
 ];

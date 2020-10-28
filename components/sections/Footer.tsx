@@ -9,6 +9,7 @@ import {
   attributionsText,
   codeOfConductText,
   privacyPolicyText,
+  termsOfService,
 } from "@/src/data";
 import { WidthWrapper } from "@/components/core/Layout";
 
@@ -41,19 +42,14 @@ export default function Footer(): ReactElement {
             ]}
           >
             <Flex
-              alignItems="center"
+              alignItems="baseline"
               justifyContent="center"
               paddingBottom={["0", "0", "0.15in", "0.15in"]}
               paddingTop="0.15in"
             >
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                href="mailto:info@cusec.net"
-              >
-                Contact CUSEC
-              </FooterLink>
+              <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
+                &copy; CUSEC 2021
+              </FooterText>
               <FooterLink
                 _focus={{}}
                 _hover={{}}
@@ -72,14 +68,11 @@ export default function Footer(): ReactElement {
               <Logo style={{ height: "24px", width: "auto" }} />
             </Flex>
             <Flex
-              alignItems="center"
+              alignItems="baseline"
               justifyContent="center"
               paddingBottom="0.15in"
               paddingTop={["0", "0", "0.15in", "0.15in"]}
             >
-              <FooterText fontSize={["xs", "xs", "xs", "sm"]}>
-                &copy; CUSEC 2021
-              </FooterText>
               <FooterModal
                 linkBody="Code of Conduct"
                 modalBody={codeOfConductText}
@@ -88,6 +81,7 @@ export default function Footer(): ReactElement {
                 linkBody="Privacy Policy"
                 modalBody={privacyPolicyText}
               />
+              <FooterModal linkBody="Terms of Use" modalBody={termsOfService} />
             </Flex>
           </Flex>
         </BaseContainer>
