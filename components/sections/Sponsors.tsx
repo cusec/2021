@@ -1,13 +1,44 @@
-import { Flex } from "@chakra-ui/core";
 import { ReactElement } from "react";
+import styled from "@emotion/styled";
+import { Flex, Grid, Image } from "@chakra-ui/core";
 import { LocationHashEnum } from "@/src/enums";
 import { WidthWrapper } from "@/components/core/Layout";
-import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
+import { BodyPrimary, Headline, HeadlinePrimary } from "@/components/core/Text";
+
+const imgPath = "/images";
+
+const SponsorImage = styled(Image)`
+  user-select: none;
+  margin-top: 32px;
+  margin-bottom: 32px;
+`;
+
+const wideGrid = [
+  `. rbc rbc rbc rbc .`,
+  `. kinaxis kinaxis kinaxis kinaxis .`,
+  `. morgan morgan morgan morgan .`,
+  `. amazon amazon ssense ssense .`,
+  `voiceflow one-pass fellow fellow balsamiq egghead`,
+]
+  .map((row) => `"${row}"`)
+  .join(" ");
+
+const thinGrid = [
+  `rbc rbc rbc`,
+  `kinaxis kinaxis kinaxis`,
+  `morgan morgan morgan`,
+  `amazon . ssense`,
+  `fellow . balsamiq`,
+  `voiceflow . one-pass`,
+  `. egghead .`,
+]
+  .map((row) => `"${row}"`)
+  .join(" ");
 
 export default function Sponsors(): ReactElement {
   return (
     <div id={LocationHashEnum.Sponsors}>
-      <WidthWrapper height="1000px">
+      <WidthWrapper>
         <Flex
           direction="column"
           paddingTop={["1in", "1in", "1in", "1.25in"]}
@@ -19,6 +50,76 @@ export default function Sponsors(): ReactElement {
           <BodyPrimary>
             Meet the sponsors who are making CUSEC 2021 a reality.
           </BodyPrimary>
+          <Grid
+            width="100%"
+            gridTemplateColumns={[
+              "repeat(3, 1fr)",
+              "repeat(3, 1fr)",
+              "repeat(6, 1fr)",
+            ]}
+            gridTemplateAreas={[thinGrid, thinGrid, wideGrid]}
+            justifyItems="center"
+            alignItems="center"
+          >
+            <SponsorImage
+              src={`${imgPath}/Royal_Bank_of_Canada-Logo.wine.svg`}
+              gridArea="rbc"
+              width={["30%", "30%", "25%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/Kinaxis-Logo.svg`}
+              gridArea="kinaxis"
+              width={["50%", "50%", "40%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/Morgan_Stanley-Logo.svg`}
+              gridArea="morgan"
+              width={["50%", "50%", "40%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/Amazon_logo.svg`}
+              gridArea="amazon"
+              width={["80%", "80%", "40%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/Ssense_logo.svg`}
+              gridArea="ssense"
+              width={["80%", "80%", "40%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/voiceflow-Logo.png`}
+              gridArea="voiceflow"
+              width={["80%", "60%", "50%"]}
+              minWidth="60px"
+            />
+            <SponsorImage
+              src={`${imgPath}/1password-logo.svg`}
+              gridArea="one-pass"
+              width={["80%", "60%", "50%"]}
+              minWidth="60px"
+            />
+            <SponsorImage
+              src={`${imgPath}/fellow-wordmark.svg`}
+              gridArea="fellow"
+              width={["80%", "60%", "25%"]}
+              minWidth="60px"
+            />
+            <SponsorImage
+              src={`${imgPath}/balsamiq-logo-noborder-screen.svg`}
+              gridArea="balsamiq"
+              width={["80%", "60%", "50%"]}
+              minWidth="60px"
+            />
+            <SponsorImage
+              src={`${imgPath}/egghead-Logo.svg`}
+              gridArea="egghead"
+              width={["80%", "60%", "50%"]}
+              minWidth="60px"
+            />
+          </Grid>
+          <Headline marginTop="0.6in" marginBottom="1in">
+            Stay tuned for more!
+          </Headline>
         </Flex>
       </WidthWrapper>
     </div>
