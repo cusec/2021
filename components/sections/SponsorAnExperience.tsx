@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Box, Flex } from "@chakra-ui/core";
+import { Box, Flex, Link } from "@chakra-ui/core";
 import BuildingBlocksSVG from "../svgs/undraw-building-blocks.svg";
 import { ButtonPrimaryVariant } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
@@ -36,9 +36,11 @@ export default function SponsorAnExperience(): ReactElement {
               .
             </BodyPrimary>
             <Flex justify={["center", "center", "center", "start"]}>
-              <ButtonPrimaryVariant marginTop="0.2in">
-                Become a sponsor
-              </ButtonPrimaryVariant>
+              <Link href="mailto:sponsor@cusec.net">
+                <ButtonPrimaryVariant marginTop="0.2in">
+                  Become a sponsor
+                </ButtonPrimaryVariant>
+              </Link>
             </Flex>
           </Box>
           <Flex width={["100%", "100%", "100%", "40%"]} justify="center">
