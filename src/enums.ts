@@ -1,6 +1,6 @@
 export enum LocationHashEnum {
   About = "about",
-  Sponsors = "sponsors",
+  Sponsors = "backers",
   Pricing = "pricing",
   FAQ = "faq",
 }
