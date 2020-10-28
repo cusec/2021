@@ -1,9 +1,5 @@
 name: format-and-lint
-
-on:
-  pull_request:
-    branches:
-      - develop
+on: pull_request
 
 jobs:
   linting:
