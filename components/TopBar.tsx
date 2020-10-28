@@ -21,7 +21,6 @@ const VerticalBar = styled.div`
 `;
 
 export const NavBarLink = styled(Body)`
-  margin-right: 32px;
   position: relative;
 
   &:after {
@@ -126,6 +125,7 @@ export default function TopBar(): React.ReactElement {
                     key={location.href}
                     offset={getComponentHeight}
                     href={location.href}
+                    style={{ marginRight: "32px", outline: "none" }}
                   >
                     <NavBarLink>{location.label}</NavBarLink>
                   </AnchorLink>
