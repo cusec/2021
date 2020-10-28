@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Divider, Flex } from "@chakra-ui/core";
+import { Box, Divider, Flex, Grid } from "@chakra-ui/core";
 import React, { Fragment } from "react";
 import MapleLeafs from "../svgs/maple-leafs.svg";
 import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";
@@ -47,6 +47,9 @@ const experienceCUSECData = [
     Icon: BuildYourNetwork,
   },
 ];
+
+const gridBox = `"0 1" "2 3"`;
+const gridColumn = `"0" "1" "2" "3"`;
 
 export default function About(): React.ReactElement {
   return (
@@ -120,20 +123,41 @@ export default function About(): React.ReactElement {
           <Flex justifyContent="center" textAlign="center" marginBottom="32px">
             <HeadlinePrimary>Ways to experience CUSEC</HeadlinePrimary>
           </Flex>
-          <Flex
-            align={["center", "center", "center", "stretch"]}
-            direction={["column", "column", "column", "row"]}
-            wrap="wrap"
-            justify="center"
+          <Grid
+            width="100%"
+            gridTemplateColumns={[
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(2, 1fr)",
+            ]}
+            gridTemplateAreas={[
+              gridColumn,
+              gridColumn,
+              gridColumn,
+              gridColumn,
+              gridBox,
+            ]}
+            alignItems="center"
           >
-            {experienceCUSECData.map(({ header, description, Icon }) => (
+            {experienceCUSECData.map(({ header, description, Icon }, index) => (
               <Box
                 key={header}
+                gridArea={index}
+                justifySelf={[
+                  "center",
+                  "center",
+                  "center",
+                  "center",
+                  index % 2 === 0 ? "flex-end" : "flex-start",
+                ]}
                 borderWidth="1px"
                 boxShadow="md"
-                marginX={[0, 0, 0, "1rem"]}
+                marginRight={[0, 0, 0, 0, index % 2 === 0 ? "1rem" : 0]}
+                marginLeft={[0, 0, 0, 0, index % 2 === 1 ? "1rem" : 0]}
                 marginBottom={["1rem", "1.5rem", "2rem"]}
-                maxWidth="600px"
+                maxWidth="700px"
                 rounded="lg"
               >
                 <Flex
@@ -142,8 +166,12 @@ export default function About(): React.ReactElement {
                   minHeight={[0, 0, "140px"]}
                   justify="center"
                 >
-                  <Box display={["none", "none", "flex"]} marginLeft="1rem">
-                    <Icon height="80px" />
+                  <Box
+                    display={["none", "none", "flex"]}
+                    marginLeft="1.5rem"
+                    marginRight="8px"
+                  >
+                    <Icon height="72px" width="72px" />
                   </Box>
                   <Flex direction="column" height="100%" padding="1rem">
                     <Flex
@@ -163,7 +191,7 @@ export default function About(): React.ReactElement {
                 </Flex>
               </Box>
             ))}
-          </Flex>
+          </Grid>
         </Flex>
       </WidthWrapper>
     </div>
