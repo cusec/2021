@@ -5,7 +5,6 @@ import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
-import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 import { HeadlinePrimary } from "@/components/core/Text";
 
@@ -117,13 +116,6 @@ export default function Pricing(): ReactElement {
           >
             <PricingCard {...vipTierInfo} />
           </Box>
-        </Flex>
-        <Flex
-          transform={translation}
-          marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
-          justify="center"
-        >
-          <ButtonPrimary>Register</ButtonPrimary>
         </Flex>
       </WidthWrapper>
     </Box>
