@@ -15,10 +15,10 @@ const SponsorImage = styled(Image)`
 
 const wideGrid = [
   `. rbc rbc rbc rbc .`,
-  `. kinaxis kinaxis kinaxis kinaxis .`,
-  `. morgan morgan morgan morgan .`,
+  `. kinaxis kinaxis morgan morgan .`,
   `. amazon amazon ssense ssense .`,
-  `voiceflow one-pass fellow fellow balsamiq egghead`,
+  `. fellow fellow balsamiq balsamiq .`,
+  `. voiceflow one-pass one-pass egghead .`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -69,52 +69,54 @@ export default function Sponsors(): ReactElement {
             <SponsorImage
               src={`${imgPath}/Kinaxis-Logo.svg`}
               gridArea="kinaxis"
-              width={["50%", "50%", "40%"]}
+              width={["50%", "50%", "80%"]}
             />
             <SponsorImage
               src={`${imgPath}/Morgan_Stanley-Logo.svg`}
               gridArea="morgan"
-              width={["50%", "50%", "40%"]}
+              width={["50%", "50%", "80%"]}
             />
             <SponsorImage
               src={`${imgPath}/Amazon_logo.svg`}
               gridArea="amazon"
-              width={["80%", "80%", "40%"]}
+              width={["80%", "80%", "45%"]}
+              minWidth="100px"
             />
             <SponsorImage
               src={`${imgPath}/Ssense_logo.svg`}
               gridArea="ssense"
-              width={["80%", "80%", "40%"]}
-            />
-            <SponsorImage
-              src={`${imgPath}/voiceflow-Logo.png`}
-              gridArea="voiceflow"
-              width={["80%", "60%", "50%"]}
-              minWidth="60px"
-            />
-            <SponsorImage
-              src={`${imgPath}/1password-logo.svg`}
-              gridArea="one-pass"
-              width={["80%", "60%", "50%"]}
-              minWidth="60px"
+              width={["80%", "80%", "45%"]}
+              minWidth="100px"
             />
             <SponsorImage
               src={`${imgPath}/fellow-wordmark.svg`}
               gridArea="fellow"
-              width={["80%", "60%", "25%"]}
-              minWidth="60px"
+              width={["80%", "60%", "30%"]}
+              minWidth="90px"
             />
             <SponsorImage
               src={`${imgPath}/balsamiq-logo-noborder-screen.svg`}
               gridArea="balsamiq"
-              width={["80%", "60%", "50%"]}
-              minWidth="60px"
+              width={["80%", "60%", "30%"]}
+              minWidth="90px"
+            />
+            <SponsorImage
+              src={`${imgPath}/voiceflow-Logo.png`}
+              gridArea="voiceflow"
+              width={["60%", "60%", "50%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/1password-logo.svg`}
+              gridArea="one-pass"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
             />
             <SponsorImage
               src={`${imgPath}/egghead-Logo.svg`}
               gridArea="egghead"
-              width={["80%", "60%", "50%"]}
-              minWidth="60px"
+              width={["60%", "60%", "50%"]}
+              minWidth="72px"
             />
           </Grid>
           <Headline marginTop="0.6in" marginBottom="1in">
