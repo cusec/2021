@@ -62,9 +62,10 @@ export default function About(): React.ReactElement {
               Annual Software Engineering Conference
             </HeadlinePrimary>
             <BodyPrimary>
-              Join thousands of students from across Canada for a weekend full of interactive 
-              knowledge sharing, mentoring, career opportunities and more as we explore the endless 
-              possibilities of the future of tech.
+              Join thousands of students from across Canada for a weekend full
+              of interactive knowledge sharing, mentoring, career opportunities
+              and more as we explore the endless possibilities of the future of
+              tech.
             </BodyPrimary>
             <BodyPrimary>
               CUSEC is an annual software engineering conference organized for
