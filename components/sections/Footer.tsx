@@ -5,7 +5,11 @@ import { Flex, Text } from "@chakra-ui/core";
 import { GreyBackground } from "@/components/core/Layout";
 import { FooterLink } from "@/components/StyledCore";
 import FooterModal from "@/components/FooterModal";
-import { codeOfConductText, privacyPolicyText } from "@/src/data";
+import {
+  attributionsText,
+  codeOfConductText,
+  privacyPolicyText,
+} from "@/src/data";
 import { WidthWrapper } from "@/components/core/Layout";
 
 const BaseContainer = styled(WidthWrapper)`
@@ -59,14 +63,10 @@ export default function Footer(): ReactElement {
               >
                 Open Source
               </FooterLink>
-              <FooterLink
-                _focus={{}}
-                _hover={{}}
-                fontSize={["xs", "xs", "xs", "sm"]}
-                isExternal
-              >
-                Attributions
-              </FooterLink>
+              <FooterModal
+                linkBody="Attributions"
+                modalBody={attributionsText}
+              />
             </Flex>
             <Flex alignItems="center" justifyContent="center" paddingY="0.1in">
               <Logo style={{ height: "24px", width: "auto" }} />

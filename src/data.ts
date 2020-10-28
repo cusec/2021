@@ -129,6 +129,23 @@ export const FAQData: { question: string; answer: string[] }[] = [
   },
 ];
 
+export const attributionsText: {
+  paragraph: string[];
+  title: string;
+}[] = [
+  { title: "Icons", paragraph: ["Icons from https://www.flaticon.com/"] },
+  {
+    title: "Code of Conduct",
+    paragraph: [
+      "Code of Conduct is adapted from https://dev.to/code-of-conduct",
+    ],
+  },
+  {
+    title: "Privacy Policy",
+    paragraph: ["Privacy Policy created with GetTerms."],
+  },
+];
+
 export const codeOfConductText: {
   paragraph: string[];
   title: string;
@@ -174,12 +191,6 @@ export const codeOfConductText: {
       "Further details of specific enforcement policies may be posted separately. We hold the right and responsibility to remove comments or other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any members for other behaviours that they deem inappropriate, threatening, offensive, or harmful.",
     ],
   },
-  {
-    title: "Attribution",
-    paragraph: [
-      "This Code of Conduct is adapted from https://dev.to/code-of-conduct.",
-    ],
-  },
 ];
 
 export const privacyPolicyText: {
@@ -197,7 +208,6 @@ export const privacyPolicyText: {
       "You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.",
       "Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.",
       "This policy is effective as of 15 September 2020.",
-      "Privacy Policy created with GetTerms.",
     ],
   },
 ];
