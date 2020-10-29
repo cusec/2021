@@ -22,7 +22,7 @@ const freeTierInfo: PricingInfo = {
   description: "Get a complete experience.",
   benefits: [
     "Access to our virtual conference platform Hopin",
-    "All talks from our leading industry speakers",
+    "Talks from our leading industry speakers",
     "Networking in our virtual career fair with the sponsors",
     "Workshops hosted by our sponsors",
     "Social events",
