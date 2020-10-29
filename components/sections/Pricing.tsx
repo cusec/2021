@@ -20,11 +20,11 @@ const freeTierInfo: PricingInfo = {
   price: "$0",
   description: "Get a complete experience.",
   benefits: [
-    "Access to our virtual conference platform Hopin.to",
-    "All talks from speakers",
+    "Access to our virtual conference platform Hopin",
+    "Talks from our leading industry speakers",
     "Networking in our virtual career fair with the sponsors",
-    "Social events",
     "Workshops hosted by our sponsors",
+    "Social events",
     "And more to come!",
   ],
 };
@@ -34,11 +34,11 @@ const vipTierInfo: PricingInfo = {
   price: "$25",
   description: "Get an exclusive experience.",
   benefits: [
-    "All free tier benefits",
-    "CUSEC 2021 merch",
-    "Exclusive and priority networking",
-    "Access to a private VIP communication platform with the sponsors and speakers",
-    "VIP Q&A events at the end of each night with speakers and sponsors",
+    "All Free tier benefits",
+    "Exclusive CUSEC 2021 swag",
+    "Priority networking",
+    "Access to a private VIP communication platform with sponsors and speakers",
+    "VIP Q&A sessions with speakers and sponsors",
     "And more to come!",
   ],
 };
