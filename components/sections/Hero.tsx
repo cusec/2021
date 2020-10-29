@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Flex, Text } from "@chakra-ui/core";
+import { Box, Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -11,8 +11,8 @@ import {
   Headline,
   LinkPrimary,
 } from "@/components/core/Text";
-import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
+import EmailListingInput from "@/components/EmailListingInput";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -93,10 +93,7 @@ export default function Hero(): React.ReactElement {
               <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
                 Canadian University Software Engineering Conference
               </Headline>
-              <Flex
-                justify={["center", "center", "center", "left"]}
-                marginBottom="16px"
-              >
+              <Flex justify={["center", "center", "center", "left"]}>
                 <BodyPrimary>January 9 - 10, 2021</BodyPrimary>
                 <Text marginX="10px" height="24px">
                   {"\u2022"}
@@ -109,12 +106,12 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <ButtonPrimary
+                <Box
                   marginRight={[0, 0, 0, "2rem"]}
                   marginBottom={["1rem", "1rem", "1rem", 0]}
                 >
-                  Register
-                </ButtonPrimary>
+                  <EmailListingInput />
+                </Box>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>

@@ -75,7 +75,7 @@ function AccordionBox({
           </Box>
           <AccordionIcon />
         </AccordionHeader>
-        <AccordionPanel padding="8px 20px 20px 20px">
+        <AccordionPanel padding="8px 20px 0px 20px">
           {item.answer.map((paragraph) => (
             <Fragment key={paragraph}>
               {paragraph.trim().indexOf(" ") === -1 ? (

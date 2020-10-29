@@ -9,10 +9,10 @@ export const FooterLink = styled(Link)`
   position: relative;
 
   &:after {
-    background: ${theme.colors.brand.dark_teal};
+    background: ${theme.colors.brand.teal};
     bottom: 0;
     content: "";
-    height: 2px;
+    height: 4px;
     left: 0;
     opacity: 0;
     position: absolute;
