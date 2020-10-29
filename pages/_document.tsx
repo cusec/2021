@@ -1,29 +1,27 @@
 import Document, {
   DocumentContext,
-  Html,
   Head,
+  Html,
   Main,
   NextScript,
+  DocumentInitialProps,
 } from "next/document";
+import { ReactElement } from "react";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
+    return await Document.getInitialProps(ctx);
   }
 
-  render() {
+  render(): ReactElement {
     return (
-      <Html>
+      <Html lang="en">
         <Head />
         <body>
           <Main />
           <NextScript />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
         </body>
       </Html>
     );

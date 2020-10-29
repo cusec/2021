@@ -1,0 +1,14 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#check-mark)">
+<path d="M6.79288 17.1643L0.292881 10.6643C-0.097627 10.2738 -0.097627 9.64062 0.292881 9.25007L1.70706 7.83585C2.09757 7.4453 2.73077 7.4453 3.12128 7.83585L7.49999 12.2145L16.8787 2.83585C17.2692 2.44534 17.9024 2.44534 18.2929 2.83585L19.7071 4.25007C20.0976 4.64058 20.0976 5.27374 19.7071 5.66429L8.2071 17.1643C7.81655 17.5548 7.18339 17.5548 6.79288 17.1643Z" fill="url(#check-mark-gradient)"/>
+</g>
+<defs>
+<linearGradient id="check-mark-gradient" x1="2.40032e-07" y1="2.6404" x2="14.2575" y2="21.7982" gradientUnits="userSpaceOnUse">
+<stop stop-color="#09D8C4"/>
+<stop offset="1" stop-color="#22306D"/>
+</linearGradient>
+<clipPath id="check-mark">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>

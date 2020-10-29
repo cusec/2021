@@ -1,12 +1,11 @@
+import { ReactElement } from "react";
 import Head from "next/head";
 
-export default function Email() {
+export default function Email(): ReactElement {
   return (
     <>
       <Head>
         <title>CUSEC 2021 Email Signature</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta charSet="UTF-8" />
       </Head>
 
       <table id="email-signature">
