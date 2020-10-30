@@ -22,6 +22,7 @@ import {
   BodyPrimary,
   Headline,
   HeadlinePrimary,
+  LinkifyText,
   LinkPrimary,
 } from "@/components/core/Text";
 
@@ -78,11 +79,13 @@ function AccordionBox({
         <AccordionPanel padding="8px 20px 0px 20px">
           {item.answer.map((paragraph) => (
             <Fragment key={paragraph}>
-              {paragraph.trim().indexOf(" ") === -1 ? (
-                <Headline marginBottom="8px">{paragraph}</Headline>
-              ) : (
-                <BodyPrimary>{paragraph}</BodyPrimary>
-              )}
+              <LinkifyText>
+                {paragraph.trim().indexOf(" ") === -1 ? (
+                  <Headline marginBottom="8px">{paragraph}</Headline>
+                ) : (
+                  <BodyPrimary>{paragraph}</BodyPrimary>
+                )}
+              </LinkifyText>
             </Fragment>
           ))}
         </AccordionPanel>

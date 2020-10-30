@@ -1,6 +1,12 @@
 import styled from "@emotion/styled";
 import { Link as ChakraLink, Text } from "@chakra-ui/core";
 import theme from "@/src/theme";
+import Linkify from "react-linkify";
+import { ReactElement } from "react";
+
+interface LinkifyProps {
+  children: ReactElement;
+}
 
 export const Headline = styled(Text)`
   font-family: "Metropolis", sans-serif;
@@ -44,3 +50,23 @@ export const LinkPrimaryVariant = styled(Link)`
   font-size: 16px;
   color: white;
 `;
+
+export function LinkifyText({ children }: LinkifyProps): ReactElement {
+  return (
+    <Linkify
+      componentDecorator={(decoratedHref, decoratedText, key) => (
+        <Link
+          isExternal
+          href={decoratedHref}
+          key={key}
+          color={theme.colors.brand.blue}
+          _hover={{ color: theme.colors.brand.dark_teal }}
+        >
+          {decoratedText}
+        </Link>
+      )}
+    >
+      {children}
+    </Linkify>
+  );
+}
