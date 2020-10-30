@@ -9,7 +9,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/core";
 import React, { Fragment, ReactElement, useEffect } from "react";
-import { BodyPrimary, Headline, HeadlinePrimary } from "@/components/core/Text";
+import {
+  BodyPrimary,
+  Headline,
+  HeadlinePrimary,
+  LinkifyText,
+} from "@/components/core/Text";
 import { FooterLink } from "@/components/StyledCore";
 import { useRouter } from "next/router";
 
@@ -87,13 +92,15 @@ export default function FooterModal({
                       <Headline marginBottom="8px">{item.title}</Headline>
                       {item.paragraph.map((paragraph) => (
                         <Fragment key={paragraph}>
-                          {paragraph.charAt(0) === "•" ? (
-                            <BodyPrimary paddingLeft={4}>
-                              {paragraph}
-                            </BodyPrimary>
-                          ) : (
-                            <BodyPrimary>{paragraph}</BodyPrimary>
-                          )}
+                          <LinkifyText>
+                            {paragraph.charAt(0) === "•" ? (
+                              <BodyPrimary paddingLeft={4}>
+                                {paragraph}
+                              </BodyPrimary>
+                            ) : (
+                              <BodyPrimary>{paragraph}</BodyPrimary>
+                            )}
+                          </LinkifyText>
                         </Fragment>
                       ))}
                     </Fragment>
