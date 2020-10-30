@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link as ChakraLink, Text } from "@chakra-ui/core";
 import theme from "@/src/theme";
 import Linkify from "react-linkify";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 
 interface LinkifyProps {
   children: ReactElement;
@@ -55,16 +55,15 @@ export function LinkifyText({ children }: LinkifyProps): ReactElement {
   return (
     <Linkify
       componentDecorator={(decoratedHref, decoratedText, key) => (
-        <a
-          target="blank"
+        <Link
+          isExternal
           href={decoratedHref}
           key={key}
-          style={{
-            color: `${theme.colors.brand.blue}`,
-          }}
+          color={theme.colors.brand.blue}
+          _hover={{ color: theme.colors.brand.dark_teal }}
         >
           {decoratedText}
-        </a>
+        </Link>
       )}
     >
       {children}
