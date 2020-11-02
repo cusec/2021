@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { Box, Flex, Grid } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
@@ -70,8 +70,6 @@ const StyledPricingBanner = styled(PricingBanner)`
 `;
 
 export default function Pricing(): ReactElement {
-  const router = useRouter();
-
   return (
     <Box id={LocationHashEnum.Pricing}>
       <Grid
@@ -126,9 +124,9 @@ export default function Pricing(): ReactElement {
           marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
           justify="center"
         >
-          <ButtonPrimary onClick={() => router.push("/register")}>
-            Register
-          </ButtonPrimary>
+          <Link href="/register">
+            <ButtonPrimary>Register</ButtonPrimary>
+          </Link>
         </Flex>
       </WidthWrapper>
     </Box>

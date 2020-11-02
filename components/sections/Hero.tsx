@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
@@ -32,7 +32,6 @@ export default function Hero(): React.ReactElement {
   const actualWidth = useScreenWidth();
   const [currentWidth, setCurrentWidth] = useState(0);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
-  const router = useRouter();
 
   useEffect(() => {
     const updateHeight = () => {
@@ -108,13 +107,14 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <ButtonPrimary
-                  onClick={() => router.push("/register")}
-                  marginRight={[0, 0, 0, "2rem"]}
-                  marginBottom={["1rem", "1rem", "1rem", 0]}
-                >
-                  Register
-                </ButtonPrimary>
+                <Link href="/register">
+                  <ButtonPrimary
+                    marginRight={[0, 0, 0, "2rem"]}
+                    marginBottom={["1rem", "1rem", "1rem", 0]}
+                  >
+                    Register
+                  </ButtonPrimary>
+                </Link>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>
