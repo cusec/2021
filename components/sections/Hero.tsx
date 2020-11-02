@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Text } from "@chakra-ui/core";
+import { useRouter } from "next/router";
+import { Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -11,8 +12,8 @@ import {
   Headline,
   LinkPrimary,
 } from "@/components/core/Text";
+import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
-import EmailListingInput from "@/components/EmailListingInput";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -31,6 +32,7 @@ export default function Hero(): React.ReactElement {
   const actualWidth = useScreenWidth();
   const [currentWidth, setCurrentWidth] = useState(0);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+  const router = useRouter();
 
   useEffect(() => {
     const updateHeight = () => {
@@ -106,12 +108,13 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <Box
+                <ButtonPrimary
+                  onClick={() => router.push("/register")}
                   marginRight={[0, 0, 0, "2rem"]}
                   marginBottom={["1rem", "1rem", "1rem", 0]}
                 >
-                  <EmailListingInput />
-                </Box>
+                  Register
+                </ButtonPrimary>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>

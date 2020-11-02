@@ -1,10 +1,12 @@
 import { ReactElement } from "react";
+import { useRouter } from "next/router";
 import { Box, Flex, Grid } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
+import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 import { HeadlinePrimary } from "@/components/core/Text";
 
@@ -68,6 +70,8 @@ const StyledPricingBanner = styled(PricingBanner)`
 `;
 
 export default function Pricing(): ReactElement {
+  const router = useRouter();
+
   return (
     <Box id={LocationHashEnum.Pricing}>
       <Grid
@@ -116,6 +120,15 @@ export default function Pricing(): ReactElement {
           >
             <PricingCard {...vipTierInfo} />
           </Box>
+        </Flex>
+        <Flex
+          transform={translation}
+          marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
+          justify="center"
+        >
+          <ButtonPrimary onClick={() => router.push("/register")}>
+            Register
+          </ButtonPrimary>
         </Flex>
       </WidthWrapper>
     </Box>

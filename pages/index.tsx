@@ -19,6 +19,10 @@ export default function Home(): React.ReactElement {
           name="description"
           content="Mark your calendars, Canada's favourite conference is back virtually this winter! Join us January 9-10, 2021 for a weekend of amazing speakers, workshops, and more!"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <main>
