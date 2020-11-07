@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Text } from "@chakra-ui/core";
+import Link from "next/link";
+import { Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -11,8 +12,8 @@ import {
   Headline,
   LinkPrimary,
 } from "@/components/core/Text";
+import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
-import EmailListingInput from "@/components/EmailListingInput";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -106,12 +107,14 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <Box
-                  marginRight={[0, 0, 0, "2rem"]}
-                  marginBottom={["1rem", "1rem", "1rem", 0]}
-                >
-                  <EmailListingInput />
-                </Box>
+                <Link href="/register">
+                  <ButtonPrimary
+                    marginRight={[0, 0, 0, "2rem"]}
+                    marginBottom={["1rem", "1rem", "1rem", 0]}
+                  >
+                    Register
+                  </ButtonPrimary>
+                </Link>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>
