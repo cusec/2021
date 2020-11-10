@@ -9,10 +9,10 @@ export const Button = styled(ChakraButton)`
 export const ButtonPrimary = styled(Button)`
   font-family: "Metropolis", sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  height: 40px;
+  font-size: 18px;
+  height: 45px;
   padding: 0px 40px;
-  border-radius: 20px;
+  border-radius: 90px;
   background: ${theme.colors.brand.blue};
 
   &:hover {
