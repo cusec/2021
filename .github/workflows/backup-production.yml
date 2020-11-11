@@ -8,7 +8,7 @@ jobs:
     name: production-firestore
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           project_id: cusec-2021-production

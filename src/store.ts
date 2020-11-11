@@ -1,6 +1,6 @@
 import create from "zustand";
 
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/firestore";
 import firebaseConfig from "./firebaseConfig";
