@@ -34,7 +34,7 @@ export const FAQData: { question: string; answer: string[] }[] = [
     question: "When should I register?",
     answer: [
       "Feel free to register as soon as possible!",
-      "Ticket sales for VIP tickets will end in December so that we can ensure you get your perks in time for the conference.",
+      "Ticket sales for VIP tickets will end on December 10th 2020, so that we can ensure you get your perks in time for the conference.",
     ],
   },
   {
