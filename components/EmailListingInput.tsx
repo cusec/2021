@@ -17,7 +17,11 @@ enum ToastStatusEnum {
   WARNING = "warning",
 }
 
-export default function EmailListingInput(): ReactElement {
+export default function EmailListingInput(props: {
+  collection: string;
+  placeholder: string;
+  width: string;
+}): ReactElement {
   const toast = useToast();
   const firestore = useStore((state) => state.firestore);
 
@@ -82,7 +86,7 @@ export default function EmailListingInput(): ReactElement {
 
   const submitToDatabase = (email: string) => {
     return firestore
-      .collection("emails")
+      .collection(props.collection)
       .doc(email)
       .set({ createdAt: firebase.firestore.FieldValue.serverTimestamp() });
   };
@@ -103,11 +107,11 @@ export default function EmailListingInput(): ReactElement {
   };
 
   return (
-    <InputGroup size="md" width="3in">
+    <InputGroup size="md" width={props.width}>
       <Input
         type="email"
         paddingRight="72px"
-        placeholder="Stay connected by email"
+        placeholder={props.placeholder}
         rounded="100px"
         fontFamily="Inter"
         fontSize="14px"

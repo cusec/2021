@@ -22,5 +22,10 @@ service cloud.firestore {
       allow create: if isEmail(email) &&
         isServerTimestamp(request.resource.data["createdAt"]);
     }
+
+    match /product-pitch-emails/{email} {
+      allow create: if isEmail(email) &&
+        isServerTimestamp(request.resource.data["createdAt"]);
+    }
   }
 }

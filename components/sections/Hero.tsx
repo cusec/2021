@@ -15,7 +15,7 @@ import {
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 
-const minHeights = [550, 650, 700, 800];
+const minHeights = [750, 750, 800];
 
 const FlexFullView = styled(Flex)`
   background-image: url("images/cityscape.svg");
@@ -119,6 +119,9 @@ export default function Hero(): React.ReactElement {
                   Interested in sponsoring?
                 </LinkPrimary>
               </Flex>
+              <BodyPrimary marginTop="28px">
+                Don&apos;t miss out! <b>VIP ticket sales end Dec 10.</b>
+              </BodyPrimary>
               <Flex
                 justifyContent="center"
                 alignItems="center"

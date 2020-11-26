@@ -12,6 +12,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import NavOverlay from "@/components/NavOverlay";
 import theme from "@/src/theme";
 import { WidthWrapper } from "@/components/core/Layout";
+import { useRouter } from "next/router";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -50,6 +51,7 @@ export default function TopBar(): React.ReactElement {
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
   const componentRef = useRef();
+  const router = useRouter();
 
   const getComponentHeight = () => {
     const element = componentRef.current as HTMLElement | undefined;
@@ -57,8 +59,17 @@ export default function TopBar(): React.ReactElement {
   };
 
   const handleCusecIconClick = () => {
+    router.push("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
     setNavOverlayOpen(false);
+  };
+
+  const handlePageSwitch = (route: string) => {
+    if (router.pathname !== route) {
+      router.push(route);
+    } else {
+      setNavOverlayOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -120,16 +131,39 @@ export default function TopBar(): React.ReactElement {
             </Box>
             <Flex align="center" display={["none", "none", "none", "flex"]}>
               <Flex direction="row">
-                {locations.map((location) => (
-                  <AnchorLink
-                    key={location.href}
-                    offset={getComponentHeight}
-                    href={location.href}
-                    style={{ marginRight: "32px", outline: "none" }}
-                  >
-                    <NavBarLink>{location.label}</NavBarLink>
-                  </AnchorLink>
-                ))}
+                {router.pathname === "/"
+                  ? locations.map((location) => (
+                      <AnchorLink
+                        key={location.href}
+                        offset={getComponentHeight}
+                        href={`${location.href}`}
+                        style={{ marginRight: "32px", outline: "none" }}
+                      >
+                        <NavBarLink>{location.label}</NavBarLink>
+                      </AnchorLink>
+                    ))
+                  : locations.map((location) => (
+                      <Link
+                        key={location.href}
+                        onClick={() => router.push(`/${location.href}`)}
+                        marginRight="32px"
+                        textDecoration="none !important"
+                      >
+                        <NavBarLink>{location.label}</NavBarLink>
+                      </Link>
+                    ))}
+              </Flex>
+              <Flex>
+                <VerticalBar />
+              </Flex>
+              <Flex direction="row">
+                <Link
+                  onClick={() => handlePageSwitch("/product-pitch")}
+                  marginX="32px"
+                  textDecoration="none !important"
+                >
+                  <NavBarLink>Product Pitch</NavBarLink>
+                </Link>
               </Flex>
               <Flex>
                 <VerticalBar />
