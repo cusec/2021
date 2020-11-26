@@ -1,16 +1,17 @@
 import { ReactElement, Fragment } from "react";
 import useStore from "@/src/store";
 import styled from "@emotion/styled";
-import { Flex, Box } from "@chakra-ui/core";
+import { Flex, Box, Divider, Link } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { locations } from "@/src/constants";
 import { Headline } from "@/components/core/Text";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import theme from "@/src/theme";
+import { useRouter } from "next/router";
 
 export const GradientNavItemLink = styled(Headline)`
   font-size: 24px;
-  margin-bottom: 5vh;
+  margin: 16px 0;
   display: inline-block;
   background: linear-gradient(
     135deg,
@@ -26,9 +27,18 @@ export default function NavOverlay(props: {
 }): ReactElement {
   const isNavOverlayOpen = useStore((state) => state.isNavOverlayOpen);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+  const router = useRouter();
 
   const handleNavItemClick = () => {
     setNavOverlayOpen(false);
+  };
+
+  const handlePageSwitch = (route: string) => {
+    if (router.pathname !== route) {
+      router.push(route);
+    } else {
+      setNavOverlayOpen(false);
+    }
   };
 
   return (
@@ -46,18 +56,35 @@ export default function NavOverlay(props: {
       background="white"
     >
       <Box>
-        {locations.map((location) => (
-          <Fragment key={location.href}>
-            <AnchorLink
-              offset={props.getTopBarHeight}
-              href={location.href}
-              onClick={handleNavItemClick}
-            >
-              <GradientNavItemLink>{location.label}</GradientNavItemLink>
-            </AnchorLink>
-            <br />
-          </Fragment>
-        ))}
+        {router.pathname === "/"
+          ? locations.map((location) => (
+              <Fragment key={location.href}>
+                <AnchorLink
+                  offset={props.getTopBarHeight}
+                  href={location.href}
+                  onClick={handleNavItemClick}
+                >
+                  <GradientNavItemLink>{location.label}</GradientNavItemLink>
+                </AnchorLink>
+                <br />
+              </Fragment>
+            ))
+          : locations.map((location) => (
+              <Fragment key={location.href}>
+                <Link onClick={() => router.push(`/${location.href}`)}>
+                  <GradientNavItemLink>{location.label}</GradientNavItemLink>
+                </Link>
+                <br />
+              </Fragment>
+            ))}
+        <Divider />
+        <Box>
+          <Link onClick={() => handlePageSwitch("/product-pitch")}>
+            <GradientNavItemLink>Product Pitch</GradientNavItemLink>
+          </Link>
+          <br />
+        </Box>
+        <Divider marginBottom="28px" />
         <Flex>
           <ColoredSocialIcons />
         </Flex>

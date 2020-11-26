@@ -5,6 +5,7 @@ import SocialShareSVG from "../svgs/undraw-social-share.svg";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { WidthWrapper } from "@/components/core/Layout";
 import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
+import { FirestoreCollectionEnum } from "@/src/enums";
 
 export default function Contact(): ReactElement {
   return (
@@ -33,7 +34,11 @@ export default function Contact(): ReactElement {
             marginTop={["0.3in", "0.3in", "0.35in", "0.35in"]}
             marginBottom="24px"
           >
-            <EmailListingInput />
+            <EmailListingInput
+              collection={FirestoreCollectionEnum.GeneralEmails}
+              placeholder="Stay connected by email"
+              width="3in"
+            />
           </Flex>
         </Flex>
         <Box display={["none", "none", "none", "flex"]} width="420px">

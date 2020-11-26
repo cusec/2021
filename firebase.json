@@ -8,6 +8,10 @@
         "destination": "/register.html"
       },
       {
+        "source": "/product-pitch",
+        "destination": "/product-pitch.html"
+      },
+      {
         "source": "/email",
         "destination": "/email.html"
       },
