@@ -62,6 +62,7 @@ export default function HackaComm(): ReactElement {
             >
               <Image
                 src="/images/rbc-world-giving-banner.png"
+                width="100%"
                 maxWidth="750px"
                 userSelect="none"
                 marginTop="0.5in"
@@ -121,7 +122,7 @@ export default function HackaComm(): ReactElement {
               radical, crazy ideas. Be creative!
             </BodyPrimary>
             {/* How to participate */}
-            <HeadlinePrimary style={{ marginTop: "1rem" }}>
+            <HeadlinePrimary marginTop="1rem">
               How to participate
             </HeadlinePrimary>
             <BodyPrimary>
@@ -129,127 +130,108 @@ export default function HackaComm(): ReactElement {
               three and five people.
             </BodyPrimary>
             {/* Timeline */}
-            <HeadlinePrimary style={{ marginTop: "1rem" }}>
-              Timeline
-            </HeadlinePrimary>
-            <Headline>Beginning December 4th</Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>Register</li>
-                <ul style={{ paddingLeft: "60px" }}>
-                  <li>Sign up individually or in a team of 3-5</li>
-                  <li>Registration Link: Coming soon!</li>
-                  <li>Connect with your team on Discord</li>
-                  <li>Start brainstorming ideas/hacking!</li>
-                </ul>
-                <li>Join our Discord server</li>
-                <ul style={{ paddingLeft: "60px" }}>
-                  <li>Discord will be used for this hackathon</li>
-                  <li>Link: Coming soon!</li>
-                  <li>Ask questions here between December 04 and January 10</li>
-                  <li>
-                    RBC employees and CUESEC volunteers will answer your
-                    questions
-                  </li>
-                </ul>
+            <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
+            <Headline marginTop="0.5rem">Beginning December 4th</Headline>
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>Register</li>
+              <ul style={{ paddingLeft: "40px" }}>
+                <li>Sign up individually or in a team of 3-5</li>
+                <li>Registration Link: Coming soon!</li>
+                <li>Connect with your team on Discord</li>
+                <li>Start brainstorming ideas/hacking!</li>
               </ul>
-            </Body>
-            <Headline>January 4th</Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>Meet the mentors day</li>
-                <ul style={{ paddingLeft: "60px" }}>
-                  <li>
-                    Talk to RBC Developers get help with your product and code
-                  </li>
-                </ul>
-              </ul>
-            </Body>
-            <Headline>January 5th</Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>Submission Day</li>
-                <ul style={{ paddingLeft: "60px" }}>
-                  <li>Submit your team name and team members</li>
-                  <li>Share GitHub repo with organizers</li>
-                  <li>Pitch schedule will be released</li>
-                </ul>
-              </ul>
-            </Body>
-            <Headline>January 8th</Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>Preliminaries: Pitch Day (All Day)</li>
-                <ul style={{ paddingLeft: "60px" }}>
-                  <li>Pitch to the Judging panel</li>
-                  <li>
-                    Top three teams will be chosen to present during the
-                    conference
-                  </li>
-                </ul>
-              </ul>
-            </Body>
-            <Headline>January 9th/10th</Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>Final presentations</li>
-                <ul style={{ paddingLeft: "60px" }}>
-                  <li>Top three teams pitch to the whole conference</li>
-                  <li>Winners will be announced!</li>
-                </ul>
-              </ul>
-            </Body>
-            {/* Judging Criteria */}
-            <HeadlinePrimary style={{ marginTop: "1rem" }}>
-              Judging Criteria
-            </HeadlinePrimary>
-            <Headline style={{ marginTop: "0.5rem" }}>Vision: 25/100</Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>Is your idea feasible in today’s world?</li>
-                <li>What kind of impact could this have?</li>
-              </ul>
-            </Body>
-            <Headline style={{ marginTop: "0.5rem" }}>
-              UI/UX Design: 25/100
-            </Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>How well designed is your solution?</li>
-                <li>Has design thinking been applied?</li>
-              </ul>
-            </Body>
-            <Headline style={{ marginTop: "0.5rem" }}>
-              Technology: 25/100
-            </Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>What technologies does your solution leverage?</li>
-                <li>What data are you consuming?</li>
-                <li>How are you using tech to solve your problem?</li>
-              </ul>
-            </Body>
-            <Headline style={{ marginTop: "0.5rem" }}>
-              Presentation: 25/100
-            </Headline>
-            <Body>
-              <ul style={{ paddingLeft: "30px" }}>
-                <li>How well do you convey your idea?</li>
-                <li>Is the problem you’re trying to solve clearly defined?</li>
-              </ul>
-            </Body>
-            {/* Prizes */}
-            <HeadlinePrimary style={{ marginTop: "1rem" }}>
-              Prizes
-            </HeadlinePrimary>
-            <Body>
-              <ol style={{ paddingLeft: "30px" }}>
+              <li>Join our Discord server</li>
+              <ul style={{ paddingLeft: "40px" }}>
+                <li>Discord will be used for this hackathon</li>
+                <li>Link: Coming soon!</li>
+                <li>Ask questions here between December 04 and January 10</li>
                 <li>
-                  First place: Kobo Formas loaded up with some of our favourite
-                  books!
+                  RBC employees and CUESEC volunteers will answer your questions
                 </li>
-                <li>Runner up prizes: TBD</li>
-              </ol>
+              </ul>
+            </ul>
+            <Headline marginTop="0.5rem">January 4th</Headline>
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>Meet the mentors day</li>
+              <ul style={{ paddingLeft: "40px" }}>
+                <li>
+                  Talk to RBC Developers get help with your product and code
+                </li>
+              </ul>
+            </ul>
+            <Headline marginTop="0.5rem">January 5th</Headline>
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>Submission Day</li>
+              <ul style={{ paddingLeft: "40px" }}>
+                <li>Submit your team name and team members</li>
+                <li>Share GitHub repo with organizers</li>
+                <li>Pitch schedule will be released</li>
+              </ul>
+            </ul>
+            <Headline marginTop="0.5rem">January 8th</Headline>
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>Preliminaries: Pitch Day (All Day)</li>
+              <ul style={{ paddingLeft: "40px" }}>
+                <li>Pitch to the Judging panel</li>
+                <li>
+                  Top three teams will be chosen to present during the
+                  conference
+                </li>
+              </ul>
+            </ul>
+
+            <Headline marginTop="0.5rem">January 9th/10th</Headline>
+
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>Final presentations</li>
+              <ul style={{ paddingLeft: "40px" }}>
+                <li>Top three teams pitch to the whole conference</li>
+                <li>Winners will be announced!</li>
+              </ul>
+            </ul>
+
+            {/* Judging Criteria */}
+            <HeadlinePrimary marginTop="1rem">Judging Criteria</HeadlinePrimary>
+            <Headline marginTop="0.5rem">Vision: 25/100</Headline>
+
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>Is your idea feasible in today’s world?</li>
+              <li>What kind of impact could this have?</li>
+            </ul>
+
+            <Headline marginTop="0.5rem">UI/UX Design: 25/100</Headline>
+
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>How well designed is your solution?</li>
+              <li>Has design thinking been applied?</li>
+            </ul>
+
+            <Headline marginTop="0.5rem">Technology: 25/100</Headline>
+
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>What technologies does your solution leverage?</li>
+              <li>What data are you consuming?</li>
+              <li>How are you using tech to solve your problem?</li>
+            </ul>
+
+            <Headline marginTop="0.5rem">Presentation: 25/100</Headline>
+
+            <ul style={{ paddingLeft: "20px" }}>
+              <li>How well do you convey your idea?</li>
+              <li>Is the problem you’re trying to solve clearly defined?</li>
+            </ul>
+
+            {/* Prizes */}
+            <HeadlinePrimary marginTop="1rem">Prizes</HeadlinePrimary>
+            <ol style={{ paddingLeft: "20px" }}>
+              <li>
+                First place: Kobo Formas loaded up with some of our favourite
+                books!
+              </li>
+              <li>Runner up prizes: TBD*</li>
+            </ol>
+            <Body fontSize="12px" marginTop="0.5in">
+              *Subject to change
             </Body>
             <Flex
               justifyContent="center"
