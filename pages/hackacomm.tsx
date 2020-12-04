@@ -145,7 +145,7 @@ export default function HackaComm(): ReactElement {
             {/* Timeline */}
             <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
             <Headline marginTop="0.5rem">Beginning December 4th</Headline>
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>
                 <LinkPrimary href={registrationLink}>Register</LinkPrimary>
               </li>
@@ -162,7 +162,7 @@ export default function HackaComm(): ReactElement {
               </ul>
             </ul>
             <Headline marginTop="0.5rem">January 4th</Headline>
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>Meet the mentors day</li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>
@@ -171,7 +171,7 @@ export default function HackaComm(): ReactElement {
               </ul>
             </ul>
             <Headline marginTop="0.5rem">January 5th</Headline>
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>Submit your teams</li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>Submit your team name and team members</li>
@@ -180,7 +180,7 @@ export default function HackaComm(): ReactElement {
               </ul>
             </ul>
             <Headline marginTop="0.5rem">January 8th</Headline>
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>Preliminaries: Pitch Day (All Day)</li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>Pitch to the Judging panel</li>
@@ -193,7 +193,7 @@ export default function HackaComm(): ReactElement {
 
             <Headline marginTop="0.5rem">January 10th</Headline>
 
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>Final presentations</li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>Top three teams pitch to the whole conference</li>
@@ -205,21 +205,21 @@ export default function HackaComm(): ReactElement {
             <HeadlinePrimary marginTop="1rem">Judging Criteria</HeadlinePrimary>
             <Headline marginTop="0.5rem">Vision: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>Is your idea feasible in today’s world?</li>
               <li>What kind of impact could this have?</li>
             </ul>
 
             <Headline marginTop="0.5rem">UI/UX Design: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>How well designed is your solution?</li>
               <li>Has design thinking been applied?</li>
             </ul>
 
             <Headline marginTop="0.5rem">Technology: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>What technologies does your solution leverage?</li>
               <li>What data are you consuming?</li>
               <li>How are you using tech to solve your problem?</li>
@@ -227,14 +227,14 @@ export default function HackaComm(): ReactElement {
 
             <Headline marginTop="0.5rem">Presentation: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "20px" }}>
+            <ul style={{ paddingLeft: "35px" }}>
               <li>How well do you convey your idea?</li>
               <li>Is the problem you’re trying to solve clearly defined?</li>
             </ul>
 
             {/* Prizes */}
             <HeadlinePrimary marginTop="1rem">Prizes</HeadlinePrimary>
-            <ol style={{ paddingLeft: "20px" }}>
+            <ol style={{ paddingLeft: "35px" }}>
               <li>
                 First place: Kobo Formas loaded up with some of our favourite
                 books!
