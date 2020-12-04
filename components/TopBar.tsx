@@ -158,11 +158,11 @@ export default function TopBar(): React.ReactElement {
               </Flex>
               <Flex direction="row">
                 <Link
-                  onClick={() => handlePageSwitch("/product-pitch")}
+                  onClick={() => handlePageSwitch("/hackacomm")}
                   marginX="32px"
                   textDecoration="none !important"
                 >
-                  <NavBarLink>Product Pitch</NavBarLink>
+                  <NavBarLink>HackaComm</NavBarLink>
                 </Link>
               </Flex>
               <Flex>

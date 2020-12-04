@@ -79,8 +79,8 @@ export default function NavOverlay(props: {
             ))}
         <Divider />
         <Box>
-          <Link onClick={() => handlePageSwitch("/product-pitch")}>
-            <GradientNavItemLink>Product Pitch</GradientNavItemLink>
+          <Link onClick={() => handlePageSwitch("/hackacomm")}>
+            <GradientNavItemLink>HackaComm</GradientNavItemLink>
           </Link>
           <br />
         </Box>

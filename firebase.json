@@ -9,7 +9,11 @@
       },
       {
         "source": "/product-pitch",
-        "destination": "/product-pitch.html"
+        "destination": "/hackacomm.html"
+      },
+      {
+        "source": "/hackacomm",
+        "destination": "/hackacomm.html"
       },
       {
         "source": "/email",
