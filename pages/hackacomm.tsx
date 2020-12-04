@@ -30,7 +30,7 @@ export default function HackaComm(): ReactElement {
         <title>HackaComm: CUSEC 2021 × RBC</title>
         <meta
           name="description"
-          content="Hacking climate change through community efforts. Registration from December 4, 2020 - January 5, 2021."
+          content="Hacking climate change through community efforts. Registration from December 4, 2020 to January 5, 2021."
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
