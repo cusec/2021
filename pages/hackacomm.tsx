@@ -21,13 +21,17 @@ const Title = styled(Body)`
   margin-bottom: 4px;
 `;
 
-const registrationLink = "https://eli030.typeform.com/to/yZyNwg6c";
+const registrationLink = "/register-hackacomm";
 
 export default function HackaComm(): ReactElement {
   return (
     <div>
       <Head>
-        <title>CUSEC 2021 - HackaComm</title>
+        <title>HackaComm: CUSEC 2021 × RBC</title>
+        <meta
+          name="description"
+          content="Register for HackaComm: Hacking climate change through community efforts from December 4, 2020 - January 10, 2021"
+        />
       </Head>
       <Flex width="100%" backgroundColor="off_white_bg">
         <TopBar />
@@ -119,9 +123,10 @@ export default function HackaComm(): ReactElement {
               How to participate
             </HeadlinePrimary>
             <BodyPrimary>
-              If you're interested in participating in the hackathon, that's awesome!
-              You'll have the chance to meet new people, learn some new skills, and maybe even win some prizes.
-              Check out the timeline below for an overview of what we've got planned.
+              If you're interested in participating in the hackathon, that's
+              awesome! You'll have the chance to meet new people, learn some new
+              skills, and maybe even win some prizes. Check out the timeline
+              below for an overview of what we've got planned.
             </BodyPrimary>
             {/* Timeline */}
             <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
@@ -172,7 +177,7 @@ export default function HackaComm(): ReactElement {
               </ul>
             </ul>
 
-            <Headline marginTop="0.5rem">January 9th/10th</Headline>
+            <Headline marginTop="0.5rem">January 10th</Headline>
 
             <ul style={{ paddingLeft: "20px" }}>
               <li>Final presentations</li>

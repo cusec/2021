@@ -8,6 +8,10 @@
         "destination": "/register.html"
       },
       {
+        "source": "/register-hackacomm",
+        "destination": "/register-hackacomm.html"
+      },
+      {
         "source": "/product-pitch",
         "destination": "/hackacomm.html"
       },
