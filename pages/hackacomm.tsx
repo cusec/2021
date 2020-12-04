@@ -30,7 +30,7 @@ export default function HackaComm(): ReactElement {
         <title>HackaComm: CUSEC 2021 × RBC</title>
         <meta
           name="description"
-          content="Register for HackaComm: Hacking climate change through community efforts from December 4, 2020 - January 10, 2021"
+          content="Hacking climate change through community efforts. Registration from December 4, 2020 - January 5, 2021."
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
@@ -47,7 +47,7 @@ export default function HackaComm(): ReactElement {
               marginBottom={"0.5in"}
             >
               <Image
-                src="/images/rbc-world-giving-banner.png"
+                src="/images/cusec-rbc-hackacomm.png"
                 width="100%"
                 maxWidth="750px"
                 userSelect="none"
