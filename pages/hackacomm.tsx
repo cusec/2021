@@ -123,10 +123,11 @@ export default function HackaComm(): ReactElement {
               How to participate
             </HeadlinePrimary>
             <BodyPrimary>
-              If you&apos;re interested in participating in the hackathon, that&apos;s
-              awesome! You&apos;ll have the chance to meet new people, learn some new
-              skills, and maybe even win some prizes. Check out the timeline
-              below for an overview of what we&apos;ve got planned.
+              If you&apos;re interested in participating in the hackathon,
+              that&apos;s awesome! You&apos;ll have the chance to meet new
+              people, learn some new skills, and maybe even win some prizes.
+              Check out the timeline below for an overview of what we&apos;ve
+              got planned.
             </BodyPrimary>
             {/* Timeline */}
             <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
