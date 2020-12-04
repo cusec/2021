@@ -32,6 +32,10 @@ export default function HackaComm(): ReactElement {
           name="description"
           content="Register for HackaComm: Hacking climate change through community efforts from December 4, 2020 - January 10, 2021"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Flex width="100%" backgroundColor="off_white_bg">
         <TopBar />

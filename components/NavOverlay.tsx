@@ -36,9 +36,8 @@ export default function NavOverlay(props: {
   const handlePageSwitch = (route: string) => {
     if (router.pathname !== route) {
       router.push(route);
-    } else {
-      setNavOverlayOpen(false);
     }
+    setNavOverlayOpen(false);
   };
 
   return (
