@@ -8,7 +8,7 @@ export default function RegisterHackaComm(): ReactElement {
         <title>HackaComm: CUSEC 2021 × RBC</title>
         <meta
           name="description"
-          content="Register for HackaComm: Hacking climate change through community efforts from December 4, 2020 - January 10, 2021"
+          content="Register for HackaComm: Hacking climate change through community efforts from December 4, 2020 - January 5, 2021"
         />
       </Head>
 
