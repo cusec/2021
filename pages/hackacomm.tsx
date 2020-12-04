@@ -118,6 +118,19 @@ export default function HackaComm(): ReactElement {
               good habits in people that benefit their communities. We welcome
               radical, crazy ideas. Be creative!
             </BodyPrimary>
+            <Headline marginTop="0.5rem">Ideas to get you started</Headline>
+            <ul style={{ paddingLeft: "40px" }}>
+              <li>
+                I want to identify the places in my neighbourhood where there is
+                a lot of trash (photos of littered places, heat maps,
+                initiatives, tasks, etc.) so that I can go there and take action
+                on my daily walk.
+              </li>
+              <li>
+                I want to get in touch with individuals and families in need so
+                that I can cook for someone extra each day.
+              </li>
+            </ul>
             {/* How to participate */}
             <HeadlinePrimary marginTop="1rem">
               How to participate
