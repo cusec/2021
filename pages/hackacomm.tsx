@@ -1,20 +1,19 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
 import Head from "next/head";
-import { Flex, Image } from "@chakra-ui/core";
+import Link from "next/link";
+import { Flex, Image, Text } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
-import useScreenWidth from "@/components/hooks/useScreenWidth";
-import useStore from "@/src/store";
 import {
   Body,
   BodyPrimary,
   Headline,
   HeadlinePrimary,
+  LinkPrimary,
 } from "@/components/core/Text";
+import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 import TopBar from "@/components/TopBar";
 import styled from "@emotion/styled";
-
-const minHeights = [550, 650, 700, 800];
 
 const Title = styled(Body)`
   font-weight: 900;
@@ -22,36 +21,15 @@ const Title = styled(Body)`
   margin-bottom: 4px;
 `;
 
+const registrationLink = "https://eli030.typeform.com/to/yZyNwg6c";
+
 export default function HackaComm(): ReactElement {
-  const [heightProp, setHeightProp] = useState(
-    minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
-  );
-  const actualWidth = useScreenWidth();
-  const [currentWidth, setCurrentWidth] = useState(0);
-  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
-
-  useEffect(() => {
-    const updateHeight = () => {
-      setCurrentWidth(actualWidth);
-      setHeightProp(
-        minHeights.map(
-          (minHeight) => `${Math.max(window.innerHeight, minHeight)}px`
-        )
-      );
-    };
-
-    if (currentWidth === 0 || currentWidth !== actualWidth) {
-      updateHeight();
-      setNavOverlayOpen(false);
-    }
-  }, [actualWidth, currentWidth, setNavOverlayOpen]);
-
   return (
     <div>
       <Head>
         <title>CUSEC 2021 - HackaComm</title>
       </Head>
-      <Flex height={heightProp} width="100%" backgroundColor="off_white_bg">
+      <Flex width="100%" backgroundColor="off_white_bg">
         <TopBar />
         <WidthWrapper>
           <>
@@ -68,40 +46,55 @@ export default function HackaComm(): ReactElement {
                 marginTop="0.5in"
               />
             </Flex>
+
             <Flex
-              justifyContent={["center", "center", "center", "space-between"]}
+              flexDirection="column"
+              textAlign={["center", "center", "center", "left"]}
               alignItems="center"
-              width="100%"
-              marginBottom={["0.5in", "0.5in"]}
             >
               <Flex
-                flexDirection="column"
-                textAlign={["center", "center", "center", "left"]}
+                direction={["column", "column", "row"]}
+                marginBottom="16px"
+                marginTop={["16px", "16px", "16px", 0]}
               >
-                <Flex
-                  direction={["column", "column", "row"]}
-                  marginBottom="16px"
-                  marginTop={["16px", "16px", "16px", 0]}
+                <Title fontSize={["4xl", "5xl"]}>CUSEC 2021</Title>
+                <Title
+                  fontSize={["4xl", "5xl"]}
+                  marginTop={["-4px", "-4px", "-2px"]}
                 >
-                  <Title fontSize={["4xl", "5xl"]}>CUSEC 2021</Title>
-                  <Title
-                    fontSize={["4xl", "5xl"]}
-                    marginTop={["-4px", "-4px", "-2px"]}
-                  >
-                    &nbsp;×&nbsp;
-                  </Title>
-                  <Title fontSize={["4xl", "5xl"]}>RBC</Title>
-                </Flex>
-                <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
-                  Hack with us! ~ December 4th until January 8th ~
-                </Headline>
-                <Headline fontSize={["l", "xl"]} marginBottom="12px">
-                  Top three teams to present during CUESEC
-                </Headline>
+                  &nbsp;×&nbsp;
+                </Title>
+                <Title fontSize={["4xl", "5xl"]}>RBC</Title>
+              </Flex>
+
+              <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
+                HackaComm: Hacking climate change through community efforts
+              </Headline>
+              <Flex justify={["center", "center", "center", "left"]}>
+                <BodyPrimary>December 4, 2020 - January 10, 2021</BodyPrimary>
+                <Text marginX="10px" height="24px">
+                  {"\u2022"}
+                </Text>
+                <BodyPrimary>Virtual Hackathon</BodyPrimary>
               </Flex>
             </Flex>
+
+            <Flex justifyContent="center" alignItems="center" display={"flex"}>
+              <Link href={registrationLink}>
+                <ButtonPrimary>Register</ButtonPrimary>
+              </Link>
+              {/* <Link href={discordLink}>
+                <Button padding="0" marginLeft="1rem" backgroundColor="none">
+                  <Image
+                    src="/images/discord-logo.svg"
+                    width="150.84px"
+                    userSelect="none"
+                  />
+                </Button>
+              </Link> */}
+            </Flex>
             {/* Theme */}
-            <HeadlinePrimary>Challenge</HeadlinePrimary>
+            <HeadlinePrimary marginTop="0.5in">Challenge</HeadlinePrimary>
             <BodyPrimary>
               As a community, we all need to adapt to face the challenge that is
               climate change. We often rely on others to guide us to live
@@ -126,28 +119,27 @@ export default function HackaComm(): ReactElement {
               How to participate
             </HeadlinePrimary>
             <BodyPrimary>
-              Sign up individually or with a team! Team sizes can be between
-              three and five people.
+              If you're interested in participating in the hackathon, that's awesome!
+              You'll have the chance to meet new people, learn some new skills, and maybe even win some prizes.
+              Check out the timeline below for an overview of what we've got planned.
             </BodyPrimary>
             {/* Timeline */}
             <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
             <Headline marginTop="0.5rem">Beginning December 4th</Headline>
             <ul style={{ paddingLeft: "20px" }}>
-              <li>Register</li>
+              <li>
+                <LinkPrimary href={registrationLink}>Register</LinkPrimary>
+              </li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>Sign up individually or in a team of 3-5</li>
-                <li>Registration Link: Coming soon!</li>
                 <li>Connect with your team on Discord</li>
                 <li>Start brainstorming ideas/hacking!</li>
               </ul>
               <li>Join our Discord server</li>
               <ul style={{ paddingLeft: "40px" }}>
-                <li>Discord will be used for this hackathon</li>
-                <li>Link: Coming soon!</li>
-                <li>Ask questions here between December 04 and January 10</li>
-                <li>
-                  RBC employees and CUESEC volunteers will answer your questions
-                </li>
+                <li>Send us your Discord ID during registration</li>
+                <li>Communicate with your teammates and other hackers</li>
+                <li>Ask RBC and CUSEC volunteers all your questions!</li>
               </ul>
             </ul>
             <Headline marginTop="0.5rem">January 4th</Headline>
@@ -155,13 +147,13 @@ export default function HackaComm(): ReactElement {
               <li>Meet the mentors day</li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>
-                  Talk to RBC Developers get help with your product and code
+                  Talk to RBC developers get help with your product and code
                 </li>
               </ul>
             </ul>
             <Headline marginTop="0.5rem">January 5th</Headline>
             <ul style={{ paddingLeft: "20px" }}>
-              <li>Submission Day</li>
+              <li>Submit your teams</li>
               <ul style={{ paddingLeft: "40px" }}>
                 <li>Submit your team name and team members</li>
                 <li>Share GitHub repo with organizers</li>
