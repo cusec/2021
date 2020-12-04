@@ -18,7 +18,7 @@ export default function Register(): ReactElement {
         height="100%"
         frameBorder="0"
         allow="camera; microphone; autoplay; encrypted-media;"
-        src="https://eli030.typeform.com/to/FFoe9hQ9"
+        src="https://eli030.typeform.com/to/FFoe9hQ9?typeform-embed=embed-fullpage"
       ></iframe>
 
       <script

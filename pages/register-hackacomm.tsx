@@ -18,7 +18,7 @@ export default function RegisterHackaComm(): ReactElement {
         height="100%"
         frameBorder="0"
         allow="camera; microphone; autoplay; encrypted-media;"
-        src="https://eli030.typeform.com/to/yZyNwg6c"
+        src="https://eli030.typeform.com/to/yZyNwg6c?typeform-embed=embed-fullpage"
       ></iframe>
 
       <script
