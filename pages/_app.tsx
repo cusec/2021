@@ -15,6 +15,7 @@ function App({ Component, pageProps }: AppProps): ReactElement {
   useEffect(() => {
     if (analytics) {
       Router.events.on("routeChangeComplete", (url) => {
+        window.scrollTo(0, 0);
         analytics.logEvent(`routeChangeComplete: ${url}`);
       });
       Router.events.on("hashChangeComplete", (url) =>
