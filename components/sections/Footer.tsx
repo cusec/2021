@@ -3,7 +3,7 @@ import Logo from "../svgs/logo.svg";
 import React, { ReactElement } from "react";
 import { Flex, Text } from "@chakra-ui/core";
 import { GreyBackground } from "@/components/core/Layout";
-import { FooterLink } from "@/components/StyledCore";
+import { FooterLink } from "@/components/core/Text";
 import FooterModal from "@/components/FooterModal";
 import {
   attributionsText,
@@ -33,7 +33,7 @@ export default function Footer(): ReactElement {
         <BaseContainer>
           <Flex
             width="100%"
-            flexDirection={["column", "column", "row", "row"]}
+            flexDirection={["column", "column", "column", "row"]}
             justifyContent={[
               "flex-start",
               "flex-start",

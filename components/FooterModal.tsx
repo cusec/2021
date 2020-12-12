@@ -15,7 +15,7 @@ import {
   HeadlinePrimary,
   LinkifyText,
 } from "@/components/core/Text";
-import { FooterLink } from "@/components/StyledCore";
+import { FooterLink } from "@/components/core/Text";
 import { useRouter } from "next/router";
 
 interface FooterModalProps {
