@@ -119,9 +119,6 @@ export default function Hero(): React.ReactElement {
                   Interested in sponsoring?
                 </LinkPrimary>
               </Flex>
-              <BodyPrimary marginTop="28px">
-                Don&apos;t miss out! <b>VIP ticket sales end Dec 10.</b>
-              </BodyPrimary>
               <Flex
                 justifyContent="center"
                 alignItems="center"
