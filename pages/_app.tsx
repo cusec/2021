@@ -13,17 +13,18 @@ function App({ Component, pageProps }: AppProps): ReactElement {
   const initAnalytics = useStore((state) => state.initAnalytics);
 
   useEffect(() => {
-    initAnalytics();
-  }, [initAnalytics]);
-
-  if (analytics) {
-    Router.events.on("routeChangeComplete", (url) =>
-      analytics.logEvent(`routeChangeComplete: ${url}`)
-    );
-    Router.events.on("hashChangeComplete", (url) =>
-      analytics.logEvent(`hashChangeComplete: ${url}`)
-    );
-  }
+    if (analytics) {
+      Router.events.on("routeChangeComplete", (url) => {
+        window.scrollTo(0, 0);
+        analytics.logEvent(`routeChangeComplete: ${url}`);
+      });
+      Router.events.on("hashChangeComplete", (url) =>
+        analytics.logEvent(`hashChangeComplete: ${url}`)
+      );
+    } else {
+      initAnalytics();
+    }
+  }, [analytics, initAnalytics]);
 
   return (
     <>
