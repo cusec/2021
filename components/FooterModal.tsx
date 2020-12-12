@@ -11,11 +11,11 @@ import {
 import React, { Fragment, ReactElement, useEffect } from "react";
 import {
   BodyPrimary,
+  FooterLink,
   Headline,
   HeadlinePrimary,
   LinkifyText,
 } from "@/components/core/Text";
-import { FooterLink } from "@/components/core/Text";
 import { useRouter } from "next/router";
 
 interface FooterModalProps {
