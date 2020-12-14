@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { Flex, Text } from "@chakra-ui/core";
+import { Box, Flex, Text } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -10,10 +10,13 @@ import {
   Body,
   BodyPrimary,
   Headline,
+  Link as ToastLink,
   LinkPrimary,
 } from "@/components/core/Text";
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
+import { useToast, CloseButton } from "@chakra-ui/core";
+import { useRouter } from "next/router";
 
 const minHeights = [750, 750, 800];
 
@@ -32,6 +35,15 @@ export default function Hero(): React.ReactElement {
   const actualWidth = useScreenWidth();
   const [currentWidth, setCurrentWidth] = useState(0);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+  const toast = useToast();
+  const router = useRouter();
+
+  const toastRefs = useRef<(() => void)[]>([]);
+
+  const closeToasts = () => {
+    toastRefs.current.forEach((cb) => cb());
+    toastRefs.current = [];
+  };
 
   useEffect(() => {
     const updateHeight = () => {
@@ -48,6 +60,56 @@ export default function Hero(): React.ReactElement {
       setNavOverlayOpen(false);
     }
   }, [actualWidth, currentWidth, setNavOverlayOpen]);
+
+  useEffect(() => {
+    const handlePageSwitch = (route: string) => {
+      if (router.pathname !== route) {
+        router.push(route);
+      } else {
+        setNavOverlayOpen(false);
+      }
+    };
+
+    const hackaCommToast = setTimeout(() => {
+      toast({
+        position: "bottom",
+        duration: null,
+        isClosable: true,
+        render: ({ onClose }) => {
+          toastRefs.current.push(onClose);
+
+          return (
+            <>
+              <Flex color="white" p={3} bg="black">
+                <Box>
+                  <ToastLink
+                    onClick={() => {
+                      handlePageSwitch("/hackacomm");
+                      closeToasts();
+                    }}
+                  >
+                    Check out HackaComm: a brand-new hackathon brought to you by
+                    CUSEC and RBC!
+                  </ToastLink>
+                </Box>
+                <Box alignSelf="center">
+                  <CloseButton
+                    size="lg"
+                    _focus={{}}
+                    onClick={() => {
+                      closeToasts();
+                    }}
+                  />
+                </Box>
+              </Flex>
+            </>
+          );
+        },
+      });
+    }, 1000);
+
+    return () => clearTimeout(hackaCommToast);
+  }, [router, setNavOverlayOpen, toast]);
 
   return (
     <FlexFullView
