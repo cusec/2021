@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Flex, Grid, Image } from "@chakra-ui/core";
 import { LocationHashEnum } from "@/src/enums";
 import { WidthWrapper } from "@/components/core/Layout";
-import { BodyPrimary, Headline, HeadlinePrimary } from "@/components/core/Text";
+import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 
 const imgPath = "/images";
 
@@ -31,6 +31,18 @@ const thinGrid = [
   `fellow . balsamiq`,
   `voiceflow . one-pass`,
   `. egghead .`,
+]
+  .map((row) => `"${row}"`)
+  .join(" ");
+
+const wideSchoolGrid = [`calgary carleton toronto uottawa waterloo`]
+  .map((row) => `"${row}"`)
+  .join(" ");
+
+const thinSchoolGrid = [
+  `calgary . carleton`,
+  `toronto . uottawa`,
+  `. waterloo.`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -119,9 +131,48 @@ export default function Sponsors(): ReactElement {
               minWidth="72px"
             />
           </Grid>
-          <Headline marginTop="0.6in" marginBottom="1in">
-            Stay tuned for more!
-          </Headline>
+          <Grid
+            width="100%"
+            gridTemplateColumns={[
+              "repeat(3, 1fr)",
+              "repeat(3, 1fr)",
+              "repeat(5, 1fr)",
+            ]}
+            gridTemplateAreas={[thinSchoolGrid, thinSchoolGrid, wideSchoolGrid]}
+            justifyItems="center"
+            alignItems="center"
+          >
+            <SponsorImage
+              src={`${imgPath}/universities/calgary.svg`}
+              gridArea="calgary"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/carleton.svg`}
+              gridArea="carleton"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/toronto.svg`}
+              gridArea="toronto"
+              width={["60%", "60%", "50%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/uottawa.svg`}
+              gridArea="uottawa"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/waterloo.svg`}
+              gridArea="waterloo"
+              width={["60%", "60%", "50%"]}
+              minWidth="72px"
+            />
+          </Grid>
         </Flex>
       </WidthWrapper>
     </div>
