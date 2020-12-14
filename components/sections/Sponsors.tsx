@@ -16,7 +16,8 @@ const SponsorImage = styled(Image)`
 const wideGrid = [
   `. rbc rbc rbc rbc .`,
   `. kinaxis kinaxis morgan morgan .`,
-  `. amazon amazon ssense ssense .`,
+  `. genetec genetec unity unity .`,
+  `amazon amazon ssense ssense nokia nokia`,
   `. fellow fellow balsamiq balsamiq .`,
   `. voiceflow one-pass one-pass egghead .`,
 ]
@@ -27,7 +28,10 @@ const thinGrid = [
   `rbc rbc rbc`,
   `kinaxis kinaxis kinaxis`,
   `morgan morgan morgan`,
+  `genetec genetec genetec`,
+  `unity unity unity`,
   `amazon . ssense`,
+  `. nokia .`,
   `fellow . balsamiq`,
   `voiceflow . one-pass`,
   `. egghead .`,
@@ -89,6 +93,16 @@ export default function Sponsors(): ReactElement {
               width={["50%", "50%", "80%"]}
             />
             <SponsorImage
+              src={`${imgPath}/genetec.svg`}
+              gridArea="genetec"
+              width={["50%", "50%", "80%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/unity.svg`}
+              gridArea="unity"
+              width={["50%", "50%", "80%"]}
+            />
+            <SponsorImage
               src={`${imgPath}/Amazon_logo.svg`}
               gridArea="amazon"
               width={["80%", "80%", "45%"]}
@@ -97,6 +111,12 @@ export default function Sponsors(): ReactElement {
             <SponsorImage
               src={`${imgPath}/Ssense_logo.svg`}
               gridArea="ssense"
+              width={["80%", "80%", "45%"]}
+              minWidth="100px"
+            />
+            <SponsorImage
+              src={`${imgPath}/nokia.svg`}
+              gridArea="nokia"
               width={["80%", "80%", "45%"]}
               minWidth="100px"
             />
