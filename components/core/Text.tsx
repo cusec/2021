@@ -45,6 +45,16 @@ export const LinkPrimary = styled(Link)`
   }
 `;
 
+export const LinkSecondary = styled(Link)`
+  font-weight: bold;
+  font-size: 16px;
+  color: ${theme.colors.brand.teal};
+
+  &:hover {
+    color: ${theme.colors.brand.blue};
+  }
+`;
+
 export const LinkPrimaryVariant = styled(Link)`
   font-weight: bold;
   font-size: 16px;

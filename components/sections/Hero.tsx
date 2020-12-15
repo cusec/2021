@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Box, Flex, Text } from "@chakra-ui/core";
+import { Box, CloseButton, Flex, Text, useToast } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -10,12 +10,11 @@ import {
   Body,
   BodyPrimary,
   Headline,
-  Link as ToastLink,
   LinkPrimary,
+  LinkSecondary,
 } from "@/components/core/Text";
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
-import { useToast, CloseButton } from "@chakra-ui/core";
 import { useRouter } from "next/router";
 
 const minHeights = [750, 750, 800];
@@ -26,6 +25,12 @@ const FlexFullView = styled(Flex)`
   background-attachment: local;
   background-size: 100vw auto;
   background-position: center bottom;
+`;
+
+const HackaCommToast = styled(Flex)`
+  background: black;
+  color: white;
+  border-radius: 15px 15px 0 0;
 `;
 
 export default function Hero(): React.ReactElement {
@@ -80,17 +85,18 @@ export default function Hero(): React.ReactElement {
 
           return (
             <>
-              <Flex color="white" p={3} bg="black">
+              <HackaCommToast p={3}>
                 <Box>
-                  <ToastLink
+                  Check out HackaComm: a brand-new hackathon brought to you by
+                  CUSEC and RBC!{" "}
+                  <LinkSecondary
                     onClick={() => {
                       handlePageSwitch("/hackacomm");
                       closeToasts();
                     }}
                   >
-                    Check out HackaComm: a brand-new hackathon brought to you by
-                    CUSEC and RBC!
-                  </ToastLink>
+                    Click to learn more.
+                  </LinkSecondary>
                 </Box>
                 <Box alignSelf="center">
                   <CloseButton
@@ -101,7 +107,7 @@ export default function Hero(): React.ReactElement {
                     }}
                   />
                 </Box>
-              </Flex>
+              </HackaCommToast>
             </>
           );
         },
