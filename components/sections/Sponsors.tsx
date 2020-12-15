@@ -177,7 +177,7 @@ export default function Sponsors(): ReactElement {
             <SponsorImage
               src={`${imgPath}/universities/toronto.svg`}
               gridArea="toronto"
-              width={["60%", "60%", "50%"]}
+              width={["60%", "60%", "25%"]}
               minWidth="72px"
             />
             <SponsorImage
@@ -189,7 +189,7 @@ export default function Sponsors(): ReactElement {
             <SponsorImage
               src={`${imgPath}/universities/waterloo.svg`}
               gridArea="waterloo"
-              width={["60%", "60%", "50%"]}
+              width={["60%", "60%", "25%"]}
               minWidth="72px"
             />
           </Grid>
