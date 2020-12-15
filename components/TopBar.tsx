@@ -59,8 +59,12 @@ export default function TopBar(): React.ReactElement {
   };
 
   const handleCusecIconClick = () => {
-    router.push("/");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (router.pathname !== "/") {
+      router.push("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     setNavOverlayOpen(false);
   };
 
