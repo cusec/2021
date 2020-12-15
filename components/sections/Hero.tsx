@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Flex, Text } from "@chakra-ui/core";
+import { Box, CloseButton, Flex, Text, useToast } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -11,9 +11,11 @@ import {
   BodyPrimary,
   Headline,
   LinkPrimary,
+  LinkSecondary,
 } from "@/components/core/Text";
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
+import { useRouter } from "next/router";
 
 const minHeights = [750, 750, 800];
 
@@ -25,6 +27,12 @@ const FlexFullView = styled(Flex)`
   background-position: center bottom;
 `;
 
+const HackaCommToast = styled(Flex)`
+  background: black;
+  color: white;
+  border-radius: 15px 15px 0 0;
+`;
+
 export default function Hero(): React.ReactElement {
   const [heightProp, setHeightProp] = useState(
     minHeights.map((minHeight) => `max(100vh, ${minHeight}px)`)
@@ -32,6 +40,15 @@ export default function Hero(): React.ReactElement {
   const actualWidth = useScreenWidth();
   const [currentWidth, setCurrentWidth] = useState(0);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
+  const toast = useToast();
+  const router = useRouter();
+
+  const toastRefs = useRef<(() => void)[]>([]);
+
+  const closeToasts = () => {
+    toastRefs.current.forEach((cb) => cb());
+    toastRefs.current = [];
+  };
 
   useEffect(() => {
     const updateHeight = () => {
@@ -48,6 +65,57 @@ export default function Hero(): React.ReactElement {
       setNavOverlayOpen(false);
     }
   }, [actualWidth, currentWidth, setNavOverlayOpen]);
+
+  useEffect(() => {
+    const handlePageSwitch = (route: string) => {
+      if (router.pathname !== route) {
+        router.push(route);
+      } else {
+        setNavOverlayOpen(false);
+      }
+    };
+
+    const hackaCommToast = setTimeout(() => {
+      toast({
+        position: "bottom",
+        duration: null,
+        isClosable: true,
+        render: ({ onClose }) => {
+          toastRefs.current.push(onClose);
+
+          return (
+            <>
+              <HackaCommToast p={3}>
+                <Box>
+                  Check out HackaComm: a brand-new hackathon brought to you by
+                  CUSEC and RBC!{" "}
+                  <LinkSecondary
+                    onClick={() => {
+                      handlePageSwitch("/hackacomm");
+                      closeToasts();
+                    }}
+                  >
+                    Click to learn more.
+                  </LinkSecondary>
+                </Box>
+                <Box alignSelf="center">
+                  <CloseButton
+                    size="lg"
+                    _focus={{}}
+                    onClick={() => {
+                      closeToasts();
+                    }}
+                  />
+                </Box>
+              </HackaCommToast>
+            </>
+          );
+        },
+      });
+    }, 1000);
+
+    return () => clearTimeout(hackaCommToast);
+  }, [router, setNavOverlayOpen, toast]);
 
   return (
     <FlexFullView
