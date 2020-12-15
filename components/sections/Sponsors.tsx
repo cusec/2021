@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Flex, Grid, Image } from "@chakra-ui/core";
 import { LocationHashEnum } from "@/src/enums";
 import { WidthWrapper } from "@/components/core/Layout";
-import { BodyPrimary, Headline, HeadlinePrimary } from "@/components/core/Text";
+import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 
 const imgPath = "/images";
 
@@ -16,7 +16,8 @@ const SponsorImage = styled(Image)`
 const wideGrid = [
   `. rbc rbc rbc rbc .`,
   `. kinaxis kinaxis morgan morgan .`,
-  `. amazon amazon ssense ssense .`,
+  `. genetec genetec unity unity .`,
+  `amazon amazon ssense ssense nokia nokia`,
   `. fellow fellow balsamiq balsamiq .`,
   `. voiceflow one-pass one-pass egghead .`,
 ]
@@ -27,10 +28,25 @@ const thinGrid = [
   `rbc rbc rbc`,
   `kinaxis kinaxis kinaxis`,
   `morgan morgan morgan`,
+  `genetec genetec genetec`,
+  `unity unity unity`,
   `amazon . ssense`,
+  `. nokia .`,
   `fellow . balsamiq`,
   `voiceflow . one-pass`,
   `. egghead .`,
+]
+  .map((row) => `"${row}"`)
+  .join(" ");
+
+const wideSchoolGrid = [`calgary carleton toronto uottawa waterloo`]
+  .map((row) => `"${row}"`)
+  .join(" ");
+
+const thinSchoolGrid = [
+  `calgary . carleton`,
+  `toronto . uottawa`,
+  `. waterloo.`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -77,6 +93,16 @@ export default function Sponsors(): ReactElement {
               width={["50%", "50%", "80%"]}
             />
             <SponsorImage
+              src={`${imgPath}/genetec.svg`}
+              gridArea="genetec"
+              width={["50%", "50%", "80%"]}
+            />
+            <SponsorImage
+              src={`${imgPath}/unity.svg`}
+              gridArea="unity"
+              width={["50%", "50%", "80%"]}
+            />
+            <SponsorImage
               src={`${imgPath}/Amazon_logo.svg`}
               gridArea="amazon"
               width={["80%", "80%", "45%"]}
@@ -85,6 +111,12 @@ export default function Sponsors(): ReactElement {
             <SponsorImage
               src={`${imgPath}/Ssense_logo.svg`}
               gridArea="ssense"
+              width={["80%", "80%", "45%"]}
+              minWidth="100px"
+            />
+            <SponsorImage
+              src={`${imgPath}/nokia.svg`}
+              gridArea="nokia"
               width={["80%", "80%", "45%"]}
               minWidth="100px"
             />
@@ -119,9 +151,49 @@ export default function Sponsors(): ReactElement {
               minWidth="72px"
             />
           </Grid>
-          <Headline marginTop="0.6in" marginBottom="1in">
-            Stay tuned for more!
-          </Headline>
+          <Grid
+            width="100%"
+            gridTemplateColumns={[
+              "repeat(3, 1fr)",
+              "repeat(3, 1fr)",
+              "repeat(5, 1fr)",
+            ]}
+            gridTemplateAreas={[thinSchoolGrid, thinSchoolGrid, wideSchoolGrid]}
+            justifyItems="center"
+            alignItems="center"
+            marginBottom="1in"
+          >
+            <SponsorImage
+              src={`${imgPath}/universities/calgary.svg`}
+              gridArea="calgary"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/carleton.svg`}
+              gridArea="carleton"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/toronto.svg`}
+              gridArea="toronto"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/uottawa.svg`}
+              gridArea="uottawa"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/universities/waterloo.svg`}
+              gridArea="waterloo"
+              width={["60%", "60%", "25%"]}
+              minWidth="72px"
+            />
+          </Grid>
         </Flex>
       </WidthWrapper>
     </div>
