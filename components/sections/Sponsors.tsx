@@ -161,6 +161,7 @@ export default function Sponsors(): ReactElement {
             gridTemplateAreas={[thinSchoolGrid, thinSchoolGrid, wideSchoolGrid]}
             justifyItems="center"
             alignItems="center"
+            marginBottom="1in"
           >
             <SponsorImage
               src={`${imgPath}/universities/calgary.svg`}
