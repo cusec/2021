@@ -114,7 +114,10 @@ export default function Hero(): React.ReactElement {
       });
     }, 1000);
 
-    return () => clearTimeout(hackaCommToast);
+    return () => {
+      clearTimeout(hackaCommToast);
+      closeToasts();
+    };
   }, [router, setNavOverlayOpen, toast]);
 
   return (
