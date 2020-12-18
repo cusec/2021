@@ -1,7 +1,8 @@
 import { ReactElement, Fragment } from "react";
+import Link from "next/link";
 import useStore from "@/src/store";
 import styled from "@emotion/styled";
-import { Flex, Box, Divider, Link } from "@chakra-ui/core";
+import { Flex, Box, Divider, Link as ChakraLink } from "@chakra-ui/core";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { locations } from "@/src/constants";
 import { Headline } from "@/components/core/Text";
@@ -30,13 +31,6 @@ export default function NavOverlay(props: {
   const router = useRouter();
 
   const handleNavItemClick = () => {
-    setNavOverlayOpen(false);
-  };
-
-  const handlePageSwitch = (route: string) => {
-    if (router.pathname !== route) {
-      router.push(route);
-    }
     setNavOverlayOpen(false);
   };
 
@@ -70,16 +64,20 @@ export default function NavOverlay(props: {
             ))
           : locations.map((location) => (
               <Fragment key={location.href}>
-                <Link onClick={() => router.push(`/${location.href}`)}>
-                  <GradientNavItemLink>{location.label}</GradientNavItemLink>
+                <Link href={`/${location.href}`}>
+                  <ChakraLink>
+                    <GradientNavItemLink>{location.label}</GradientNavItemLink>
+                  </ChakraLink>
                 </Link>
                 <br />
               </Fragment>
             ))}
         <Divider />
         <Box>
-          <Link onClick={() => handlePageSwitch("/hackacomm")}>
-            <GradientNavItemLink>HackaComm</GradientNavItemLink>
+          <Link href="/hackacomm">
+            <ChakraLink>
+              <GradientNavItemLink>HackaComm</GradientNavItemLink>
+            </ChakraLink>
           </Link>
           <br />
         </Box>
