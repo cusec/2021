@@ -176,7 +176,9 @@ export default function HackaComm(): ReactElement {
             <Headline marginTop="0.5rem">Beginning December 4th</Headline>
             <Level1List>
               <ListItem>
-                <LinkPrimary href={registrationLink}>Register</LinkPrimary>
+                <Link href={registrationLink}>
+                  <LinkPrimary>Register</LinkPrimary>
+                </Link>
               </ListItem>
               <Level2List>
                 <ListItem>Sign up individually or in a team of 3-5</ListItem>

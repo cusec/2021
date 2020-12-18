@@ -12,10 +12,16 @@ function App({ Component, pageProps }: AppProps): ReactElement {
   const router = useRouter();
   const analytics = useStore((state) => state.analytics);
   const initAnalytics = useStore((state) => state.initAnalytics);
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
   useEffect(() => {
     const routeChangeComplete = (url: string) => {
-      window.scrollTo(0, 0);
+      if (url.indexOf("#") === -1) {
+        window.scrollTo(0, 0);
+      }
+
+      setNavOverlayOpen(false);
+
       analytics?.logEvent(`routeChangeComplete: ${url}`);
     };
 
@@ -32,7 +38,7 @@ function App({ Component, pageProps }: AppProps): ReactElement {
       router.events.off("routeChangeComplete", routeChangeComplete);
       router.events.off("hashChangeComplete", hashChangeComplete);
     };
-  }, [analytics, initAnalytics, router.events]);
+  }, [analytics, initAnalytics, setNavOverlayOpen, router.events]);
 
   return (
     <>
