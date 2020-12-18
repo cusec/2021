@@ -92,9 +92,16 @@ export default function HackaComm(): ReactElement {
               <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
                 HackaComm: Hacking climate change through community efforts
               </Headline>
-              <Flex justify={["center", "center", "center", "left"]}>
+              <Flex
+                direction={["column", "column", "row"]}
+                justify={["center", "center", "center", "left"]}
+              >
                 <BodyPrimary>December 4, 2020 - January 10, 2021</BodyPrimary>
-                <Text marginX="10px" height="24px">
+                <Text
+                  marginX="10px"
+                  height="24px"
+                  display={["none", "none", "block"]}
+                >
                   {"\u2022"}
                 </Text>
                 <BodyPrimary>Virtual Hackathon</BodyPrimary>
@@ -262,11 +269,7 @@ export default function HackaComm(): ReactElement {
             <Body fontSize="12px" marginTop="0.5in">
               *Subject to change
             </Body>
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              display={["flex", "flex", "flex", "none"]}
-            >
+            <Flex justifyContent="center" alignItems="center">
               <Socials margin="16px" />
             </Flex>
           </>
