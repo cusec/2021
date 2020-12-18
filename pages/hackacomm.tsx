@@ -106,6 +106,13 @@ export default function HackaComm(): ReactElement {
                 </Text>
                 <BodyPrimary>Virtual Hackathon</BodyPrimary>
               </Flex>
+              <BodyPrimary>
+                Also register for{" "}
+                <Link href="/">
+                  <LinkPrimary>CUSEC</LinkPrimary>
+                </Link>{" "}
+                to participate
+              </BodyPrimary>
             </Flex>
 
             <Flex justifyContent="center" alignItems="center" display={"flex"}>
@@ -156,6 +163,13 @@ export default function HackaComm(): ReactElement {
               people, learn some new skills, and maybe even win some prizes.
               Check out the timeline below for an overview of what we&apos;ve
               got planned.
+            </BodyPrimary>
+            <BodyPrimary>
+              Please note you will also need to register for{" "}
+              <Link href="/">
+                <LinkPrimary>CUSEC</LinkPrimary>
+              </Link>{" "}
+              to participate.
             </BodyPrimary>
             {/* Timeline */}
             <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
