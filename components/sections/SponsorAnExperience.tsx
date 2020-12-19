@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Box, Flex, Link } from "@chakra-ui/core";
+import { Box, Flex, Link } from "@chakra-ui/react";
 import BuildingBlocksSVG from "../svgs/undraw-building-blocks.svg";
 import { ButtonPrimaryVariant } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";

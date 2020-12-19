@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Link } from "@chakra-ui/core";
+import { Link } from "@chakra-ui/react";
 import useStore from "@/src/store";
 
 interface PropTypes {

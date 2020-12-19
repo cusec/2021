@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box } from "@chakra-ui/core";
+import { Box } from "@chakra-ui/react";
 import theme from "@/src/theme";
 
 export const WidthWrapper = styled(Box)`
@@ -10,17 +10,17 @@ export const WidthWrapper = styled(Box)`
   padding-left: 0.25in;
   padding-right: 0.25in;
 
-  @media only screen and (min-width: ${theme.breakpoints[0]}) {
+  @media only screen and (min-width: ${theme.breakpoints[1]}) {
     padding-left: 0.5in;
     padding-right: 0.5in;
   }
 
-  @media only screen and (min-width: ${theme.breakpoints[1]}) {
+  @media only screen and (min-width: ${theme.breakpoints[2]}) {
     padding-left: 0.75in;
     padding-right: 0.75in;
   }
 
-  @media only screen and (min-width: ${theme.breakpoints[2]}) {
+  @media only screen and (min-width: ${theme.breakpoints[3]}) {
     padding-left: 1.25in;
     padding-right: 1.25in;
   }

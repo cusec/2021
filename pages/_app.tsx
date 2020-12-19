@@ -1,6 +1,6 @@
 import { useEffect, ReactElement } from "react";
 
-import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -47,10 +47,9 @@ function App({ Component, pageProps }: AppProps): ReactElement {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CSSReset />
+      <ChakraProvider resetCSS theme={theme}>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </ChakraProvider>
     </>
   );
 }

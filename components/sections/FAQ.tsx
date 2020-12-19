@@ -8,13 +8,13 @@ import React, {
 } from "react";
 import {
   Accordion,
-  AccordionHeader,
+  AccordionButton,
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
   Box,
   Flex,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { FAQData as data } from "@/src/data";
 import { LocationHashEnum } from "@/src/enums";
 import { GreyBackground, WidthWrapper } from "@/components/core/Layout";
@@ -61,7 +61,7 @@ function AccordionBox({
         onChange={handleChange}
         isOpen={shouldBeOpened}
       >
-        <AccordionHeader
+        <AccordionButton
           _focus={{}}
           padding="12px 20px"
           borderRadius={shouldBeOpened ? "8px 8px 0px 0px" : "8px"}
@@ -75,7 +75,7 @@ function AccordionBox({
             {item.question}
           </Box>
           <AccordionIcon />
-        </AccordionHeader>
+        </AccordionButton>
         <AccordionPanel padding="8px 20px 0px 20px">
           {item.answer.map((paragraph) => (
             <Fragment key={paragraph}>

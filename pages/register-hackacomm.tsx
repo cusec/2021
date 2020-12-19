@@ -19,12 +19,12 @@ export default function RegisterHackaComm(): ReactElement {
         frameBorder="0"
         allow="camera; microphone; autoplay; encrypted-media;"
         src="https://eli030.typeform.com/to/yZyNwg6c?typeform-embed=embed-fullpage"
-      ></iframe>
+      />
 
       <script
         type="text/javascript"
         src="https://embed.typeform.com/embed.js"
-      ></script>
+      />
 
       <style jsx>{`
         html {

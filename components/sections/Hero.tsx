@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Box, CloseButton, Flex, Text, useToast } from "@chakra-ui/core";
+import { Box, CloseButton, Flex, Text, useToast } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -16,6 +16,7 @@ import {
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 import { useRouter } from "next/router";
+import theme from "@/src/theme";
 
 const minHeights = [750, 750, 800];
 
@@ -75,6 +76,8 @@ export default function Hero(): React.ReactElement {
       }
     };
 
+    console.log(theme.breakpoints);
+
     const hackaCommToast = setTimeout(() => {
       toast({
         position: "bottom",
@@ -84,9 +87,9 @@ export default function Hero(): React.ReactElement {
           toastRefs.current.push(onClose);
 
           return (
-            <>
-              <HackaCommToast p={3}>
-                <Box>
+            <HackaCommToast p={3}>
+              <Box>
+                <Text align="center">
                   Check out HackaComm: a brand-new hackathon brought to you by
                   CUSEC and RBC!{" "}
                   <LinkSecondary
@@ -97,18 +100,18 @@ export default function Hero(): React.ReactElement {
                   >
                     Click to learn more.
                   </LinkSecondary>
-                </Box>
-                <Box alignSelf="center">
-                  <CloseButton
-                    size="lg"
-                    _focus={{}}
-                    onClick={() => {
-                      closeToasts();
-                    }}
-                  />
-                </Box>
-              </HackaCommToast>
-            </>
+                </Text>
+              </Box>
+              <Box alignSelf="center">
+                <CloseButton
+                  size="lg"
+                  _focus={{}}
+                  onClick={() => {
+                    closeToasts();
+                  }}
+                />
+              </Box>
+            </HackaCommToast>
           );
         },
       });

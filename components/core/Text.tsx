@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Link as ChakraLink, Text } from "@chakra-ui/core";
+import { Link as ChakraLink, Text } from "@chakra-ui/react";
 import theme from "@/src/theme";
 import Linkify from "react-linkify";
 import { ReactElement } from "react";

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Logo from "../svgs/logo.svg";
 import React, { ReactElement } from "react";
-import { Flex, Text } from "@chakra-ui/core";
+import { Flex, Text } from "@chakra-ui/react";
 import { GreyBackground } from "@/components/core/Layout";
 import { FooterLink } from "@/components/core/Text";
 import FooterModal from "@/components/FooterModal";
@@ -12,11 +12,6 @@ import {
   termsOfService,
 } from "@/src/data";
 import { WidthWrapper } from "@/components/core/Layout";
-
-const BaseContainer = styled(WidthWrapper)`
-  display: flex;
-  height: 100%;
-`;
 
 const FooterText = styled(Text)`
   color: #616161;
@@ -30,7 +25,7 @@ export default function Footer(): ReactElement {
   return (
     <>
       <GreyBackground>
-        <BaseContainer>
+        <WidthWrapper>
           <Flex
             width="100%"
             flexDirection={["column", "column", "column", "row"]}
@@ -84,7 +79,7 @@ export default function Footer(): ReactElement {
               <FooterModal linkBody="Terms of Use" modalBody={termsOfService} />
             </Flex>
           </Flex>
-        </BaseContainer>
+        </WidthWrapper>
       </GreyBackground>
     </>
   );

@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/core";
+import { Box, Flex } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
 import EmailListingInput from "@/components/EmailListingInput";
 import SocialShareSVG from "../svgs/undraw-social-share.svg";

@@ -8,7 +8,8 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-} from "@chakra-ui/core";
+  Text,
+} from "@chakra-ui/react";
 import { WidthWrapper } from "@/components/core/Layout";
 import { HeadlinePrimary } from "@/components/core/Text";
 
@@ -43,8 +44,12 @@ export default function Schedule(): ReactElement {
                 <Tab _focus={{}}>Sunday, January 10th 2021</Tab>
               </TabList>
               <TabPanels>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
+                <TabPanel>
+                  <Text>Saturday, January 9th 2021</Text>
+                </TabPanel>
+                <TabPanel>
+                  <Text>Sunday, January 10th 2021</Text>
+                </TabPanel>
               </TabPanels>
             </Tabs>
           </Box>

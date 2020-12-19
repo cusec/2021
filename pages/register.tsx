@@ -19,12 +19,12 @@ export default function Register(): ReactElement {
         frameBorder="0"
         allow="camera; microphone; autoplay; encrypted-media;"
         src="https://eli030.typeform.com/to/FFoe9hQ9?typeform-embed=embed-fullpage"
-      ></iframe>
+      />
 
       <script
         type="text/javascript"
         src="https://embed.typeform.com/embed.js"
-      ></script>
+      />
 
       <style jsx>{`
         html {

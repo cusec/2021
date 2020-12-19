@@ -1,4 +1,4 @@
-import { Box, Flex, Link as ChakraLink } from "@chakra-ui/core";
+import { Box, Flex, Link as ChakraLink } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
 import React, { useRef, useEffect, useState } from "react";

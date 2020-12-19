@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Flex, Image, List, ListItem, Text } from "@chakra-ui/core";
+import { Flex, Image, List, ListItem, Text } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import {
   Body,
@@ -22,7 +22,7 @@ const Title = styled(Body)`
 `;
 
 const StyledList = styled(List)`
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
 `;
 
 const Level1List = styled(StyledList)`

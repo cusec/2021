@@ -5,10 +5,11 @@ import {
   InputGroup,
   InputRightElement,
   useToast,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { useState, FormEvent, ReactElement } from "react";
 import useStore from "@/src/store";
 import firebase from "firebase/app";
+import { ArrowForwardIcon, CheckIcon } from "@chakra-ui/icons";
 
 enum ToastStatusEnum {
   INFO = "info",
@@ -127,7 +128,7 @@ export default function EmailListingInput(props: {
         <Flex width="100%">
           <IconButton
             aria-label="Submit email address to join email listing"
-            icon={isSubmitted ? "check" : "arrow-forward"}
+            icon={isSubmitted ? <CheckIcon /> : <ArrowForwardIcon />}
             isRound={true}
             backgroundColor="brand.blue"
             color="white"

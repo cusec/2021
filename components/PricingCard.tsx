@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Box, Flex, Stack } from "@chakra-ui/core";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import CheckMark from "./svgs/check-mark-coloured.svg";
 import { Body, Headline } from "@/components/core/Text";

@@ -4,7 +4,7 @@ import EmailIcon from "./svgs/envelope-coloured-icon.svg";
 import FBIcon from "./svgs/facebook-coloured-icon.svg";
 import TwitterIcon from "./svgs/twitter-coloured-icon.svg";
 import SocialLink from "./SocialLink";
-import { Flex } from "@chakra-ui/core";
+import { Flex } from "@chakra-ui/react";
 
 export default function ColoredSocialIcons(): ReactElement {
   return (
