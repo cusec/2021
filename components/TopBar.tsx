@@ -1,4 +1,4 @@
-import { Box, Flex, Link } from "@chakra-ui/core";
+import { Box, Flex, Link as ChakraLink } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
 import React, { useRef, useEffect, useState } from "react";
@@ -13,6 +13,7 @@ import NavOverlay from "@/components/NavOverlay";
 import theme from "@/src/theme";
 import { WidthWrapper } from "@/components/core/Layout";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -59,21 +60,13 @@ export default function TopBar(): React.ReactElement {
   };
 
   const handleCusecIconClick = () => {
-    if (router.pathname !== "/") {
-      router.push("/");
-    } else {
+    if (router.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
     }
 
     setNavOverlayOpen(false);
-  };
-
-  const handlePageSwitch = (route: string) => {
-    if (router.pathname !== route) {
-      router.push(route);
-    } else {
-      setNavOverlayOpen(false);
-    }
   };
 
   useEffect(() => {
@@ -119,9 +112,9 @@ export default function TopBar(): React.ReactElement {
         <WidthWrapper>
           <Flex align="center" justify="space-between" paddingY="8px">
             <Flex align="center">
-              <Link onClick={handleCusecIconClick}>
+              <ChakraLink onClick={handleCusecIconClick}>
                 <Logo style={{ height: "32px", width: "auto" }} />
-              </Link>
+              </ChakraLink>
             </Flex>
             <Box display={["block", "block", "block", "none"]} cursor="pointer">
               <HamburgerMenu
@@ -147,13 +140,13 @@ export default function TopBar(): React.ReactElement {
                       </AnchorLink>
                     ))
                   : locations.map((location) => (
-                      <Link
-                        key={location.href}
-                        onClick={() => router.push(`/${location.href}`)}
-                        marginRight="32px"
-                        textDecoration="none !important"
-                      >
-                        <NavBarLink>{location.label}</NavBarLink>
+                      <Link key={location.href} href={`/${location.href}`}>
+                        <ChakraLink
+                          marginRight="32px"
+                          textDecoration="none !important"
+                        >
+                          <NavBarLink>{location.label}</NavBarLink>
+                        </ChakraLink>
                       </Link>
                     ))}
               </Flex>
@@ -161,12 +154,10 @@ export default function TopBar(): React.ReactElement {
                 <VerticalBar />
               </Flex>
               <Flex direction="row">
-                <Link
-                  onClick={() => handlePageSwitch("/hackacomm")}
-                  marginX="32px"
-                  textDecoration="none !important"
-                >
-                  <NavBarLink>HackaComm</NavBarLink>
+                <Link href="/hackacomm">
+                  <ChakraLink marginX="32px" textDecoration="none !important">
+                    <NavBarLink>HackaComm</NavBarLink>
+                  </ChakraLink>
                 </Link>
               </Flex>
               <Flex>

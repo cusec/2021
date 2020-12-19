@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Flex, Image, Text } from "@chakra-ui/core";
+import { Flex, Image, List, ListItem, Text } from "@chakra-ui/core";
 import Socials from "@/components/Socials";
 import {
   Body,
@@ -19,6 +19,20 @@ const Title = styled(Body)`
   font-weight: 900;
   line-height: 1;
   margin-bottom: 4px;
+`;
+
+const StyledList = styled(List)`
+  font-family: "Inter";
+`;
+
+const Level1List = styled(StyledList)`
+  list-style-type: disc;
+  padding-left: 20px;
+`;
+
+const Level2List = styled(StyledList)`
+  list-style-type: circle;
+  padding-left: 40px;
 `;
 
 const registrationLink = "/register-hackacomm";
@@ -78,30 +92,34 @@ export default function HackaComm(): ReactElement {
               <Headline fontSize={["xl", "2xl"]} marginBottom="12px">
                 HackaComm: Hacking climate change through community efforts
               </Headline>
-              <Flex justify={["center", "center", "center", "left"]}>
+              <Flex
+                direction={["column", "column", "row"]}
+                justify={["center", "center", "center", "left"]}
+              >
                 <BodyPrimary>December 4, 2020 - January 10, 2021</BodyPrimary>
-                <Text marginX="10px" height="24px">
+                <Text
+                  marginX="10px"
+                  height="24px"
+                  display={["none", "none", "block"]}
+                >
                   {"\u2022"}
                 </Text>
                 <BodyPrimary>Virtual Hackathon</BodyPrimary>
               </Flex>
+              <BodyPrimary>
+                Also register for{" "}
+                <Link href="/">
+                  <LinkPrimary>CUSEC</LinkPrimary>
+                </Link>{" "}
+                to participate
+              </BodyPrimary>
             </Flex>
 
             <Flex justifyContent="center" alignItems="center" display={"flex"}>
               <Link href={registrationLink}>
                 <ButtonPrimary>Register</ButtonPrimary>
               </Link>
-              {/* <Link href={discordLink}>
-                <Button padding="0" marginLeft="1rem" backgroundColor="none">
-                  <Image
-                    src="/images/discord-logo.svg"
-                    width="150.84px"
-                    userSelect="none"
-                  />
-                </Button>
-              </Link> */}
             </Flex>
-            {/* Theme */}
             <HeadlinePrimary marginTop="0.5in">Challenge</HeadlinePrimary>
             <BodyPrimary>
               As a community, we all need to adapt to face the challenge that is
@@ -123,18 +141,18 @@ export default function HackaComm(): ReactElement {
               radical, crazy ideas. Be creative!
             </BodyPrimary>
             <Headline marginTop="0.5rem">Ideas to get you started</Headline>
-            <ul style={{ paddingLeft: "40px" }}>
-              <li>
+            <Level1List>
+              <ListItem>
                 I want to identify the places in my neighbourhood where there is
                 a lot of trash (photos of littered places, heat maps,
                 initiatives, tasks, etc.) so that I can go there and take action
                 on my daily walk.
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 I want to get in touch with individuals and families in need so
                 that I can cook for someone extra each day.
-              </li>
-            </ul>
+              </ListItem>
+            </Level1List>
             {/* How to participate */}
             <HeadlinePrimary marginTop="1rem">
               How to participate
@@ -146,113 +164,128 @@ export default function HackaComm(): ReactElement {
               Check out the timeline below for an overview of what we&apos;ve
               got planned.
             </BodyPrimary>
+            <BodyPrimary>
+              Please note you will also need to register for{" "}
+              <Link href="/">
+                <LinkPrimary>CUSEC</LinkPrimary>
+              </Link>{" "}
+              to participate.
+            </BodyPrimary>
             {/* Timeline */}
             <HeadlinePrimary marginTop="1rem">Timeline</HeadlinePrimary>
             <Headline marginTop="0.5rem">Beginning December 4th</Headline>
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>
-                <LinkPrimary href={registrationLink}>Register</LinkPrimary>
-              </li>
-              <ul style={{ paddingLeft: "40px" }}>
-                <li>Sign up individually or in a team of 3-5</li>
-                <li>Connect with your team on Discord</li>
-                <li>Start brainstorming ideas/hacking!</li>
-              </ul>
-              <li>Join our Discord server</li>
-              <ul style={{ paddingLeft: "40px" }}>
-                <li>Send us your Discord ID during registration</li>
-                <li>Communicate with your teammates and other hackers</li>
-                <li>Ask RBC and CUSEC volunteers all your questions!</li>
-              </ul>
-            </ul>
+            <Level1List>
+              <ListItem>
+                <Link href={registrationLink}>
+                  <LinkPrimary>Register</LinkPrimary>
+                </Link>
+              </ListItem>
+              <Level2List>
+                <ListItem>Sign up individually or in a team of 3-5</ListItem>
+                <ListItem>Connect with your team on Discord</ListItem>
+                <ListItem>Start brainstorming ideas/hacking!</ListItem>
+              </Level2List>
+              <ListItem>Join our Discord server</ListItem>
+              <Level2List>
+                <ListItem>Send us your Discord ID during registration</ListItem>
+                <ListItem>
+                  Communicate with your teammates and other hackers
+                </ListItem>
+                <ListItem>
+                  Ask RBC and CUSEC volunteers all your questions!
+                </ListItem>
+              </Level2List>
+            </Level1List>
             <Headline marginTop="0.5rem">January 4th</Headline>
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>Meet the mentors day</li>
-              <ul style={{ paddingLeft: "40px" }}>
-                <li>
+            <Level1List>
+              <ListItem>Meet the mentors day</ListItem>
+              <Level2List>
+                <ListItem>
                   Talk to RBC developers get help with your product and code
-                </li>
-              </ul>
-            </ul>
+                </ListItem>
+              </Level2List>
+            </Level1List>
             <Headline marginTop="0.5rem">January 5th</Headline>
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>Submit your teams</li>
-              <ul style={{ paddingLeft: "40px" }}>
-                <li>Submit your team name and team members</li>
-                <li>Share GitHub repo with organizers</li>
-                <li>Pitch schedule will be released</li>
-              </ul>
-            </ul>
+            <Level1List>
+              <ListItem>Submit your teams</ListItem>
+              <Level2List>
+                <ListItem>Submit your team name and team members</ListItem>
+                <ListItem>Share GitHub repo with organizers</ListItem>
+                <ListItem>Pitch schedule will be released</ListItem>
+              </Level2List>
+            </Level1List>
             <Headline marginTop="0.5rem">January 8th</Headline>
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>Preliminaries: Pitch Day (All Day)</li>
-              <ul style={{ paddingLeft: "40px" }}>
-                <li>Pitch to the Judging panel</li>
-                <li>
+            <Level1List>
+              <ListItem>Preliminaries: Pitch Day (All Day)</ListItem>
+              <Level2List>
+                <ListItem>Pitch to the Judging panel</ListItem>
+                <ListItem>
                   Top three teams will be chosen to present during the
                   conference
-                </li>
-              </ul>
-            </ul>
+                </ListItem>
+              </Level2List>
+            </Level1List>
 
             <Headline marginTop="0.5rem">January 10th</Headline>
 
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>Final presentations</li>
-              <ul style={{ paddingLeft: "40px" }}>
-                <li>Top three teams pitch to the whole conference</li>
-                <li>Winners will be announced!</li>
-              </ul>
-            </ul>
+            <Level1List>
+              <ListItem>Final presentations</ListItem>
+              <Level2List>
+                <ListItem>
+                  Top three teams pitch to the whole conference
+                </ListItem>
+                <ListItem>Winners will be announced!</ListItem>
+              </Level2List>
+            </Level1List>
 
             {/* Judging Criteria */}
             <HeadlinePrimary marginTop="1rem">Judging Criteria</HeadlinePrimary>
             <Headline marginTop="0.5rem">Vision: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>Is your idea feasible in today’s world?</li>
-              <li>What kind of impact could this have?</li>
-            </ul>
+            <Level1List>
+              <ListItem>Is your idea feasible in today’s world?</ListItem>
+              <ListItem>What kind of impact could this have?</ListItem>
+            </Level1List>
 
             <Headline marginTop="0.5rem">UI/UX Design: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>How well designed is your solution?</li>
-              <li>Has design thinking been applied?</li>
-            </ul>
+            <Level1List>
+              <ListItem>How well designed is your solution?</ListItem>
+              <ListItem>Has design thinking been applied?</ListItem>
+            </Level1List>
 
             <Headline marginTop="0.5rem">Technology: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>What technologies does your solution leverage?</li>
-              <li>What data are you consuming?</li>
-              <li>How are you using tech to solve your problem?</li>
-            </ul>
+            <Level1List>
+              <ListItem>
+                What technologies does your solution leverage?
+              </ListItem>
+              <ListItem>What data are you consuming?</ListItem>
+              <ListItem>How are you using tech to solve your problem?</ListItem>
+            </Level1List>
 
             <Headline marginTop="0.5rem">Presentation: 25/100</Headline>
 
-            <ul style={{ paddingLeft: "35px" }}>
-              <li>How well do you convey your idea?</li>
-              <li>Is the problem you’re trying to solve clearly defined?</li>
-            </ul>
+            <Level1List>
+              <ListItem>How well do you convey your idea?</ListItem>
+              <ListItem>
+                Is the problem you’re trying to solve clearly defined?
+              </ListItem>
+            </Level1List>
 
             {/* Prizes */}
             <HeadlinePrimary marginTop="1rem">Prizes</HeadlinePrimary>
-            <ol style={{ paddingLeft: "35px" }}>
-              <li>
+            <Level1List as="ol" styleType="decimal !important">
+              <ListItem>
                 First place: Kobo Formas loaded up with some of our favourite
                 books!
-              </li>
-              <li>Runner up prizes: TBD*</li>
-            </ol>
+              </ListItem>
+              <ListItem>Runner up prizes: TBD*</ListItem>
+            </Level1List>
             <Body fontSize="12px" marginTop="0.5in">
               *Subject to change
             </Body>
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              display={["flex", "flex", "flex", "none"]}
-            >
+            <Flex justifyContent="center" alignItems="center">
               <Socials margin="16px" />
             </Flex>
           </>

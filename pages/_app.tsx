@@ -2,29 +2,43 @@ import { useEffect, ReactElement } from "react";
 
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 import { AppProps } from "next/app";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import Head from "next/head";
 
 import useStore from "@/src/store";
 import theme from "@/src/theme";
 
 function App({ Component, pageProps }: AppProps): ReactElement {
+  const router = useRouter();
   const analytics = useStore((state) => state.analytics);
   const initAnalytics = useStore((state) => state.initAnalytics);
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
   useEffect(() => {
-    if (analytics) {
-      Router.events.on("routeChangeComplete", (url) => {
+    const routeChangeComplete = (url: string) => {
+      if (url.indexOf("#") === -1) {
         window.scrollTo(0, 0);
-        analytics.logEvent(`routeChangeComplete: ${url}`);
-      });
-      Router.events.on("hashChangeComplete", (url) =>
-        analytics.logEvent(`hashChangeComplete: ${url}`)
-      );
-    } else {
-      initAnalytics();
-    }
-  }, [analytics, initAnalytics]);
+      }
+
+      setNavOverlayOpen(false);
+
+      analytics?.logEvent(`routeChangeComplete: ${url}`);
+    };
+
+    const hashChangeComplete = (url: string) => {
+      analytics?.logEvent(`hashChangeComplete: ${url}`);
+    };
+
+    initAnalytics();
+
+    router.events.on("routeChangeComplete", routeChangeComplete);
+    router.events.on("hashChangeComplete", hashChangeComplete);
+
+    return () => {
+      router.events.off("routeChangeComplete", routeChangeComplete);
+      router.events.off("hashChangeComplete", hashChangeComplete);
+    };
+  }, [analytics, initAnalytics, setNavOverlayOpen, router.events]);
 
   return (
     <>
