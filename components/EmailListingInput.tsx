@@ -4,6 +4,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  InputRightAddon,
   useToast,
 } from "@chakra-ui/react";
 import { useState, FormEvent, ReactElement } from "react";
@@ -124,30 +125,34 @@ export default function EmailListingInput(props: {
         isInvalid={hasBadSubmission && !hasValidEmail && emailValue !== ""}
         errorBorderColor="red.300"
       />
-      <InputRightElement width="64px" justifyContent="flex-end">
-        <Flex width="100%">
-          <IconButton
-            aria-label="Submit email address to join email listing"
-            icon={isSubmitted ? <CheckIcon /> : <ArrowForwardIcon />}
-            isRound={true}
-            backgroundColor="brand.blue"
-            color="white"
-            fontSize={isSubmitted ? "20px" : "24px"}
-            width="100%"
-            _hover={
-              isDisabled
-                ? undefined
-                : {
-                    backgroundColor: "brand.dark_teal",
-                  }
-            }
-            _active={{}}
-            onClick={handleSubmitClick}
-            isDisabled={isDisabled}
-            isLoading={isLoading}
-          />
-        </Flex>
-      </InputRightElement>
+      <InputRightElement
+        width="56px"
+        justifyContent="flex-end"
+        children={
+          <Flex width="100%">
+            <IconButton
+              aria-label="Submit email address to join email listing"
+              icon={isSubmitted ? <CheckIcon /> : <ArrowForwardIcon />}
+              isRound={true}
+              backgroundColor="brand.blue"
+              color="white"
+              fontSize={isSubmitted ? "20px" : "24px"}
+              width="100%"
+              _hover={
+                isDisabled
+                  ? undefined
+                  : {
+                      backgroundColor: "brand.dark_teal",
+                    }
+              }
+              _active={{}}
+              onClick={handleSubmitClick}
+              isDisabled={isDisabled}
+              isLoading={isLoading}
+            />
+          </Flex>
+        }
+      />
     </InputGroup>
   );
 }

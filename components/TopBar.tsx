@@ -29,7 +29,7 @@ export const NavBarLink = styled(Body)`
     background: ${theme.colors.brand.teal};
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 4px;
