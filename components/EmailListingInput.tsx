@@ -4,10 +4,9 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  InputRightAddon,
   useToast,
 } from "@chakra-ui/react";
-import { useState, FormEvent, ReactElement } from "react";
+import { FormEvent, ReactElement, useState } from "react";
 import useStore from "@/src/store";
 import firebase from "firebase/app";
 import { ArrowForwardIcon, CheckIcon } from "@chakra-ui/icons";

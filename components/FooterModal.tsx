@@ -70,7 +70,7 @@ export default function FooterModal({
         motionPreset="slideInBottom"
         isOpen={isOpen}
         onClose={handleOnClose}
-        size="xl" // TODO
+        size="5xl"
       >
         <ModalOverlay />
         <ModalContent rounded="lg">
