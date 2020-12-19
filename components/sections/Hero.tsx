@@ -76,8 +76,6 @@ export default function Hero(): React.ReactElement {
       }
     };
 
-    console.log(theme.breakpoints);
-
     const hackaCommToast = setTimeout(() => {
       toast({
         position: "bottom",
