@@ -11,7 +11,7 @@
     "export-production": "env-cmd -e production --use-shell \"next build && next export\"",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write **/*.{js,ts,tsx} --ignore-path .gitignore",
+    "format": "prettier --write **/*.{js,ts,tsx,json} --ignore-path .gitignore",
     "lint": "eslint . --ext ts --ext tsx --ext js --ignore-path .gitignore",
     "test": "jest tests"
   },
