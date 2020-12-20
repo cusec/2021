@@ -16,7 +16,6 @@ import {
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 import { useRouter } from "next/router";
-import theme from "@/src/theme";
 
 const minHeights = [750, 750, 800];
 

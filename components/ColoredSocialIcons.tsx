@@ -11,27 +11,27 @@ export default function ColoredSocialIcons(): ReactElement {
     <>
       <Flex paddingRight={["0.15in", "0.15in", "0.2in", "0.25in"]}>
         <SocialLink
-          eventType="facebook"
+          eventtype="facebook"
           href="https://www.facebook.com/cusecofficial/"
         >
           <FBIcon />
         </SocialLink>
       </Flex>
       <Flex paddingX={["0.15in", "0.15in", "0.2in", "0.25in"]}>
-        <SocialLink eventType="twitter" href="https://twitter.com/cusec">
+        <SocialLink eventtype="twitter" href="https://twitter.com/cusec">
           <TwitterIcon />
         </SocialLink>
       </Flex>
       <Flex paddingX={["0.15in", "0.15in", "0.2in", "0.25in"]}>
         <SocialLink
-          eventType="instagram"
+          eventtype="instagram"
           href="https://www.instagram.com/cusecofficial/"
         >
           <IGIcon />
         </SocialLink>
       </Flex>
       <Flex paddingLeft={["0.15in", "0.15in", "0.2in", "0.25in"]}>
-        <SocialLink eventType="email" href="mailto:info@cusec.net">
+        <SocialLink eventtype="email" href="mailto:info@cusec.net">
           <EmailIcon />
         </SocialLink>
       </Flex>

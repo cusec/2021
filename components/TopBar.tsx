@@ -1,7 +1,7 @@
 import { Box, Flex, Link as ChakraLink } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Body } from "@/components/core/Text";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -93,6 +93,7 @@ export default function TopBar(): React.ReactElement {
     <>
       <NavOverlay getTopBarHeight={getComponentHeight} />
       <Box
+        // @ts-ignore
         ref={componentRef}
         position="fixed"
         top="0"

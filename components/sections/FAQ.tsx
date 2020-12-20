@@ -1,11 +1,4 @@
-import React, {
-  Dispatch,
-  FormEvent,
-  Fragment,
-  ReactElement,
-  SetStateAction,
-  useState,
-} from "react";
+import React, { Fragment, ReactElement, useState } from "react";
 import {
   Accordion,
   AccordionButton,
@@ -13,6 +6,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  ExpandedIndex,
   Flex,
 } from "@chakra-ui/react";
 import { FAQData as data } from "@/src/data";
@@ -28,23 +22,10 @@ import {
 
 interface AccordionBoxParams {
   item: { question: string; answer: string[] };
-  index: number;
-  opened: number | null;
-  setOpened: Dispatch<SetStateAction<number | null>>;
+  opened: boolean | null;
 }
 
-function AccordionBox({
-  item,
-  index,
-  opened,
-  setOpened,
-}: AccordionBoxParams): ReactElement {
-  const shouldBeOpened = opened !== null && opened === index;
-
-  const handleChange = (event: boolean | FormEvent<any>) => {
-    setOpened(event ? index : null);
-  };
-
+function AccordionBox({ item, opened }: AccordionBoxParams): ReactElement {
   return (
     <Box
       background="white"
@@ -52,25 +33,20 @@ function AccordionBox({
       display="flex"
       marginBottom="8px"
       rounded="8px"
-      borderColor={shouldBeOpened ? "brand.teal" : "#e2e8f0"}
-      shadow={shouldBeOpened ? "md" : "none"}
+      borderColor={opened ? "brand.teal" : "#e2e8f0"}
+      shadow={opened ? "md" : "none"}
     >
-      <AccordionItem
-        border="0"
-        width="100%"
-        onChange={handleChange}
-        isOpen={shouldBeOpened}
-      >
+      <AccordionItem border="0" width="100%">
         <AccordionButton
           _focus={{}}
           padding="12px 20px"
-          borderRadius={shouldBeOpened ? "8px 8px 0px 0px" : "8px"}
+          borderRadius={opened ? "8px 8px 0px 0px" : "8px"}
         >
           <Box
             flex="1"
             textAlign="left"
             marginRight="20px"
-            fontWeight={shouldBeOpened ? "bold" : "normal"}
+            fontWeight={opened ? "bold" : "normal"}
           >
             {item.question}
           </Box>
@@ -95,7 +71,11 @@ function AccordionBox({
 }
 
 export default function FAQ(): ReactElement {
-  const [opened, setOpened] = useState<number | null>(null);
+  const [opened, setOpened] = useState<string | null>(null);
+
+  const handleChange = (expandedIndex: ExpandedIndex, side: string) => {
+    setOpened(`${expandedIndex}-${side}`);
+  };
 
   return (
     <GreyBackground id={LocationHashEnum.FAQ}>
@@ -117,15 +97,19 @@ export default function FAQ(): ReactElement {
               <Accordion
                 width={["100%", "100%", "100%", "50%"]}
                 marginRight={["0", "0", "0", "16px"]}
+                onChange={(e) => handleChange(e, "left")}
+                index={
+                  opened?.includes("left")
+                    ? parseInt(opened.slice(0, -5))
+                    : undefined
+                }
               >
                 {data
                   .map((faqItem, index) => (
                     <AccordionBox
                       item={faqItem}
                       key={`${index}${faqItem.question}`}
-                      index={index}
-                      opened={opened}
-                      setOpened={setOpened}
+                      opened={`${index / 2}-left` === opened}
                     />
                   ))
                   .filter((_, index) => index % 2 === 0)}
@@ -133,15 +117,19 @@ export default function FAQ(): ReactElement {
               <Accordion
                 width={["100%", "100%", "100%", "50%"]}
                 marginLeft={["0", "0", "0", "16px"]}
+                onChange={(e) => handleChange(e, "right")}
+                index={
+                  opened?.includes("right")
+                    ? parseInt(opened.slice(0, -6))
+                    : undefined
+                }
               >
                 {data
                   .map((faqItem, index) => (
                     <AccordionBox
                       item={faqItem}
                       key={`${index}${faqItem.question}`}
-                      index={index}
-                      opened={opened}
-                      setOpened={setOpened}
+                      opened={`${Math.floor(index / 2)}-right` === opened}
                     />
                   ))
                   .filter((_, index) => index % 2 !== 0)}

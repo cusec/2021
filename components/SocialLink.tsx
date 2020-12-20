@@ -22,7 +22,7 @@ export default function SocialLink(props: PropTypes): ReactElement {
         _focus={{}}
         isExternal
         onClick={() => {
-          clickSocial(props.eventType);
+          clickSocial(props.eventtype);
         }}
       >
         {props.children}
