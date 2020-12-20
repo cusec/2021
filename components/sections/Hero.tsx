@@ -39,6 +39,7 @@ export default function Hero(): React.ReactElement {
   );
   const actualWidth = useScreenWidth();
   const [currentWidth, setCurrentWidth] = useState(0);
+  const [toastDismissed, setToastDismissed] = useState(false);
   const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
   const toast = useToast();
   const router = useRouter();
@@ -75,7 +76,7 @@ export default function Hero(): React.ReactElement {
       }
     };
 
-    const hackaCommToast = setTimeout(() => {
+    const toastPopUp = () => {
       toast({
         position: "bottom",
         duration: null,
@@ -104,6 +105,7 @@ export default function Hero(): React.ReactElement {
                   size="lg"
                   _focus={{}}
                   onClick={() => {
+                    setToastDismissed(true);
                     closeToasts();
                   }}
                 />
@@ -112,13 +114,19 @@ export default function Hero(): React.ReactElement {
           );
         },
       });
-    }, 1000);
+    };
+
+    let hackaCommToast: NodeJS.Timeout;
+
+    if (!router.asPath.includes("#") && !toastDismissed) {
+      hackaCommToast = setTimeout(toastPopUp, 1000);
+    }
 
     return () => {
       clearTimeout(hackaCommToast);
       closeToasts();
     };
-  }, [router, setNavOverlayOpen, toast]);
+  }, [router, setNavOverlayOpen, toast, toastDismissed]);
 
   return (
     <FlexFullView
