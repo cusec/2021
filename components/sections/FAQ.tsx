@@ -95,6 +95,7 @@ export default function FAQ(): ReactElement {
           <Box marginTop="0.25in">
             <Flex direction={["column", "column", "column", "row"]}>
               <Accordion
+                allowToggle
                 width={["100%", "100%", "100%", "50%"]}
                 marginRight={["0", "0", "0", "16px"]}
                 onChange={(e) => handleChange(e, "left")}
@@ -115,6 +116,7 @@ export default function FAQ(): ReactElement {
                   .filter((_, index) => index % 2 === 0)}
               </Accordion>
               <Accordion
+                allowToggle
                 width={["100%", "100%", "100%", "50%"]}
                 marginLeft={["0", "0", "0", "16px"]}
                 onChange={(e) => handleChange(e, "right")}

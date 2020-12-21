@@ -12,14 +12,16 @@ export default function Register(): ReactElement {
         />
       </Head>
 
-      <iframe
-        id="typeform-full"
-        width="100%"
-        height="100%"
-        frameBorder="0"
-        allow="camera; microphone; autoplay; encrypted-media;"
-        src="https://eli030.typeform.com/to/FFoe9hQ9?typeform-embed=embed-fullpage"
-      />
+      <div style={{ height: "100vh" }}>
+        <iframe
+          id="typeform-full"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          allow="camera; microphone; autoplay; encrypted-media;"
+          src="https://eli030.typeform.com/to/FFoe9hQ9?typeform-embed=embed-fullpage"
+        />
+      </div>
 
       <script
         type="text/javascript"
