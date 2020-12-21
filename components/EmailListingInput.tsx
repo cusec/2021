@@ -125,8 +125,9 @@ export default function EmailListingInput(props: {
         errorBorderColor="red.300"
       />
       <InputRightElement
-        width="56px"
+        width="64px"
         justifyContent="flex-end"
+        padding="0"
         children={
           <Flex width="100%">
             <IconButton
