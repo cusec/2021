@@ -198,3 +198,175 @@ export const termsOfService: {
     ],
   },
 ];
+
+type event = {
+  startTime: { hour: number; minute: number };
+  endTime: { hour: number; minute: number };
+  title: string;
+};
+
+export const scheduleSaturday: event[] = [
+  {
+    startTime: { hour: 10, minute: 30 },
+    endTime: { hour: 11, minute: 0 },
+    title: "Opening Ceremonies",
+  },
+  {
+    startTime: { hour: 11, minute: 0 },
+    endTime: { hour: 11, minute: 45 },
+    title: "Keynote Speaker #1",
+  },
+  {
+    startTime: { hour: 11, minute: 45 },
+    endTime: { hour: 12, minute: 15 },
+    title: "Talk #1 - Patrick",
+  },
+  {
+    startTime: { hour: 12, minute: 15 },
+    endTime: { hour: 13, minute: 15 },
+    title: "RBC Workshop",
+  },
+  {
+    startTime: { hour: 13, minute: 15 },
+    endTime: { hour: 14, minute: 0 },
+    title: "Speed Networking FREE X FREE",
+  },
+  {
+    startTime: { hour: 13, minute: 15 },
+    endTime: { hour: 14, minute: 0 },
+    title: "Speed Networking VIP X SS",
+  },
+  {
+    startTime: { hour: 14, minute: 0 },
+    endTime: { hour: 14, minute: 30 },
+    title: "Talk #2",
+  },
+  {
+    startTime: { hour: 14, minute: 30 },
+    endTime: { hour: 16, minute: 30 },
+    title: "Career Fair",
+  },
+  {
+    startTime: { hour: 14, minute: 30 },
+    endTime: { hour: 16, minute: 0 },
+    title: "Team Hiring Event",
+  },
+  {
+    startTime: { hour: 16, minute: 0 },
+    endTime: { hour: 16, minute: 30 },
+    title: "Talk #3",
+  },
+  {
+    startTime: { hour: 16, minute: 30 },
+    endTime: { hour: 17, minute: 30 },
+    title: "Kinaxis Workshop",
+  },
+  {
+    startTime: { hour: 16, minute: 30 },
+    endTime: { hour: 17, minute: 0 },
+    title: "Morgan Stanley Workshop",
+  },
+  {
+    startTime: { hour: 17, minute: 0 },
+    endTime: { hour: 18, minute: 0 },
+    title: "Panel",
+  },
+  {
+    startTime: { hour: 17, minute: 30 },
+    endTime: { hour: 18, minute: 0 },
+    title: "Talk #4 - RBC",
+  },
+  {
+    startTime: { hour: 18, minute: 0 },
+    endTime: { hour: 18, minute: 45 },
+    title: "Keynote Speaker #2",
+  },
+  {
+    startTime: { hour: 19, minute: 30 },
+    endTime: { hour: 22, minute: 0 },
+    title: "Social Event (TBA)",
+  },
+];
+
+export const scheduleSunday: event[] = [
+  {
+    startTime: { hour: 9, minute: 45 },
+    endTime: { hour: 10, minute: 30 },
+    title: "Morning Meditation/Exercise",
+  },
+  {
+    startTime: { hour: 10, minute: 30 },
+    endTime: { hour: 11, minute: 15 },
+    title: "Keynote #3",
+  },
+  {
+    startTime: { hour: 11, minute: 15 },
+    endTime: { hour: 11, minute: 45 },
+    title: "Talk #5 - John Fish",
+  },
+  {
+    startTime: { hour: 11, minute: 45 },
+    endTime: { hour: 12, minute: 30 },
+    title: "Speed Networking ALL X SS",
+  },
+  {
+    startTime: { hour: 12, minute: 30 },
+    endTime: { hour: 13, minute: 30 },
+    title: "Diversity Talk",
+  },
+  {
+    startTime: { hour: 13, minute: 0 },
+    endTime: { hour: 13, minute: 30 },
+    title: "Talk #6",
+  },
+  {
+    startTime: { hour: 13, minute: 30 },
+    endTime: { hour: 14, minute: 15 },
+    title: "Genetec Workshop",
+  },
+  {
+    startTime: { hour: 13, minute: 30 },
+    endTime: { hour: 14, minute: 0 },
+    title: "Unity Workshop",
+  },
+  {
+    startTime: { hour: 14, minute: 30 },
+    endTime: { hour: 16, minute: 30 },
+    title: "Career Fair",
+  },
+  {
+    startTime: { hour: 14, minute: 30 },
+    endTime: { hour: 16, minute: 0 },
+    title: "Team Hiring Event",
+  },
+  {
+    startTime: { hour: 16, minute: 0 },
+    endTime: { hour: 16, minute: 30 },
+    title: "Talk #7",
+  },
+  {
+    startTime: { hour: 16, minute: 30 },
+    endTime: { hour: 17, minute: 30 },
+    title: "VIP Q&A Hopin",
+  },
+  {
+    startTime: { hour: 17, minute: 15 },
+    endTime: { hour: 18, minute: 15 },
+    title: "Product Pitch Competition",
+  },
+  {
+    startTime: { hour: 17, minute: 45 },
+    endTime: { hour: 18, minute: 15 },
+    title: "Talk #8",
+  },
+  {
+    startTime: { hour: 18, minute: 15 },
+    endTime: { hour: 19, minute: 0 },
+    title: "Keynote #8",
+  },
+  {
+    startTime: { hour: 19, minute: 0 },
+    endTime: { hour: 19, minute: 45 },
+    title: "Closing Ceremonies",
+  },
+];
