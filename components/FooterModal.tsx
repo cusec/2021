@@ -5,9 +5,8 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  SlideIn,
   useDisclosure,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import React, { Fragment, ReactElement, useEffect } from "react";
 import {
   BodyPrimary,
@@ -67,50 +66,40 @@ export default function FooterModal({
       >
         {linkBody}
       </FooterLink>
-      {/* @ts-ignore */}
-      <SlideIn in={isOpen}>
-        {/* @ts-ignore */}
-        {(styles) => (
-          <>
-            <Modal
-              isOpen={true}
-              onClose={handleOnClose}
-              preserveScrollBarGap
-              size={["95vw", "95vw", "80vw", "60vw"]}
-            >
-              <ModalOverlay opacity={styles.opacity} />
-              <ModalContent rounded="lg" {...styles}>
-                <ModalHeader paddingTop={6}>
-                  <HeadlinePrimary margin="0px !important">
-                    {linkBody}
-                  </HeadlinePrimary>
-                </ModalHeader>
-                <ModalCloseButton _focus={{}} />
-                <ModalBody paddingBottom={6}>
-                  {modalBody.map((item) => (
-                    <Fragment key={item.title}>
-                      <Headline marginBottom="8px">{item.title}</Headline>
-                      {item.paragraph.map((paragraph) => (
-                        <Fragment key={paragraph}>
-                          <LinkifyText>
-                            {paragraph.charAt(0) === "•" ? (
-                              <BodyPrimary paddingLeft={4}>
-                                {paragraph}
-                              </BodyPrimary>
-                            ) : (
-                              <BodyPrimary>{paragraph}</BodyPrimary>
-                            )}
-                          </LinkifyText>
-                        </Fragment>
-                      ))}
-                    </Fragment>
-                  ))}
-                </ModalBody>
-              </ModalContent>
-            </Modal>
-          </>
-        )}
-      </SlideIn>
+      <Modal
+        motionPreset="slideInBottom"
+        isOpen={isOpen}
+        onClose={handleOnClose}
+        size="5xl"
+      >
+        <ModalOverlay />
+        <ModalContent rounded="lg">
+          <ModalHeader paddingTop={6}>
+            <HeadlinePrimary margin="0px !important">
+              {linkBody}
+            </HeadlinePrimary>
+          </ModalHeader>
+          <ModalCloseButton _focus={{}} />
+          <ModalBody paddingBottom={6}>
+            {modalBody.map((item) => (
+              <Fragment key={item.title}>
+                <Headline marginBottom="8px">{item.title}</Headline>
+                {item.paragraph.map((paragraph) => (
+                  <Fragment key={paragraph}>
+                    <LinkifyText>
+                      {paragraph.charAt(0) === "•" ? (
+                        <BodyPrimary paddingLeft={4}>{paragraph}</BodyPrimary>
+                      ) : (
+                        <BodyPrimary>{paragraph}</BodyPrimary>
+                      )}
+                    </LinkifyText>
+                  </Fragment>
+                ))}
+              </Fragment>
+            ))}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

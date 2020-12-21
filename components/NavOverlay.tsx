@@ -2,7 +2,7 @@ import { ReactElement, Fragment } from "react";
 import Link from "next/link";
 import useStore from "@/src/store";
 import styled from "@emotion/styled";
-import { Flex, Box, Divider, Link as ChakraLink } from "@chakra-ui/core";
+import { Flex, Box, Divider, Link as ChakraLink } from "@chakra-ui/react";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { locations } from "@/src/constants";
 import { Headline } from "@/components/core/Text";

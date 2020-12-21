@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import Link from "next/link";
-import { Box, Flex, Grid } from "@chakra-ui/core";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";

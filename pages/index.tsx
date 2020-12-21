@@ -60,6 +60,10 @@ export default function Home(): React.ReactElement {
         * {
           box-sizing: border-box;
         }
+
+        .chakra-toast__inner {
+          margin-bottom: 0 !important;
+        }
       `}</style>
     </div>
   );

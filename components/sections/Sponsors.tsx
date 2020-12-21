@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import styled from "@emotion/styled";
-import { Flex, Grid, Image } from "@chakra-ui/core";
+import { Flex, Grid, Image } from "@chakra-ui/react";
 import { LocationHashEnum } from "@/src/enums";
 import { WidthWrapper } from "@/components/core/Layout";
 import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";

@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Link } from "@chakra-ui/core";
+import { Link } from "@chakra-ui/react";
 import useStore from "@/src/store";
 
 interface PropTypes {
@@ -22,7 +22,7 @@ export default function SocialLink(props: PropTypes): ReactElement {
         _focus={{}}
         isExternal
         onClick={() => {
-          clickSocial(props.eventType);
+          clickSocial(props.eventtype);
         }}
       >
         {props.children}

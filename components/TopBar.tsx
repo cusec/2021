@@ -1,7 +1,7 @@
-import { Box, Flex, Link as ChakraLink } from "@chakra-ui/core";
+import { Box, Flex, Link as ChakraLink } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import Logo from "./svgs/logo.svg";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Body } from "@/components/core/Text";
 import styled from "@emotion/styled";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -29,7 +29,7 @@ export const NavBarLink = styled(Body)`
     background: ${theme.colors.brand.teal};
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 4px;
@@ -93,6 +93,7 @@ export default function TopBar(): React.ReactElement {
     <>
       <NavOverlay getTopBarHeight={getComponentHeight} />
       <Box
+        // @ts-ignore
         ref={componentRef}
         position="fixed"
         top="0"

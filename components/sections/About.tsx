@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Divider, Flex, Grid } from "@chakra-ui/core";
+import { Box, Divider, Flex, Grid } from "@chakra-ui/react";
 import React, { Fragment } from "react";
 import MapleLeafs from "../svgs/maple-leafs.svg";
 import InspiringKeynotes from "../svgs/inspiring-keynotes.svg";

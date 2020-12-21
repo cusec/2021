@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import Head from "next/head";
-import { Flex, Image } from "@chakra-ui/core";
+import { Flex, Image } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import useScreenWidth from "@/components/hooks/useScreenWidth";
 import useStore from "@/src/store";
