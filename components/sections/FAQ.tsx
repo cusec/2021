@@ -100,9 +100,7 @@ export default function FAQ(): ReactElement {
                 marginRight={["0", "0", "0", "16px"]}
                 onChange={(e) => handleChange(e, "left")}
                 index={
-                  opened?.includes("left")
-                    ? parseInt(opened.slice(0, -5))
-                    : undefined
+                  opened?.includes("left") ? parseInt(opened.slice(0, -5)) : []
                 }
               >
                 {data
@@ -121,9 +119,7 @@ export default function FAQ(): ReactElement {
                 marginLeft={["0", "0", "0", "16px"]}
                 onChange={(e) => handleChange(e, "right")}
                 index={
-                  opened?.includes("right")
-                    ? parseInt(opened.slice(0, -6))
-                    : undefined
+                  opened?.includes("right") ? parseInt(opened.slice(0, -6)) : []
                 }
               >
                 {data
