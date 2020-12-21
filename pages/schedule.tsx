@@ -1,26 +1,31 @@
 import { ReactElement } from "react";
-import theme from "@/src/theme";
 import {
   Box,
   Flex,
   Tab,
+  Table,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
+  Tbody,
+  Td,
+  Tr,
 } from "@chakra-ui/react";
 import { WidthWrapper } from "@/components/core/Layout";
 import { HeadlinePrimary } from "@/components/core/Text";
+import { scheduleSaturday, scheduleSunday } from "@/src/data";
+import TopBar from "@/components/TopBar";
 
 export default function Schedule(): ReactElement {
   return (
     <>
       <Box
-        background={`linear-gradient(to bottom right, ${theme.colors.bg_gradient_dark}, ${theme.colors.bg_gradient_light})`}
+        // background={`linear-gradient(to bottom right, ${theme.colors.bg_gradient_dark}, ${theme.colors.bg_gradient_light})`}
         height="100vh"
       >
-        <WidthWrapper paddingY="5rem">
+        <TopBar />
+        <WidthWrapper paddingY="10rem">
           <Box
             background="white"
             borderRadius="12px"
@@ -30,6 +35,7 @@ export default function Schedule(): ReactElement {
             minHeight="50vh"
             minWidth="50vw"
             paddingY="3rem"
+            borderWidth="10px"
           >
             <Flex
               justifyContent="center"
@@ -45,10 +51,49 @@ export default function Schedule(): ReactElement {
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  <Text>Saturday, January 9th 2021</Text>
+                  <Table variant="striped" colorScheme="gray" size="lg">
+                    <Tbody>
+                      {scheduleSaturday.map((event) => (
+                        <Tr key={event.title}>
+                          <Td>
+                            {event.startTime.hour}:{" "}
+                            {event.startTime.minute === 0
+                              ? "00"
+                              : event.startTime.minute}{" "}
+                            - {event.endTime.hour}:
+                            {event.endTime.minute === 0
+                              ? "00"
+                              : event.endTime.minute}
+                          </Td>
+                          <Td>{event.title}</Td>
+                        </Tr>
+                      ))}
+                    </Tbody>
+                  </Table>
                 </TabPanel>
                 <TabPanel>
-                  <Text>Sunday, January 10th 2021</Text>
+                  <Table variant="striped" colorScheme="gray" size="lg">
+                    <Tbody>
+                      {scheduleSunday.map((event) => (
+                        <Tr key={event.title}>
+                          <Td>
+                            {event.startTime.hour.toString().length === 1
+                              ? "0" + event.startTime.hour
+                              : event.startTime.hour}
+                            :{" "}
+                            {event.startTime.minute === 0
+                              ? "00"
+                              : event.startTime.minute}{" "}
+                            - {event.endTime.hour}:
+                            {event.endTime.minute === 0
+                              ? "00"
+                              : event.endTime.minute}
+                          </Td>
+                          <Td>{event.title}</Td>
+                        </Tr>
+                      ))}
+                    </Tbody>
+                  </Table>
                 </TabPanel>
               </TabPanels>
             </Tabs>

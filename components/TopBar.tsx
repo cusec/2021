@@ -155,6 +155,16 @@ export default function TopBar(): React.ReactElement {
                 <VerticalBar />
               </Flex>
               <Flex direction="row">
+                <Link href="/schedule">
+                  <ChakraLink marginX="32px" textDecoration="none !important">
+                    <NavBarLink>Schedule</NavBarLink>
+                  </ChakraLink>
+                </Link>
+              </Flex>
+              <Flex>
+                <VerticalBar />
+              </Flex>
+              <Flex direction="row">
                 <Link href="/hackacomm">
                   <ChakraLink marginX="32px" textDecoration="none !important">
                     <NavBarLink>HackaComm</NavBarLink>
