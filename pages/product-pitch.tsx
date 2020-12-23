@@ -71,7 +71,7 @@ export default function ProductPitch(): ReactElement {
               display={["flex", "flex", "flex", "none"]}
             >
               <Image
-                src="/images/Royal_Bank_of_Canada-Logo.wine.svg"
+                src="/images/backers/Royal_Bank_of_Canada-Logo.wine.svg"
                 height="100px"
                 width="auto"
                 userSelect="none"
@@ -135,7 +135,7 @@ export default function ProductPitch(): ReactElement {
                 display={["none", "none", "none", "flex"]}
               >
                 <Image
-                  src="/images/Royal_Bank_of_Canada-Logo.wine.svg"
+                  src="/images/backers/Royal_Bank_of_Canada-Logo.wine.svg"
                   width="min(250px, 15vw)"
                   height="auto"
                   userSelect="none"

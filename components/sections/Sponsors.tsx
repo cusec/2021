@@ -19,7 +19,7 @@ const wideGrid = [
   `. genetec genetec unity unity .`,
   `amazon amazon ssense ssense nokia nokia`,
   `. fellow fellow balsamiq balsamiq .`,
-  `. voiceflow one-pass one-pass egghead .`,
+  `. voiceflow one-pass egghead wonsulting .`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -34,7 +34,7 @@ const thinGrid = [
   `. nokia .`,
   `fellow . balsamiq`,
   `voiceflow . one-pass`,
-  `. egghead .`,
+  `egghead . wonsulting`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -78,77 +78,83 @@ export default function Sponsors(): ReactElement {
             alignItems="center"
           >
             <SponsorImage
-              src={`${imgPath}/Royal_Bank_of_Canada-Logo.wine.svg`}
+              src={`${imgPath}/backers/Royal_Bank_of_Canada-Logo.wine.svg`}
               gridArea="rbc"
               width={["30%", "30%", "25%"]}
             />
             <SponsorImage
-              src={`${imgPath}/Kinaxis-Logo.svg`}
+              src={`${imgPath}/backers/Kinaxis-Logo.svg`}
               gridArea="kinaxis"
               width={["50%", "50%", "80%"]}
             />
             <SponsorImage
-              src={`${imgPath}/Morgan_Stanley-Logo.svg`}
+              src={`${imgPath}/backers/Morgan_Stanley-Logo.svg`}
               gridArea="morgan"
               width={["50%", "50%", "80%"]}
             />
             <SponsorImage
-              src={`${imgPath}/genetec.svg`}
+              src={`${imgPath}/backers/genetec.svg`}
               gridArea="genetec"
               width={["50%", "50%", "80%"]}
             />
             <SponsorImage
-              src={`${imgPath}/unity.svg`}
+              src={`${imgPath}/backers/unity.svg`}
               gridArea="unity"
               width={["50%", "50%", "80%"]}
             />
             <SponsorImage
-              src={`${imgPath}/Amazon_logo.svg`}
+              src={`${imgPath}/backers/Amazon_logo.svg`}
               gridArea="amazon"
               width={["80%", "80%", "45%"]}
               minWidth="100px"
             />
             <SponsorImage
-              src={`${imgPath}/Ssense_logo.svg`}
+              src={`${imgPath}/backers/Ssense_logo.svg`}
               gridArea="ssense"
               width={["80%", "80%", "45%"]}
               minWidth="100px"
             />
             <SponsorImage
-              src={`${imgPath}/nokia.svg`}
+              src={`${imgPath}/backers/nokia.svg`}
               gridArea="nokia"
               width={["80%", "80%", "45%"]}
               minWidth="100px"
             />
             <SponsorImage
-              src={`${imgPath}/fellow-wordmark.svg`}
+              src={`${imgPath}/backers/fellow-wordmark.svg`}
               gridArea="fellow"
               width={["80%", "60%", "30%"]}
               minWidth="90px"
             />
             <SponsorImage
-              src={`${imgPath}/balsamiq-logo-noborder-screen.svg`}
+              src={`${imgPath}/backers/balsamiq-logo-noborder-screen.svg`}
               gridArea="balsamiq"
               width={["80%", "60%", "30%"]}
               minWidth="90px"
             />
             <SponsorImage
-              src={`${imgPath}/voiceflow-Logo.png`}
+              src={`${imgPath}/backers/voiceflow-Logo.png`}
               gridArea="voiceflow"
               width={["60%", "60%", "50%"]}
               minWidth="72px"
             />
             <SponsorImage
-              src={`${imgPath}/1password-logo.svg`}
+              src={`${imgPath}/backers/1password-logo.svg`}
               gridArea="one-pass"
-              width={["60%", "60%", "25%"]}
+              width={["60%", "60%", "50%"]}
               minWidth="72px"
             />
             <SponsorImage
-              src={`${imgPath}/egghead-Logo.svg`}
+              src={`${imgPath}/backers/egghead-Logo.svg`}
               gridArea="egghead"
               width={["60%", "60%", "50%"]}
               minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/backers/wonsulting.png`}
+              gridArea="wonsulting"
+              width={["30%", "30%", "25%"]}
+              minWidth="36px"
             />
           </Grid>
           <Grid
