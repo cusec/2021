@@ -19,7 +19,7 @@ const wideGrid = [
   `. genetec genetec unity unity .`,
   `amazon amazon ssense ssense nokia nokia`,
   `. fellow fellow balsamiq balsamiq .`,
-  `. voiceflow one-pass one-pass egghead .`,
+  `. voiceflow one-pass egghead wonsulting .`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -34,7 +34,7 @@ const thinGrid = [
   `. nokia .`,
   `fellow . balsamiq`,
   `voiceflow . one-pass`,
-  `. egghead .`,
+  `egghead . wonsulting`,
 ]
   .map((row) => `"${row}"`)
   .join(" ");
@@ -141,7 +141,7 @@ export default function Sponsors(): ReactElement {
             <SponsorImage
               src={`${imgPath}/sponsors/1password-logo.svg`}
               gridArea="one-pass"
-              width={["60%", "60%", "25%"]}
+              width={["60%", "60%", "50%"]}
               minWidth="72px"
             />
             <SponsorImage
@@ -149,6 +149,12 @@ export default function Sponsors(): ReactElement {
               gridArea="egghead"
               width={["60%", "60%", "50%"]}
               minWidth="72px"
+            />
+            <SponsorImage
+              src={`${imgPath}/sponsors/wonsulting.png`}
+              gridArea="wonsulting"
+              width={["30%", "30%", "25%"]}
+              minWidth="36px"
             />
           </Grid>
           <Grid
