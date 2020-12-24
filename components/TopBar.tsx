@@ -14,6 +14,7 @@ import theme from "@/src/theme";
 import { WidthWrapper } from "@/components/core/Layout";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import ScheduleModal from "@/components/ScheduleModal";
 
 const VerticalBar = styled.div`
   display: inline-block;
@@ -155,11 +156,7 @@ export default function TopBar(): React.ReactElement {
                 <VerticalBar />
               </Flex>
               <Flex direction="row">
-                <Link href="/schedule">
-                  <ChakraLink marginX="32px" textDecoration="none !important">
-                    <NavBarLink>Schedule</NavBarLink>
-                  </ChakraLink>
-                </Link>
+                <ScheduleModal />
               </Flex>
               <Flex>
                 <VerticalBar />

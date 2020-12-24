@@ -199,13 +199,13 @@ export const termsOfService: {
   },
 ];
 
-type event = {
+export type cusecEvent = {
   startTime: { hour: number; minute: number };
   endTime: { hour: number; minute: number };
   title: string;
 };
 
-export const scheduleSaturday: event[] = [
+export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 10, minute: 30 },
     endTime: { hour: 11, minute: 0 },
@@ -288,11 +288,11 @@ export const scheduleSaturday: event[] = [
   },
 ];
 
-export const scheduleSunday: event[] = [
+export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 9, minute: 45 },
     endTime: { hour: 10, minute: 30 },
-    title: "Morning Meditation/Exercise",
+    title: "Morning Meditation & Exercise",
   },
   {
     startTime: { hour: 10, minute: 30 },
