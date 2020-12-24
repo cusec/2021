@@ -1,25 +1,73 @@
-import { Table, TableCaption, Tbody, Td, Tr } from "@chakra-ui/react";
+import { Table, TableCaption, Tbody, Td, Text, Tr } from "@chakra-ui/react";
 
 import { cusecEvent } from "@/src/data";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 
 interface ISchedule {
   schedule: cusecEvent[];
 }
 
+interface IEvent {
+  title: string;
+  start: Date;
+  end: Date;
+}
+
 export default function ScheduleTable({ schedule }: ISchedule): ReactElement {
+  const [localSchedule, setLocalSchedule] = useState<IEvent[]>([]);
+
+  useEffect(() => {
+    const scheduleList: IEvent[] = [];
+
+    schedule.forEach((thisEvent) => {
+      const start = new Date(
+        Date.UTC(
+          2021,
+          1,
+          9,
+          thisEvent.startTime.hour + 5,
+          thisEvent.startTime.minute
+        )
+      );
+      const end = new Date(
+        Date.UTC(
+          2021,
+          1,
+          9,
+          thisEvent.endTime.hour + 5,
+          thisEvent.endTime.minute
+        )
+      );
+
+      scheduleList.push({ title: thisEvent.title, start, end });
+    });
+
+    setLocalSchedule(scheduleList);
+  }, [schedule, setLocalSchedule]);
+
   return (
     <>
       <Table variant="striped" colorScheme="gray" size="lg">
-        <TableCaption>Times are displayed in America/Toronto</TableCaption>
+        <TableCaption>
+          Times are displayed in{" "}
+          {Intl.DateTimeFormat().resolvedOptions().timeZone}
+        </TableCaption>
         <Tbody>
-          {schedule.map((event) => (
+          {localSchedule.map((event) => (
             <Tr key={event.title}>
               <Td>
-                {event.startTime.hour}:
-                {event.startTime.minute === 0 ? "00" : event.startTime.minute} -{" "}
-                {event.endTime.hour}:
-                {event.endTime.minute === 0 ? "00" : event.endTime.minute}
+                <Text>
+                  {event.start.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </Text>
+                <Text>
+                  {event.end.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </Text>
               </Td>
               <Td>{event.title}</Td>
             </Tr>
