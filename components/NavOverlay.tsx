@@ -9,6 +9,7 @@ import { Headline } from "@/components/core/Text";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import theme from "@/src/theme";
 import { useRouter } from "next/router";
+import ScheduleModal from "@/components/ScheduleModal";
 
 export const GradientNavItemLink = styled(Headline)`
   font-size: 24px;
@@ -72,6 +73,10 @@ export default function NavOverlay(props: {
                 <br />
               </Fragment>
             ))}
+        <Divider />
+        <Box>
+          <ScheduleModal mobile={true} />
+        </Box>
         <Divider />
         <Box>
           <Link href="/hackacomm">

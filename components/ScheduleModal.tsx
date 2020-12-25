@@ -19,8 +19,19 @@ import { scheduleSaturday, scheduleSunday } from "@/src/data";
 import { NavBarLink } from "@/components/TopBar";
 import { useRouter } from "next/router";
 import ScheduleTable from "./ScheduleTable";
+import { GradientNavItemLink } from "@/components/NavOverlay";
 
-export default function ScheduleModal(): ReactElement {
+ScheduleModal.defaultProps = {
+  mobile: false,
+};
+
+interface IScheduleModal {
+  mobile: boolean;
+}
+
+export default function ScheduleModal({
+  mobile,
+}: IScheduleModal): ReactElement {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
 
@@ -46,9 +57,17 @@ export default function ScheduleModal(): ReactElement {
 
   return (
     <>
-      <ChakraLink marginX="32px" textDecoration="none !important">
-        <NavBarLink onClick={handleOnOpen}>Schedule</NavBarLink>
-      </ChakraLink>
+      {mobile ? (
+        <ChakraLink>
+          <GradientNavItemLink onClick={handleOnOpen}>
+            Schedule
+          </GradientNavItemLink>
+        </ChakraLink>
+      ) : (
+        <ChakraLink marginX="32px" textDecoration="none !important">
+          <NavBarLink onClick={handleOnOpen}>Schedule</NavBarLink>
+        </ChakraLink>
+      )}
       <Modal
         motionPreset="slideInBottom"
         isOpen={isOpen}
