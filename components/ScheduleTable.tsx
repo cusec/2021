@@ -3,8 +3,9 @@ import { Table, TableCaption, Tbody, Td, Text, Tr } from "@chakra-ui/react";
 import { cusecEvent } from "@/src/data";
 import { ReactElement, useEffect, useState } from "react";
 
-interface ISchedule {
+interface IScheduleTable {
   schedule: cusecEvent[];
+  mobile: boolean;
 }
 
 interface IEvent {
@@ -13,7 +14,10 @@ interface IEvent {
   end: Date;
 }
 
-export default function ScheduleTable({ schedule }: ISchedule): ReactElement {
+export default function ScheduleTable({
+  schedule,
+  mobile,
+}: IScheduleTable): ReactElement {
   const [localSchedule, setLocalSchedule] = useState<IEvent[]>([]);
 
   useEffect(() => {
@@ -62,6 +66,7 @@ export default function ScheduleTable({ schedule }: ISchedule): ReactElement {
                     minute: "2-digit",
                   })}
                 </Text>
+                {mobile && <Text>-</Text>}
                 <Text>
                   {event.end.toLocaleTimeString([], {
                     hour: "2-digit",

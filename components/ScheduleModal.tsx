@@ -90,10 +90,10 @@ export default function ScheduleModal({
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  <ScheduleTable schedule={scheduleSaturday} />
+                  <ScheduleTable schedule={scheduleSaturday} mobile={mobile} />
                 </TabPanel>
                 <TabPanel>
-                  <ScheduleTable schedule={scheduleSunday} />
+                  <ScheduleTable schedule={scheduleSunday} mobile={mobile} />
                 </TabPanel>
               </TabPanels>
             </Tabs>
