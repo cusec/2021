@@ -118,7 +118,10 @@ export default function TopBar(): React.ReactElement {
                 <Logo style={{ height: "32px", width: "auto" }} />
               </ChakraLink>
             </Flex>
-            <Box display={["block", "block", "block", "none"]} cursor="pointer">
+            <Box
+              display={["block", "block", "block", "block", "none"]}
+              cursor="pointer"
+            >
               <HamburgerMenu
                 isOpen={isNavOverlayOpen}
                 menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
@@ -128,7 +131,10 @@ export default function TopBar(): React.ReactElement {
                 rotate={180}
               />
             </Box>
-            <Flex align="center" display={["none", "none", "none", "flex"]}>
+            <Flex
+              align="center"
+              display={["none", "none", "none", "none", "flex"]}
+            >
               <Flex direction="row">
                 {router.pathname === "/"
                   ? locations.map((location) => (
