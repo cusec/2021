@@ -20,6 +20,7 @@ import { NavBarLink } from "@/components/TopBar";
 import { useRouter } from "next/router";
 import ScheduleTable from "./ScheduleTable";
 import { GradientNavItemLink } from "@/components/NavOverlay";
+import useStore from "@/src/store";
 
 ScheduleModal.defaultProps = {
   mobile: false,
@@ -34,6 +35,7 @@ export default function ScheduleModal({
 }: IScheduleModal): ReactElement {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
+  const setNavOverlayOpen = useStore((state) => state.setNavOverlayOpen);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -53,6 +55,7 @@ export default function ScheduleModal({
       lastCharInPath === "/" ? router.pathname : `${router.pathname}/`;
     onOpen();
     router.replace(`${currentPath}#schedule`);
+    setNavOverlayOpen(false);
   };
 
   return (
