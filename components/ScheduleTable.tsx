@@ -1,4 +1,12 @@
-import { Table, TableCaption, Tbody, Td, Text, Tr } from "@chakra-ui/react";
+import {
+  Table,
+  TableCaption,
+  Tbody,
+  Td,
+  Text,
+  Tr,
+  Flex,
+} from "@chakra-ui/react";
 
 import { cusecEvent } from "@/src/data";
 import { ReactElement, useEffect, useState } from "react";
@@ -60,19 +68,21 @@ export default function ScheduleTable({
           {localSchedule.map((event) => (
             <Tr key={event.title}>
               <Td>
-                <Text>
-                  {event.start.toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </Text>
-                {mobile && <Text>-</Text>}
-                <Text>
-                  {event.end.toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </Text>
+                <Flex flexDirection="column">
+                  <Text isTruncated>
+                    {event.start.toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </Text>
+                  {mobile && <Text align="center">-</Text>}
+                  <Text isTruncated>
+                    {event.end.toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </Text>
+                </Flex>
               </Td>
               <Td>{event.title}</Td>
             </Tr>
