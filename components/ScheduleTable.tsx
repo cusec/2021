@@ -69,14 +69,14 @@ export default function ScheduleTable({
             <Tr key={event.title}>
               <Td>
                 <Flex flexDirection="column">
-                  <Text isTruncated>
+                  <Text isTruncated align="center">
                     {event.start.toLocaleTimeString([], {
                       hour: "2-digit",
                       minute: "2-digit",
                     })}
                   </Text>
                   {mobile && <Text align="center">-</Text>}
-                  <Text isTruncated>
+                  <Text isTruncated align="center">
                     {event.end.toLocaleTimeString([], {
                       hour: "2-digit",
                       minute: "2-digit",
@@ -84,7 +84,9 @@ export default function ScheduleTable({
                   </Text>
                 </Flex>
               </Td>
-              <Td>{event.title}</Td>
+              <Td>
+                <Text align="center">{event.title}</Text>
+              </Td>
             </Tr>
           ))}
         </Tbody>
