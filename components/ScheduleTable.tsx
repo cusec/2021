@@ -85,7 +85,7 @@ export default function ScheduleTable({
                 </Flex>
               </Td>
               <Td>
-                <Text align="center">{event.title}</Text>
+                <Text>{event.title}</Text>
               </Td>
             </Tr>
           ))}

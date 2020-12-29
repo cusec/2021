@@ -12,8 +12,8 @@ import {
 } from "@/components/core/Text";
 import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
-import TopBar from "@/components/TopBar";
 import styled from "@emotion/styled";
+import TopArea from "@/components/sections/TopArea";
 
 const Title = styled(Body)`
   font-weight: 900;
@@ -52,7 +52,7 @@ export default function HackaComm(): ReactElement {
         />
       </Head>
       <Flex width="100%" backgroundColor="off_white_bg">
-        <TopBar />
+        <TopArea />
         <WidthWrapper>
           <>
             <Flex
