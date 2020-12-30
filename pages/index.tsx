@@ -1,5 +1,4 @@
 import Head from "next/head";
-import TopBar from "@/components/TopBar";
 import Hero from "@/components/sections/Hero";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
@@ -9,6 +8,7 @@ import Contact from "@/components/sections/Contact";
 import Sponsors from "@/components/sections/Sponsors";
 import Pricing from "@/components/sections/Pricing";
 import SponsorAnExperience from "@/components/sections/SponsorAnExperience";
+import TopArea from "@/components/sections/TopArea";
 
 export default function Home(): React.ReactElement {
   return (
@@ -26,7 +26,7 @@ export default function Home(): React.ReactElement {
       </Head>
 
       <main>
-        <TopBar />
+        <TopArea />
         <Hero />
         <About />
         <SponsorAnExperience />

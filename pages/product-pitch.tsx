@@ -6,10 +6,10 @@ import useScreenWidth from "@/components/hooks/useScreenWidth";
 import useStore from "@/src/store";
 import { Body, BodyPrimary, Headline } from "@/components/core/Text";
 import { WidthWrapper } from "@/components/core/Layout";
-import TopBar from "@/components/TopBar";
 import EmailListingInput from "@/components/EmailListingInput";
 import { FirestoreCollectionEnum } from "@/src/enums";
 import styled from "@emotion/styled";
+import TopArea from "@/components/sections/TopArea";
 
 const minHeights = [550, 650, 700, 800];
 
@@ -57,7 +57,7 @@ export default function ProductPitch(): ReactElement {
         />
       </Head>
       <Flex height={heightProp} width="100%" backgroundColor="off_white_bg">
-        <TopBar />
+        <TopArea />
         <WidthWrapper>
           <Flex
             flexDirection="column"
