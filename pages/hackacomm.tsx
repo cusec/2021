@@ -56,9 +56,9 @@ export default function HackaComm(): ReactElement {
         <WidthWrapper>
           <>
             <Flex
-              justifyContent={"center"}
+              justifyContent="center"
               alignItems="center"
-              marginBottom={"0.5in"}
+              marginBottom="0.5in"
             >
               <Image
                 src="/images/cusec-rbc-hackacomm.png"
@@ -115,7 +115,7 @@ export default function HackaComm(): ReactElement {
               </BodyPrimary>
             </Flex>
 
-            <Flex justifyContent="center" alignItems="center" display={"flex"}>
+            <Flex justifyContent="center" alignItems="center">
               <Link href={registrationLink}>
                 <ButtonPrimary>Register</ButtonPrimary>
               </Link>
@@ -176,7 +176,7 @@ export default function HackaComm(): ReactElement {
             <Headline marginTop="0.5rem">Beginning December 4th</Headline>
             <Level1List>
               <ListItem>
-                <Link href={registrationLink}>
+                <Link href={registrationLink} passHref>
                   <LinkPrimary>Register</LinkPrimary>
                 </Link>
               </ListItem>
@@ -196,16 +196,34 @@ export default function HackaComm(): ReactElement {
                 </ListItem>
               </Level2List>
             </Level1List>
-            <Headline marginTop="0.5rem">January 4th</Headline>
+            <Headline marginTop="0.5rem">
+              January 4th - Meet The Mentors Day
+            </Headline>
             <Level1List>
-              <ListItem>Meet the mentors day</ListItem>
+              <ListItem>Hosted on Discord</ListItem>
+              <ListItem>
+                Talk to RBC developers get help with your product and code
+              </ListItem>
+            </Level1List>
+            <Level1List>
+              <ListItem>Schedule (EST):</ListItem>
               <Level2List>
-                <ListItem>
-                  Talk to RBC developers get help with your product and code
-                </ListItem>
+                <ListItem>1:00 PM: HackaComm Intro</ListItem>
+                <Level2List>
+                  <ListItem>Competition overview</ListItem>
+                  <ListItem>Mentor introductions</ListItem>
+                  <ListItem>Mini prizes</ListItem>
+                </Level2List>
+                <ListItem>1:30 PM - 4:00 PM: Mentor drop-ins</ListItem>
+                <Level2List>
+                  <ListItem>
+                    Students can ask mentors any questions they may have!
+                  </ListItem>
+                </Level2List>
+                <ListItem>4:00 PM - 5:00 PM: Social (CUSEC - games)</ListItem>
               </Level2List>
             </Level1List>
-            <Headline marginTop="0.5rem">January 5th</Headline>
+            <Headline marginTop="0.5rem">January 5th - January 7th</Headline>
             <Level1List>
               <ListItem>Submit your teams</ListItem>
               <Level2List>
@@ -213,6 +231,16 @@ export default function HackaComm(): ReactElement {
                 <ListItem>Share GitHub repo with organizers</ListItem>
                 <ListItem>Pitch schedule will be released</ListItem>
               </Level2List>
+              <ListItem>
+                Need to be registered to the hackathon in order to be on
+                Discord.{" "}
+                <Link href={registrationLink} passHref>
+                  <LinkPrimary>Register today!</LinkPrimary>
+                </Link>
+              </ListItem>
+              <ListItem>
+                Teams can register up until January 7th 23:59:59 PM
+              </ListItem>
             </Level1List>
             <Headline marginTop="0.5rem">January 8th</Headline>
             <Level1List>
