@@ -39,6 +39,7 @@ export default function SponsorAnExperience(): ReactElement {
               <Link
                 href="mailto:sponsor@cusec.net"
                 marginTop="0.2in"
+                borderRadius="9999px"
                 _hover={{ textDecoration: "none" }}
               >
                 <ButtonPrimaryVariant>Become a sponsor</ButtonPrimaryVariant>

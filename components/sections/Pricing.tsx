@@ -125,7 +125,7 @@ export default function Pricing(): ReactElement {
           justify="center"
         >
           <NextLink href="/register" passHref>
-            <Link _hover={{ textDecoration: "none" }}>
+            <Link borderRadius="9999px" _hover={{ textDecoration: "none" }}>
               <ButtonPrimary>Register</ButtonPrimary>
             </Link>
           </NextLink>

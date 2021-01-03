@@ -117,7 +117,7 @@ export default function HackaComm(): ReactElement {
 
             <Flex justifyContent="center" alignItems="center">
               <NextLink href={registrationLink} passHref>
-                <Link _hover={{ textDecoration: "none" }}>
+                <Link borderRadius="9999px" _hover={{ textDecoration: "none" }}>
                   <ButtonPrimary>Register</ButtonPrimary>
                 </Link>
               </NextLink>

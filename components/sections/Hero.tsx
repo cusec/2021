@@ -202,6 +202,7 @@ export default function Hero(): React.ReactElement {
                   <Link
                     marginRight={[0, 0, 0, "2rem"]}
                     marginBottom={["1rem", "1rem", "1rem", 0]}
+                    borderRadius="9999px"
                     _hover={{ textDecoration: "none" }}
                   >
                     <ButtonPrimary>Register</ButtonPrimary>
