@@ -1,4 +1,5 @@
 import {
+  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -55,14 +56,23 @@ export default function FooterModal({
 
   return (
     <>
-      <FooterLink
-        _hover={{}}
-        fontSize={["xs", "xs", "xs", "sm"]}
+      <Button
+        variant="link"
+        fontWeight="inherit"
+        borderRadius="inherit"
+        _hover={{ textDecoration: "inherit" }}
+        margin="5px 8px"
         onClick={handleOnOpen}
-        href={`#${thisModalHash}`}
       >
-        {linkBody}
-      </FooterLink>
+        <FooterLink
+          lineHeight={1.5}
+          margin="0px !important"
+          _hover={{}}
+          fontSize={["xs", "xs", "xs", "sm"]}
+        >
+          {linkBody}
+        </FooterLink>
+      </Button>
       <Modal
         motionPreset="slideInBottom"
         isOpen={isOpen}

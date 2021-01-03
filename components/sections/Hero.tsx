@@ -1,6 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import NextLink from "next/link";
-import { Box, CloseButton, Flex, Link, Text, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  CloseButton,
+  Flex,
+  Link,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -90,14 +98,19 @@ export default function Hero(): React.ReactElement {
                 <Text align="center">
                   Check out HackaComm: a brand-new hackathon brought to you by
                   CUSEC and RBC!{" "}
-                  <LinkSecondary
+                  <Button
+                    variant="link"
+                    marginTop="-3px"
+                    _hover={{ textDecoration: "inherit" }}
                     onClick={() => {
                       handlePageSwitch("/hackacomm");
                       closeToasts();
                     }}
                   >
-                    Click to learn more.
-                  </LinkSecondary>
+                    <LinkSecondary lineHeight="inherit">
+                      Click to learn more.
+                    </LinkSecondary>
+                  </Button>
                 </Text>
               </Box>
               <Box alignSelf="center">

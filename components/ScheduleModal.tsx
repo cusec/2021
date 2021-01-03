@@ -1,6 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import {
-  Link,
+  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -61,19 +61,30 @@ export default function ScheduleModal({
   return (
     <>
       {mobile ? (
-        <Link href="#schedule">
-          <GradientNavItemLink onClick={handleOnOpen}>
+        <GradientNavItemLink>
+          <Button
+            variant="link"
+            background="inherit"
+            fontSize="inherit"
+            borderRadius="inherit"
+            _hover={{ textDecoration: "inherit" }}
+            onClick={handleOnOpen}
+          >
             Schedule
-          </GradientNavItemLink>
-        </Link>
+          </Button>
+        </GradientNavItemLink>
       ) : (
-        <Link
-          href="#schedule"
+        <Button
+          variant="link"
+          color="inherit"
+          fontWeight="inherit"
+          borderRadius="inherit"
+          _hover={{ textDecoration: "inherit" }}
           marginX="32px"
-          _hover={{ textDecoration: "none" }}
+          onClick={handleOnOpen}
         >
-          <NavBarLink onClick={handleOnOpen}>Schedule</NavBarLink>
-        </Link>
+          <NavBarLink lineHeight={1.5}>Schedule</NavBarLink>
+        </Button>
       )}
       <Modal
         motionPreset="slideInBottom"
