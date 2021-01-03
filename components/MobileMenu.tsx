@@ -34,6 +34,7 @@ export default function MobileMenu(): ReactElement {
               onClick={() => setNavOverlayOpen(!isNavOverlayOpen)}
               icon={
                 <HamburgerMenu
+                  color="#1a202c"
                   isOpen={isNavOverlayOpen}
                   menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
                   height={17}

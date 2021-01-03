@@ -3,6 +3,4 @@ declare module "*.svg" {
   export default content;
 }
 
-declare module "react-hamburger-menu";
-
 declare module "react-anchor-link-smooth-scroll";
