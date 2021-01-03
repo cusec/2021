@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import "focus-visible/dist/focus-visible";
 
 import useStore from "@/src/store";
 import theme from "@/src/theme";

@@ -27,6 +27,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@n8tb1t/use-scroll-position": "^1.0.47",
     "firebase": "^8.0.1",
+    "focus-visible": "^5.2.0",
     "framer-motion": "^3.1.1",
     "next": "9.5.4",
     "react": "16.13.1",

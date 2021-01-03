@@ -103,7 +103,6 @@ export default function Hero(): React.ReactElement {
               <Box alignSelf="center">
                 <CloseButton
                   size="lg"
-                  _focus={{}}
                   onClick={() => {
                     setToastDismissed(true);
                     closeToasts();

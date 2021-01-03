@@ -19,7 +19,6 @@ export default function SocialLink(props: PropTypes): ReactElement {
     <>
       <Link
         {...props}
-        _focus={{}}
         isExternal
         onClick={() => {
           clickSocial(props.eventtype);

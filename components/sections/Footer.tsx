@@ -46,7 +46,6 @@ export default function Footer(): ReactElement {
                 &copy; CUSEC 2021
               </FooterText>
               <FooterLink
-                _focus={{}}
                 _hover={{}}
                 fontSize={["xs", "xs", "xs", "sm"]}
                 href="https://github.com/cusec/2021"

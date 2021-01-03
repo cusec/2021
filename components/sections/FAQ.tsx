@@ -38,7 +38,6 @@ function AccordionBox({ item, opened }: AccordionBoxParams): ReactElement {
     >
       <AccordionItem border="0" width="100%">
         <AccordionButton
-          _focus={{}}
           padding="12px 20px"
           borderRadius={opened ? "8px 8px 0px 0px" : "8px"}
         >

@@ -84,12 +84,12 @@ export default function ScheduleModal({
               Schedule
             </HeadlinePrimary>
           </ModalHeader>
-          <ModalCloseButton _focus={{}} />
+          <ModalCloseButton />
           <ModalBody paddingBottom={6}>
             <Tabs size="lg" variant="enclosed" isFitted colorScheme="teal">
               <TabList>
-                <Tab _focus={{}}>Saturday, January 9th 2021</Tab>
-                <Tab _focus={{}}>Sunday, January 10th 2021</Tab>
+                <Tab>Saturday, January 9th 2021</Tab>
+                <Tab>Sunday, January 10th 2021</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>

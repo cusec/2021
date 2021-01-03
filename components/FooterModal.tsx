@@ -58,7 +58,6 @@ export default function FooterModal({
   return (
     <>
       <FooterLink
-        _focus={{}}
         _hover={{}}
         fontSize={["xs", "xs", "xs", "sm"]}
         onClick={handleOnOpen}
@@ -79,7 +78,7 @@ export default function FooterModal({
               {linkBody}
             </HeadlinePrimary>
           </ModalHeader>
-          <ModalCloseButton _focus={{}} />
+          <ModalCloseButton />
           <ModalBody paddingBottom={6}>
             {modalBody.map((item) => (
               <Fragment key={item.title}>
