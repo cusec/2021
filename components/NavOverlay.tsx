@@ -1,8 +1,8 @@
 import { ReactElement, Fragment } from "react";
-import Link from "next/link";
+import NextLink from "next/link";
 import useStore from "@/src/store";
 import styled from "@emotion/styled";
-import { Flex, Box, Divider, Link as ChakraLink } from "@chakra-ui/react";
+import { chakra, Flex, Box, Divider, Link } from "@chakra-ui/react";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { locations } from "@/src/constants";
 import { Headline } from "@/components/core/Text";
@@ -23,6 +23,15 @@ export const GradientNavItemLink = styled(Headline)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
+
+const MyAnchorLink = chakra(AnchorLink, {
+  baseStyle: {
+    outline: "none",
+    _focus: {
+      boxShadow: "0 0 0 3px rgba(66,153,225,0.6)",
+    },
+  },
+});
 
 export default function NavOverlay(props: {
   getTopBarHeight: () => number;
@@ -53,23 +62,23 @@ export default function NavOverlay(props: {
         {router.pathname === "/"
           ? locations.map((location) => (
               <Fragment key={location.href}>
-                <AnchorLink
+                <MyAnchorLink
                   offset={props.getTopBarHeight}
                   href={location.href}
                   onClick={handleNavItemClick}
                 >
                   <GradientNavItemLink>{location.label}</GradientNavItemLink>
-                </AnchorLink>
+                </MyAnchorLink>
                 <br />
               </Fragment>
             ))
           : locations.map((location) => (
               <Fragment key={location.href}>
-                <Link href={`/${location.href}`}>
-                  <ChakraLink>
+                <NextLink href={`/${location.href}`} passHref>
+                  <Link>
                     <GradientNavItemLink>{location.label}</GradientNavItemLink>
-                  </ChakraLink>
-                </Link>
+                  </Link>
+                </NextLink>
                 <br />
               </Fragment>
             ))}
@@ -79,11 +88,11 @@ export default function NavOverlay(props: {
         </Box>
         <Divider />
         <Box>
-          <Link href="/hackacomm">
-            <ChakraLink>
+          <NextLink href="/hackacomm" passHref>
+            <Link>
               <GradientNavItemLink>HackaComm</GradientNavItemLink>
-            </ChakraLink>
-          </Link>
+            </Link>
+          </NextLink>
           <br />
         </Box>
         <Divider marginBottom="28px" />

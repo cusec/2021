@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { Box, CloseButton, Flex, Text, useToast } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Box, CloseButton, Flex, Link, Text, useToast } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Socials from "@/components/Socials";
 import Logo from "../svgs/logo.svg";
@@ -185,14 +185,15 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <Link href="/register">
-                  <ButtonPrimary
+                <NextLink href="/register" passHref>
+                  <Link
                     marginRight={[0, 0, 0, "2rem"]}
                     marginBottom={["1rem", "1rem", "1rem", 0]}
+                    _hover={{ textDecoration: "none" }}
                   >
-                    Register
-                  </ButtonPrimary>
-                </Link>
+                    <ButtonPrimary>Register</ButtonPrimary>
+                  </Link>
+                </NextLink>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>

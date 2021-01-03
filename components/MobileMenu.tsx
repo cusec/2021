@@ -1,5 +1,5 @@
 import { WidthWrapper } from "@/components/core/Layout";
-import { Box, Flex } from "@chakra-ui/react";
+import { IconButton, Flex } from "@chakra-ui/react";
 import HamburgerMenu from "react-hamburger-menu";
 import useStore from "@/src/store";
 import { ReactElement, useRef } from "react";
@@ -24,19 +24,25 @@ export default function MobileMenu(): ReactElement {
         <WidthWrapper>
           <Flex align="center" justify="space-between" paddingY="8px">
             <TopBarLogo />
-            <Box
+            <IconButton
+              aria-label="Navigation Menu"
+              background="none !important"
+              size="auto"
+              paddingX="2px"
+              paddingY="7px"
               display={["block", "block", "block", "block", "none"]}
-              cursor="pointer"
-            >
-              <HamburgerMenu
-                isOpen={isNavOverlayOpen}
-                menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
-                height={17}
-                width={28}
-                strokeWidth={3}
-                rotate={180}
-              />
-            </Box>
+              onClick={() => setNavOverlayOpen(!isNavOverlayOpen)}
+              icon={
+                <HamburgerMenu
+                  isOpen={isNavOverlayOpen}
+                  menuClicked={() => setNavOverlayOpen(!isNavOverlayOpen)}
+                  height={17}
+                  width={28}
+                  strokeWidth={3}
+                  rotate={180}
+                />
+              }
+            />
           </Flex>
         </WidthWrapper>
       </TopBarWrapper>

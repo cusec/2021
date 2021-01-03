@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import Head from "next/head";
-import Link from "next/link";
-import { Flex, Image, List, ListItem, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Flex, Image, Link, List, ListItem, Text } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import {
   Body,
@@ -108,17 +108,19 @@ export default function HackaComm(): ReactElement {
               </Flex>
               <BodyPrimary>
                 Also register for{" "}
-                <Link href="/">
+                <NextLink href="/" passHref>
                   <LinkPrimary>CUSEC</LinkPrimary>
-                </Link>{" "}
+                </NextLink>{" "}
                 to participate
               </BodyPrimary>
             </Flex>
 
             <Flex justifyContent="center" alignItems="center">
-              <Link href={registrationLink}>
-                <ButtonPrimary>Register</ButtonPrimary>
-              </Link>
+              <NextLink href={registrationLink} passHref>
+                <Link _hover={{ textDecoration: "none" }}>
+                  <ButtonPrimary>Register</ButtonPrimary>
+                </Link>
+              </NextLink>
             </Flex>
             <HeadlinePrimary marginTop="0.5in">Challenge</HeadlinePrimary>
             <BodyPrimary>
@@ -166,9 +168,9 @@ export default function HackaComm(): ReactElement {
             </BodyPrimary>
             <BodyPrimary>
               Please note you will also need to register for{" "}
-              <Link href="/">
+              <NextLink href="/" passHref>
                 <LinkPrimary>CUSEC</LinkPrimary>
-              </Link>{" "}
+              </NextLink>{" "}
               to participate.
             </BodyPrimary>
             {/* Timeline */}
@@ -176,9 +178,9 @@ export default function HackaComm(): ReactElement {
             <Headline marginTop="0.5rem">Beginning December 4th</Headline>
             <Level1List>
               <ListItem>
-                <Link href={registrationLink} passHref>
+                <NextLink href={registrationLink} passHref>
                   <LinkPrimary>Register</LinkPrimary>
-                </Link>
+                </NextLink>
               </ListItem>
               <Level2List>
                 <ListItem>Sign up individually or in a team of 3-5</ListItem>
@@ -234,9 +236,9 @@ export default function HackaComm(): ReactElement {
               <ListItem>
                 Need to be registered to the hackathon in order to be on
                 Discord.{" "}
-                <Link href={registrationLink} passHref>
+                <NextLink href={registrationLink} passHref>
                   <LinkPrimary>Register today!</LinkPrimary>
-                </Link>
+                </NextLink>
               </ListItem>
               <ListItem>
                 Teams can register up until January 7th 23:59:59 PM

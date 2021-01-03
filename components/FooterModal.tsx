@@ -31,14 +31,14 @@ export default function FooterModal({
 }: FooterModalProps): ReactElement {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
+  const thisModalHash = linkBody.replace(/\s/g, "").toLowerCase();
 
   useEffect(() => {
     const hash = window.location.hash;
-    const thisModalHash = linkBody.replace(/\s/g, "").toLowerCase();
     if (hash === `#${thisModalHash}`) {
       onOpen();
     }
-  }, [linkBody, onOpen]);
+  }, [thisModalHash, onOpen]);
 
   const handleOnClose = () => {
     onClose();
@@ -50,9 +50,7 @@ export default function FooterModal({
     const currentPath: string =
       lastCharInPath === "/" ? router.pathname : `${router.pathname}/`;
     onOpen();
-    router.replace(
-      `${currentPath}#${linkBody.replace(/\s/g, "").toLowerCase()}`
-    );
+    router.replace(`${currentPath}#${thisModalHash}`);
   };
 
   return (
@@ -61,7 +59,7 @@ export default function FooterModal({
         _hover={{}}
         fontSize={["xs", "xs", "xs", "sm"]}
         onClick={handleOnOpen}
-        isExternal
+        href={`#${thisModalHash}`}
       >
         {linkBody}
       </FooterLink>

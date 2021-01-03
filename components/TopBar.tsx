@@ -1,4 +1,4 @@
-import { Flex, Link as ChakraLink } from "@chakra-ui/react";
+import { chakra, Flex, Link } from "@chakra-ui/react";
 import Socials from "@/components/Socials";
 import React, { useEffect, useRef, useState } from "react";
 import { Body } from "@/components/core/Text";
@@ -9,7 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import theme from "@/src/theme";
 import { WidthWrapper } from "@/components/core/Layout";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import NextLink from "next/link";
 import ScheduleModal from "@/components/ScheduleModal";
 import TopBarWrapper from "@/components/TopBarWrapper";
 import TopBarLogo from "@/components/TopBarLogo";
@@ -43,6 +43,16 @@ export const NavBarLink = styled(Body)`
     transform: translateY(0);
   }
 `;
+
+const MyAnchorLink = chakra(AnchorLink, {
+  baseStyle: {
+    marginRight: "32px",
+    outline: "none",
+    _focus: {
+      boxShadow: "0 0 0 3px rgba(66,153,225,0.6)",
+    },
+  },
+});
 
 export default function TopBar(): React.ReactElement {
   const [hideBackground, setHideBackground] = useState(true);
@@ -89,24 +99,27 @@ export default function TopBar(): React.ReactElement {
               <Flex direction="row">
                 {router.pathname === "/"
                   ? locations.map((location) => (
-                      <AnchorLink
+                      <MyAnchorLink
                         key={location.href}
                         offset={getComponentHeight}
                         href={`${location.href}`}
-                        style={{ marginRight: "32px", outline: "none" }}
                       >
                         <NavBarLink>{location.label}</NavBarLink>
-                      </AnchorLink>
+                      </MyAnchorLink>
                     ))
                   : locations.map((location) => (
-                      <Link key={location.href} href={`/${location.href}`}>
-                        <ChakraLink
+                      <NextLink
+                        key={location.href}
+                        href={`/${location.href}`}
+                        passHref
+                      >
+                        <Link
                           marginRight="32px"
-                          textDecoration="none !important"
+                          _hover={{ textDecoration: "none" }}
                         >
                           <NavBarLink>{location.label}</NavBarLink>
-                        </ChakraLink>
-                      </Link>
+                        </Link>
+                      </NextLink>
                     ))}
               </Flex>
               <Flex>
@@ -119,11 +132,11 @@ export default function TopBar(): React.ReactElement {
                 <VerticalBar />
               </Flex>
               <Flex direction="row">
-                <Link href="/hackacomm">
-                  <ChakraLink marginX="32px" textDecoration="none !important">
+                <NextLink href="/hackacomm" passHref>
+                  <Link marginX="32px" _hover={{ textDecoration: "none" }}>
                     <NavBarLink>HackaComm</NavBarLink>
-                  </ChakraLink>
-                </Link>
+                  </Link>
+                </NextLink>
               </Flex>
               <Flex>
                 <VerticalBar />

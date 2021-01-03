@@ -1,6 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import {
-  Link as ChakraLink,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -61,15 +61,19 @@ export default function ScheduleModal({
   return (
     <>
       {mobile ? (
-        <ChakraLink>
+        <Link href="#schedule">
           <GradientNavItemLink onClick={handleOnOpen}>
             Schedule
           </GradientNavItemLink>
-        </ChakraLink>
+        </Link>
       ) : (
-        <ChakraLink marginX="32px" textDecoration="none !important">
+        <Link
+          href="#schedule"
+          marginX="32px"
+          _hover={{ textDecoration: "none" }}
+        >
           <NavBarLink onClick={handleOnOpen}>Schedule</NavBarLink>
-        </ChakraLink>
+        </Link>
       )}
       <Modal
         motionPreset="slideInBottom"
