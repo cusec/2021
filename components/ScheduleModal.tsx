@@ -61,18 +61,20 @@ export default function ScheduleModal({
   return (
     <>
       {mobile ? (
-        <GradientNavItemLink>
-          <Button
-            variant="link"
-            background="inherit"
-            fontSize="inherit"
-            borderRadius="inherit"
-            _hover={{ textDecoration: "inherit" }}
-            onClick={handleOnOpen}
-          >
+        <Button
+          variant="link"
+          color="inherit"
+          background="inherit"
+          fontSize="inherit"
+          borderRadius="inherit"
+          _hover={{ textDecoration: "inherit" }}
+          marginY="16px"
+          onClick={handleOnOpen}
+        >
+          <GradientNavItemLink margin="0px !important" lineHeight={1.5}>
             Schedule
-          </Button>
-        </GradientNavItemLink>
+          </GradientNavItemLink>
+        </Button>
       ) : (
         <Button
           variant="link"
@@ -80,7 +82,8 @@ export default function ScheduleModal({
           fontWeight="inherit"
           borderRadius="inherit"
           _hover={{ textDecoration: "inherit" }}
-          marginX="32px"
+          marginLeft="32px"
+          marginRight="16px"
           onClick={handleOnOpen}
         >
           <NavBarLink lineHeight={1.5}>Schedule</NavBarLink>

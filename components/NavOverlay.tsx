@@ -1,4 +1,4 @@
-import { ReactElement, Fragment } from "react";
+import { ReactElement } from "react";
 import NextLink from "next/link";
 import useStore from "@/src/store";
 import styled from "@emotion/styled";
@@ -61,7 +61,7 @@ export default function NavOverlay(props: {
       <Box>
         {router.pathname === "/"
           ? locations.map((location) => (
-              <Fragment key={location.href}>
+              <Box key={location.href}>
                 <MyAnchorLink
                   offset={props.getTopBarHeight}
                   href={location.href}
@@ -69,31 +69,34 @@ export default function NavOverlay(props: {
                 >
                   <GradientNavItemLink>{location.label}</GradientNavItemLink>
                 </MyAnchorLink>
-                <br />
-              </Fragment>
+              </Box>
             ))
           : locations.map((location) => (
-              <Fragment key={location.href}>
+              <Box key={location.href}>
                 <NextLink href={`/${location.href}`} passHref>
                   <Link>
                     <GradientNavItemLink>{location.label}</GradientNavItemLink>
                   </Link>
                 </NextLink>
-                <br />
-              </Fragment>
+              </Box>
             ))}
         <Divider />
         <Box>
           <ScheduleModal mobile={true} />
         </Box>
-        <Divider />
+        <Box>
+          <NextLink href="/speakers" passHref>
+            <Link>
+              <GradientNavItemLink>Speakers</GradientNavItemLink>
+            </Link>
+          </NextLink>
+        </Box>
         <Box>
           <NextLink href="/hackacomm" passHref>
             <Link>
               <GradientNavItemLink>HackaComm</GradientNavItemLink>
             </Link>
           </NextLink>
-          <br />
         </Box>
         <Divider marginBottom="28px" />
         <Flex>

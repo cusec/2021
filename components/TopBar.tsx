@@ -122,25 +122,23 @@ export default function TopBar(): React.ReactElement {
                       </NextLink>
                     ))}
               </Flex>
-              <Flex>
-                <VerticalBar />
-              </Flex>
-              <Flex direction="row">
-                <ScheduleModal />
-              </Flex>
-              <Flex>
-                <VerticalBar />
-              </Flex>
-              <Flex direction="row">
-                <NextLink href="/hackacomm" passHref>
-                  <Link marginX="32px" _hover={{ textDecoration: "none" }}>
-                    <NavBarLink>HackaComm</NavBarLink>
-                  </Link>
-                </NextLink>
-              </Flex>
-              <Flex>
-                <VerticalBar />
-              </Flex>
+              <VerticalBar />
+              <ScheduleModal />
+              <NextLink href="/speakers" passHref>
+                <Link marginX="16px" _hover={{ textDecoration: "none" }}>
+                  <NavBarLink>Speakers</NavBarLink>
+                </Link>
+              </NextLink>
+              <NextLink href="/hackacomm" passHref>
+                <Link
+                  marginLeft="16px"
+                  marginRight="32px"
+                  _hover={{ textDecoration: "none" }}
+                >
+                  <NavBarLink>HackaComm</NavBarLink>
+                </Link>
+              </NextLink>
+              <VerticalBar />
               <Socials marginLeft="32px" />
             </Flex>
           </Flex>
