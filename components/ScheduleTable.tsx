@@ -18,6 +18,7 @@ interface IScheduleTable {
 
 interface IEvent {
   title: string;
+  description?: string;
   start: Date;
   end: Date;
 }
@@ -51,7 +52,7 @@ export default function ScheduleTable({
         )
       );
 
-      scheduleList.push({ title: thisEvent.title, start, end });
+      scheduleList.push({ title: thisEvent.title, description: thisEvent.description, start, end });
     });
 
     setLocalSchedule(scheduleList);
@@ -85,7 +86,8 @@ export default function ScheduleTable({
                 </Flex>
               </Td>
               <Td>
-                <Text>{event.title}</Text>
+                <Text fontSize="xl">{event.title}</Text>
+                <Text fontSize="sm">{event.description}</Text>
               </Td>
             </Tr>
           ))}
