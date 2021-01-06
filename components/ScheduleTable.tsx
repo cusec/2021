@@ -86,8 +86,8 @@ export default function ScheduleTable({
                 </Flex>
               </Td>
               <Td>
-                <Text fontSize="xl">{event.title}</Text>
-                <Text fontSize="sm">{event.description}</Text>
+                <Text fontWeight="bold">{event.title}</Text>
+                <Text fontSize="xs" as="i">{event.description}</Text>
               </Td>
             </Tr>
           ))}

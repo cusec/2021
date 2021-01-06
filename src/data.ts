@@ -252,8 +252,8 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 16, minute: 0 },
     endTime: { hour: 16, minute: 30 },
-    title: "Jerry Lee - COO at Wonsulting",
-    description: "Using LinkedIn to Land Your Dream Job",
+    title: "Adrienne Tacke - Senior Developer Advocate & Software Engineer at MongoDB",
+    description: "There is NO Developer Uniform!",
   },
   {
     startTime: { hour: 16, minute: 30 },
@@ -296,7 +296,7 @@ export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 10, minute: 30 },
     endTime: { hour: 11, minute: 15 },
-    title: "Shelli Brunswick - Chief Operating Officer, Space Foundation",
+    title: "Shelli Brunswick - Chief Operating Officer at Space Foundation",
     description: "How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy",
   },
   {
@@ -320,8 +320,8 @@ export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 13, minute: 0 },
     endTime: { hour: 13, minute: 30 },
-    title: "Adrienne Tacke - Senior Developer Advocate & Software Engineer at MongoDB",
-    description: "There is NO Developer Uniform!",
+    title: "Patrick Colucci - Technical Training Program Manager at AWS",
+    description: "Side Projects Save Careers",
   },
   {
     startTime: { hour: 13, minute: 30 },
@@ -344,8 +344,8 @@ export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 16, minute: 0 },
     endTime: { hour: 16, minute: 30 },
-    title: "Patrick Colucci - Technical Training Program Manager at AWS",
-    description: "Side Projects Save Careers",
+    title: "Jerry Lee - COO at Wonsulting",
+    description: "Using LinkedIn to Land Your Dream Job",
   },
   {
     startTime: { hour: 16, minute: 30 },
