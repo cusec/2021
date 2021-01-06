@@ -52,7 +52,12 @@ export default function ScheduleTable({
         )
       );
 
-      scheduleList.push({ title: thisEvent.title, description: thisEvent.description, start, end });
+      scheduleList.push({
+        title: thisEvent.title,
+        description: thisEvent.description,
+        start,
+        end,
+      });
     });
 
     setLocalSchedule(scheduleList);

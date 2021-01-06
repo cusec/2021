@@ -222,8 +222,8 @@ export const scheduleSaturday: cusecEvent[] = [
     startTime: { hour: 11, minute: 45 },
     endTime: { hour: 12, minute: 15 },
     title: "Aria Chang - Software Engineer at MediaMath",
-    description: "Dig Your Heels in Tech: Find Your Place through Hackathons, Research & Applications",
-
+    description:
+      "Dig Your Heels in Tech: Find Your Place through Hackathons, Research & Applications",
   },
   {
     startTime: { hour: 12, minute: 15 },
@@ -235,19 +235,22 @@ export const scheduleSaturday: cusecEvent[] = [
     startTime: { hour: 13, minute: 15 },
     endTime: { hour: 14, minute: 0 },
     title: "Speed Networking",
-    description: "Meet and connect with all the sponsors, speakers and other students in a fun and dynamic way!",
+    description:
+      "Meet and connect with all the sponsors, speakers and other students in a fun and dynamic way!",
   },
   {
     startTime: { hour: 14, minute: 0 },
     endTime: { hour: 14, minute: 30 },
     title: "Stephanie A. Higa - Senior Software Engineer at Box",
-    description: "What Frontend Engineers Really Do (and why you might want to become one, too)",
+    description:
+      "What Frontend Engineers Really Do (and why you might want to become one, too)",
   },
   {
     startTime: { hour: 14, minute: 30 },
     endTime: { hour: 16, minute: 30 },
     title: "Virtual Career Fair",
-    description: "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, Amazon and more!",
+    description:
+      "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, Amazon and more!",
   },
   {
     startTime: { hour: 16, minute: 0 },
@@ -265,7 +268,8 @@ export const scheduleSaturday: cusecEvent[] = [
     startTime: { hour: 17, minute: 0 },
     endTime: { hour: 18, minute: 0 },
     title: "New Grad Panel: So I've Graduated, What Next?",
-    description: "Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, Konrad Group and Ciena.",
+    description:
+      "Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, Konrad Group and Ciena.",
   },
   {
     startTime: { hour: 17, minute: 30 },
@@ -276,13 +280,15 @@ export const scheduleSaturday: cusecEvent[] = [
     startTime: { hour: 18, minute: 0 },
     endTime: { hour: 18, minute: 45 },
     title: "Andra Keay - Managing Director at Silicon Valley Robotics",
-    description: "Robots are the canary in the AI coal mine: the risks of autonomous systems involves more than physical safety",
+    description:
+      "Robots are the canary in the AI coal mine: the risks of autonomous systems involves more than physical safety",
   },
   {
     startTime: { hour: 19, minute: 30 },
     endTime: { hour: 22, minute: 0 },
     title: "Social Event",
-    description: "Join us for a fun evening filled with networking, trivia and prizes (Up to $300CAD of prizes to be given out!)",
+    description:
+      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300CAD of prizes to be given out!)",
   },
 ];
 
@@ -296,8 +302,9 @@ export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 10, minute: 30 },
     endTime: { hour: 11, minute: 15 },
-    title: "Shelli Brunswick - Chief Operating Officer at Space Foundation",
-    description: "How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy",
+    title: "Shelli Brunswick - Chief Operating Officer, Space Foundation",
+    description:
+      "How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy",
   },
   {
     startTime: { hour: 11, minute: 15 },
@@ -309,7 +316,8 @@ export const scheduleSunday: cusecEvent[] = [
     startTime: { hour: 11, minute: 45 },
     endTime: { hour: 12, minute: 30 },
     title: "Speed Networking",
-    description: "Meet and connect with all the sponsors, speakers and other students in a fun and dynamic way!",
+    description:
+      "Meet and connect with all the sponsors, speakers and other students in a fun and dynamic way!",
   },
   {
     startTime: { hour: 12, minute: 30 },
@@ -339,7 +347,8 @@ export const scheduleSunday: cusecEvent[] = [
     startTime: { hour: 14, minute: 30 },
     endTime: { hour: 16, minute: 30 },
     title: "Virtual Career Fair",
-    description: "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, SSENSE, Nokia and more!",
+    description:
+      "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, SSENSE, Nokia and more!",
   },
   {
     startTime: { hour: 16, minute: 0 },
