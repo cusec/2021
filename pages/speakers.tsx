@@ -2,6 +2,11 @@ import { ReactElement } from "react";
 import Head from "next/head";
 import TopArea from "@/components/sections/TopArea";
 import { WidthWrapper } from "@/components/core/Layout";
+import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
+import SpeakerCard from "@/components/SpeakerCard";
+import { Box, Flex } from "@chakra-ui/react";
+import Footer from "@/components/sections/Footer";
+import { speakerData } from "@/src/data";
 
 export default function Speakers(): ReactElement {
   return (
@@ -20,7 +25,33 @@ export default function Speakers(): ReactElement {
 
       <main>
         <TopArea />
-        <WidthWrapper paddingTop="48px"></WidthWrapper>
+        <Box paddingTop="48px" marginBottom="4rem">
+          <Box
+            textAlign="center"
+            paddingTop={["1in", "1.5in", "1.5in", "1.5in", "2in"]}
+            paddingBottom={["0.5in", "0.75in", "0.75in", "0.75in", "1in"]}
+            backgroundImage="url(/images/headline-shapes-background.svg)"
+            backgroundPosition="center 50%"
+            backgroundSize={["600px", "700px", "700px", "800px", "1000px"]}
+            backgroundRepeat="no-repeat"
+            overflow="visible"
+          >
+            <WidthWrapper>
+              <HeadlinePrimary>Our speakers</HeadlinePrimary>
+              <BodyPrimary>
+                Get to know our fabulous group of speakers.
+              </BodyPrimary>
+            </WidthWrapper>
+          </Box>
+          <WidthWrapper>
+            <Flex justify="center" flexWrap="wrap">
+              {speakerData.map((speaker, index) => (
+                <SpeakerCard key={`${index}-${speaker.name}`} {...speaker} />
+              ))}
+            </Flex>
+          </WidthWrapper>
+        </Box>
+        <Footer />
       </main>
 
       <style jsx global>{`

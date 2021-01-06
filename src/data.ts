@@ -1,3 +1,5 @@
+import { ISpeaker } from "@/components/SpeakerCard";
+
 export const FAQData: { question: string; answer: string[] }[] = [
   {
     question: "Is CUSEC happening virtually this year?",
@@ -368,5 +370,169 @@ export const scheduleSunday: cusecEvent[] = [
     startTime: { hour: 19, minute: 0 },
     endTime: { hour: 19, minute: 45 },
     title: "Closing Ceremonies",
+  },
+];
+
+export const speakerData: ISpeaker[] = [
+  {
+    name: "Shelli Brunswick",
+    title: "Chief Operating Officer, Space Foundation",
+    photo: "/images/speakers/shelli-brunswick.jpg",
+    logo: "/images/speakers/logos/space-foundation.png",
+    bio: `Shelli Brunswick, COO of Space Foundation, and Executive Leader for the Center of Innovation and Education, brings a broad perspective and deep vision of the workforce development roadmap and economic opportunities available to all people in the space economy — from a distinguished career as a space acquisition and program management leader and Congressional Liaison for the US Air Force — to her current role leading the Center for Innovation and Education.
+
+<br />Shelli speaks at organizations and events around the globe to advance space technology innovation partnership and collaboration opportunities, chairs the Women in Aerospace (WIA) Foundation, and hosts the Women’s Global Gathering annually at the Space Symposium.  In addition to advancing that program, Brunswick is one of only 35 women worldwide to be selected by the United Nations as a mentor for its Space4Women program.  She was selected as the Diversity and Inclusion Officer / Role Model 2020 by WomenTech Network.`,
+    talk: {
+      title: `How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy`,
+      description: `Space – once considered the final frontier and only accessible to a select few – is now home to the most dynamic and innovative economy on the planet. Today every community, infrastructure, and aspect of modern life is either acutely dependent on or indirectly affected by space-related technologies. These innovations span health and medicine, transportation, public safety, consumer goods, industrial productivity, information technology, energy and environment, and more, impacting societies and regions across the globe.
+
+<br />Opportunities abound, but it’s complicated. Beyond the abundance of possibilities presented by collaboration between public organizations and private enterprises, NASA and the Pentagon, there is a workforce and skills deficit in the space industry. Without manpower at every level – from non-STEM laborers to business entrepreneurs to STEM experts – and continual career upskilling to enable the commercialization of space technology innovations, the full potential of the space economy for the betterment of humanity will not be realized.
+
+<br />Not every person will get to ride on a rocket, see one lift off, or build a satellite or payload, but every person can contribute to delivering space technology solutions that we depend on every day, like more accurate weather forecasting, new materials for manufacturing goods, advanced global communications, healthcare innovation, and precision farming. Shelli will share a pragmatic workforce development roadmap and five core disciplines for becoming a space innovator.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/shellibrunswick",
+      linkedin: "https://www.linkedin.com/in/shellibrunswick/",
+      website: "https://www.spacefoundation.org/cie/",
+    },
+  },
+  {
+    name: "Jack Poulson",
+    title: "Executive Director, Tech Inquiry",
+    photo: "/images/speakers/jack-poulson.jpg",
+    logo: "/images/speakers/logos/tech-inquiry.png",
+    bio: `Dr. Jack Poulson is the Executive Director of the tech accountability nonprofit, Tech Inquiry, where he helps lead research into the public/private interface (esp. relating to tech companies) and its relationship to tech worker organizing. He was previously a Senior Research Scientist at Google focused on (conversational) recommender systems, and, before that, an Assistant Professor of Mathematics at Stanford focused on high-performance linear algebra and optimization.`,
+    talk: {
+      title: `Organizing to Prevent Abuses in Tech`,
+      description: `There are numerous recent cases of lone researchers and/or whistleblowers standing up against massive corporate interests in clear-cut cases of profit overriding espoused ethics. Yet in-depth study shows that sustained collective action from tech workers and civil society are what have delivered the few concrete concessions so far. Further, companies themselves inherently function through collectives: from management itself, to surveillance of workers through HR, to trade organizations, to the Chamber of Commerce. This talk hopes to provide a blend of analysis of topics ranging from recent ethical crises in tech, to federal contracting, to lobbying and trade associations to help make the case for unions in tech being needed yesterday.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/_jack_poulson",
+      website: "https://techinquiry.org/explorer/",
+    },
+  },
+  {
+    name: "Andra Keay",
+    title: "Managing Director at Silicon Valley Robotics",
+    photo: "/images/speakers/andra-keay.jpg",
+    logo: "/images/speakers/logos/svr.jpg",
+    bio: `Andra Keay is the Managing Director of Silicon Valley Robotics, the non-profit industry group supporting innovation and commercialization of robotics technologies. Andra is an trained futurist, founder of the Robot Launch global startup competition, Robot Garden maker space, Women in Robotics and is a mentor, investor and advisor to startups, accelerators and think tanks, with a strong interest in commercializing socially positive robotics and AI. She is also a Visiting Scholar with the UC’s CITRIS People and Robots Research Group.`,
+    talk: {
+      title: `Robots are the canary in the AI coal mine: the risks of autonomous systems involves more than physical safety`,
+      description: `In recent years, robotics and autonomous systems have become bundled up under the general heading of AI or AIS for Autonomous and Intelligent Systems, with AI representing social and economic issues such as bias and persuasion, and the robotics representing the physical issues of safety and reliability. The reality is far worse, because robots literally embody many of the harms of AI in such a way as to institutionalize and reproduce the stereotypes and issues. It's imperative that we reframe the discussion to represent the ethics of robotics and autonomous systems, incorporating AI and it's many issues.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/robotlaunch",
+      linkedin: "https://www.linkedin.com/in/andra-keay",
+      website: "https://svrobo.org/",
+    },
+  },
+  {
+    name: "Stephanie A. Higa",
+    title: "Senior Software Engineer at Box",
+    photo: "/images/speakers/stephanie-higa.jpg",
+    logo: "/images/speakers/logos/box.png",
+    bio: `Stephanie is a senior software engineer at Box in Redwood City, California. She taught herself how to code while working in business development for a tech incubator in Los Angeles. In her current role, she creates developer tools and contributes to Box UI Elements, the company's open-source user interface library. She’s passionate about art, writing, indoor plants, interior design, and the future of technology.`,
+    talk: {
+      title: `What frontend engineers really do (and why you might want to become one, too)`,
+      description: `The world of frontend development encompasses everything you see and interact with on the web. From this talk, you'll gain a solid understanding of what frontend engineers do, and maybe even figure out whether this is a career path that appeals to you. I'll share insights from my 8+ years of working as a frontend engineer in Silicon Valley and Los Angeles, with a focus on the following topics:
+
+* The amazing evolution of frontend development (from static HTML pages to complex single-page applications)
+* The unique challenges of building user interfaces for the modern web
+* What differentiates frontend engineers from full-stack and backend engineers
+* How to keep up with web trends
+* What I find most rewarding (and fun!) about my work`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/sahiga",
+      website: "https://www.stephaniehiga.com",
+      github: "https://www.github.com/sahiga",
+    },
+  },
+  {
+    name: "Patrick Colucci",
+    title: "Technical Training Program Manager at AWS",
+    photo: "/images/speakers/patrick-colucci.jpg",
+    logo: "/images/speakers/logos/aws.svg",
+    bio: `Patrick Colucci is a Technical Training Program Manager at AWS. He manages and executes a 48-week residency program for a select group of new AWS employees in Canada. Prior to AWS, Patrick functioned as the Global Presales Manager at SAP’s Academy where he onboarded and guided early talent at SAP so they may gain the skills and experience needed to become highly valued Presales Solution Engineers. Before SAP, Patrick had the privilege of working for Apple where he had the opportunity to work with some of the most popular products on the planet.`,
+    talk: {
+      title: `Side Projects Save Careers`,
+      description: `Learning by doing is not only effective but it's also fun. Side projects that have a primary purpose of learning something ends up being low-risk, and provides sufficient freedom to change and evolve things as you go, without having to explain it to or convince someone else.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/pscolucci",
+      linkedin: "https://www.linkedin.com/in/pscolucci",
+      website: "http://pscolucci.com/",
+    },
+  },
+  {
+    name: "Jerry Lee",
+    title: "COO @ Wonsulting",
+    photo: "/images/speakers/jerry-lee.jpg",
+    logo: "/images/speakers/logos/wonsulting.png",
+    bio: `Jerry is an ex-Senior Strategy & Operations Manager at Google and current Manager, Product Strategy at Lucid. He is from Torrance, California and graduated summa cum laude from Babson College. After graduating, Jerry was hired as the youngest analyst in his organization by being promoted multiple times in 2 years to his current position. Outside of work, Jerry partners with universities & organizations (170+ to date) to help others land into their dream careers. He's amassed 83,000+ followers and has reached 15M+ professionals.`,
+    talk: {
+      title: `Using LinkedIn to Land Your Dream Job`,
+      description: `Learn the underutilized LinkedIn strategies to land your dream role, especially coming from a non target school.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/jehakjerrylee/",
+      website: "https://www.wonsulting.com/",
+    },
+  },
+  {
+    name: "Adrienne Tacke",
+    title: "Senior Developer Advocate & Software Engineer at MongoDB",
+    photo: "/images/speakers/adrienne-tacke.jpg",
+    logo: "/images/speakers/logos/mongo-db.svg",
+    bio: `Currently a Senior Developer Advocate for MongoDB, Adrienne Tacke is also a Filipina software engineer, speaker, published author of the book Coding for Kids: Python, and a LinkedIn Learning instructor who specializes in Cloud Development courses. Perhaps most important, however, is that she spends way too much money on desserts and ungodly amounts of time playing Cyberpunk 2077.`,
+    talk: {
+      title: `There is NO Developer Uniform!`,
+      description: `"No devs wear that!" "You're too pretty to be a dev" "Only real devs use Macs"
+
+<br />When we wonder why there is no diversity in tech, these stereotypes and gatekeeping philosophies are part of the blame. Having heard them over and over in my own career, I've learned to resist the negativity that ensues from these thoughts.
+
+<br />In this keynote talk, I'll share some personal bits of my own story in this industry, the hardships and prejudices I've faced, and the lessons I've learned to establish that success is more than possible. While going on this journey, we'll explore the many stereotypes that influence the way we think, how they impact our efforts on making the tech industry more diverse and inclusive, and see direct counterexamples to these baseless assumptions.
+
+<br />By the end of this talk, I hope to dismantle these established, but harmful stereotypes and inspire the audience, no matter who they are, to believe that there truly is no developer uniform.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/AdrienneTacke",
+      linkedin: "https://www.linkedin.com/in/adriennetacke/",
+      website: "https://blog.adrienne.io/",
+    },
+  },
+  {
+    name: "Emmanuel Straschnov",
+    title: "Co-CEO & Founder of Bubble",
+    photo: "/images/speakers/emmanuel-straschnov.jpg",
+    logo: "/images/speakers/logos/bubble.svg",
+    bio: `Emmanuel Straschnov is co-CEO and founder of Bubble. Bubble is a visual programming (or no-code) platform that makes programming as easy as pointing and clicking. Bubble counts more than 700,000 users; people have used it to start companies without technical resources, and have been accepted into Y Combinator  or raised multi-million dollar rounds.
+
+<br />Born in Paris, Emmanuel studied computer science and mathematics at École Polytechnique and received his MBA from Harvard Business School. Prior to starting Bubble, he was a management consultant in China. He’s now based in New York.`,
+    talk: {
+      title: `How no-code is changing the development workflow`,
+      description: `No-code platforms are changing how software is built and enable non technical staff to build business applications themselves. This has a tremendous impact on how organizations work, as it fastens greatly how product can be built and at the same time enables software talent to focus on innovative solutions. In this talk, we'll cover the fundamentals of visual programming, how this technology is used on the business world, at startups and large organizations, and will discuss a few examples.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/estraschnov",
+      linkedin: "https://www.linkedin.com/in/straschnov/",
+      website: "https://bubble.io",
+    },
+  },
+  {
+    name: `Qianyun "Aria" Chang`,
+    title: "Software Engineer at MediaMath",
+    photo: "/images/speakers/qianyun-chang.jpg",
+    logo: "/images/speakers/logos/media-math.jpg",
+    bio: `Aria is a software engineer on the data engineering team at MediaMath designing and maintaining large scale machine learning data pipelines. She holds a bachelors in computer science focusing on AI and ML applications from UC Davis. She was named one of the top 50 Most Inspirational MLH Hackers for her heavy hackathon participation and numerous hackathon awards. Her skin cancer classification and time series seizure prediction projects were published in case studies. She also researched with professors on comments sentiment analysis, game reinforcement learning, and heart disease classification. Notably, her patent pending project at a smart grid research company was awarded one of the Best IEEE Conference Papers for using reinforcement learning to fix contingencies within the power grid. A huge part of her identity is to advocate and for women in tech. She founded a number of women in tech/AI groups to educate, empower, and inspire women.`,
+    talk: {
+      title: `Dig Your Heels in Tech: Find Your Place through Hackathons, Research & Applications`,
+      description: `Research was the most fun part of my college education from researching with professors to applying research results to Hackathon applications. It’s what made me feel like I was always on the cusp of a breakthrough invention, even though I was just a college student. Then when I stepped into the industry, I discovered how to truly make an impact by putting research into production. I will walk you through how I found a place in tech for me and what you could do to find your sense of belonging in the tech world.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/qianyunchang/",
+      website: "https://ariachang.tech/",
+    },
   },
 ];
