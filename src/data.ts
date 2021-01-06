@@ -203,6 +203,7 @@ export type cusecEvent = {
   startTime: { hour: number; minute: number };
   endTime: { hour: number; minute: number };
   title: string;
+  description?: string;
 };
 
 export const scheduleSaturday: cusecEvent[] = [
@@ -214,77 +215,81 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 11, minute: 0 },
     endTime: { hour: 11, minute: 45 },
-    title: "Keynote Speaker #1",
+    title: "Jack Poulson - Executive Director at Tech Inquiry",
+    description: "Organizing to Prevent Abuses in Tech",
   },
   {
     startTime: { hour: 11, minute: 45 },
     endTime: { hour: 12, minute: 15 },
-    title: "Talk #1 - Patrick",
+    title: "Aria Chang - Software Engineer at MediaMath",
+    description:
+      "Dig Your Heels in Tech: Find Your Place through Hackathons, Research & Applications",
   },
   {
     startTime: { hour: 12, minute: 15 },
     endTime: { hour: 13, minute: 15 },
-    title: "RBC Workshop",
+    title: "Workshop by RBC",
+    description: "Analyzing a day in my Spotify life with technology",
   },
   {
     startTime: { hour: 13, minute: 15 },
     endTime: { hour: 14, minute: 0 },
-    title: "Speed Networking FREE X FREE",
-  },
-  {
-    startTime: { hour: 13, minute: 15 },
-    endTime: { hour: 14, minute: 0 },
-    title: "Speed Networking VIP X SS",
+    title: "Speed Networking",
+    description:
+      "Meet and connect with all the sponsors, speakers and other students in a fun and dynamic way!",
   },
   {
     startTime: { hour: 14, minute: 0 },
     endTime: { hour: 14, minute: 30 },
-    title: "Talk #2",
+    title: "Stephanie A. Higa - Senior Software Engineer at Box",
+    description:
+      "What Frontend Engineers Really Do (and why you might want to become one, too)",
   },
   {
     startTime: { hour: 14, minute: 30 },
     endTime: { hour: 16, minute: 30 },
-    title: "Career Fair",
-  },
-  {
-    startTime: { hour: 14, minute: 30 },
-    endTime: { hour: 16, minute: 0 },
-    title: "Team Hiring Event",
+    title: "Virtual Career Fair",
+    description:
+      "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, Amazon and more!",
   },
   {
     startTime: { hour: 16, minute: 0 },
     endTime: { hour: 16, minute: 30 },
-    title: "Talk #3",
+    title:
+      "Adrienne Tacke - Senior Developer Advocate & Software Engineer at MongoDB",
+    description: "There is NO Developer Uniform!",
   },
   {
     startTime: { hour: 16, minute: 30 },
     endTime: { hour: 17, minute: 30 },
-    title: "Kinaxis Workshop",
-  },
-  {
-    startTime: { hour: 16, minute: 30 },
-    endTime: { hour: 17, minute: 0 },
-    title: "Morgan Stanley Workshop",
+    title: "Workshop by Kinaxis",
+    description: "Supply Chain Management and You",
   },
   {
     startTime: { hour: 17, minute: 0 },
     endTime: { hour: 18, minute: 0 },
-    title: "Panel",
+    title: "New Grad Panel: So I've Graduated, What Next?",
+    description:
+      "Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, Konrad Group and Ciena.",
   },
   {
     startTime: { hour: 17, minute: 30 },
     endTime: { hour: 18, minute: 0 },
-    title: "Talk #4 - RBC",
+    title: "Alexandra Cactus",
   },
   {
     startTime: { hour: 18, minute: 0 },
     endTime: { hour: 18, minute: 45 },
-    title: "Keynote Speaker #2",
+    title: "Andra Keay - Managing Director at Silicon Valley Robotics",
+    description:
+      "Robots are the canary in the AI coal mine: the risks of autonomous systems involves more than physical safety",
   },
   {
     startTime: { hour: 19, minute: 30 },
     endTime: { hour: 22, minute: 0 },
-    title: "Social Event (TBA)",
+    title: "Social Event",
+    description:
+      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300CAD of prizes to be given out!)",
   },
 ];
 
@@ -293,76 +298,80 @@ export const scheduleSunday: cusecEvent[] = [
     startTime: { hour: 9, minute: 45 },
     endTime: { hour: 10, minute: 30 },
     title: "Morning Meditation & Exercise",
+    description: "Hosted by Genetec",
   },
   {
     startTime: { hour: 10, minute: 30 },
     endTime: { hour: 11, minute: 15 },
-    title: "Keynote #3",
+    title: "Shelli Brunswick - Chief Operating Officer, Space Foundation",
+    description:
+      "How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy",
   },
   {
     startTime: { hour: 11, minute: 15 },
     endTime: { hour: 11, minute: 45 },
-    title: "Talk #5 - John Fish",
+    title: "Emanuel Straschnov - Co-CEO & Founder at Bubble",
+    description: "No-code is Changing the Development Workflow",
   },
   {
     startTime: { hour: 11, minute: 45 },
     endTime: { hour: 12, minute: 30 },
-    title: "Speed Networking ALL X SS",
+    title: "Speed Networking",
+    description:
+      "Meet and connect with all the sponsors, speakers and other students in a fun and dynamic way!",
   },
   {
     startTime: { hour: 12, minute: 30 },
     endTime: { hour: 13, minute: 30 },
-    title: "Diversity Talk",
+    title: "Diversity Discussion",
+    description: "Hosted by RBC",
   },
   {
     startTime: { hour: 13, minute: 0 },
     endTime: { hour: 13, minute: 30 },
-    title: "Talk #6",
+    title: "Patrick Colucci - Technical Training Program Manager at AWS",
+    description: "Side Projects Save Careers",
   },
   {
     startTime: { hour: 13, minute: 30 },
     endTime: { hour: 14, minute: 15 },
-    title: "Genetec Workshop",
+    title: "Workshop by Genetec",
+    description: "Async and multi-threaded programming in C#",
   },
   {
     startTime: { hour: 13, minute: 30 },
     endTime: { hour: 14, minute: 0 },
-    title: "Unity Workshop",
+    title: "Workshop by Unity",
+    description: "Unity Technologies Information Session",
   },
   {
     startTime: { hour: 14, minute: 30 },
     endTime: { hour: 16, minute: 30 },
-    title: "Career Fair",
-  },
-  {
-    startTime: { hour: 14, minute: 30 },
-    endTime: { hour: 16, minute: 0 },
-    title: "Team Hiring Event",
+    title: "Virtual Career Fair",
+    description:
+      "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, SSENSE, Nokia and more!",
   },
   {
     startTime: { hour: 16, minute: 0 },
     endTime: { hour: 16, minute: 30 },
-    title: "Talk #7",
+    title: "Jerry Lee - COO at Wonsulting",
+    description: "Using LinkedIn to Land Your Dream Job",
   },
   {
     startTime: { hour: 16, minute: 30 },
     endTime: { hour: 17, minute: 30 },
-    title: "VIP Q&A Hopin",
+    title: "VIP Q&A Session",
   },
   {
     startTime: { hour: 17, minute: 15 },
     endTime: { hour: 18, minute: 15 },
-    title: "Product Pitch Competition",
-  },
-  {
-    startTime: { hour: 17, minute: 45 },
-    endTime: { hour: 18, minute: 15 },
-    title: "Talk #8",
+    title: "RBC Hackacomm Finals",
   },
   {
     startTime: { hour: 18, minute: 15 },
     endTime: { hour: 19, minute: 0 },
-    title: "Keynote #8",
+    title: "William Hurley - Founder and CEO of Strangeworks",
+    description: "",
   },
   {
     startTime: { hour: 19, minute: 0 },
