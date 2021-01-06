@@ -92,7 +92,9 @@ export default function ScheduleTable({
               </Td>
               <Td>
                 <Text fontWeight="bold">{event.title}</Text>
-                <Text fontSize="xs" as="i">{event.description}</Text>
+                <Text fontSize="xs" as="i">
+                  {event.description}
+                </Text>
               </Td>
             </Tr>
           ))}

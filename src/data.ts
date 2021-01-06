@@ -255,7 +255,8 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 16, minute: 0 },
     endTime: { hour: 16, minute: 30 },
-    title: "Adrienne Tacke - Senior Developer Advocate & Software Engineer at MongoDB",
+    title:
+      "Adrienne Tacke - Senior Developer Advocate & Software Engineer at MongoDB",
     description: "There is NO Developer Uniform!",
   },
   {
