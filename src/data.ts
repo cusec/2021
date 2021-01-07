@@ -231,8 +231,11 @@ export const scheduleSaturday: cusecEvent[] = [
     startTime: { hour: 12, minute: 15 },
     endTime: { hour: 13, minute: 15 },
     title: "Andrew Briggs - Technical Lead at RBC",
-    description:
-      "Practicing Architecture by analyzing a day in my Spotify life. Please read [GitHub repo](https://github.com/atbriggs/nsync) prior to Workshop!",
+    description: `Practicing Architecture by analyzing a day in my Spotify life.
+
+Please download the pre-requisites and try to run the apps prior to the workshop if you'd like to participate.
+
+Instructions can be found in the [GitHub repo](https://github.com/atbriggs/nsync).`,
   },
   {
     startTime: { hour: 13, minute: 15 },
