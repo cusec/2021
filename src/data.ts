@@ -559,4 +559,19 @@ export const speakerData: ISpeaker[] = [
       website: "https://ariachang.tech/",
     },
   },
+  {
+    name: "Alex Catus",
+    title: "Developer at RBC",
+    photo: "/images/speakers/alex-catus.jpg",
+    logo: "/images/speakers/logos/rbc.svg",
+    bio: `Alex Catus is a web-developer at RBC. Many years ago, their life changed when they fell in love with modern web development technologies including Angular, Rxjs, Ngrx… Alex loves to learn new things, and that's why their job is perfect for them.`,
+    talk: {
+      title: `Introduction to Rxjs`,
+      description: `Asynchronous programming can feel tricky. By changing the way we handle events, Rxjs allows us to solve hard problems with clarity and flexibility by writing fully testable code. Let's dive into observable's magic! Alex will show you a small app they built to breakdown the some of the main features. The code will be available on a public repo.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/alexcatus/",
+      github: "https://github.com/alexCatus",
+    },
+  },
 ];
