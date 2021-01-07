@@ -297,7 +297,7 @@ Instructions can be found in the [GitHub repo](https://github.com/atbriggs/nsync
     endTime: { hour: 22, minute: 0 },
     title: "Social Event",
     description:
-      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300CAD of prizes to be given out!)",
+      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300 CAD of prizes to be given out!)",
   },
 ];
 
