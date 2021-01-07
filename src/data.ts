@@ -230,8 +230,9 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 12, minute: 15 },
     endTime: { hour: 13, minute: 15 },
-    title: "Workshop by RBC",
-    description: "Analyzing a day in my Spotify life with technology",
+    title: "Andrew Briggs - Technical Lead at RBC",
+    description:
+      "Practicing Architecture by analyzing a day in my Spotify life. Please read [GitHub repo](https://github.com/atbriggs/nsync) prior to Workshop!",
   },
   {
     startTime: { hour: 13, minute: 15 },
@@ -277,7 +278,9 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 17, minute: 30 },
     endTime: { hour: 18, minute: 0 },
-    title: "Alexandra Cactus",
+    title: "Alex Catus - Fullstack Developer at RBC",
+    description:
+      "Initiation to RxJs, a love story. [GitHub demo](https://github.com/alexCatus/rxjs-demo) available here!",
   },
   {
     startTime: { hour: 18, minute: 0 },
