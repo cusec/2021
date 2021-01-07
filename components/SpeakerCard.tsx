@@ -113,6 +113,11 @@ const SpeakerSocials = ({
   );
 
 const Markdown = styled(ReactMarkdown)`
+  * {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+  }
+
   ul,
   ol {
     margin-left: 2rem;
@@ -238,16 +243,14 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
                   </BodyPrimary>
                 )}
                 {talk.description && (
-                  <BodyPrimary>
+                  <Box marginBottom="1rem">
                     <Markdown children={talk.description} allowDangerousHtml />
-                  </BodyPrimary>
+                  </Box>
                 )}
               </>
             )}
             <BodyPrimary fontWeight="bold">About {name}</BodyPrimary>
-            <Body>
-              <Markdown children={bio} allowDangerousHtml />
-            </Body>
+            <Markdown children={bio} allowDangerousHtml />
           </ModalBody>
           <ModalFooter>
             <Flex justify="center" width="100%" marginBottom="1rem">
