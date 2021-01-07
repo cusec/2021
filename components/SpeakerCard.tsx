@@ -186,15 +186,7 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
             <SpeakerName>{name}</SpeakerName>
             <SpeakerTitle marginBottom="1rem">{title}</SpeakerTitle>
             {talk?.title && (
-              <BodyPrimary
-                fontStyle="italic"
-                display="-webkit-box"
-                style={{ WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
-                overflow="hidden"
-                textOverflow="ellipsis"
-              >
-                {talk.title}
-              </BodyPrimary>
+              <BodyPrimary fontStyle="italic">{talk.title}</BodyPrimary>
             )}
             <BodyPrimary
               display="-webkit-box"

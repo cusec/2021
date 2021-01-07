@@ -7,7 +7,9 @@ import {
   Tr,
   Flex,
 } from "@chakra-ui/react";
-
+import ReactMarkdown from "react-markdown";
+import styled from "@emotion/styled";
+import theme from "@/src/theme";
 import { cusecEvent } from "@/src/data";
 import { ReactElement, useEffect, useState } from "react";
 
@@ -22,6 +24,20 @@ interface IEvent {
   start: Date;
   end: Date;
 }
+
+const Markdown = styled(ReactMarkdown)`
+  font-size: 12px;
+  margin-top: 2px;
+
+  a {
+    color: ${theme.colors.brand.blue};
+  }
+
+  a:hover {
+    color: ${theme.colors.brand.dark_teal};
+    text-decoration: underline;
+  }
+`;
 
 export default function ScheduleTable({
   schedule,
@@ -92,9 +108,7 @@ export default function ScheduleTable({
               </Td>
               <Td>
                 <Text fontWeight="bold">{event.title}</Text>
-                <Text fontSize="xs" as="i">
-                  {event.description}
-                </Text>
+                {event.description && <Markdown>{event.description}</Markdown>}
               </Td>
             </Tr>
           ))}

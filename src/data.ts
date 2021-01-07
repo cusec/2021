@@ -230,8 +230,12 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 12, minute: 15 },
     endTime: { hour: 13, minute: 15 },
-    title: "Workshop by RBC",
-    description: "Analyzing a day in my Spotify life with technology",
+    title: "Andrew Briggs - Technical Lead at RBC",
+    description: `Practicing Architecture by analyzing a day in my Spotify life.
+
+Please download the pre-requisites and try to run the apps prior to the workshop if you'd like to participate.
+
+Instructions can be found in the [GitHub repo](https://github.com/atbriggs/nsync).`,
   },
   {
     startTime: { hour: 13, minute: 15 },
@@ -277,7 +281,9 @@ export const scheduleSaturday: cusecEvent[] = [
   {
     startTime: { hour: 17, minute: 30 },
     endTime: { hour: 18, minute: 0 },
-    title: "Alexandra Cactus",
+    title: "Alex Catus - Fullstack Developer at RBC",
+    description:
+      "Initiation to RxJs, a love story. [GitHub demo](https://github.com/alexCatus/rxjs-demo) available here!",
   },
   {
     startTime: { hour: 18, minute: 0 },
@@ -291,7 +297,7 @@ export const scheduleSaturday: cusecEvent[] = [
     endTime: { hour: 22, minute: 0 },
     title: "Social Event",
     description:
-      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300CAD of prizes to be given out!)",
+      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300 CAD of prizes to be given out!)",
   },
 ];
 
@@ -554,6 +560,21 @@ export const speakerData: ISpeaker[] = [
     socials: {
       linkedin: "https://www.linkedin.com/in/qianyunchang/",
       website: "https://ariachang.tech/",
+    },
+  },
+  {
+    name: "Alex Catus",
+    title: "Developer at RBC",
+    photo: "/images/speakers/alex-catus.jpg",
+    logo: "/images/speakers/logos/rbc.svg",
+    bio: `Alex Catus is a web-developer at RBC. Many years ago, their life changed when they fell in love with modern web development technologies including Angular, Rxjs, Ngrx… Alex loves to learn new things, and that's why their job is perfect for them.`,
+    talk: {
+      title: `Introduction to Rxjs`,
+      description: `Asynchronous programming can feel tricky. By changing the way we handle events, Rxjs allows us to solve hard problems with clarity and flexibility by writing fully testable code. Let's dive into observable's magic! Alex will show you a small app they built to breakdown the some of the main features. The code will be available on a public repo.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/alexcatus/",
+      github: "https://github.com/alexCatus",
     },
   },
 ];
