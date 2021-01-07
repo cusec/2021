@@ -15,6 +15,10 @@ const theme = extendTheme({
   colors: {
     ...chakraTheme.colors,
     brand: {
+      100: "#09d8c4",
+      200: "#11a0a7",
+      300: "#1e5480",
+      400: "#22306d",
       dark_blue: "#22306d",
       blue: "#1e5480",
       dark_teal: "#11a0a7",
@@ -28,9 +32,6 @@ const theme = extendTheme({
   },
   fonts,
   breakpoints,
-  icons: {
-    ...chakraTheme.icons,
-  },
 });
 
 export default theme;
