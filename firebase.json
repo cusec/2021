@@ -20,6 +20,10 @@
         "destination": "/hackacomm.html"
       },
       {
+        "source": "/speakers",
+        "destination": "/speakers.html"
+      },
+      {
         "source": "/email",
         "destination": "/email.html"
       },

@@ -1,4 +1,5 @@
 import {
+  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -31,14 +32,14 @@ export default function FooterModal({
 }: FooterModalProps): ReactElement {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
+  const thisModalHash = linkBody.replace(/\s/g, "").toLowerCase();
 
   useEffect(() => {
     const hash = window.location.hash;
-    const thisModalHash = linkBody.replace(/\s/g, "").toLowerCase();
     if (hash === `#${thisModalHash}`) {
       onOpen();
     }
-  }, [linkBody, onOpen]);
+  }, [thisModalHash, onOpen]);
 
   const handleOnClose = () => {
     onClose();
@@ -50,22 +51,28 @@ export default function FooterModal({
     const currentPath: string =
       lastCharInPath === "/" ? router.pathname : `${router.pathname}/`;
     onOpen();
-    router.replace(
-      `${currentPath}#${linkBody.replace(/\s/g, "").toLowerCase()}`
-    );
+    router.replace(`${currentPath}#${thisModalHash}`);
   };
 
   return (
     <>
-      <FooterLink
-        _focus={{}}
-        _hover={{}}
-        fontSize={["xs", "xs", "xs", "sm"]}
+      <Button
+        variant="link"
+        fontWeight="inherit"
+        borderRadius="inherit"
+        _hover={{ textDecoration: "inherit" }}
+        margin="5px 8px"
         onClick={handleOnOpen}
-        isExternal
       >
-        {linkBody}
-      </FooterLink>
+        <FooterLink
+          lineHeight={1.5}
+          margin="0px !important"
+          _hover={{}}
+          fontSize={["xs", "xs", "xs", "sm"]}
+        >
+          {linkBody}
+        </FooterLink>
+      </Button>
       <Modal
         motionPreset="slideInBottom"
         isOpen={isOpen}
@@ -79,7 +86,7 @@ export default function FooterModal({
               {linkBody}
             </HeadlinePrimary>
           </ModalHeader>
-          <ModalCloseButton _focus={{}} />
+          <ModalCloseButton />
           <ModalBody paddingBottom={6}>
             {modalBody.map((item) => (
               <Fragment key={item.title}>

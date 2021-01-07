@@ -1,8 +1,8 @@
-import { ReactElement, Fragment } from "react";
-import Link from "next/link";
+import { ReactElement } from "react";
+import NextLink from "next/link";
 import useStore from "@/src/store";
 import styled from "@emotion/styled";
-import { Flex, Box, Divider, Link as ChakraLink } from "@chakra-ui/react";
+import { chakra, Flex, Box, Divider, Link } from "@chakra-ui/react";
 import ColoredSocialIcons from "@/components/ColoredSocialIcons";
 import { locations } from "@/src/constants";
 import { Headline } from "@/components/core/Text";
@@ -23,6 +23,15 @@ export const GradientNavItemLink = styled(Headline)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
+
+const MyAnchorLink = chakra(AnchorLink, {
+  baseStyle: {
+    outline: "none",
+    _focus: {
+      boxShadow: "0 0 0 3px rgba(66,153,225,0.6)",
+    },
+  },
+});
 
 export default function NavOverlay(props: {
   getTopBarHeight: () => number;
@@ -52,39 +61,42 @@ export default function NavOverlay(props: {
       <Box>
         {router.pathname === "/"
           ? locations.map((location) => (
-              <Fragment key={location.href}>
-                <AnchorLink
+              <Box key={location.href}>
+                <MyAnchorLink
                   offset={props.getTopBarHeight}
                   href={location.href}
                   onClick={handleNavItemClick}
                 >
                   <GradientNavItemLink>{location.label}</GradientNavItemLink>
-                </AnchorLink>
-                <br />
-              </Fragment>
+                </MyAnchorLink>
+              </Box>
             ))
           : locations.map((location) => (
-              <Fragment key={location.href}>
-                <Link href={`/${location.href}`}>
-                  <ChakraLink>
+              <Box key={location.href}>
+                <NextLink href={`/${location.href}`} passHref>
+                  <Link>
                     <GradientNavItemLink>{location.label}</GradientNavItemLink>
-                  </ChakraLink>
-                </Link>
-                <br />
-              </Fragment>
+                  </Link>
+                </NextLink>
+              </Box>
             ))}
         <Divider />
         <Box>
           <ScheduleModal mobile={true} />
         </Box>
-        <Divider />
         <Box>
-          <Link href="/hackacomm">
-            <ChakraLink>
+          <NextLink href="/speakers" passHref>
+            <Link>
+              <GradientNavItemLink>Speakers</GradientNavItemLink>
+            </Link>
+          </NextLink>
+        </Box>
+        <Box>
+          <NextLink href="/hackacomm" passHref>
+            <Link>
               <GradientNavItemLink>HackaComm</GradientNavItemLink>
-            </ChakraLink>
-          </Link>
-          <br />
+            </Link>
+          </NextLink>
         </Box>
         <Divider marginBottom="28px" />
         <Flex>

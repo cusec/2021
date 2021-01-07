@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import Link from "next/link";
-import { Box, Flex, Grid } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Box, Flex, Grid, Link } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
@@ -124,9 +124,11 @@ export default function Pricing(): ReactElement {
           marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
           justify="center"
         >
-          <Link href="/register">
-            <ButtonPrimary>Register</ButtonPrimary>
-          </Link>
+          <NextLink href="/register" passHref>
+            <Link borderRadius="9999px" _hover={{ textDecoration: "none" }}>
+              <ButtonPrimary>Register</ButtonPrimary>
+            </Link>
+          </NextLink>
         </Flex>
       </WidthWrapper>
     </Box>

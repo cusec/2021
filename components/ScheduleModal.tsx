@@ -1,6 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import {
-  Link as ChakraLink,
+  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -61,15 +61,33 @@ export default function ScheduleModal({
   return (
     <>
       {mobile ? (
-        <ChakraLink>
-          <GradientNavItemLink onClick={handleOnOpen}>
+        <Button
+          variant="link"
+          color="inherit"
+          background="inherit"
+          fontSize="inherit"
+          borderRadius="inherit"
+          _hover={{ textDecoration: "inherit" }}
+          marginY="16px"
+          onClick={handleOnOpen}
+        >
+          <GradientNavItemLink margin="0px !important" lineHeight={1.5}>
             Schedule
           </GradientNavItemLink>
-        </ChakraLink>
+        </Button>
       ) : (
-        <ChakraLink marginX="32px" textDecoration="none !important">
-          <NavBarLink onClick={handleOnOpen}>Schedule</NavBarLink>
-        </ChakraLink>
+        <Button
+          variant="link"
+          color="inherit"
+          fontWeight="inherit"
+          borderRadius="inherit"
+          _hover={{ textDecoration: "inherit" }}
+          marginLeft="32px"
+          marginRight="16px"
+          onClick={handleOnOpen}
+        >
+          <NavBarLink lineHeight={1.5}>Schedule</NavBarLink>
+        </Button>
       )}
       <Modal
         motionPreset="slideInBottom"
@@ -84,12 +102,12 @@ export default function ScheduleModal({
               Schedule
             </HeadlinePrimary>
           </ModalHeader>
-          <ModalCloseButton _focus={{}} />
+          <ModalCloseButton />
           <ModalBody paddingBottom={6}>
             <Tabs size="lg" variant="enclosed" isFitted colorScheme="teal">
               <TabList>
-                <Tab _focus={{}}>Saturday, January 9th 2021</Tab>
-                <Tab _focus={{}}>Sunday, January 10th 2021</Tab>
+                <Tab>Saturday, January 9th 2021</Tab>
+                <Tab>Sunday, January 10th 2021</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>

@@ -1,5 +1,5 @@
 import Logo from "./svgs/logo.svg";
-import { Flex, Link as ChakraLink } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import useStore from "@/src/store";
 import { ReactElement } from "react";
 import { useRouter } from "next/router";
@@ -19,10 +19,12 @@ export default function TopBarLogo(): ReactElement {
   };
 
   return (
-    <Flex align="center">
-      <ChakraLink onClick={handleCusecIconClick}>
-        <Logo style={{ height: "32px", width: "auto" }} />
-      </ChakraLink>
-    </Flex>
+    <IconButton
+      aria-label="Home"
+      background="none !important"
+      size="auto"
+      onClick={handleCusecIconClick}
+      icon={<Logo style={{ height: "32px", width: "auto" }} />}
+    />
   );
 }

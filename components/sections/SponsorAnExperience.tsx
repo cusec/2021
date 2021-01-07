@@ -36,10 +36,13 @@ export default function SponsorAnExperience(): ReactElement {
               .
             </BodyPrimary>
             <Flex justify={["center", "center", "center", "start"]}>
-              <Link href="mailto:sponsor@cusec.net">
-                <ButtonPrimaryVariant marginTop="0.2in">
-                  Become a sponsor
-                </ButtonPrimaryVariant>
+              <Link
+                href="mailto:sponsor@cusec.net"
+                marginTop="0.2in"
+                borderRadius="9999px"
+                _hover={{ textDecoration: "none" }}
+              >
+                <ButtonPrimaryVariant>Become a sponsor</ButtonPrimaryVariant>
               </Link>
             </Flex>
           </Box>
