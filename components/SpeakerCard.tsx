@@ -135,7 +135,6 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
         border="1px solid #d8dee9"
         maxWidth={["100%", "300px"]}
         width="100%"
-        height="100%"
         shadow="md"
         userSelect="none"
         whileHover={{ translateY: -4 }}

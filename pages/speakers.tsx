@@ -4,9 +4,10 @@ import TopArea from "@/components/sections/TopArea";
 import { WidthWrapper } from "@/components/core/Layout";
 import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 import SpeakerCard from "@/components/SpeakerCard";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Footer from "@/components/sections/Footer";
 import { speakerData } from "@/src/data";
+import Masonry from "react-masonry-css";
 
 export default function Speakers(): ReactElement {
   return (
@@ -44,11 +45,20 @@ export default function Speakers(): ReactElement {
             </WidthWrapper>
           </Box>
           <WidthWrapper>
-            <Flex justify="center" flexWrap="wrap">
+            <Masonry
+              breakpointCols={{
+                default: 4,
+                768: 1,
+                1150: 2,
+                1440: 3,
+              }}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
               {speakerData.map((speaker, index) => (
                 <SpeakerCard key={`${index}-${speaker.name}`} {...speaker} />
               ))}
-            </Flex>
+            </Masonry>
           </WidthWrapper>
         </Box>
         <Footer />
@@ -76,6 +86,25 @@ export default function Speakers(): ReactElement {
 
         * {
           box-sizing: border-box;
+        }
+
+        .my-masonry-grid {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          width: auto;
+        }
+
+        .my-masonry-grid_column {
+          padding-left: 15px;
+          padding-right: 15px;
+          background-clip: padding-box;
+        }
+
+        .my-masonry-grid_column > div {
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 30px;
         }
       `}</style>
     </>
