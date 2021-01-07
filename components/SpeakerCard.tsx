@@ -35,9 +35,9 @@ export interface ISpeaker {
   photo: string;
   logo?: string;
   bio: string;
-  talk: {
-    title: string;
-    description: string;
+  talk?: {
+    title?: string;
+    description?: string;
   };
   socials?: ISpeakerSocials;
 }
@@ -113,7 +113,8 @@ const SpeakerSocials = ({
   );
 
 const Markdown = styled(ReactMarkdown)`
-  ul {
+  ul,
+  ol {
     margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -132,7 +133,7 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
         borderRadius="4px"
         overflow="hidden"
         border="1px solid #d8dee9"
-        maxWidth="300px"
+        maxWidth={["100%", "300px"]}
         width="100%"
         height="100%"
         shadow="md"
@@ -180,15 +181,17 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
           >
             <SpeakerName>{name}</SpeakerName>
             <SpeakerTitle marginBottom="1rem">{title}</SpeakerTitle>
-            <BodyPrimary
-              fontStyle="italic"
-              display="-webkit-box"
-              style={{ WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
-              overflow="hidden"
-              textOverflow="ellipsis"
-            >
-              {talk.title}
-            </BodyPrimary>
+            {talk?.title && (
+              <BodyPrimary
+                fontStyle="italic"
+                display="-webkit-box"
+                style={{ WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
+                overflow="hidden"
+                textOverflow="ellipsis"
+              >
+                {talk.title}
+              </BodyPrimary>
+            )}
             <BodyPrimary
               display="-webkit-box"
               style={{ WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}
@@ -225,13 +228,23 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <BodyPrimary>Join us in {name}&apos;s talk on:</BodyPrimary>
-            <BodyPrimary fontWeight="bold" fontStyle="italic">
-              {talk.title}
-            </BodyPrimary>
-            <BodyPrimary>
-              <Markdown children={talk.description} allowDangerousHtml />
-            </BodyPrimary>
+            {talk && (
+              <>
+                {(talk.title || talk.description) && (
+                  <BodyPrimary>Join us in {name}&apos;s talk on:</BodyPrimary>
+                )}
+                {talk.title && (
+                  <BodyPrimary fontWeight="bold" fontStyle="italic">
+                    {talk.title}
+                  </BodyPrimary>
+                )}
+                {talk.description && (
+                  <BodyPrimary>
+                    <Markdown children={talk.description} allowDangerousHtml />
+                  </BodyPrimary>
+                )}
+              </>
+            )}
             <BodyPrimary fontWeight="bold">About {name}</BodyPrimary>
             <Body>
               <Markdown children={bio} allowDangerousHtml />

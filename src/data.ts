@@ -437,6 +437,18 @@ export const speakerData: ISpeaker[] = [
     },
   },
   {
+    name: "William Hurley",
+    title: "CEO of Strangeworks",
+    photo: "/images/speakers/william-hurley.jpg",
+    logo: "/images/speakers/logos/strangeworks.svg",
+    bio: `whurley is founder and CEO of Strangeworks, a quantum computing startup that makes the power of quantum computing easily accessible and available to all. He is an Eisenhower Fellow, Innovator in Residence for the Legatum Center for Development and Entrepreneurship at the Sloan School of Management at MIT, A Senior Member of the Institute of Electrical and Electronics Engineers (IEEE), Chairman of the Quantum Computing Standards Workgroup at the IEEE, the first Ambassador to CERN and Society, a regular contributor to TechCrunch on the topic of Quantum Computing, and the co-author of "Quantum Computing For Babies”. Prior to starting Strangeworks he was a Managing Director at Goldman Sachs [NYSE: GS]. He came to Goldman Sachs via the acquisition of his second startup, Honest Dollar. Prior to Honest Dollar whurley founded Chaotic Moon Studios which was acquired by Accenture [NYSE: ACN].`,
+    socials: {
+      twitter: "https://www.twitter.com/whurley",
+      linkedin: "https://www.linkedin.com/in/whurley/",
+      website: "https://whurley.com",
+    },
+  },
+  {
     name: "Stephanie A. Higa",
     title: "Senior Software Engineer at Box",
     photo: "/images/speakers/stephanie-higa.jpg",
