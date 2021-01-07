@@ -26,7 +26,6 @@ interface IEvent {
 }
 
 const Markdown = styled(ReactMarkdown)`
-  font-style: italic;
   font-size: 12px;
   margin-top: 2px;
 
