@@ -276,7 +276,7 @@ Instructions can be found in the [GitHub repo](https://github.com/atbriggs/nsync
     endTime: { hour: 18, minute: 0 },
     title: "New Grad Panel: So I've Graduated, What Next?",
     description:
-      "Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, Konrad Group and Ciena.",
+      "Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, MetrixData360 and Ciena.",
   },
   {
     startTime: { hour: 17, minute: 30 },
@@ -295,9 +295,23 @@ Instructions can be found in the [GitHub repo](https://github.com/atbriggs/nsync
   {
     startTime: { hour: 19, minute: 30 },
     endTime: { hour: 22, minute: 0 },
-    title: "Social Event",
+    title: "CUSECTown",
     description:
-      "Join us for a fun evening filled with networking, trivia and prizes (Up to $300 CAD of prizes to be given out!)",
+      "Come join us in meeting CUSEC attendees, organizers, speakers, and sponsors through a fun networking game with a prize of $50 CAD. Link will be sent closer to the event.",
+  },
+  {
+    startTime: { hour: 20, minute: 0 },
+    endTime: { hour: 20, minute: 40 },
+    title: "Xs and Os Solo Trivia (On CUSECTown)",
+    description:
+      "Come test your wits as you put your knowledge to the test. How good are you at true or false questions?",
+  },
+  {
+    startTime: { hour: 20, minute: 45 },
+    endTime: { hour: 21, minute: 45 },
+    title: "Team Trivia (On Hopin)",
+    description:
+      "A good old classic Team Trivia. Up to $200 CAD in prizes to be given out.",
   },
 ];
 
@@ -305,8 +319,8 @@ export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 9, minute: 45 },
     endTime: { hour: 10, minute: 30 },
-    title: "Morning Meditation & Exercise",
-    description: "Hosted by Genetec",
+    title: "Morning Exercise",
+    description: "Sponsored by Genetec",
   },
   {
     startTime: { hour: 10, minute: 30 },
@@ -332,7 +346,7 @@ export const scheduleSunday: cusecEvent[] = [
     startTime: { hour: 12, minute: 30 },
     endTime: { hour: 13, minute: 30 },
     title: "Diversity Discussion",
-    description: "Hosted by RBC",
+    description: "Sponsored by RBC",
   },
   {
     startTime: { hour: 13, minute: 0 },
@@ -368,7 +382,7 @@ export const scheduleSunday: cusecEvent[] = [
   {
     startTime: { hour: 16, minute: 30 },
     endTime: { hour: 17, minute: 30 },
-    title: "VIP Q&A Session",
+    title: "VIP Q&A Session (on the CUSEC 2021 VIP Discord)",
   },
   {
     startTime: { hour: 17, minute: 15 },
