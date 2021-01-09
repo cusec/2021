@@ -198,14 +198,14 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <NextLink href="/register" passHref>
+                <NextLink href="https://hopin.com/events/cusec-2021" passHref>
                   <Link
                     marginRight={[0, 0, 0, "2rem"]}
                     marginBottom={["1rem", "1rem", "1rem", 0]}
                     borderRadius="9999px"
                     _hover={{ textDecoration: "none" }}
                   >
-                    <ButtonPrimary>Register</ButtonPrimary>
+                    <ButtonPrimary>Enter The Live Event!</ButtonPrimary>
                   </Link>
                 </NextLink>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
