@@ -323,13 +323,6 @@ export const scheduleSunday: cusecEvent[] = [
     description: "Sponsored by Genetec",
   },
   {
-    startTime: { hour: 10, minute: 30 },
-    endTime: { hour: 11, minute: 15 },
-    title: "Shelli Brunswick - Chief Operating Officer, Space Foundation",
-    description:
-      "How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy",
-  },
-  {
     startTime: { hour: 11, minute: 15 },
     endTime: { hour: 11, minute: 45 },
     title: "Emanuel Straschnov - Co-CEO & Founder at Bubble",
@@ -374,6 +367,13 @@ export const scheduleSunday: cusecEvent[] = [
       "Meet with companies RBC, Kinaxis, Morgan Stanley, Genetec, Unity, SSENSE, Nokia and more!",
   },
   {
+    startTime: { hour: 15, minute: 0 },
+    endTime: { hour: 15, minute: 45 },
+    title: "Shelli Brunswick - Chief Operating Officer, Space Foundation",
+    description:
+      "How to Leverage Innovation and Entrepreneurship in the Vibrant Space Economy",
+  },
+  {
     startTime: { hour: 16, minute: 0 },
     endTime: { hour: 16, minute: 30 },
     title: "Jerry Lee - COO at Wonsulting",
@@ -393,7 +393,7 @@ export const scheduleSunday: cusecEvent[] = [
     startTime: { hour: 18, minute: 15 },
     endTime: { hour: 19, minute: 0 },
     title: "William Hurley - Founder and CEO of Strangeworks",
-    description: "",
+    description: "Hacking Quantum Today",
   },
   {
     startTime: { hour: 19, minute: 0 },
@@ -461,7 +461,7 @@ export const speakerData: ISpeaker[] = [
     title: "CEO of Strangeworks",
     photo: "/images/speakers/william-hurley.jpg",
     logo: "/images/speakers/logos/strangeworks.svg",
-    bio: `whurley is founder and CEO of Strangeworks, a quantum computing startup that makes the power of quantum computing easily accessible and available to all. He is an Eisenhower Fellow, Innovator in Residence for the Legatum Center for Development and Entrepreneurship at the Sloan School of Management at MIT, A Senior Member of the Institute of Electrical and Electronics Engineers (IEEE), Chairman of the Quantum Computing Standards Workgroup at the IEEE, the first Ambassador to CERN and Society, a regular contributor to TechCrunch on the topic of Quantum Computing, and the co-author of "Quantum Computing For Babies”. Prior to starting Strangeworks he was a Managing Director at Goldman Sachs [NYSE: GS]. He came to Goldman Sachs via the acquisition of his second startup, Honest Dollar. Prior to Honest Dollar whurley founded Chaotic Moon Studios which was acquired by Accenture [NYSE: ACN].`,
+    bio: `Quantum computing is accelerating, but with so many hardware and software options, what is the best way to explore it? We’ll give you the background on quantum, why it’s valuable, how you can be involved, and access to the entire quantum landscape. This talk is for beginners, as well as educators interested in quantum programming. You’ll understand the promise of quantum computers, learn how to run some quantum code, and learn how to best collaborate on quantum projects. All without any software installation needed. Come discover the power of quantum computing and how to get started programming today.`,
     socials: {
       twitter: "https://www.twitter.com/whurley",
       linkedin: "https://www.linkedin.com/in/whurley/",
