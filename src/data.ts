@@ -1,4 +1,5 @@
 import { ISpeaker } from "@/components/SpeakerCard";
+import { ITeamMember } from "@/components/TeamMemberCard";
 
 export const FAQData: { question: string; answer: string[] }[] = [
   {
@@ -593,7 +594,7 @@ export const speakerData: ISpeaker[] = [
   },
 ];
 
-export const TeamData = [
+export const teamData: ITeamMember[] = [
   {
     name: "Ellen Li",
     title: "Co-Chair",

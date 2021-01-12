@@ -6,12 +6,14 @@ import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
 import { Box } from "@chakra-ui/react";
 import Footer from "@/components/sections/Footer";
 import Masonry from "react-masonry-css";
+import { teamData } from "@/src/data";
+import TeamMemberCard from "@/components/TeamMemberCard";
 
 export default function Team(): ReactElement {
   return (
     <>
       <Head>
-        <title>Speakers - CUSEC 2021</title>
+        <title>Team - CUSEC 2021</title>
         <meta
           name="description"
           content="Mark your calendars, Canada's favourite conference is back virtually this winter! Join us January 9-10, 2021 for a weekend of amazing speakers, workshops, and more!"
@@ -52,7 +54,14 @@ export default function Team(): ReactElement {
               }}
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
-            ></Masonry>
+            >
+              {teamData.map((teamMember, index) => (
+                <TeamMemberCard
+                  key={`${index}-${teamMember.name}`}
+                  {...teamMember}
+                />
+              ))}
+            </Masonry>
           </WidthWrapper>
         </Box>
         <Footer />
