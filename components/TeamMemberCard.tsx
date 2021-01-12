@@ -91,7 +91,6 @@ export default function TeamMemberCard(props: ITeamMember): ReactElement {
           height="300px"
           position="relative"
           backgroundColor="gray.50"
-          cursor="pointer"
         >
           <Image
             src={photo}
@@ -102,7 +101,7 @@ export default function TeamMemberCard(props: ITeamMember): ReactElement {
           />
         </Box>
         <Box backgroundColor="white" paddingBottom="24px">
-          <Box cursor="pointer" paddingX="20px" paddingTop="24px">
+          <Box paddingX="20px" paddingTop="24px">
             <CardName>{name}</CardName>
             <CardTitle marginBottom="1rem">{title}</CardTitle>
             <BodyPrimary fontStyle="italic">{school}</BodyPrimary>

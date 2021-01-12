@@ -662,7 +662,7 @@ export const teamData: ITeamMember[] = [
   },
   {
     name: "Gordon Pham-Nguyen",
-    title: "",
+    title: "Technology and Design Team",
     school: "Concordia University",
     photo: "/images/team/gordon_pham-nguyen.jpg",
     socials: {

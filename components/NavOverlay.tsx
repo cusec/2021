@@ -98,6 +98,14 @@ export default function NavOverlay(props: {
             </Link>
           </NextLink>
         </Box>
+        <Divider />
+        <Box>
+          <NextLink href="/team" passHref>
+            <Link>
+              <GradientNavItemLink>Team</GradientNavItemLink>
+            </Link>
+          </NextLink>
+        </Box>
         <Divider marginBottom="28px" />
         <Flex>
           <ColoredSocialIcons />

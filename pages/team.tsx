@@ -38,9 +38,9 @@ export default function Team(): ReactElement {
             overflow="visible"
           >
             <WidthWrapper>
-              <HeadlinePrimary>Our Team</HeadlinePrimary>
+              <HeadlinePrimary>Meet Our Team</HeadlinePrimary>
               <BodyPrimary>
-                Our wonderful team that made CUSEC 2021 a reality
+                The wonderful team that made CUSEC 2021 possible
               </BodyPrimary>
             </WidthWrapper>
           </Box>
