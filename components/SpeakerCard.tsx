@@ -1,14 +1,11 @@
 import { ReactElement } from "react";
 import {
-  chakra,
-  useDisclosure,
   Box,
   Button,
   Center,
   Flex,
   HStack,
   Image,
-  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -16,15 +13,21 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { MotionBox } from "@/components/core/Motion";
-import { Body, BodyPrimary } from "@/components/core/Text";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  BodyPrimary,
+  CardName,
+  CardTitle,
+  MyIcon,
+  MySocialLink,
+} from "@/components/core/Text";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import {
-  faTwitter,
-  faLinkedinIn,
   faGithub,
+  faLinkedinIn,
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import ReactMarkdown from "react-markdown";
 import styled from "@emotion/styled";
@@ -50,35 +53,6 @@ interface ISpeakerSocials {
 }
 
 const logoSize = 14;
-
-const MyIcon = chakra(FontAwesomeIcon, {
-  baseStyle: {
-    width: "18px",
-  },
-});
-
-const MySocialLink = chakra(Link, {
-  baseStyle: {
-    color: "gray.400",
-    _hover: {
-      color: "gray.800",
-    },
-  },
-});
-
-const SpeakerTitle = chakra(Body, {
-  baseStyle: {
-    fontSize: "18px",
-    color: "#696969",
-  },
-});
-
-const SpeakerName = chakra(Body, {
-  baseStyle: {
-    fontSize: "26px",
-    fontWeight: "bold",
-  },
-});
 
 const SpeakerSocials = ({
   socials,
@@ -183,8 +157,8 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
             paddingX="20px"
             paddingTop="24px"
           >
-            <SpeakerName>{name}</SpeakerName>
-            <SpeakerTitle marginBottom="1rem">{title}</SpeakerTitle>
+            <CardName>{name}</CardName>
+            <CardTitle marginBottom="1rem">{title}</CardTitle>
             {talk?.title && (
               <BodyPrimary fontStyle="italic">{talk.title}</BodyPrimary>
             )}
@@ -219,8 +193,8 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <SpeakerName>{name}</SpeakerName>
-            <SpeakerTitle>{title}</SpeakerTitle>
+            <CardName>{name}</CardName>
+            <CardTitle>{title}</CardTitle>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
