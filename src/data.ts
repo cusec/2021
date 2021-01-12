@@ -592,3 +592,113 @@ export const speakerData: ISpeaker[] = [
     },
   },
 ];
+
+export const TeamData = [
+  {
+    name: "Ellen Li",
+    title: "Co-Chair",
+    school: "University of Ottawa",
+    photo: "",
+    socials: {},
+  },
+  {
+    name: "Nathan Tozer",
+    title: "Co-Chair",
+    school: "University of New Brunswick",
+    photo: "",
+    socials: {},
+  },
+  {
+    name: "Tae Kim",
+    title: "Director of Events",
+    school: "University of Ottawa",
+    photo: "",
+    socials: {
+      instagram: "https://www.instagram.com/taekim.jpg",
+      linkedin: "https://www.linkedin.com/in/tae-hireme-kim",
+    },
+  },
+  {
+    name: "Aisorya Bhandari",
+    title: "Co-Director of Sponsorship",
+    school: "University of Ottawa",
+    photo: "",
+    socials: {
+      instagram: "https://www.instagram.com/aisoryasunshine",
+    },
+  },
+  {
+    name: "Kisenge Mbaga",
+    title: "Co-Director of Sponsorship",
+    school: "University of New Brunswick",
+    photo: "",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/kisenge-mbaga/",
+      website: "https://thekisengereport.com/",
+    },
+  },
+  {
+    name: "Tommy Deng",
+    title: "Director of Technology & Design",
+    school: "University of Ottawa",
+    photo: "",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/tommydeng/",
+      instagram: "https://www.instagram.com/tommysdeng/",
+      github: "https://github.com/sttic",
+    },
+  },
+  {
+    name: "Gordon Pham-Nguyen",
+    title: "",
+    school: "Concordia University",
+    photo: "",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/gordonpn/",
+      instagram: "https://www.instagram.com/gordonpn/",
+      github: "https://github.com/gordonpn",
+    },
+  },
+  {
+    name: "Hervé Egla",
+    title: "Head Delegate",
+    school: "University of Ottawa",
+    photo: "",
+    socials: {
+      instagram: "https://www.instagram.com/herveegla/",
+    },
+  },
+  {
+    name: "Esther Guerrier",
+    title: "Head Delegate",
+    school: "Polytechnique Montréal",
+    photo: "",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/esther-guerrier-973865179/",
+    },
+  },
+  {
+    name: "Wendy Yang",
+    title: "Head Delegate",
+    school: "University of Calgary",
+    photo: "",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/wendy-yang-297979149/",
+    },
+  },
+  {
+    name: "Edison Guillermo",
+    title: "Head Delegate",
+    school: "University of Manitoba",
+    photo: "",
+  },
+  {
+    name: "Trang Vu",
+    title: "Head Delegate",
+    school: "University of New Brunswick",
+    photo: "",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/vuttrang/",
+    },
+  },
+];
