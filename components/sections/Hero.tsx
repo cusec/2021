@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import NextLink from "next/link";
 import {
   Box,
   Button,
@@ -198,16 +197,16 @@ export default function Hero(): React.ReactElement {
                 flexDirection={["column", "column", "column", "row"]}
                 justify={["center", "center", "center", "left"]}
               >
-                <NextLink href="https://hopin.com/events/cusec-2021" passHref>
-                  <Link
-                    marginRight={[0, 0, 0, "2rem"]}
-                    marginBottom={["1rem", "1rem", "1rem", 0]}
-                    borderRadius="9999px"
-                    _hover={{ textDecoration: "none" }}
-                  >
-                    <ButtonPrimary>Enter The Live Event!</ButtonPrimary>
-                  </Link>
-                </NextLink>
+                <Link
+                  href="https://hopin.com/events/cusec-2021"
+                  isExternal
+                  marginRight={[0, 0, 0, "2rem"]}
+                  marginBottom={["1rem", "1rem", "1rem", 0]}
+                  borderRadius="9999px"
+                  _hover={{ textDecoration: "none" }}
+                >
+                  <ButtonPrimary>Thanks for coming!</ButtonPrimary>
+                </Link>
                 <LinkPrimary href="mailto:sponsor@cusec.net">
                   Interested in sponsoring?
                 </LinkPrimary>
