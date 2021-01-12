@@ -613,7 +613,7 @@ export const teamData: ITeamMember[] = [
     name: "Tae Kim",
     title: "Director of Events",
     school: "University of Ottawa",
-    photo: "",
+    photo: "/images/team/tae_kim.jpg",
     socials: {
       instagram: "https://www.instagram.com/taekim.jpg",
       linkedin: "https://www.linkedin.com/in/tae-hireme-kim",
@@ -623,7 +623,7 @@ export const teamData: ITeamMember[] = [
     name: "Aisorya Bhandari",
     title: "Co-Director of Sponsorship",
     school: "University of Ottawa",
-    photo: "",
+    photo: "/images/team/aisorya_bhandari.jpg",
     socials: {
       instagram: "https://www.instagram.com/aisoryasunshine",
     },
@@ -632,17 +632,28 @@ export const teamData: ITeamMember[] = [
     name: "Kisenge Mbaga",
     title: "Co-Director of Sponsorship",
     school: "University of New Brunswick",
-    photo: "",
+    photo: "/images/team/kisenge_mbaga.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/kisenge-mbaga/",
       website: "https://thekisengereport.com/",
     },
   },
   {
+    name: "Tanner Dunn",
+    title: "Director of Logistics",
+    school: "Queen's University",
+    photo: "/images/team/tanner_dunn.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/tanner-dunn8/",
+      instagram: "https://www.instagram.com/tanner_dunn8",
+    },
+  },
+
+  {
     name: "Tommy Deng",
     title: "Director of Technology & Design",
     school: "University of Ottawa",
-    photo: "",
+    photo: "/images/team/tommy_deng.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/tommydeng/",
       instagram: "https://www.instagram.com/tommysdeng/",
@@ -653,7 +664,7 @@ export const teamData: ITeamMember[] = [
     name: "Gordon Pham-Nguyen",
     title: "",
     school: "Concordia University",
-    photo: "",
+    photo: "/images/team/gordon_pham-nguyen.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/gordonpn/",
       instagram: "https://www.instagram.com/gordonpn/",
@@ -664,7 +675,7 @@ export const teamData: ITeamMember[] = [
     name: "Hervé Egla",
     title: "Head Delegate",
     school: "University of Ottawa",
-    photo: "",
+    photo: "/images/team/herve_egla.jpg",
     socials: {
       instagram: "https://www.instagram.com/herveegla/",
     },
@@ -673,31 +684,62 @@ export const teamData: ITeamMember[] = [
     name: "Esther Guerrier",
     title: "Head Delegate",
     school: "Polytechnique Montréal",
-    photo: "",
+    photo: "/images/team/esther_guerrier.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/esther-guerrier-973865179/",
+    },
+  },
+  {
+    name: "HaoHao Du",
+    title: "Head Delegate",
+    school: "Carleton University",
+    photo: "/images/team/haohao_du.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/haohao-du/",
+    },
+  },
+  {
+    name: "Karl Zhu",
+    title: "Head Delegate",
+    school: "University of Waterloo",
+    photo: "/images/team/karl_zhu.jpg",
+    socials: {
+      instagram: "https://www.instagram.com/_karl.zhu/",
+      facebook: "https://www.facebook.com/karlzhu.theman",
+      linkedin: "https://www.linkedin.com/in/karl-zhu/",
     },
   },
   {
     name: "Wendy Yang",
     title: "Head Delegate",
     school: "University of Calgary",
-    photo: "",
+    photo: "/images/team/wendy_yang.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/wendy-yang-297979149/",
+    },
+  },
+  {
+    name: "Matthieu Chan Chee",
+    title: "Head Delegate",
+    school: "University of Toronto",
+    photo: "/images/team/matthieu_chanchee.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/matthieu-chan-chee-883624138",
+      instagram: "https://www.instagram.com/mattchan21",
+      facebook: "https://www.facebook.com/matthieuchanchee",
     },
   },
   {
     name: "Edison Guillermo",
     title: "Head Delegate",
     school: "University of Manitoba",
-    photo: "",
+    photo: "/images/team/edison_guillermo.jpg",
   },
   {
     name: "Trang Vu",
     title: "Head Delegate",
     school: "University of New Brunswick",
-    photo: "",
+    photo: "/images/team/trang_vu.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/vuttrang/",
     },
