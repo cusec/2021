@@ -1,12 +1,10 @@
 import { ReactElement } from "react";
-import NextLink from "next/link";
-import { Box, Flex, Grid, Link } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import PricingBanner from "../svgs/pricing-banner.svg";
 import PricingCard from "@/components/PricingCard";
 import theme from "@/src/theme";
 import { LocationHashEnum } from "@/src/enums";
-import { ButtonPrimary } from "@/components/core/Button";
 import { WidthWrapper } from "@/components/core/Layout";
 import { HeadlinePrimary } from "@/components/core/Text";
 
@@ -90,7 +88,7 @@ export default function Pricing(): ReactElement {
       </Grid>
       <WidthWrapper
         marginTop={["32px", "32px", "32px", 0]}
-        marginBottom={["0.8in", "0.8in", "0.8in", 0]}
+        marginBottom={["0.8in", "0.8in", "0.8in", "1in"]}
       >
         <Flex
           direction={["column", "column", "column", "row"]}
@@ -118,17 +116,6 @@ export default function Pricing(): ReactElement {
           >
             <PricingCard {...vipTierInfo} />
           </Box>
-        </Flex>
-        <Flex
-          transform={translation}
-          marginTop={["0.5in", "0.5in", "0.5in", "0.8in"]}
-          justify="center"
-        >
-          <NextLink href="/register" passHref>
-            <Link borderRadius="9999px" _hover={{ textDecoration: "none" }}>
-              <ButtonPrimary>Register</ButtonPrimary>
-            </Link>
-          </NextLink>
         </Flex>
       </WidthWrapper>
     </Box>
