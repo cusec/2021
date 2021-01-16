@@ -4,14 +4,6 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/register",
-        "destination": "/register.html"
-      },
-      {
-        "source": "/register-hackacomm",
-        "destination": "/register-hackacomm.html"
-      },
-      {
         "source": "/product-pitch",
         "destination": "/hackacomm.html"
       },
