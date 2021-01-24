@@ -603,15 +603,11 @@ export const teamData: ITeamMember[] = [
     name: "Ellen Li",
     title: "Co-Chair",
     school: "University of Ottawa",
-    photo: "",
-    socials: {},
-  },
-  {
-    name: "Nathan Tozer",
-    title: "Co-Chair",
-    school: "University of New Brunswick",
-    photo: "",
-    socials: {},
+    photo: "/images/team/ellen_li.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ellenli030/ ",
+      instagram: "https://www.instagram.com/cotoncandykira/",
+    },
   },
   {
     name: "Tae Kim",
