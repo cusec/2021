@@ -595,4 +595,54 @@ export const speakerData: ISpeaker[] = [
       github: "https://github.com/alexCatus",
     },
   },
+  {
+    name: "Ahmed Yasser",
+    title: "Associate at Global Production Support Engineering",
+    photo: "/images/speakers/ahmed-yasser.jpg",
+    talk: {
+      title: `New Grad Panel: So I've Graduated, What Next?`,
+      description: `Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, MetrixData360 and Ciena.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ahmed-yasser-07723aa9",
+    },
+  },
+  {
+    name: "Anita Popescu",
+    title: "Photos Engineer at Apple",
+    photo: "/images/speakers/anita-popescu.jpg",
+    talk: {
+      title: `New Grad Panel: So I've Graduated, What Next?`,
+      description: `Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, MetrixData360 and Ciena.`,
+    },
+    socials: {
+      twitter: "https://twitter.com/anitapita613",
+      linkedin: "https://www.linkedin.com/in/anita-popescu",
+    },
+  },
+  {
+    name: "Eric Chau",
+    title: "Software Engineer at MetrixData 360",
+    photo: "/images/speakers/eric-chau.jpg",
+    talk: {
+      title: `New Grad Panel: So I've Graduated, What Next?`,
+      description: `Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, MetrixData360 and Ciena.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ericchau-net/",
+      website: "http://ericchau.net/",
+    },
+  },
+  {
+    name: "Megan Doherty",
+    title: "Technical Specialist in Security & Compliance @ Microsoft",
+    photo: "/images/speakers/megan-doherty.jpg",
+    talk: {
+      title: `New Grad Panel: So I've Graduated, What Next?`,
+      description: `Hear from recent grads who are now at the companies Microsoft, Apple, Amazon AWS, MetrixData360 and Ciena.`,
+    },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/megan-shay-doherty/",
+    },
+  },
 ];
