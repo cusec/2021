@@ -37,7 +37,7 @@ export interface ISpeaker {
   title: string;
   photo: string;
   logo?: string;
-  bio: string;
+  bio?: string;
   talk?: {
     title?: string;
     description?: string;
@@ -162,14 +162,16 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
             {talk?.title && (
               <BodyPrimary fontStyle="italic">{talk.title}</BodyPrimary>
             )}
-            <BodyPrimary
-              display="-webkit-box"
-              style={{ WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}
-              overflow="hidden"
-              textOverflow="ellipsis"
-            >
-              {bio}
-            </BodyPrimary>
+            {bio && (
+              <BodyPrimary
+                display="-webkit-box"
+                style={{ WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}
+                overflow="hidden"
+                textOverflow="ellipsis"
+              >
+                {bio}
+              </BodyPrimary>
+            )}
             <Button
               fontFamily="Inter, sans-serif"
               variant="link"
@@ -215,8 +217,12 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
                 )}
               </>
             )}
-            <BodyPrimary fontWeight="bold">About {name}</BodyPrimary>
-            <Markdown children={bio} allowDangerousHtml />
+            {bio && (
+              <>
+                <BodyPrimary fontWeight="bold">About {name}</BodyPrimary>
+                <Markdown children={bio} allowDangerousHtml />
+              </>
+            )}
           </ModalBody>
           <ModalFooter>
             <Flex justify="center" width="100%" marginBottom="1rem">
