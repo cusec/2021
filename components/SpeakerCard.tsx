@@ -198,9 +198,11 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
               </Button>
             )}
           </Box>
-          <Box marginTop="1rem" marginX="20px">
-            <SpeakerSocials socials={socials} />
-          </Box>
+          {socials && (
+            <Box marginTop="1rem" marginX="20px">
+              <SpeakerSocials socials={socials} />
+            </Box>
+          )}
         </Box>
       </MotionBox>
 
@@ -243,9 +245,11 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
             )}
           </ModalBody>
           <ModalFooter>
-            <Flex justify="center" width="100%" marginBottom="1rem">
-              <SpeakerSocials socials={socials} />
-            </Flex>
+            {socials && (
+              <Flex justify="center" width="100%" marginBottom="1rem">
+                <SpeakerSocials socials={socials} />
+              </Flex>
+            )}
           </ModalFooter>
         </ModalContent>
       </Modal>
