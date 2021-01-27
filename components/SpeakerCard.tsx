@@ -1,14 +1,18 @@
-import { ReactElement } from "react";
+import { MotionBox } from "@/components/core/Motion";
 import {
-  chakra,
-  useDisclosure,
+  BodyPrimary,
+  CardName,
+  CardTitle,
+  MyIcon,
+  MySocialLink,
+} from "@/components/core/Text";
+import {
   Box,
   Button,
   Center,
   Flex,
   HStack,
   Image,
-  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -16,22 +20,24 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { MotionBox } from "@/components/core/Motion";
-import { Body, BodyPrimary } from "@/components/core/Text";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import {
-  faTwitter,
-  faLinkedinIn,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import ReactMarkdown from "react-markdown";
 import styled from "@emotion/styled";
+import {
+  faFacebook,
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { ReactElement } from "react";
+import ReactMarkdown from "react-markdown";
 
 export interface ISpeaker {
   name: string;
   title: string;
+  school?: string;
   photo: string;
   logo?: string;
   bio?: string;
@@ -47,38 +53,11 @@ interface ISpeakerSocials {
   linkedin?: string;
   website?: string;
   github?: string;
+  instagram?: string;
+  facebook?: string;
 }
 
 const logoSize = 14;
-
-const MyIcon = chakra(FontAwesomeIcon, {
-  baseStyle: {
-    width: "18px",
-  },
-});
-
-const MySocialLink = chakra(Link, {
-  baseStyle: {
-    color: "gray.400",
-    _hover: {
-      color: "gray.800",
-    },
-  },
-});
-
-const SpeakerTitle = chakra(Body, {
-  baseStyle: {
-    fontSize: "18px",
-    color: "#696969",
-  },
-});
-
-const SpeakerName = chakra(Body, {
-  baseStyle: {
-    fontSize: "26px",
-    fontWeight: "bold",
-  },
-});
 
 const SpeakerSocials = ({
   socials,
@@ -107,6 +86,16 @@ const SpeakerSocials = ({
           <MyIcon icon={faGithub} />
         </MySocialLink>
       )}
+      {socials.instagram && (
+        <MySocialLink href={socials.instagram} isExternal>
+          <MyIcon icon={faInstagram} />
+        </MySocialLink>
+      )}
+      {socials.facebook && (
+        <MySocialLink href={socials.facebook} isExternal>
+          <MyIcon icon={faFacebook} />
+        </MySocialLink>
+      )}
     </HStack>
   ) : (
     <></>
@@ -127,7 +116,7 @@ const Markdown = styled(ReactMarkdown)`
 `;
 
 export default function SpeakerCard(props: ISpeaker): ReactElement {
-  const { name, title, photo, logo, bio, talk, socials } = props;
+  const { name, title, photo, logo, bio, talk, socials, school } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -183,8 +172,9 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
             paddingX="20px"
             paddingTop="24px"
           >
-            <SpeakerName>{name}</SpeakerName>
-            <SpeakerTitle marginBottom="1rem">{title}</SpeakerTitle>
+            <CardName>{name}</CardName>
+            <CardTitle marginBottom="1rem">{title}</CardTitle>
+            {school && <BodyPrimary fontStyle="italic">{school}</BodyPrimary>}
             {talk?.title && (
               <BodyPrimary fontStyle="italic">{talk.title}</BodyPrimary>
             )}
@@ -198,17 +188,21 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
                 {bio}
               </BodyPrimary>
             )}
-            <Button
-              fontFamily="Inter, sans-serif"
-              variant="link"
-              marginBottom="8px"
-            >
-              More
-            </Button>
+            {(bio || talk) && (
+              <Button
+                fontFamily="Inter, sans-serif"
+                variant="link"
+                marginBottom="8px"
+              >
+                More
+              </Button>
+            )}
           </Box>
-          <Box marginTop="1rem" marginX="20px">
-            <SpeakerSocials socials={socials} />
-          </Box>
+          {socials && (
+            <Box marginTop="1rem" marginX="20px">
+              <SpeakerSocials socials={socials} />
+            </Box>
+          )}
         </Box>
       </MotionBox>
 
@@ -221,8 +215,8 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <SpeakerName>{name}</SpeakerName>
-            <SpeakerTitle>{title}</SpeakerTitle>
+            <CardName>{name}</CardName>
+            <CardTitle>{title}</CardTitle>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -251,9 +245,11 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
             )}
           </ModalBody>
           <ModalFooter>
-            <Flex justify="center" width="100%" marginBottom="1rem">
-              <SpeakerSocials socials={socials} />
-            </Flex>
+            {socials && (
+              <Flex justify="center" width="100%" marginBottom="1rem">
+                <SpeakerSocials socials={socials} />
+              </Flex>
+            )}
           </ModalFooter>
         </ModalContent>
       </Modal>

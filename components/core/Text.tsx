@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import { Link as ChakraLink, Text } from "@chakra-ui/react";
+import { Link as ChakraLink, Text, chakra } from "@chakra-ui/react";
 import theme from "@/src/theme";
 import Linkify from "react-linkify";
 import { ReactElement } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface LinkifyProps {
   children: ReactElement;
@@ -105,3 +106,32 @@ export function LinkifyText({ children }: LinkifyProps): ReactElement {
     </Linkify>
   );
 }
+
+export const MyIcon = chakra(FontAwesomeIcon, {
+  baseStyle: {
+    width: "18px",
+  },
+});
+
+export const MySocialLink = chakra(Link, {
+  baseStyle: {
+    color: "gray.400",
+    _hover: {
+      color: "gray.800",
+    },
+  },
+});
+
+export const CardTitle = chakra(Body, {
+  baseStyle: {
+    fontSize: "18px",
+    color: "#696969",
+  },
+});
+
+export const CardName = chakra(Body, {
+  baseStyle: {
+    fontSize: "26px",
+    fontWeight: "bold",
+  },
+});

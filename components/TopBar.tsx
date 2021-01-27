@@ -139,6 +139,12 @@ export default function TopBar(): React.ReactElement {
                 </Link>
               </NextLink>
               <VerticalBar />
+              <NextLink href="/team" passHref>
+                <Link marginX="16px" _hover={{ textDecoration: "none" }}>
+                  <NavBarLink>Team</NavBarLink>
+                </Link>
+              </NextLink>
+              <VerticalBar />
               <Socials marginLeft="32px" />
             </Flex>
           </Flex>
