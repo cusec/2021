@@ -1,5 +1,4 @@
 import { ISpeaker } from "@/components/SpeakerCard";
-import { ITeamMember } from "@/components/TeamMemberCard";
 
 export const FAQData: { question: string; answer: string[] }[] = [
   {
@@ -648,11 +647,13 @@ export const speakerData: ISpeaker[] = [
   },
 ];
 
-export const teamData: ITeamMember[] = [
+export const teamData: ISpeaker[] = [
   {
     name: "Ellen Li",
     title: "Co-Chair",
     school: "University of Ottawa",
+    bio:
+      "Hello everyone! My name is Ellen, and I am a fourth year software engineering student at uOttawa. This is my third CUSEC, and I'm excited to be here as the Co-Chair of this amazing team. During quarantine, I've been baking pies from scratch, knitting and running around with my puppy @cotoncandykira. Can't wait to meet you all virtually at CUSEC 2021!",
     photo: "/images/team/ellen_li.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/ellenli030/ ",
@@ -663,6 +664,7 @@ export const teamData: ITeamMember[] = [
     name: "Tae Kim",
     title: "Director of Events",
     school: "University of Ottawa",
+    bio: `2020 sucks, I cope with League and good food, Dogs make it better, an original Haiku by Tae Kim.`,
     photo: "/images/team/tae_kim.jpg",
     socials: {
       instagram: "https://www.instagram.com/taekim.jpg",
@@ -673,6 +675,8 @@ export const teamData: ITeamMember[] = [
     name: "Aisorya Bhandari",
     title: "Co-Director of Sponsorship",
     school: "University of Ottawa",
+    bio:
+      "Hi guys! I'm Aisorya (eye-soar-ya) and I'm currently a second year computer science student at UOttawa.  I LOVE tofu and have been trying to go vegan (ALMOST THERE… slowly but surely). Dm me if you have any vegan recipe recommendations",
     photo: "/images/team/aisorya_bhandari.jpg",
     socials: {
       instagram: "https://www.instagram.com/aisoryasunshine",
@@ -682,6 +686,8 @@ export const teamData: ITeamMember[] = [
     name: "Kisenge Mbaga",
     title: "Co-Director of Sponsorship",
     school: "University of New Brunswick",
+    bio:
+      "My name is Kisenge, and I am a second year Software Engineering student at the University of New Brunswick. Outside of tech I love playing sports, reading and Netflix of course. I switch themes for my editor sometimes and Wolverine is my favourite superhero.",
     photo: "/images/team/kisenge_mbaga.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/kisenge-mbaga/",
@@ -692,6 +698,8 @@ export const teamData: ITeamMember[] = [
     name: "Tanner Dunn",
     title: "Director of Logistics",
     school: "Queen's University",
+    bio:
+      "I am a third year Computing student at Queen's University and this will be my second CUSEC. I am very passionate about machine learning and its many applications. In my spare time I enjoy playing and watching hockey, rugby and golf. This is my first time organizing, and I can't wait to share the experience with you!",
     photo: "/images/team/tanner_dunn.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/tanner-dunn8/",
@@ -703,6 +711,8 @@ export const teamData: ITeamMember[] = [
     name: "Tommy Deng",
     title: "Director of Technology & Design",
     school: "University of Ottawa",
+    bio:
+      "I'm a software engineering student who loves penny boarding, cats, and working on cool projects!",
     photo: "/images/team/tommy_deng.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/tommydeng/",
@@ -714,6 +724,8 @@ export const teamData: ITeamMember[] = [
     name: "Gordon Pham-Nguyen",
     title: "Technology and Design Team",
     school: "Concordia University",
+    bio:
+      "I'm a 3rd year software engineering student. Passionate about full stack web development and DevOps. Outside of software development I enjoy cycling, reading, working out, and playing tennis. I used to climb V10 before my fingers gave up on me. Hit me up if you wanna race on road bikes!",
     photo: "/images/team/gordon_pham-nguyen.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/gordonpn/",
@@ -725,6 +737,11 @@ export const teamData: ITeamMember[] = [
     name: "Hervé Egla",
     title: "Head Delegate",
     school: "University of Ottawa",
+    bio: `Hervé Egla is a bilingual 4th year student in the Software Engineering program. He has had various Co-op work experiences in the Software Development field with several companies. After having completed his first two internships in Ottawa at RogueWave Software, he worked for the TD Bank in Toronto, NTT and recently completed his last co-op term with the Ford Motor Company. He is currently a full time student who also works as a student mobile app advisor at uOfO.
+
+<br/>Having discovered a passion for Software Engineering, he takes part in various Hackathons across Canada. He has been selected to lead the University of Ottawa delegation for the next edition of CUSEC (Canadian University Software Engineering conference).
+
+<br/>Feel free to reach out to him at hegla088@uottawa.ca`,
     photo: "/images/team/herve_egla.jpg",
     socials: {
       instagram: "https://www.instagram.com/herveegla/",
@@ -734,6 +751,8 @@ export const teamData: ITeamMember[] = [
     name: "Esther Guerrier",
     title: "Head Delegate",
     school: "Polytechnique Montréal",
+    bio:
+      "Esther is a fourth year student studying in software engineering at Polytechnique Montreal. Had previous internships at Morgan Stanley and Amazon, she is very curious and passionate about technology. She made multiple projects in different fields of technology like robotics, machine learning, android mobile development, websites/applications and more. She is also passionate about sharing her passion to others and to younger generations by teaching.",
     photo: "/images/team/esther_guerrier.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/esther-guerrier-973865179/",
@@ -743,6 +762,8 @@ export const teamData: ITeamMember[] = [
     name: "HaoHao Du",
     title: "Head Delegate",
     school: "Carleton University",
+    bio:
+      "Hey everyone ! My name is HaoHao Du, and I'm currently a third year computer science student at Carleton University. I'm going to be the head delegate for Carleton this year :) Before COVID-19 I enjoyed hosting board game nights with friends (some of my personal favourites were Secret Hitler, Avalant, and any games that caused chaotic energy). I also enjoy playing Ultimate Frisbee, Volleyball, and going to the gym in my spare time. I'm looking forward to leading the ravens into our first virtual conference this year!",
     photo: "/images/team/haohao_du.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/haohao-du/",
@@ -752,6 +773,8 @@ export const teamData: ITeamMember[] = [
     name: "Karl Zhu",
     title: "Head Delegate",
     school: "University of Waterloo",
+    bio:
+      "Hello everyone! My name is Karl, and I am super excited for CUSEC 2021! I'm currently the Head Delegate for the University of Waterloo, so if you're a Warrior, and you're interested in attending CUSEC, hit me up! In my free time, I love to play sports, hang out with friends, and go for runs! Can't wait to see all of you at CUSEC soon!",
     photo: "/images/team/karl_zhu.jpg",
     socials: {
       instagram: "https://www.instagram.com/_karl.zhu/",
@@ -763,6 +786,8 @@ export const teamData: ITeamMember[] = [
     name: "Wendy Yang",
     title: "Head Delegate",
     school: "University of Calgary",
+    bio:
+      "Hello! My name is Wendy, and I am currently in my fourth year of electrical engineering with a minor in computer engineering at the University of Calgary. This will be my first year attending CUSEC, and I am very excited to be on the team representing the University of Calgary. I am super passionate about promoting diversity in tech and hope to get more students involved in amazing opportunities like this conference! Outside of school I like to spend my time chilling with my cat or playing volleyball!",
     photo: "/images/team/wendy_yang.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/wendy-yang-297979149/",
@@ -772,6 +797,8 @@ export const teamData: ITeamMember[] = [
     name: "Matthieu Chan Chee",
     title: "Head Delegate",
     school: "University of Toronto",
+    bio:
+      "Hey, I study CompSci at UofT and am super excited to be part of the CUSEC team! Currently, I'm working on Machine Learning and Computer Vision at AMD. When I'm not fiddling with tech, I enjoy practising Kung Fu, dragon boat, lion dance, public speaking and debating!",
     photo: "/images/team/matthieu_chanchee.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/matthieu-chan-chee-883624138",
@@ -783,12 +810,17 @@ export const teamData: ITeamMember[] = [
     name: "Edison Guillermo",
     title: "Head Delegate",
     school: "University of Manitoba",
+    bio: `I am a Computer Engineering student with an interest in Internet of Things, embedded systems and full-stack web development. I have been involved in various student groups within the University of Manitoba; one of which involves planning out technical workshops for computer science/engineering students, providing a hands-on experience with software used in industry today.
+
+<br/>During my spare time, I enjoy cycling, baking, playing tabletop and PC games, and listening to music. I would also be playing around with various microcontrollers like my Arduino and do some wacky projects.`,
     photo: "/images/team/edison_guillermo.jpg",
   },
   {
     name: "Trang Vu",
     title: "Head Delegate",
     school: "University of New Brunswick",
+    bio:
+      "Trang is a second year student in Computer Science/Software Engineering at the University of New Brunswick, Canada. She is skilled in Python, C, Java, SQL and MATLAB. She has working experience in Linux, Mac, Window, and Git. With a strong background in business and project management, she is sharpening her technical skills on her journey to become a well-rounded software engineer.",
     photo: "/images/team/trang_vu.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/vuttrang/",

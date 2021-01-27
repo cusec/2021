@@ -1,13 +1,13 @@
-import { ReactElement } from "react";
-import Head from "next/head";
-import TopArea from "@/components/sections/TopArea";
 import { WidthWrapper } from "@/components/core/Layout";
 import { BodyPrimary, HeadlinePrimary } from "@/components/core/Text";
-import { Box } from "@chakra-ui/react";
 import Footer from "@/components/sections/Footer";
-import Masonry from "react-masonry-css";
+import TopArea from "@/components/sections/TopArea";
+import SpeakerCard from "@/components/SpeakerCard";
 import { teamData } from "@/src/data";
-import TeamMemberCard from "@/components/TeamMemberCard";
+import { Box } from "@chakra-ui/react";
+import Head from "next/head";
+import { ReactElement } from "react";
+import Masonry from "react-masonry-css";
 
 export default function Team(): ReactElement {
   return (
@@ -56,7 +56,7 @@ export default function Team(): ReactElement {
               columnClassName="my-masonry-grid_column"
             >
               {teamData.map((teamMember, index) => (
-                <TeamMemberCard
+                <SpeakerCard
                   key={`${index}-${teamMember.name}`}
                   {...teamMember}
                 />

@@ -1,4 +1,11 @@
-import { ReactElement } from "react";
+import { MotionBox } from "@/components/core/Motion";
+import {
+  BodyPrimary,
+  CardName,
+  CardTitle,
+  MyIcon,
+  MySocialLink,
+} from "@/components/core/Text";
 import {
   Box,
   Button,
@@ -15,26 +22,22 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { MotionBox } from "@/components/core/Motion";
+import styled from "@emotion/styled";
 import {
-  BodyPrimary,
-  CardName,
-  CardTitle,
-  MyIcon,
-  MySocialLink,
-} from "@/components/core/Text";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import {
+  faFacebook,
   faGithub,
+  faInstagram,
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { ReactElement } from "react";
 import ReactMarkdown from "react-markdown";
-import styled from "@emotion/styled";
 
 export interface ISpeaker {
   name: string;
   title: string;
+  school?: string;
   photo: string;
   logo?: string;
   bio?: string;
@@ -50,6 +53,8 @@ interface ISpeakerSocials {
   linkedin?: string;
   website?: string;
   github?: string;
+  instagram?: string;
+  facebook?: string;
 }
 
 const logoSize = 14;
@@ -81,6 +86,16 @@ const SpeakerSocials = ({
           <MyIcon icon={faGithub} />
         </MySocialLink>
       )}
+      {socials.instagram && (
+        <MySocialLink href={socials.instagram} isExternal>
+          <MyIcon icon={faInstagram} />
+        </MySocialLink>
+      )}
+      {socials.facebook && (
+        <MySocialLink href={socials.facebook} isExternal>
+          <MyIcon icon={faFacebook} />
+        </MySocialLink>
+      )}
     </HStack>
   ) : (
     <></>
@@ -101,7 +116,7 @@ const Markdown = styled(ReactMarkdown)`
 `;
 
 export default function SpeakerCard(props: ISpeaker): ReactElement {
-  const { name, title, photo, logo, bio, talk, socials } = props;
+  const { name, title, photo, logo, bio, talk, socials, school } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -159,6 +174,7 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
           >
             <CardName>{name}</CardName>
             <CardTitle marginBottom="1rem">{title}</CardTitle>
+            {school && <BodyPrimary fontStyle="italic">{school}</BodyPrimary>}
             {talk?.title && (
               <BodyPrimary fontStyle="italic">{talk.title}</BodyPrimary>
             )}
@@ -172,13 +188,15 @@ export default function SpeakerCard(props: ISpeaker): ReactElement {
                 {bio}
               </BodyPrimary>
             )}
-            <Button
-              fontFamily="Inter, sans-serif"
-              variant="link"
-              marginBottom="8px"
-            >
-              More
-            </Button>
+            {(bio || talk) && (
+              <Button
+                fontFamily="Inter, sans-serif"
+                variant="link"
+                marginBottom="8px"
+              >
+                More
+              </Button>
+            )}
           </Box>
           <Box marginTop="1rem" marginX="20px">
             <SpeakerSocials socials={socials} />
