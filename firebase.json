@@ -16,6 +16,10 @@
         "destination": "/speakers.html"
       },
       {
+        "source": "/team",
+        "destination": "/team.html"
+      },
+      {
         "source": "/email",
         "destination": "/email.html"
       },
