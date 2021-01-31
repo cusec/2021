@@ -672,6 +672,30 @@ export const teamData: ISpeaker[] = [
     },
   },
   {
+    name: "Vivian Diec",
+    title: "Director of Promotions",
+    school: "University of Ottawa",
+    bio: `Hey there! My name is Vivian, and I’m currently in my 4th year of software engineering at uOttawa! I'm currently the Director of Promotions. I was the Director of Logistics last year and the uOttawa HD the year before that. I'm so excited for the first ever virtual CUSEC and I can't wait to meet you all digitally!
+
+<br/>In my free time, I love hiking, bouldering, travelling and getting boba!`,
+    photo: "/images/team/vivian_diec.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/vivian-diec",
+    },
+  },
+  {
+    name: "Tanner Dunn",
+    title: "Director of Logistics",
+    school: "Queen's University",
+    bio:
+      "I am a third year Computing student at Queen's University and this will be my second CUSEC. I am very passionate about machine learning and its many applications. In my spare time I enjoy playing and watching hockey, rugby and golf. This is my first time organizing, and I can't wait to share the experience with you!",
+    photo: "/images/team/tanner_dunn.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/tanner-dunn8/",
+      instagram: "https://www.instagram.com/tanner_dunn8",
+    },
+  },
+  {
     name: "Aisorya Bhandari",
     title: "Co-Director of Sponsorship",
     school: "University of Ottawa",
@@ -694,19 +718,6 @@ export const teamData: ISpeaker[] = [
       website: "https://thekisengereport.com/",
     },
   },
-  {
-    name: "Tanner Dunn",
-    title: "Director of Logistics",
-    school: "Queen's University",
-    bio:
-      "I am a third year Computing student at Queen's University and this will be my second CUSEC. I am very passionate about machine learning and its many applications. In my spare time I enjoy playing and watching hockey, rugby and golf. This is my first time organizing, and I can't wait to share the experience with you!",
-    photo: "/images/team/tanner_dunn.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/tanner-dunn8/",
-      instagram: "https://www.instagram.com/tanner_dunn8",
-    },
-  },
-
   {
     name: "Tommy Deng",
     title: "Director of Technology & Design",
