@@ -684,8 +684,22 @@ export const teamData: ISpeaker[] = [
     },
   },
   {
+    name: "Isham Behl",
+    title: "Co-Director of Logistics",
+    school: "University of Manitoba",
+    bio:
+      "Isham is in his third year of Computer Science and Film Studies at University of Manitoba! He is passionate about Human Rights and has volunteered with the Canadian Museum for Human rights for 4 years. In his free time, Isham likes to make music, read and watch short films. If you don't find him behind a computer, he is most likely to be looking for interesting foods to eat, people to meet, or a computer. Pineapples belong on pizzas.",
+    photo: "/images/team/isham_behl.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/behli",
+      instagram: "https://www.instagram.com/isham7920",
+      github: "https://github.com/Marshmallows7920",
+      website: "https://isham.ca",
+    },
+  },
+  {
     name: "Tanner Dunn",
-    title: "Director of Logistics",
+    title: "Co-Director of Logistics",
     school: "Queen's University",
     bio:
       "I am a third year Computing student at Queen's University and this will be my second CUSEC. I am very passionate about machine learning and its many applications. In my spare time I enjoy playing and watching hockey, rugby and golf. This is my first time organizing, and I can't wait to share the experience with you!",
