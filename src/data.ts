@@ -653,11 +653,24 @@ export const teamData: ISpeaker[] = [
     title: "Co-Chair",
     school: "University of Ottawa",
     bio:
-      "Hello everyone! My name is Ellen, and I am a fourth year software engineering student at uOttawa. This is my third CUSEC, and I'm excited to be here as the Co-Chair of this amazing team. During quarantine, I've been baking pies from scratch, knitting and running around with my puppy @cotoncandykira. Can't wait to meet you all virtually at CUSEC 2021!",
+      "Hi everyone :) My name is Ellen, and I am a fourth year software engineering student at uOttawa. This is my third CUSEC, and I'm excited to be here as the Co-Chair of this amazing team. During quarantine I've been baking pies from scratch, knitting and running around with my puppy @cotoncandykira. Can't wait to meet you all virtually at CUSEC 2021!",
     photo: "/images/team/ellen_li.jpg",
     socials: {
-      linkedin: "https://www.linkedin.com/in/ellenli030/ ",
+      linkedin: "https://www.linkedin.com/in/ellenli030/",
       instagram: "https://www.instagram.com/cotoncandykira/",
+      github: "https://github.com/ellenli030",
+    },
+  },
+  {
+    name: "Nathan Tozer",
+    title: "Co-Chair",
+    school: "University of New Brunswick",
+    bio: "Hello there! My name is Nathan and this year I have the honour of being one of the CUSEC 2021 Chairs. It's my fifth year studying Software Engineering at the University of New Brunswick and my third time organizing and attending CUSEC. When I'm not studying for my courses you're most likely to find me baking bread, playing tennis, or putting pineapple on pizza.",
+    photo: "/images/team/nathan_tozer.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/nathantozer/",
+      instagram: "https://github.com/ntozer",
+      github: "https://www.instagram.com/nathantozer/",
     },
   },
   {
@@ -685,7 +698,7 @@ export const teamData: ISpeaker[] = [
   },
   {
     name: "Isham Behl",
-    title: "Co-Director of Logistics",
+    title: "Director of Logistics",
     school: "University of Manitoba",
     bio:
       "Isham is in his third year of Computer Science and Film Studies at University of Manitoba! He is passionate about Human Rights and has volunteered with the Canadian Museum for Human rights for 4 years. In his free time, Isham likes to make music, read and watch short films. If you don't find him behind a computer, he is most likely to be looking for interesting foods to eat, people to meet, or a computer. Pineapples belong on pizzas.",
@@ -699,7 +712,7 @@ export const teamData: ISpeaker[] = [
   },
   {
     name: "Tanner Dunn",
-    title: "Co-Director of Logistics",
+    title: "Logistics Team",
     school: "Queen's University",
     bio:
       "I am a third year Computing student at Queen's University and this will be my second CUSEC. I am very passionate about machine learning and its many applications. In my spare time I enjoy playing and watching hockey, rugby and golf. This is my first time organizing, and I can't wait to share the experience with you!",
@@ -730,6 +743,17 @@ export const teamData: ISpeaker[] = [
     socials: {
       linkedin: "https://www.linkedin.com/in/kisenge-mbaga/",
       website: "https://thekisengereport.com/",
+    },
+  },
+  {
+    name: "HaoHao Du",
+    title: "Sponsorship Team & Head Delegate",
+    school: "Carleton University",
+    bio:
+      "Hey everyone ! My name is HaoHao Du, and I'm currently a third year computer science student at Carleton University. I'm going to be the head delegate for Carleton this year :) Before COVID-19 I enjoyed hosting board game nights with friends (some of my personal favourites were Secret Hitler, Avalant, and any games that caused chaotic energy). I also enjoy playing Ultimate Frisbee, Volleyball, and going to the gym in my spare time. I'm looking forward to leading the ravens into our first virtual conference this year!",
+    photo: "/images/team/haohao_du.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/haohao-du/",
     },
   },
   {
@@ -781,17 +805,6 @@ export const teamData: ISpeaker[] = [
     photo: "/images/team/esther_guerrier.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/esther-guerrier-973865179/",
-    },
-  },
-  {
-    name: "HaoHao Du",
-    title: "Head Delegate",
-    school: "Carleton University",
-    bio:
-      "Hey everyone ! My name is HaoHao Du, and I'm currently a third year computer science student at Carleton University. I'm going to be the head delegate for Carleton this year :) Before COVID-19 I enjoyed hosting board game nights with friends (some of my personal favourites were Secret Hitler, Avalant, and any games that caused chaotic energy). I also enjoy playing Ultimate Frisbee, Volleyball, and going to the gym in my spare time. I'm looking forward to leading the ravens into our first virtual conference this year!",
-    photo: "/images/team/haohao_du.jpg",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/haohao-du/",
     },
   },
   {
