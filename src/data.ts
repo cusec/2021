@@ -665,7 +665,8 @@ export const teamData: ISpeaker[] = [
     name: "Nathan Tozer",
     title: "Co-Chair",
     school: "University of New Brunswick",
-    bio: "Hello there! My name is Nathan and this year I have the honour of being one of the CUSEC 2021 Chairs. It's my fifth year studying Software Engineering at the University of New Brunswick and my third time organizing and attending CUSEC. When I'm not studying for my courses you're most likely to find me baking bread, playing tennis, or putting pineapple on pizza.",
+    bio:
+      "Hello there! My name is Nathan and this year I have the honour of being one of the CUSEC 2021 Chairs. It's my fifth year studying Software Engineering at the University of New Brunswick and my third time organizing and attending CUSEC. When I'm not studying for my courses you're most likely to find me baking bread, playing tennis, or putting pineapple on pizza.",
     photo: "/images/team/nathan_tozer.jpg",
     socials: {
       linkedin: "https://www.linkedin.com/in/nathantozer/",
